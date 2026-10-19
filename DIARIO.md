@@ -1,5 +1,41 @@
 # Diario
 
+## 2026-10-19 sera — Chiusura di giornata
+
+### Fatto
+- Download onde fermato alle 23:29, appena chiusa la zona `france-st-jean-de-monts`: **51 zone su 150** con dati, 99 mancanti, prossima `spain-montalvo-beach`. Nessun file a metà; `_progress.json` salvato con stato "fermato dopo la zona in corso".
+- `era5_cds.py scarica` ora:
+  - salta le zone già fatte;
+  - si ferma pulito con `touch data/raw/waves/_stop`, prima della zona successiva, dicendo quale sarebbe;
+  - con kill o Ctrl-C salva lo stato.
+  - Ripresa provata senza scaricare: salta le 51 zone fatte e riparte da `spain-montalvo-beach`.
+- `climate.json` ricostruito: 51 zone con settimane e mesi, 99 "dati in arrivo".
+- Collaudo locale prima del push, senza errori in console:
+  - zona senza dati grigia con "Dati in arrivo";
+  - stella senza login che apre l'accesso;
+  - segnalazione arrivata nel database e poi cancellata;
+  - 400 px senza sforamenti, sia nella vista mese sia nella vista anno.
+  - L'unico avviso rimasto riguarda i prezzi, che non ci sono finché non si esegue la migrazione `swell_prices`.
+- Corretto: con chiamate contemporanee si creavano due client Supabase (avviso "Multiple GoTrueClient instances"); ora si memorizza la promessa.
+- Controllo segreti su tutta la cronologia (18 commit): nessuna secret key Supabase, nessun token Travelpayouts, nessuna chiave Copernicus, nessun `.env` o `.cdsapirc`; `data/raw` mai tracciato. Unica chiave presente la publishable, pubblica per natura.
+
+### Ripresa del download (comando esatto)
+```
+cd /Users/mattia/Documents/swell-atlas
+nohup .venv/bin/python -u scripts/era5_cds.py scarica >> data/raw/waves/_download_cds.log 2>&1 < /dev/null &
+nohup caffeinate -i -w $! >/dev/null 2>&1 < /dev/null &
+```
+- Stato: `.venv/bin/python scripts/fetch_waves.py --stato`
+- Fermare dopo la zona in corso: `touch data/raw/waves/_stop`
+- A download finito: `.venv/bin/python scripts/build_climate.py`, poi commit di `data/climate.json`.
+- Ritmo: circa 75-125 s a zona, quindi per le 99 zone mancanti circa 2-3 ore.
+
+### Prossimi passi (domani, in quest'ordine)
+1. Calendario: rivederlo con più zone e ritoccare dove serve.
+2. Fase 5 prezzi: token Travelpayouts in `.env`, migrazione `20261020090000_swell_prices.sql`, collaudo su GOA-DPS, MXP-HNL, PSA-LIS, poi i secret su GitHub.
+3. Ripresa del download onde con il comando qui sopra, poi `build_climate.py`.
+
+
 ## 2026-10-20 — Fase 5, prezzi voli indicativi
 
 ### Fatto

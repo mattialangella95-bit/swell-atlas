@@ -86,6 +86,13 @@ Fonti: spot dal gist pubblico di naotokui (~5900 spot), coste Natural Earth, aer
 .venv/bin/python scripts/build_climate.py --verifica <id>
 ```
 
+Ripresa del download Copernicus (si ferma con `touch data/raw/waves/_stop`, salta le zone già fatte):
+
+```
+nohup .venv/bin/python -u scripts/era5_cds.py scarica >> data/raw/waves/_download_cds.log 2>&1 < /dev/null &
+nohup caffeinate -i -w $! >/dev/null 2>&1 < /dev/null &
+```
+
 La regola qualità si tara solo in `data/quality-rule.json` (usa il periodo medio). Fonte: ERA5 2005-2024, ore di luce, onda totale al largo (niente swell separato) e vento a 10 m nella cella di mare sulla costa.
 
 ## Calendario
@@ -116,6 +123,6 @@ Il giro completo lo fa GitHub Actions ogni lunedì (`.github/workflows/prezzi.ym
 
 1. **Base** — prototipo trasformato in progetto: file separati, dati in JSON, GitHub Pages. *(completata)*
 2. **Zone** — zone reali da ~5900 spot: pulizia, clustering, esposizione della costa, aeroporto di riferimento, revisione a mano. *(completata)*
-3. **Onde ERA5** — climatologia 2005-2024 da ERA5 (Open-Meteo per il collaudo, Copernicus CDS per tutte le zone), regola qualità in JSON, `climate.json` letto da `getZoneWeeks()`. *(in corso: 5 zone di collaudo fatte)*
+3. **Onde ERA5** — climatologia 2005-2024 da ERA5 (Open-Meteo per il collaudo, Copernicus CDS per tutte le zone), regola qualità in JSON, `climate.json` letto da `getZoneWeeks()`. *(in corso: 51 zone su 150, download in pausa; ripresa in DIARIO.md)*
 4. **Ore di volo** — aeroporto principale e locale per zona da OurAirports, partenza da tutti gli aeroporti italiani, ore e scali stimati con parametri in `data/flight-estimate.json`. *(fatta, stima senza rotte vere)*
-5. **Prezzi** — prezzi indicativi dalla cache di Aviasales (Travelpayouts), raccolti ogni settimana da GitHub Actions in `swell_prices` su Supabase; storico per vedere la stagionalità vera. *(in corso)*
+5. **Prezzi** — prezzi indicativi dalla cache di Aviasales (Travelpayouts), raccolti ogni settimana da GitHub Actions in `swell_prices` su Supabase; storico per vedere la stagionalità vera. *(codice pronto; mancano token, migrazione e collaudo)*

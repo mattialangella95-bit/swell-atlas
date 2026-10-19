@@ -23,7 +23,7 @@ Uso:    .venv/bin/python scripts/era5_cds.py costi
         .venv/bin/python scripts/era5_cds.py prova-griglia
         .venv/bin/python scripts/era5_cds.py scarica --zone usa-graters
 """
-import argparse, csv, io, json, math, os, sys, time, urllib.request, zipfile
+import argparse, csv, io, json, math, os, signal, sys, time, urllib.request, zipfile
 from datetime import datetime
 from pathlib import Path
 
@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ZONES = ROOT / "data/zones.json"
 RAW = ROOT / "data/raw/waves"
 CDS_RAW = ROOT / "data/raw/cds"
+STOP = RAW / "_stop"
 API = "https://cds.climate.copernicus.eu/api/retrieve/v1/processes"
 TS = "reanalysis-era5-single-levels-timeseries"
 GRID = "reanalysis-era5-single-levels"
@@ -281,12 +282,19 @@ def cmd_scarica(a):
             "pid": os.getpid(), "zona_in_corso": current, "fatte": len(ok), "mancanti": len(ids) - len(ok), "totale": len(ids),
             "saltate": skipped, "zone_mancanti": [i for i in ids if i not in ok], "zone_fatte": ok}, ensure_ascii=False, indent=1))
 
+    def stop(signum, frame):   # kill o Ctrl-C: si salva lo stato; la zona a metà si rifà alla ripresa
+        progress("fermato"); print("fermato", flush=True); sys.exit(0)
+    signal.signal(signal.SIGTERM, stop); signal.signal(signal.SIGINT, stop)
+
     for z in zones:
         if a.max and done >= a.max:
             break
         final = RAW / f"{z['id']}.parquet"
         if final.exists() or (RAW / f"{z['id']}.marine.parquet").exists():
             continue   # già fatta, o in corso con Open-Meteo
+        if STOP.exists():   # touch data/raw/waves/_stop: si ferma prima della zona successiva
+            STOP.unlink(); progress("fermato dopo la zona in corso")
+            print(f"fermato su richiesta (_stop): la prossima zona sarebbe {z['id']}", flush=True); return
         t0 = time.time()
         progress("scarico (Copernicus)", z["id"])
         vlat, vlon = sea_cell(z["lat"], z["lon"], land)

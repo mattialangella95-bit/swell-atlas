@@ -9,12 +9,11 @@ export const configured = !!(SUPABASE_URL && SUPABASE_PUBLISHABLE_KEY);
 let client = null, user = null;
 const listeners = [];
 
-export async function supabase(){
-  if(!configured) return null;
-  if(!client){
-    const {createClient} = await import(SUPABASE_JS);
-    client = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {auth:{persistSession:true, detectSessionInUrl:true}});
-  }
+export function supabase(){
+  if(!configured) return Promise.resolve(null);
+  // si memorizza la promessa, non il risultato: chiamate contemporanee (auth, profilo, prezzi) usano un solo client
+  client ||= import(SUPABASE_JS).then(({createClient}) =>
+    createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {auth:{persistSession:true, detectSessionInUrl:true}}));
   return client;
 }
 
