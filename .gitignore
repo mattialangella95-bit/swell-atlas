@@ -1,2 +1,5 @@
 swell-atlas.html
 .DS_Store
+.venv/
+data/raw/
+__pycache__/

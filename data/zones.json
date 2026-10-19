@@ -1,404 +1,4059 @@
 [
-  {
-    "id": "hos",
-    "name": "Hossegor",
-    "region": "Francia, Landes",
-    "lat": 43.66,
-    "lon": -1.44,
-    "airport": {
-      "code": "BIQ",
-      "lat": 43.47,
-      "lon": -1.52
-    },
-    "demo": {
-      "peak": 41,
-      "base": 2,
-      "amp": 6,
-      "height": [
-        0.6,
-        2.4
-      ],
-      "period": [
-        8,
-        14
-      ]
-    }
+ {
+  "id": "australia-blue-bay",
+  "name": "Blue Bay",
+  "region": "Australia, NSW, Central",
+  "lat": -33.4369,
+  "lon": 151.465,
+  "spots": 68,
+  "exposure": 115,
+  "airport": {
+   "code": "SYD",
+   "lat": -33.946098,
+   "lon": 151.177002
   },
-  {
-    "id": "eri",
-    "name": "Ericeira",
-    "region": "Portogallo",
-    "lat": 38.96,
-    "lon": -9.42,
-    "airport": {
-      "code": "LIS",
-      "lat": 38.77,
-      "lon": -9.13
-    },
-    "demo": {
-      "peak": 45,
-      "base": 2,
-      "amp": 6.5,
-      "height": [
-        0.7,
-        2.6
-      ],
-      "period": [
-        8,
-        15
-      ]
-    }
-  },
-  {
-    "id": "bun",
-    "name": "Bundoran",
-    "region": "Irlanda, Donegal",
-    "lat": 54.48,
-    "lon": -8.28,
-    "airport": {
-      "code": "DUB",
-      "lat": 53.42,
-      "lon": -6.27
-    },
-    "demo": {
-      "peak": 43,
-      "base": 1.5,
-      "amp": 5.5,
-      "height": [
-        0.8,
-        2.8
-      ],
-      "period": [
-        9,
-        15
-      ]
-    }
-  },
-  {
-    "id": "tag",
-    "name": "Taghazout",
-    "region": "Marocco",
-    "lat": 30.54,
-    "lon": -9.71,
-    "airport": {
-      "code": "AGA",
-      "lat": 30.38,
-      "lon": -9.55,
-      "nearEurope": true
-    },
-    "demo": {
-      "peak": 2,
-      "base": 2,
-      "amp": 6,
-      "height": [
-        0.6,
-        2.2
-      ],
-      "period": [
-        9,
-        15
-      ]
-    }
-  },
-  {
-    "id": "fue",
-    "name": "Fuerteventura Nord",
-    "region": "Spagna, Canarie",
-    "lat": 28.72,
-    "lon": -13.86,
-    "airport": {
-      "code": "FUE",
-      "lat": 28.45,
-      "lon": -13.86,
-      "nearEurope": true
-    },
-    "demo": {
-      "peak": 50,
-      "base": 2.5,
-      "amp": 5,
-      "height": [
-        0.7,
-        2.2
-      ],
-      "period": [
-        9,
-        15
-      ]
-    }
-  },
-  {
-    "id": "sar",
-    "name": "Capo Mannu",
-    "region": "Italia, Sardegna",
-    "lat": 40.04,
-    "lon": 8.38,
-    "airport": {
-      "code": "CAG",
-      "lat": 39.25,
-      "lon": 9.05
-    },
-    "demo": {
-      "peak": 4,
-      "base": 1,
-      "amp": 4.5,
-      "height": [
-        0.3,
-        1.8
-      ],
-      "period": [
-        6,
-        10
-      ]
-    }
-  },
-  {
-    "id": "jbay",
-    "name": "Jeffreys Bay",
-    "region": "Sudafrica",
-    "lat": -34.05,
-    "lon": 24.93,
-    "airport": {
-      "code": "PLZ",
-      "lat": -33.98,
-      "lon": 25.62
-    },
-    "demo": {
-      "peak": 26,
-      "base": 2.5,
-      "amp": 6,
-      "height": [
-        0.8,
-        2.4
-      ],
-      "period": [
-        10,
-        16
-      ]
-    }
-  },
-  {
-    "id": "mal",
-    "name": "Atolli di Malé",
-    "region": "Maldive",
-    "lat": 4.3,
-    "lon": 73.6,
-    "airport": {
-      "code": "MLE",
-      "lat": 4.19,
-      "lon": 73.53
-    },
-    "demo": {
-      "peak": 22,
-      "base": 2.5,
-      "amp": 5,
-      "height": [
-        0.6,
-        1.8
-      ],
-      "period": [
-        11,
-        16
-      ]
-    }
-  },
-  {
-    "id": "aru",
-    "name": "Arugam Bay",
-    "region": "Sri Lanka",
-    "lat": 6.84,
-    "lon": 81.84,
-    "airport": {
-      "code": "CMB",
-      "lat": 7.18,
-      "lon": 79.88
-    },
-    "demo": {
-      "peak": 28,
-      "base": 1.5,
-      "amp": 5.5,
-      "height": [
-        0.5,
-        1.6
-      ],
-      "period": [
-        10,
-        14
-      ]
-    }
-  },
-  {
-    "id": "men",
-    "name": "Mentawai",
-    "region": "Indonesia",
-    "lat": -2.1,
-    "lon": 99.6,
-    "airport": {
-      "code": "PDG",
-      "lat": -0.79,
-      "lon": 100.28
-    },
-    "demo": {
-      "peak": 25,
-      "base": 3.5,
-      "amp": 5.5,
-      "height": [
-        0.9,
-        2.4
-      ],
-      "period": [
-        12,
-        17
-      ]
-    }
-  },
-  {
-    "id": "bal",
-    "name": "Uluwatu",
-    "region": "Indonesia, Bali",
-    "lat": -8.82,
-    "lon": 115.09,
-    "airport": {
-      "code": "DPS",
-      "lat": -8.75,
-      "lon": 115.17
-    },
-    "demo": {
-      "peak": 28,
-      "base": 3,
-      "amp": 6,
-      "height": [
-        0.8,
-        2.4
-      ],
-      "period": [
-        11,
-        17
-      ]
-    }
-  },
-  {
-    "id": "sia",
-    "name": "Siargao",
-    "region": "Filippine",
-    "lat": 9.81,
-    "lon": 126.16,
-    "airport": {
-      "code": "IAO",
-      "lat": 9.86,
-      "lon": 126.01
-    },
-    "demo": {
-      "peak": 40,
-      "base": 1.5,
-      "amp": 5.5,
-      "height": [
-        0.5,
-        2
-      ],
-      "period": [
-        9,
-        14
-      ]
-    }
-  },
-  {
-    "id": "gc",
-    "name": "Gold Coast",
-    "region": "Australia, Queensland",
-    "lat": -28.17,
-    "lon": 153.55,
-    "airport": {
-      "code": "OOL",
-      "lat": -28.16,
-      "lon": 153.5
-    },
-    "demo": {
-      "peak": 10,
-      "base": 2.5,
-      "amp": 5.5,
-      "height": [
-        0.6,
-        2
-      ],
-      "period": [
-        9,
-        14
-      ]
-    }
-  },
-  {
-    "id": "ns",
-    "name": "North Shore",
-    "region": "Hawaii, Oahu",
-    "lat": 21.66,
-    "lon": -158.05,
-    "airport": {
-      "code": "HNL",
-      "lat": 21.32,
-      "lon": -157.92
-    },
-    "demo": {
-      "peak": 2,
-      "base": 1.5,
-      "amp": 8,
-      "height": [
-        0.5,
-        4
-      ],
-      "period": [
-        12,
-        18
-      ]
-    }
-  },
-  {
-    "id": "pe",
-    "name": "Puerto Escondido",
-    "region": "Messico, Oaxaca",
-    "lat": 15.86,
-    "lon": -97.07,
-    "airport": {
-      "code": "PXM",
-      "lat": 15.88,
-      "lon": -97.09
-    },
-    "demo": {
-      "peak": 23,
-      "base": 3,
-      "amp": 6,
-      "height": [
-        1,
-        3
-      ],
-      "period": [
-        12,
-        18
-      ]
-    }
-  },
-  {
-    "id": "st",
-    "name": "Santa Teresa",
-    "region": "Costa Rica",
-    "lat": 9.64,
-    "lon": -85.17,
-    "airport": {
-      "code": "LIR",
-      "lat": 10.59,
-      "lon": -85.54
-    },
-    "demo": {
-      "peak": 30,
-      "base": 3,
-      "amp": 5,
-      "height": [
-        0.7,
-        2
-      ],
-      "period": [
-        11,
-        17
-      ]
-    }
+  "demo": {
+   "peak": 25,
+   "base": 2.3,
+   "amp": 5.3,
+   "height": [
+    0.7,
+    2.8
+   ],
+   "period": [
+    8,
+    14
+   ]
   }
+ },
+ {
+  "id": "south-africa-blinkklip-reef",
+  "name": "Blinkklip Reef",
+  "region": "South Africa, Cape Town",
+  "lat": -34.1153,
+  "lon": 18.5901,
+  "spots": 56,
+  "exposure": 232,
+  "airport": {
+   "code": "CPT",
+   "lat": -33.97403,
+   "lon": 18.604333
+  },
+  "demo": {
+   "peak": 31,
+   "base": 1.6,
+   "amp": 5.3,
+   "height": [
+    0.9,
+    2.4
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "australia-spooks",
+  "name": "Spooks",
+  "region": "Australia, VIC, Melbourne East",
+  "lat": -38.3792,
+  "lon": 144.7181,
+  "spots": 54,
+  "exposure": 179,
+  "airport": {
+   "code": "AVV",
+   "lat": -38.040269,
+   "lon": 144.467196
+  },
+  "demo": {
+   "peak": 22,
+   "base": 2.7,
+   "amp": 4.5,
+   "height": [
+    0.8,
+    2.8
+   ],
+   "period": [
+    9,
+    13
+   ]
+  }
+ },
+ {
+  "id": "australia-comerong-island",
+  "name": "Comerong island",
+  "region": "Australia, NSW, South Coast",
+  "lat": -34.9046,
+  "lon": 150.7336,
+  "spots": 52,
+  "exposure": 111,
+  "airport": {
+   "code": "SYD",
+   "lat": -33.946098,
+   "lon": 151.177002
+  },
+  "demo": {
+   "peak": 33,
+   "base": 3.4,
+   "amp": 6.3,
+   "height": [
+    0.5,
+    1.8
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "usa-cassidy",
+  "name": "Cassidy",
+  "region": "USA, California, San Diego County",
+  "lat": 33.0769,
+  "lon": -117.3964,
+  "spots": 48,
+  "exposure": 241,
+  "airport": {
+   "code": "CLD",
+   "lat": 33.1283,
+   "lon": -117.279999
+  },
+  "demo": {
+   "peak": 8,
+   "base": 3.0,
+   "amp": 6.2,
+   "height": [
+    0.5,
+    2.7
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-manhattan-26th-street",
+  "name": "Manhattan 26th street",
+  "region": "USA, California, LA County",
+  "lat": 33.8482,
+  "lon": -118.4266,
+  "spots": 45,
+  "exposure": 214,
+  "airport": {
+   "code": "LAX",
+   "lat": 33.942501,
+   "lon": -118.407997
+  },
+  "demo": {
+   "peak": 0,
+   "base": 2.6,
+   "amp": 6.2,
+   "height": [
+    0.8,
+    2.1
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "brazil-tingua",
+  "name": "Tingua",
+  "region": "Brazil, Santa Catarina North",
+  "lat": -27.3648,
+  "lon": -48.5209,
+  "spots": 42,
+  "exposure": 89,
+  "airport": {
+   "code": "FLN",
+   "lat": -27.670279,
+   "lon": -48.552502
+  },
+  "demo": {
+   "peak": 30,
+   "base": 2.1,
+   "amp": 5.3,
+   "height": [
+    0.8,
+    2.1
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "australia-garden-island",
+  "name": "Garden Island",
+  "region": "Australia, WA, Perth City",
+  "lat": -32.1188,
+  "lon": 115.6795,
+  "spots": 41,
+  "exposure": 268,
+  "airport": {
+   "code": "PER",
+   "lat": -31.94029998779297,
+   "lon": 115.96700286865234
+  },
+  "demo": {
+   "peak": 25,
+   "base": 1.6,
+   "amp": 5.5,
+   "height": [
+    0.7,
+    2.6
+   ],
+   "period": [
+    10,
+    14
+   ]
+  }
+ },
+ {
+  "id": "france-audierne-la-gamelle",
+  "name": "Audierne - La Gamelle",
+  "region": "France, Brittany South",
+  "lat": 48.0656,
+  "lon": -4.4732,
+  "spots": 41,
+  "exposure": 240,
+  "airport": {
+   "code": "BES",
+   "lat": 48.447899,
+   "lon": -4.41854
+  },
+  "demo": {
+   "peak": 0,
+   "base": 2.5,
+   "amp": 4.6,
+   "height": [
+    0.7,
+    2.7
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "australia-blackrocks",
+  "name": "Blackrocks",
+  "region": "Australia, NSW, North",
+  "lat": -28.3491,
+  "lon": 153.5363,
+  "spots": 39,
+  "exposure": 83,
+  "airport": {
+   "code": "OOL",
+   "lat": -28.165962,
+   "lon": 153.506641
+  },
+  "demo": {
+   "peak": 29,
+   "base": 3.0,
+   "amp": 6.4,
+   "height": [
+    0.5,
+    2.8
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "portugal-magoito",
+  "name": "Magoito",
+  "region": "Portugal, Central Lisboa",
+  "lat": 38.8886,
+  "lon": -9.3491,
+  "spots": 37,
+  "exposure": 261,
+  "airport": {
+   "code": "CAT",
+   "lat": 38.724998,
+   "lon": -9.35523
+  },
+  "demo": {
+   "peak": 48,
+   "base": 2.0,
+   "amp": 5.6,
+   "height": [
+    0.6,
+    3.0
+   ],
+   "period": [
+    8,
+    13
+   ]
+  }
+ },
+ {
+  "id": "france-le-penon",
+  "name": "Le Penon",
+  "region": "France, Landes",
+  "lat": 43.6411,
+  "lon": -1.5038,
+  "spots": 36,
+  "exposure": 304,
+  "airport": {
+   "code": "BIQ",
+   "lat": 43.468372,
+   "lon": -1.523223
+  },
+  "demo": {
+   "peak": 51,
+   "base": 3.1,
+   "amp": 6.4,
+   "height": [
+    0.6,
+    1.9
+   ],
+   "period": [
+    11,
+    15
+   ]
+  }
+ },
+ {
+  "id": "australia-isolators",
+  "name": "Isolators",
+  "region": "Australia, WA, Margaret River North",
+  "lat": -33.7753,
+  "lon": 115.0644,
+  "spots": 34,
+  "exposure": 287,
+  "airport": {
+   "code": "PER",
+   "lat": -31.94029998779297,
+   "lon": 115.96700286865234
+  },
+  "demo": {
+   "peak": 22,
+   "base": 1.7,
+   "amp": 4.7,
+   "height": [
+    0.7,
+    3.0
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-carpinteria-beach",
+  "name": "Carpinteria Beach",
+  "region": "USA, California, Santa Barbara",
+  "lat": 34.3379,
+  "lon": -119.6015,
+  "spots": 34,
+  "exposure": 201,
+  "airport": {
+   "code": "SBA",
+   "lat": 34.426201,
+   "lon": -119.839996
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.1,
+   "amp": 5.4,
+   "height": [
+    1.0,
+    2.3
+   ],
+   "period": [
+    9,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-dutches-wedge",
+  "name": "Dutches Wedge",
+  "region": "USA, North East, New Jersey",
+  "lat": 39.3048,
+  "lon": -74.5192,
+  "spots": 32,
+  "exposure": 128,
+  "airport": {
+   "code": "ACY",
+   "lat": 39.456201,
+   "lon": -74.577511
+  },
+  "demo": {
+   "peak": 7,
+   "base": 2.2,
+   "amp": 5.1,
+   "height": [
+    0.5,
+    2.1
+   ],
+   "period": [
+    9,
+    13
+   ]
+  }
+ },
+ {
+  "id": "spain-islares",
+  "name": "Islares",
+  "region": "Spain, Cantabria",
+  "lat": 43.43,
+  "lon": -3.364,
+  "spots": 31,
+  "exposure": 1,
+  "airport": {
+   "code": "SDR",
+   "lat": 43.427101,
+   "lon": -3.82001
+  },
+  "demo": {
+   "peak": 51,
+   "base": 2.6,
+   "amp": 5.4,
+   "height": [
+    0.5,
+    2.5
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "uk-boobies",
+  "name": "Boobies",
+  "region": "UK, Cornwall West",
+  "lat": 50.4782,
+  "lon": -5.0353,
+  "spots": 30,
+  "exposure": 300,
+  "airport": {
+   "code": "NQY",
+   "lat": 50.440601,
+   "lon": -4.99541
+  },
+  "demo": {
+   "peak": 6,
+   "base": 2.1,
+   "amp": 5.5,
+   "height": [
+    0.9,
+    2.2
+   ],
+   "period": [
+    10,
+    15
+   ]
+  }
+ },
+ {
+  "id": "france-oleron-vert-bois-les-allassins",
+  "name": "Oléron - Vert bois - Les Allassins",
+  "region": "France, Charente maritime",
+  "lat": 45.8736,
+  "lon": -1.2558,
+  "spots": 29,
+  "exposure": 253,
+  "airport": {
+   "code": "LRH",
+   "lat": 46.179199,
+   "lon": -1.19528
+  },
+  "demo": {
+   "peak": 4,
+   "base": 1.8,
+   "amp": 5.5,
+   "height": [
+    0.8,
+    3.0
+   ],
+   "period": [
+    10,
+    15
+   ]
+  }
+ },
+ {
+  "id": "japan-hitotsuba",
+  "name": "Hitotsuba",
+  "region": "Japan, Kyushu",
+  "lat": 31.9347,
+  "lon": 131.4962,
+  "spots": 28,
+  "exposure": 109,
+  "airport": {
+   "code": "KMI",
+   "lat": 31.877199,
+   "lon": 131.449005
+  },
+  "demo": {
+   "peak": 51,
+   "base": 1.9,
+   "amp": 5.1,
+   "height": [
+    0.7,
+    2.6
+   ],
+   "period": [
+    11,
+    16
+   ]
+  }
+ },
+ {
+  "id": "australia-broulee-north",
+  "name": "Broulee North",
+  "region": "Australia, NSW, Far South",
+  "lat": -35.8114,
+  "lon": 150.2536,
+  "spots": 27,
+  "exposure": 109,
+  "airport": {
+   "code": "MYA",
+   "lat": -35.8978004456,
+   "lon": 150.143997192
+  },
+  "demo": {
+   "peak": 27,
+   "base": 2.6,
+   "amp": 5.6,
+   "height": [
+    0.8,
+    2.3
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "usa-scott-s-creek",
+  "name": "Scott's Creek",
+  "region": "USA, California, Santa Cruz",
+  "lat": 36.9557,
+  "lon": -122.08,
+  "spots": 27,
+  "exposure": 242,
+  "airport": {
+   "code": "MRY",
+   "lat": 36.586777,
+   "lon": -121.844183
+  },
+  "demo": {
+   "peak": 5,
+   "base": 2.3,
+   "amp": 6.1,
+   "height": [
+    0.7,
+    2.9
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "australia-austinmer-beach",
+  "name": "Austinmer Beach",
+  "region": "Australia, NSW, Sydney South",
+  "lat": -34.1326,
+  "lon": 151.0952,
+  "spots": 25,
+  "exposure": 115,
+  "airport": {
+   "code": "SYD",
+   "lat": -33.946098,
+   "lon": 151.177002
+  },
+  "demo": {
+   "peak": 29,
+   "base": 3.3,
+   "amp": 5.7,
+   "height": [
+    0.9,
+    3.1
+   ],
+   "period": [
+    7,
+    11
+   ]
+  }
+ },
+ {
+  "id": "australia-noosa-main-beach",
+  "name": "Noosa Main Beach",
+  "region": "Australia, QLD, Sunshine Coast",
+  "lat": -26.4799,
+  "lon": 153.1168,
+  "spots": 25,
+  "exposure": 83,
+  "airport": {
+   "code": "MCY",
+   "lat": -26.593324,
+   "lon": 153.08319
+  },
+  "demo": {
+   "peak": 22,
+   "base": 2.0,
+   "amp": 6.1,
+   "height": [
+    0.6,
+    2.1
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "brazil-laguna",
+  "name": "Laguna",
+  "region": "Brazil, Santa Catarina",
+  "lat": -28.3244,
+  "lon": -48.7313,
+  "spots": 25,
+  "exposure": 114,
+  "airport": {
+   "code": "FLN",
+   "lat": -27.670279,
+   "lon": -48.552502
+  },
+  "demo": {
+   "peak": 33,
+   "base": 3.4,
+   "amp": 5.9,
+   "height": [
+    0.6,
+    2.8
+   ],
+   "period": [
+    9,
+    13
+   ]
+  }
+ },
+ {
+  "id": "chile-cap-ducal",
+  "name": "Cap Ducal",
+  "region": "Chile, Central Santiago",
+  "lat": -33.0368,
+  "lon": -71.5719,
+  "spots": 25,
+  "exposure": 278,
+  "airport": {
+   "code": "SCL",
+   "lat": -33.393001556396484,
+   "lon": -70.78579711914062
+  },
+  "demo": {
+   "peak": 32,
+   "base": 1.6,
+   "amp": 5.5,
+   "height": [
+    0.7,
+    2.1
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "brazil-camboinhas",
+  "name": "Camboinhas",
+  "region": "Brazil, Rio de Janeiro City",
+  "lat": -22.9859,
+  "lon": -43.1748,
+  "spots": 24,
+  "exposure": 170,
+  "airport": {
+   "code": "SDU",
+   "lat": -22.910397,
+   "lon": -43.16282
+  },
+  "demo": {
+   "peak": 28,
+   "base": 3.4,
+   "amp": 5.7,
+   "height": [
+    0.5,
+    2.5
+   ],
+   "period": [
+    11,
+    16
+   ]
+  }
+ },
+ {
+  "id": "portugal-a-ver-o-mar",
+  "name": "A-ver-o-mar",
+  "region": "Portugal, North Porto",
+  "lat": 41.2988,
+  "lon": -8.7391,
+  "spots": 24,
+  "exposure": 265,
+  "airport": {
+   "code": "OPO",
+   "lat": 41.2481002808,
+   "lon": -8.68138980865
+  },
+  "demo": {
+   "peak": 4,
+   "base": 1.7,
+   "amp": 6.1,
+   "height": [
+    0.5,
+    2.0
+   ],
+   "period": [
+    9,
+    14
+   ]
+  }
+ },
+ {
+  "id": "portugal-pirata-or-ponta-do-levante",
+  "name": "Pirata or Ponta do Levante",
+  "region": "Portugal, Algarve",
+  "lat": 37.0559,
+  "lon": -8.4694,
+  "spots": 24,
+  "exposure": 195,
+  "airport": {
+   "code": "PRM",
+   "lat": 37.1493,
+   "lon": -8.58396
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.1,
+   "amp": 5.5,
+   "height": [
+    0.5,
+    2.4
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "spain-bastiagueiro",
+  "name": "Bastiagueiro",
+  "region": "Spain, Galicia",
+  "lat": 43.4376,
+  "lon": -8.4135,
+  "spots": 24,
+  "exposure": 328,
+  "airport": {
+   "code": "LCG",
+   "lat": 43.302101,
+   "lon": -8.37726
+  },
+  "demo": {
+   "peak": 49,
+   "base": 2.2,
+   "amp": 5.4,
+   "height": [
+    1.0,
+    3.3
+   ],
+   "period": [
+    12,
+    17
+   ]
+  }
+ },
+ {
+  "id": "brazil-lagoinha",
+  "name": "Lagoinha",
+  "region": "Brazil, Sao Paulo North Coast",
+  "lat": -23.5842,
+  "lon": -45.2003,
+  "spots": 23,
+  "exposure": 156,
+  "airport": {
+   "code": "SJK",
+   "lat": -23.2292,
+   "lon": -45.8615
+  },
+  "demo": {
+   "peak": 34,
+   "base": 2.5,
+   "amp": 5.2,
+   "height": [
+    0.8,
+    2.8
+   ],
+   "period": [
+    10,
+    15
+   ]
+  }
+ },
+ {
+  "id": "france-grand-crohot",
+  "name": "Grand Crohot",
+  "region": "France, Gironde",
+  "lat": 44.7702,
+  "lon": -1.2326,
+  "spots": 23,
+  "exposure": 276,
+  "airport": {
+   "code": "BOD",
+   "lat": 44.82865,
+   "lon": -0.715356
+  },
+  "demo": {
+   "peak": 2,
+   "base": 3.5,
+   "amp": 5.4,
+   "height": [
+    0.9,
+    3.1
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "peru-ala-moana",
+  "name": "Ala Moana",
+  "region": "Peru, Lima",
+  "lat": -12.2055,
+  "lon": -76.9502,
+  "spots": 23,
+  "exposure": 239,
+  "airport": {
+   "code": "LIM",
+   "lat": -12.0219,
+   "lon": -77.114305
+  },
+  "demo": {
+   "peak": 32,
+   "base": 2.5,
+   "amp": 5.6,
+   "height": [
+    0.6,
+    2.2
+   ],
+   "period": [
+    12,
+    17
+   ]
+  }
+ },
+ {
+  "id": "usa-block-island",
+  "name": "Block Island",
+  "region": "USA, North East, Southern New England",
+  "lat": 41.3432,
+  "lon": -71.518,
+  "spots": 23,
+  "exposure": 156,
+  "airport": {
+   "code": "WST",
+   "lat": 41.349602,
+   "lon": -71.803398
+  },
+  "demo": {
+   "peak": 51,
+   "base": 1.5,
+   "amp": 6.3,
+   "height": [
+    0.8,
+    2.1
+   ],
+   "period": [
+    9,
+    14
+   ]
+  }
+ },
+ {
+  "id": "australia-seal-rocks-lighthouse-beach",
+  "name": "Seal Rocks-Lighthouse Beach",
+  "region": "Australia, NSW, Mid North Coast",
+  "lat": -32.4339,
+  "lon": 152.3831,
+  "spots": 22,
+  "exposure": 122,
+  "airport": {
+   "code": "NTL",
+   "lat": -32.796114,
+   "lon": 151.835025
+  },
+  "demo": {
+   "peak": 24,
+   "base": 1.6,
+   "amp": 5.2,
+   "height": [
+    0.6,
+    2.9
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "indonesia-4-bobs",
+  "name": "4 Bobs",
+  "region": "Indonesia, Mentawai",
+  "lat": -1.9524,
+  "lon": 99.4098,
+  "spots": 22,
+  "exposure": null,
+  "airport": {
+   "code": "PDG",
+   "lat": -0.785964,
+   "lon": 100.280384
+  },
+  "demo": {
+   "peak": 47,
+   "base": 2.0,
+   "amp": 6.2,
+   "height": [
+    0.4,
+    1.9
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "netherlands-langevelderslag",
+  "name": "Langevelderslag",
+  "region": "Netherlands",
+  "lat": 52.2955,
+  "lon": 4.3821,
+  "spots": 22,
+  "exposure": 298,
+  "airport": {
+   "code": "AMS",
+   "lat": 52.308601,
+   "lon": 4.76389
+  },
+  "demo": {
+   "peak": 7,
+   "base": 1.8,
+   "amp": 6.5,
+   "height": [
+    0.9,
+    2.8
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "australia-turtles",
+  "name": "Turtles",
+  "region": "Australia, NSW, Banana Coast",
+  "lat": -29.9083,
+  "lon": 153.2454,
+  "spots": 21,
+  "exposure": 102,
+  "airport": {
+   "code": "CFS",
+   "lat": -30.320601,
+   "lon": 153.115997
+  },
+  "demo": {
+   "peak": 27,
+   "base": 3.2,
+   "amp": 5.2,
+   "height": [
+    0.5,
+    2.3
+   ],
+   "period": [
+    9,
+    14
+   ]
+  }
+ },
+ {
+  "id": "french-polynesia-temae",
+  "name": "Temae",
+  "region": "French Polynesia, Tahiti",
+  "lat": -17.5697,
+  "lon": -149.5614,
+  "spots": 21,
+  "exposure": null,
+  "airport": {
+   "code": "PPT",
+   "lat": -17.553472,
+   "lon": -149.606936
+  },
+  "demo": {
+   "peak": 22,
+   "base": 3.4,
+   "amp": 4.7,
+   "height": [
+    0.9,
+    3.2
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "indonesia-green-ball",
+  "name": "Green ball",
+  "region": "Indonesia, Bali",
+  "lat": -8.7026,
+  "lon": 115.2619,
+  "spots": 21,
+  "exposure": 168,
+  "airport": {
+   "code": "DPS",
+   "lat": -8.748409,
+   "lon": 115.167123
+  },
+  "demo": {
+   "peak": 51,
+   "base": 2.0,
+   "amp": 6.0,
+   "height": [
+    0.8,
+    2.3
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "usa-klamath-rivermouth",
+  "name": "Klamath Rivermouth",
+  "region": "USA, California, Del Norte",
+  "lat": 41.565,
+  "lon": -124.1709,
+  "spots": 21,
+  "exposure": 263,
+  "airport": {
+   "code": "CEC",
+   "lat": 41.778929,
+   "lon": -124.236403
+  },
+  "demo": {
+   "peak": 48,
+   "base": 3.0,
+   "amp": 6.2,
+   "height": [
+    0.7,
+    2.9
+   ],
+   "period": [
+    12,
+    17
+   ]
+  }
+ },
+ {
+  "id": "canary-el-centro",
+  "name": "El centro",
+  "region": "Canary, Lanzarote",
+  "lat": 28.974,
+  "lon": -13.7388,
+  "spots": 20,
+  "exposure": 347,
+  "airport": {
+   "code": "ACE",
+   "lat": 28.945499,
+   "lon": -13.6052,
+   "nearEurope": true
+  },
+  "demo": {
+   "peak": 51,
+   "base": 3.4,
+   "amp": 5.4,
+   "height": [
+    0.4,
+    2.8
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "ecuador-montanita",
+  "name": "Montañita",
+  "region": "Ecuador",
+  "lat": -1.9296,
+  "lon": -80.8576,
+  "spots": 20,
+  "exposure": 261,
+  "airport": {
+   "code": "SNC",
+   "lat": -2.210057,
+   "lon": -80.985067
+  },
+  "demo": {
+   "peak": 38,
+   "base": 1.6,
+   "amp": 5.1,
+   "height": [
+    0.4,
+    2.3
+   ],
+   "period": [
+    7,
+    11
+   ]
+  }
+ },
+ {
+  "id": "uk-pembrey-beach",
+  "name": "Pembrey Beach",
+  "region": "UK, South Wales",
+  "lat": 51.5956,
+  "lon": -4.3106,
+  "spots": 20,
+  "exposure": 223,
+  "airport": {
+   "code": "CWL",
+   "lat": 51.396702,
+   "lon": -3.34333
+  },
+  "demo": {
+   "peak": 2,
+   "base": 3.3,
+   "amp": 5.2,
+   "height": [
+    0.9,
+    3.3
+   ],
+   "period": [
+    8,
+    12
+   ]
+  }
+ },
+ {
+  "id": "usa-ocean-isle",
+  "name": "Ocean Isle",
+  "region": "USA, South East, South Carolina",
+  "lat": 33.808,
+  "lon": -78.5364,
+  "spots": 20,
+  "exposure": 141,
+  "airport": {
+   "code": "MYR",
+   "lat": 33.679699,
+   "lon": -78.928299
+  },
+  "demo": {
+   "peak": 4,
+   "base": 1.7,
+   "amp": 5.4,
+   "height": [
+    0.7,
+    2.4
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "brazil-picama",
+  "name": "Picama",
+  "region": "Brazil, Santa Catarina North",
+  "lat": -26.4607,
+  "lon": -48.6195,
+  "spots": 19,
+  "exposure": 89,
+  "airport": {
+   "code": "JOI",
+   "lat": -26.224501,
+   "lon": -48.797401
+  },
+  "demo": {
+   "peak": 26,
+   "base": 1.5,
+   "amp": 6.1,
+   "height": [
+    0.7,
+    2.3
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "france-anse-st-martin",
+  "name": "Anse st Martin",
+  "region": "France, Normandy",
+  "lat": 49.6064,
+  "lon": -1.7924,
+  "spots": 19,
+  "exposure": 302,
+  "airport": {
+   "code": "ACI",
+   "lat": 49.706104,
+   "lon": -2.21472
+  },
+  "demo": {
+   "peak": 0,
+   "base": 3.1,
+   "amp": 6.4,
+   "height": [
+    0.9,
+    2.5
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "france-st-jean-de-monts",
+  "name": "St jean de monts",
+  "region": "France, Vendee",
+  "lat": 46.7656,
+  "lon": -1.9602,
+  "spots": 19,
+  "exposure": 234,
+  "airport": {
+   "code": "NTE",
+   "lat": 47.153198,
+   "lon": -1.61073
+  },
+  "demo": {
+   "peak": 8,
+   "base": 3.4,
+   "amp": 4.5,
+   "height": [
+    0.8,
+    2.9
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "spain-montalvo-beach",
+  "name": "Montalvo Beach",
+  "region": "Spain, Galicia",
+  "lat": 42.3398,
+  "lon": -8.9124,
+  "spots": 19,
+  "exposure": 269,
+  "airport": {
+   "code": "VGO",
+   "lat": 42.2318,
+   "lon": -8.62677
+  },
+  "demo": {
+   "peak": 2,
+   "base": 1.6,
+   "amp": 6.5,
+   "height": [
+    0.9,
+    3.2
+   ],
+   "period": [
+    7,
+    11
+   ]
+  }
+ },
+ {
+  "id": "usa-13th-street",
+  "name": "13th Street",
+  "region": "USA, South East, North Florida",
+  "lat": 28.1908,
+  "lon": -80.5694,
+  "spots": 19,
+  "exposure": 74,
+  "airport": {
+   "code": "MLB",
+   "lat": 28.102009,
+   "lon": -80.641088
+  },
+  "demo": {
+   "peak": 48,
+   "base": 1.8,
+   "amp": 5.1,
+   "height": [
+    0.6,
+    2.6
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "usa-7th-avenue",
+  "name": "7th Avenue",
+  "region": "USA, South East, North Florida",
+  "lat": 30.218,
+  "lon": -81.3494,
+  "spots": 19,
+  "exposure": 79,
+  "airport": {
+   "code": "UST",
+   "lat": 29.9592,
+   "lon": -81.339798
+  },
+  "demo": {
+   "peak": 2,
+   "base": 3.4,
+   "amp": 5.6,
+   "height": [
+    0.9,
+    2.2
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-fire-island-point-of-woods",
+  "name": "Fire Island Point of Woods",
+  "region": "USA, North East, Long Island NY",
+  "lat": 40.6738,
+  "lon": -73.1932,
+  "spots": 19,
+  "exposure": 158,
+  "airport": {
+   "code": "ISP",
+   "lat": 40.796324,
+   "lon": -73.101703
+  },
+  "demo": {
+   "peak": 6,
+   "base": 1.9,
+   "amp": 5.5,
+   "height": [
+    0.5,
+    2.1
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "costa-rica-marbella",
+  "name": "Marbella",
+  "region": "Costa Rica, Guanacaste",
+  "lat": 10.1176,
+  "lon": -85.7207,
+  "spots": 18,
+  "exposure": 241,
+  "airport": {
+   "code": "NOB",
+   "lat": 9.976490020750001,
+   "lon": -85.65299987790002
+  },
+  "demo": {
+   "peak": 1,
+   "base": 3.0,
+   "amp": 5.4,
+   "height": [
+    0.8,
+    2.9
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "portugal-buarcos",
+  "name": "Buarcos",
+  "region": "Portugal, North Beira",
+  "lat": 40.1531,
+  "lon": -8.8908,
+  "spots": 18,
+  "exposure": 283,
+  "airport": {
+   "code": "VSE",
+   "lat": 40.725498,
+   "lon": -7.88899
+  },
+  "demo": {
+   "peak": 6,
+   "base": 3.5,
+   "amp": 6.4,
+   "height": [
+    0.6,
+    1.9
+   ],
+   "period": [
+    8,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-double-point",
+  "name": "Double point",
+  "region": "USA, California, SF Marin",
+  "lat": 37.868,
+  "lon": -122.687,
+  "spots": 18,
+  "exposure": 242,
+  "airport": {
+   "code": "SFO",
+   "lat": 37.619806,
+   "lon": -122.374821
+  },
+  "demo": {
+   "peak": 6,
+   "base": 1.5,
+   "amp": 4.5,
+   "height": [
+    0.6,
+    2.5
+   ],
+   "period": [
+    10,
+    14
+   ]
+  }
+ },
+ {
+  "id": "usa-main-street",
+  "name": "Main Street",
+  "region": "USA, California, San Luis Obispo",
+  "lat": 34.9916,
+  "lon": -120.6914,
+  "spots": 18,
+  "exposure": 239,
+  "airport": {
+   "code": "SMX",
+   "lat": 34.898899,
+   "lon": -120.457001
+  },
+  "demo": {
+   "peak": 0,
+   "base": 3.1,
+   "amp": 6.1,
+   "height": [
+    0.6,
+    1.9
+   ],
+   "period": [
+    10,
+    14
+   ]
+  }
+ },
+ {
+  "id": "israel-ha-arubot",
+  "name": "HA-ARUBOT",
+  "region": "Israel",
+  "lat": 32.4352,
+  "lon": 34.8725,
+  "spots": 17,
+  "exposure": 288,
+  "airport": {
+   "code": "HFA",
+   "lat": 32.810219,
+   "lon": 35.043719
+  },
+  "demo": {
+   "peak": 2,
+   "base": 3.5,
+   "amp": 5.1,
+   "height": [
+    0.9,
+    3.0
+   ],
+   "period": [
+    11,
+    15
+   ]
+  }
+ },
+ {
+  "id": "portugal-odeceixe",
+  "name": "Odeceixe",
+  "region": "Portugal, Algarve",
+  "lat": 37.4972,
+  "lon": -8.8489,
+  "spots": 17,
+  "exposure": 262,
+  "airport": {
+   "code": "PRM",
+   "lat": 37.1493,
+   "lon": -8.58396
+  },
+  "demo": {
+   "peak": 6,
+   "base": 2.3,
+   "amp": 5.0,
+   "height": [
+    0.5,
+    2.8
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "puerto-rico-cochino",
+  "name": "Cochino",
+  "region": "Puerto Rico",
+  "lat": 18.4605,
+  "lon": -66.1973,
+  "spots": 17,
+  "exposure": 10,
+  "airport": {
+   "code": "SIG",
+   "lat": 18.45680046081543,
+   "lon": -66.09809875488281
+  },
+  "demo": {
+   "peak": 6,
+   "base": 1.9,
+   "amp": 4.6,
+   "height": [
+    0.7,
+    2.6
+   ],
+   "period": [
+    11,
+    15
+   ]
+  }
+ },
+ {
+  "id": "seychelles-anse-kerlan",
+  "name": "Anse Kerlan",
+  "region": "Seychelles, Mahe",
+  "lat": -4.5843,
+  "lon": 55.5952,
+  "spots": 17,
+  "exposure": 203,
+  "airport": {
+   "code": "SEZ",
+   "lat": -4.67434,
+   "lon": 55.521801
+  },
+  "demo": {
+   "peak": 45,
+   "base": 1.8,
+   "amp": 5.6,
+   "height": [
+    0.5,
+    2.7
+   ],
+   "period": [
+    8,
+    12
+   ]
+  }
+ },
+ {
+  "id": "usa-abalolo-reef",
+  "name": "Abalolo Reef",
+  "region": "USA, Hawaii, Oahu",
+  "lat": 21.3086,
+  "lon": -157.9461,
+  "spots": 17,
+  "exposure": 198,
+  "airport": {
+   "code": "HNL",
+   "lat": 21.318387,
+   "lon": -157.92567
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.6,
+   "amp": 5.6,
+   "height": [
+    0.6,
+    2.9
+   ],
+   "period": [
+    7,
+    11
+   ]
+  }
+ },
+ {
+  "id": "belgium-bay-of-heist",
+  "name": "Bay of Heist",
+  "region": "Belgium",
+  "lat": 51.2638,
+  "lon": 3.0125,
+  "spots": 16,
+  "exposure": 331,
+  "airport": {
+   "code": "OST",
+   "lat": 51.1998,
+   "lon": 2.874673
+  },
+  "demo": {
+   "peak": 1,
+   "base": 1.6,
+   "amp": 5.3,
+   "height": [
+    0.8,
+    2.3
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "costa-rica-perro-fino",
+  "name": "Perro Fino",
+  "region": "Costa Rica, Pacific South",
+  "lat": 9.6293,
+  "lon": -84.6549,
+  "spots": 16,
+  "exposure": 215,
+  "airport": {
+   "code": "XQP",
+   "lat": 9.44316,
+   "lon": -84.129799
+  },
+  "demo": {
+   "peak": 46,
+   "base": 2.6,
+   "amp": 6.0,
+   "height": [
+    0.5,
+    2.3
+   ],
+   "period": [
+    9,
+    14
+   ]
+  }
+ },
+ {
+  "id": "france-belle-ile-en-mer-donnant",
+  "name": "Belle Ile en Mer - Donnant",
+  "region": "France, Brittany South",
+  "lat": 47.583,
+  "lon": -3.2001,
+  "spots": 16,
+  "exposure": 209,
+  "airport": {
+   "code": "RNS",
+   "lat": 48.0695,
+   "lon": -1.73479
+  },
+  "demo": {
+   "peak": 49,
+   "base": 3.3,
+   "amp": 5.7,
+   "height": [
+    0.5,
+    2.0
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "south-africa-ansteys-beach",
+  "name": "Ansteys Beach",
+  "region": "South Africa, Durban",
+  "lat": -29.9131,
+  "lon": 30.9905,
+  "spots": 16,
+  "exposure": 119,
+  "airport": {
+   "code": "DUR",
+   "lat": -29.6144444444,
+   "lon": 31.1197222222
+  },
+  "demo": {
+   "peak": 22,
+   "base": 1.8,
+   "amp": 5.4,
+   "height": [
+    0.8,
+    2.8
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "south-africa-doughnuts-backreef",
+  "name": "Doughnuts Backreef",
+  "region": "South Africa, South East Port Elizabeth",
+  "lat": -34.014,
+  "lon": 25.3703,
+  "spots": 16,
+  "exposure": 148,
+  "airport": {
+   "code": "PLZ",
+   "lat": -33.989715,
+   "lon": 25.617353
+  },
+  "demo": {
+   "peak": 32,
+   "base": 2.6,
+   "amp": 5.8,
+   "height": [
+    0.7,
+    2.7
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-boiler-bay",
+  "name": "Boiler bay",
+  "region": "USA, North West, Oregon North",
+  "lat": 44.8496,
+  "lon": -124.0424,
+  "spots": 16,
+  "exposure": 274,
+  "airport": {
+   "code": "SLE",
+   "lat": 44.9095,
+   "lon": -123.002998
+  },
+  "demo": {
+   "peak": 8,
+   "base": 3.1,
+   "amp": 6.3,
+   "height": [
+    0.6,
+    2.8
+   ],
+   "period": [
+    9,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-graters",
+  "name": "Graters",
+  "region": "USA, Hawaii, Oahu",
+  "lat": 21.6151,
+  "lon": -157.9983,
+  "spots": 16,
+  "exposure": 352,
+  "airport": {
+   "code": "HNL",
+   "lat": 21.318387,
+   "lon": -157.92567
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.9,
+   "amp": 4.6,
+   "height": [
+    0.9,
+    3.0
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "australia-bashams-bommie",
+  "name": "Bashams bommie",
+  "region": "Australia, SA, York Peninsula",
+  "lat": -35.5739,
+  "lon": 138.5981,
+  "spots": 15,
+  "exposure": 186,
+  "airport": {
+   "code": "ADL",
+   "lat": -34.947512,
+   "lon": 138.533393
+  },
+  "demo": {
+   "peak": 34,
+   "base": 1.6,
+   "amp": 5.8,
+   "height": [
+    0.5,
+    2.1
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "brazil-asturias",
+  "name": "Astúrias",
+  "region": "Brazil, Sao Paulo North Coast",
+  "lat": -23.9151,
+  "lon": -46.1435,
+  "spots": 15,
+  "exposure": 156,
+  "airport": {
+   "code": "CGH",
+   "lat": -23.627657,
+   "lon": -46.654601
+  },
+  "demo": {
+   "peak": 27,
+   "base": 1.8,
+   "amp": 5.2,
+   "height": [
+    0.6,
+    3.0
+   ],
+   "period": [
+    11,
+    16
+   ]
+  }
+ },
+ {
+  "id": "ireland-bay-break",
+  "name": "Bay Break",
+  "region": "Ireland, North West",
+  "lat": 54.4356,
+  "lon": -8.6035,
+  "spots": 15,
+  "exposure": 319,
+  "airport": {
+   "code": "NOC",
+   "lat": 53.910439,
+   "lon": -8.817002
+  },
+  "demo": {
+   "peak": 5,
+   "base": 2.3,
+   "amp": 4.6,
+   "height": [
+    0.6,
+    2.1
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "sri-lanka-devils-rock",
+  "name": "Devils rock",
+  "region": "Sri Lanka",
+  "lat": 6.0059,
+  "lon": 80.3539,
+  "spots": 15,
+  "exposure": 201,
+  "airport": {
+   "code": "KCT",
+   "lat": 5.993680000305176,
+   "lon": 80.32029724121094
+  },
+  "demo": {
+   "peak": 17,
+   "base": 3.4,
+   "amp": 5.0,
+   "height": [
+    0.7,
+    2.3
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "usa-allenhurst",
+  "name": "Allenhurst",
+  "region": "USA, North East, New Jersey",
+  "lat": 40.1324,
+  "lon": -74.0256,
+  "spots": 15,
+  "exposure": 105,
+  "airport": {
+   "code": "JFK",
+   "lat": 40.639447,
+   "lon": -73.779317
+  },
+  "demo": {
+   "peak": 4,
+   "base": 1.7,
+   "amp": 5.0,
+   "height": [
+    0.7,
+    2.2
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "usa-delray-public-beach",
+  "name": "Delray public beach",
+  "region": "USA, South East, South Florida",
+  "lat": 26.4301,
+  "lon": -80.071,
+  "spots": 15,
+  "exposure": 93,
+  "airport": {
+   "code": "DJT",
+   "lat": 26.683201,
+   "lon": -80.095596
+  },
+  "demo": {
+   "peak": 48,
+   "base": 3.3,
+   "amp": 4.8,
+   "height": [
+    0.9,
+    2.5
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "usa-plum-island",
+  "name": "Plum Island",
+  "region": "USA, North East, Southern New England",
+  "lat": 42.8181,
+  "lon": -70.7295,
+  "spots": 15,
+  "exposure": 101,
+  "airport": {
+   "code": "PSM",
+   "lat": 43.0779,
+   "lon": -70.823303
+  },
+  "demo": {
+   "peak": 5,
+   "base": 2.4,
+   "amp": 5.0,
+   "height": [
+    0.8,
+    3.1
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "usa-sunset-beach",
+  "name": "Sunset Beach",
+  "region": "USA, Gulf Coast, Florida",
+  "lat": 27.7598,
+  "lon": -82.7614,
+  "spots": 15,
+  "exposure": 259,
+  "airport": {
+   "code": "PIE",
+   "lat": 27.9102,
+   "lon": -82.687401
+  },
+  "demo": {
+   "peak": 4,
+   "base": 3.5,
+   "amp": 5.5,
+   "height": [
+    0.5,
+    2.1
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "australia-apollo-bay",
+  "name": "Apollo Bay",
+  "region": "Australia, VIC, Melbourne West",
+  "lat": -38.6862,
+  "lon": 143.735,
+  "spots": 14,
+  "exposure": 158,
+  "airport": {
+   "code": "AVV",
+   "lat": -38.040269,
+   "lon": 144.467196
+  },
+  "demo": {
+   "peak": 33,
+   "base": 1.9,
+   "amp": 4.7,
+   "height": [
+    0.6,
+    2.7
+   ],
+   "period": [
+    7,
+    11
+   ]
+  }
+ },
+ {
+  "id": "australia-clifton-beach",
+  "name": "Clifton Beach",
+  "region": "Australia, TAS, Hobart",
+  "lat": -43.0717,
+  "lon": 147.5726,
+  "spots": 14,
+  "exposure": 141,
+  "airport": {
+   "code": "HBA",
+   "lat": -42.837032,
+   "lon": 147.513022
+  },
+  "demo": {
+   "peak": 30,
+   "base": 3.2,
+   "amp": 6.1,
+   "height": [
+    0.7,
+    2.3
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "brazil-atlantida-pier",
+  "name": "Atlântida - Pier",
+  "region": "Brazil, Rio Grande do Sul",
+  "lat": -29.6325,
+  "lon": -49.9112,
+  "spots": 14,
+  "exposure": 121,
+  "airport": {
+   "code": "POA",
+   "lat": -29.993984,
+   "lon": -51.167482
+  },
+  "demo": {
+   "peak": 30,
+   "base": 2.9,
+   "amp": 4.6,
+   "height": [
+    0.9,
+    2.2
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "brazil-costazul",
+  "name": "Costazul",
+  "region": "Brazil, Rio de Janeiro Norte",
+  "lat": -22.7748,
+  "lon": -41.9778,
+  "spots": 14,
+  "exposure": 136,
+  "airport": {
+   "code": "SDU",
+   "lat": -22.910397,
+   "lon": -43.16282
+  },
+  "demo": {
+   "peak": 33,
+   "base": 2.3,
+   "amp": 6.5,
+   "height": [
+    0.6,
+    1.9
+   ],
+   "period": [
+    7,
+    11
+   ]
+  }
+ },
+ {
+  "id": "ireland-ballybunion",
+  "name": "Ballybunion",
+  "region": "Ireland, West",
+  "lat": 52.6895,
+  "lon": -9.587,
+  "spots": 14,
+  "exposure": 285,
+  "airport": {
+   "code": "SNN",
+   "lat": 52.702,
+   "lon": -8.92482
+  },
+  "demo": {
+   "peak": 51,
+   "base": 3.0,
+   "amp": 5.3,
+   "height": [
+    0.8,
+    2.6
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "new-zealand-daniels-reef",
+  "name": "Daniels Reef",
+  "region": "New Zealand, New Zealand NI, NE Coast",
+  "lat": -36.3377,
+  "lon": 174.719,
+  "spots": 14,
+  "exposure": 76,
+  "airport": {
+   "code": "WRE",
+   "lat": -35.769253,
+   "lon": 174.363713
+  },
+  "demo": {
+   "peak": 34,
+   "base": 1.6,
+   "amp": 5.5,
+   "height": [
+    0.9,
+    2.5
+   ],
+   "period": [
+    11,
+    16
+   ]
+  }
+ },
+ {
+  "id": "philippines-hewies-ayuki-island",
+  "name": "Hewies Ayuki  Island",
+  "region": "Philippines, Mindanao",
+  "lat": 9.4422,
+  "lon": 126.0916,
+  "spots": 14,
+  "exposure": 56,
+  "airport": {
+   "code": "SUG",
+   "lat": 9.755838325629998,
+   "lon": 125.480947495
+  },
+  "demo": {
+   "peak": 7,
+   "base": 1.5,
+   "amp": 6.4,
+   "height": [
+    1.0,
+    2.4
+   ],
+   "period": [
+    9,
+    13
+   ]
+  }
+ },
+ {
+  "id": "spain-garraf",
+  "name": "Garraf",
+  "region": "Spain, Mediterranean",
+  "lat": 41.3228,
+  "lon": 1.9621,
+  "spots": 14,
+  "exposure": 151,
+  "airport": {
+   "code": "BCN",
+   "lat": 41.2971,
+   "lon": 2.07846
+  },
+  "demo": {
+   "peak": 49,
+   "base": 3.3,
+   "amp": 4.6,
+   "height": [
+    0.6,
+    2.5
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "spain-rodiles",
+  "name": "Rodiles",
+  "region": "Spain, Asturias",
+  "lat": 43.5244,
+  "lon": -5.4793,
+  "spots": 14,
+  "exposure": 7,
+  "airport": {
+   "code": "OVD",
+   "lat": 43.563599,
+   "lon": -6.03462
+  },
+  "demo": {
+   "peak": 2,
+   "base": 3.0,
+   "amp": 6.2,
+   "height": [
+    0.6,
+    2.1
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "argentina-alfonsina",
+  "name": "Alfonsina",
+  "region": "Argentina, North",
+  "lat": -38.0756,
+  "lon": -57.5992,
+  "spots": 13,
+  "exposure": 125,
+  "airport": {
+   "code": "MDQ",
+   "lat": -37.9342,
+   "lon": -57.5733
+  },
+  "demo": {
+   "peak": 26,
+   "base": 2.4,
+   "amp": 6.3,
+   "height": [
+    0.9,
+    3.0
+   ],
+   "period": [
+    10,
+    15
+   ]
+  }
+ },
+ {
+  "id": "australia-crescent-head",
+  "name": "Crescent Head",
+  "region": "Australia, NSW, Mid North Coast",
+  "lat": -31.2705,
+  "lon": 152.9378,
+  "spots": 13,
+  "exposure": 103,
+  "airport": {
+   "code": "PQQ",
+   "lat": -31.4358005524,
+   "lon": 152.863006592
+  },
+  "demo": {
+   "peak": 24,
+   "base": 3.4,
+   "amp": 6.0,
+   "height": [
+    0.7,
+    2.7
+   ],
+   "period": [
+    9,
+    14
+   ]
+  }
+ },
+ {
+  "id": "indonesia-medewi",
+  "name": "Medewi",
+  "region": "Indonesia, Bali",
+  "lat": -8.6895,
+  "lon": 114.9598,
+  "spots": 13,
+  "exposure": 217,
+  "airport": {
+   "code": "DPS",
+   "lat": -8.748409,
+   "lon": 115.167123
+  },
+  "demo": {
+   "peak": 14,
+   "base": 1.5,
+   "amp": 6.4,
+   "height": [
+    0.9,
+    2.3
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "mexico-chacala",
+  "name": "Chacala",
+  "region": "Mexico, Sinaloa-Nayarit",
+  "lat": 21.0851,
+  "lon": -105.3665,
+  "spots": 13,
+  "exposure": 262,
+  "airport": {
+   "code": "PVR",
+   "lat": 20.679913,
+   "lon": -105.254391
+  },
+  "demo": {
+   "peak": 0,
+   "base": 2.1,
+   "amp": 6.4,
+   "height": [
+    0.9,
+    2.3
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "morocco-14th-km",
+  "name": "14th km.",
+  "region": "Morocco, South",
+  "lat": 30.5199,
+  "lon": -9.7413,
+  "spots": 13,
+  "exposure": 260,
+  "airport": {
+   "code": "AGA",
+   "lat": 30.322478,
+   "lon": -9.412003,
+   "nearEurope": true
+  },
+  "demo": {
+   "peak": 8,
+   "base": 2.8,
+   "amp": 6.2,
+   "height": [
+    0.5,
+    2.7
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "morocco-oubaha-camping-mimosas",
+  "name": "Oubaha   camping mimosas",
+  "region": "Morocco, North",
+  "lat": 33.7557,
+  "lon": -7.3124,
+  "spots": 13,
+  "exposure": 327,
+  "airport": {
+   "code": "CMN",
+   "lat": 33.3675,
+   "lon": -7.58997,
+   "nearEurope": true
+  },
+  "demo": {
+   "peak": 48,
+   "base": 2.2,
+   "amp": 5.7,
+   "height": [
+    0.4,
+    1.8
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "nicaragua-pochomil-beach-break",
+  "name": "Pochomil Beach Break",
+  "region": "Nicaragua",
+  "lat": 11.9029,
+  "lon": -86.5553,
+  "spots": 13,
+  "exposure": 228,
+  "airport": {
+   "code": "MGA",
+   "lat": 12.1415,
+   "lon": -86.168198
+  },
+  "demo": {
+   "peak": 8,
+   "base": 3.2,
+   "amp": 5.8,
+   "height": [
+    0.6,
+    2.2
+   ],
+   "period": [
+    8,
+    12
+   ]
+  }
+ },
+ {
+  "id": "peru-el-nuro",
+  "name": "El Nuro",
+  "region": "Peru, North",
+  "lat": -4.2826,
+  "lon": -81.1796,
+  "spots": 13,
+  "exposure": 293,
+  "airport": {
+   "code": "TYL",
+   "lat": -4.57664,
+   "lon": -81.254097
+  },
+  "demo": {
+   "peak": 8,
+   "base": 3.1,
+   "amp": 6.2,
+   "height": [
+    0.6,
+    2.3
+   ],
+   "period": [
+    10,
+    15
+   ]
+  }
+ },
+ {
+  "id": "usa-48th-street-ocean-city",
+  "name": "48th Street (Ocean City)",
+  "region": "USA, North East, Virginia",
+  "lat": 38.4947,
+  "lon": -75.0981,
+  "spots": 13,
+  "exposure": 104,
+  "airport": {
+   "code": "OCE",
+   "lat": 38.310398,
+   "lon": -75.124001
+  },
+  "demo": {
+   "peak": 50,
+   "base": 3.0,
+   "amp": 4.8,
+   "height": [
+    0.8,
+    2.6
+   ],
+   "period": [
+    8,
+    12
+   ]
+  }
+ },
+ {
+  "id": "australia-merimbula-bar",
+  "name": "Merimbula bar",
+  "region": "Australia, NSW, Far South",
+  "lat": -36.799,
+  "lon": 149.9952,
+  "spots": 12,
+  "exposure": 99,
+  "airport": {
+   "code": "MIM",
+   "lat": -36.9085998535,
+   "lon": 149.901000977
+  },
+  "demo": {
+   "peak": 34,
+   "base": 3.4,
+   "amp": 5.7,
+   "height": [
+    0.6,
+    2.4
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "france-dossen",
+  "name": "Dossen",
+  "region": "France, Brittany North",
+  "lat": 48.697,
+  "lon": -3.975,
+  "spots": 12,
+  "exposure": 334,
+  "airport": {
+   "code": "BES",
+   "lat": 48.447899,
+   "lon": -4.41854
+  },
+  "demo": {
+   "peak": 0,
+   "base": 3.4,
+   "amp": 4.6,
+   "height": [
+    1.0,
+    2.5
+   ],
+   "period": [
+    11,
+    15
+   ]
+  }
+ },
+ {
+  "id": "mexico-3-emes",
+  "name": "3 emes",
+  "region": "Mexico, Baja Norte",
+  "lat": 32.0211,
+  "lon": -116.836,
+  "spots": 12,
+  "exposure": 238,
+  "airport": {
+   "code": "TIJ",
+   "lat": 32.541043,
+   "lon": -116.969976
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.1,
+   "amp": 6.4,
+   "height": [
+    0.7,
+    2.1
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "new-zealand-cliffs",
+  "name": "Cliffs",
+  "region": "New Zealand, New Zealand NI, East Cape",
+  "lat": -38.7408,
+  "lon": 178.0105,
+  "spots": 12,
+  "exposure": 130,
+  "airport": {
+   "code": "GIS",
+   "lat": -38.6633,
+   "lon": 177.977997
+  },
+  "demo": {
+   "peak": 29,
+   "base": 2.6,
+   "amp": 5.1,
+   "height": [
+    0.7,
+    2.5
+   ],
+   "period": [
+    10,
+    15
+   ]
+  }
+ },
+ {
+  "id": "south-africa-herolds-bay",
+  "name": "Herolds Bay",
+  "region": "South Africa, South George",
+  "lat": -34.1064,
+  "lon": 22.4897,
+  "spots": 12,
+  "exposure": 170,
+  "airport": {
+   "code": "GRJ",
+   "lat": -34.0056,
+   "lon": 22.378902
+  },
+  "demo": {
+   "peak": 22,
+   "base": 1.6,
+   "amp": 6.1,
+   "height": [
+    0.9,
+    2.2
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "uruguay-el-pehue",
+  "name": "El Pehue",
+  "region": "Uruguay",
+  "lat": -34.8923,
+  "lon": -55.1528,
+  "spots": 12,
+  "exposure": 175,
+  "airport": {
+   "code": "PDP",
+   "lat": -34.855099,
+   "lon": -55.094299
+  },
+  "demo": {
+   "peak": 26,
+   "base": 3.0,
+   "amp": 4.7,
+   "height": [
+    0.9,
+    3.2
+   ],
+   "period": [
+    11,
+    16
+   ]
+  }
+ },
+ {
+  "id": "usa-bicentenial-park",
+  "name": "Bicentenial Park",
+  "region": "USA, South East, North Florida",
+  "lat": 29.256,
+  "lon": -81.01,
+  "spots": 12,
+  "exposure": 67,
+  "airport": {
+   "code": "DAB",
+   "lat": 29.18255,
+   "lon": -81.059464
+  },
+  "demo": {
+   "peak": 2,
+   "base": 1.9,
+   "amp": 4.7,
+   "height": [
+    0.8,
+    2.6
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-big-beach",
+  "name": "Big Beach",
+  "region": "USA, Hawaii, Maui",
+  "lat": 20.7646,
+  "lon": -156.5925,
+  "spots": 12,
+  "exposure": 228,
+  "airport": {
+   "code": "OGG",
+   "lat": 20.896263,
+   "lon": -156.431837
+  },
+  "demo": {
+   "peak": 2,
+   "base": 1.9,
+   "amp": 5.9,
+   "height": [
+    0.8,
+    3.0
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "france-cap-blanc-nez",
+  "name": "Cap Blanc Nez",
+  "region": "France, Normandy",
+  "lat": 50.809,
+  "lon": 1.7253,
+  "spots": 11,
+  "exposure": 307,
+  "airport": {
+   "code": "OST",
+   "lat": 51.1998,
+   "lon": 2.874673
+  },
+  "demo": {
+   "peak": 8,
+   "base": 3.0,
+   "amp": 6.0,
+   "height": [
+    1.0,
+    2.5
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "indonesia-tropical-s",
+  "name": "Tropical's",
+  "region": "Indonesia, Sumbawa",
+  "lat": -8.8954,
+  "lon": 116.5867,
+  "spots": 11,
+  "exposure": 225,
+  "airport": {
+   "code": "LOP",
+   "lat": -8.759962,
+   "lon": 116.278169
+  },
+  "demo": {
+   "peak": 34,
+   "base": 2.7,
+   "amp": 5.8,
+   "height": [
+    0.6,
+    3.0
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "ireland-long-strand",
+  "name": "Long Strand",
+  "region": "Ireland, South West",
+  "lat": 51.5796,
+  "lon": -8.9368,
+  "spots": 11,
+  "exposure": 170,
+  "airport": {
+   "code": "ORK",
+   "lat": 51.841301,
+   "lon": -8.49111
+  },
+  "demo": {
+   "peak": 2,
+   "base": 1.7,
+   "amp": 4.5,
+   "height": [
+    0.6,
+    2.8
+   ],
+   "period": [
+    11,
+    15
+   ]
+  }
+ },
+ {
+  "id": "italy-46",
+  "name": "46°",
+  "region": "Italy, Mainland",
+  "lat": 43.7949,
+  "lon": 10.2104,
+  "spots": 11,
+  "exposure": 234,
+  "airport": {
+   "code": "PSA",
+   "lat": 43.683899,
+   "lon": 10.3927
+  },
+  "demo": {
+   "peak": 0,
+   "base": 1.6,
+   "amp": 5.1,
+   "height": [
+    0.6,
+    2.8
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "maldives-chickens",
+  "name": "Chickens",
+  "region": "Maldives",
+  "lat": 4.2038,
+  "lon": 73.5687,
+  "spots": 11,
+  "exposure": 124,
+  "airport": {
+   "code": "MLE",
+   "lat": 4.19183,
+   "lon": 73.529099
+  },
+  "demo": {
+   "peak": 15,
+   "base": 2.7,
+   "amp": 5.1,
+   "height": [
+    0.4,
+    2.5
+   ],
+   "period": [
+    8,
+    12
+   ]
+  }
+ },
+ {
+  "id": "new-zealand-clark-island",
+  "name": "Clark Island",
+  "region": "New Zealand, New Zealand NI, Coromandel",
+  "lat": -37.1982,
+  "lon": 175.9218,
+  "spots": 11,
+  "exposure": 55,
+  "airport": {
+   "code": "TRG",
+   "lat": -37.67190170288086,
+   "lon": 176.1959991455078
+  },
+  "demo": {
+   "peak": 33,
+   "base": 1.8,
+   "amp": 5.3,
+   "height": [
+    0.5,
+    2.6
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "puerto-rico-crashboats",
+  "name": "Crashboats",
+  "region": "Puerto Rico",
+  "lat": 18.4249,
+  "lon": -67.1801,
+  "spots": 11,
+  "exposure": 302,
+  "airport": {
+   "code": "BQN",
+   "lat": 18.4949,
+   "lon": -67.129402
+  },
+  "demo": {
+   "peak": 49,
+   "base": 1.8,
+   "amp": 5.8,
+   "height": [
+    0.6,
+    1.9
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "uk-highcliffe",
+  "name": "Highcliffe",
+  "region": "UK, South",
+  "lat": 50.6957,
+  "lon": -1.5927,
+  "spots": 11,
+  "exposure": 180,
+  "airport": {
+   "code": "BOH",
+   "lat": 50.780483,
+   "lon": -1.839576
+  },
+  "demo": {
+   "peak": 0,
+   "base": 2.8,
+   "amp": 4.7,
+   "height": [
+    0.8,
+    3.1
+   ],
+   "period": [
+    9,
+    13
+   ]
+  }
+ },
+ {
+  "id": "uk-saltburn",
+  "name": "Saltburn",
+  "region": "UK, East England",
+  "lat": 54.5977,
+  "lon": -0.861,
+  "spots": 11,
+  "exposure": 55,
+  "airport": {
+   "code": "MME",
+   "lat": 54.509201,
+   "lon": -1.42941
+  },
+  "demo": {
+   "peak": 48,
+   "base": 1.9,
+   "amp": 5.9,
+   "height": [
+    0.8,
+    2.4
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "usa-hakalau",
+  "name": "Hakalau",
+  "region": "USA, Hawaii, Hawaii Island",
+  "lat": 19.8174,
+  "lon": -155.1239,
+  "spots": 11,
+  "exposure": 52,
+  "airport": {
+   "code": "ITO",
+   "lat": 19.72135,
+   "lon": -155.045428
+  },
+  "demo": {
+   "peak": 51,
+   "base": 2.6,
+   "amp": 6.1,
+   "height": [
+    0.7,
+    2.8
+   ],
+   "period": [
+    11,
+    15
+   ]
+  }
+ },
+ {
+  "id": "usa-seaside-cove",
+  "name": "Seaside Cove",
+  "region": "USA, North West, Oregon North",
+  "lat": 46.0122,
+  "lon": -123.9903,
+  "spots": 11,
+  "exposure": 268,
+  "airport": {
+   "code": "PDX",
+   "lat": 45.588699,
+   "lon": -122.598
+  },
+  "demo": {
+   "peak": 49,
+   "base": 2.4,
+   "amp": 4.8,
+   "height": [
+    0.9,
+    3.2
+   ],
+   "period": [
+    7,
+    12
+   ]
+  }
+ },
+ {
+  "id": "australia-3-poles-reef",
+  "name": "3-poles reef",
+  "region": "Australia, SA, York Peninsula",
+  "lat": -35.0896,
+  "lon": 138.4768,
+  "spots": 10,
+  "exposure": 268,
+  "airport": {
+   "code": "ADL",
+   "lat": -34.947512,
+   "lon": 138.533393
+  },
+  "demo": {
+   "peak": 31,
+   "base": 1.9,
+   "amp": 6.3,
+   "height": [
+    0.5,
+    2.1
+   ],
+   "period": [
+    11,
+    15
+   ]
+  }
+ },
+ {
+  "id": "australia-childers-cove",
+  "name": "Childers Cove",
+  "region": "Australia, VIC, Western Victoria",
+  "lat": -38.4448,
+  "lon": 142.5098,
+  "spots": 10,
+  "exposure": 196,
+  "airport": {
+   "code": "PTJ",
+   "lat": -38.31809997558594,
+   "lon": 141.4709930419922
+  },
+  "demo": {
+   "peak": 24,
+   "base": 2.2,
+   "amp": 4.8,
+   "height": [
+    0.6,
+    2.7
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "australia-cullens",
+  "name": "cullens",
+  "region": "Australia, SA, East",
+  "lat": -37.6546,
+  "lon": 140.2038,
+  "spots": 10,
+  "exposure": 225,
+  "airport": {
+   "code": "MGB",
+   "lat": -37.744382,
+   "lon": 140.780561
+  },
+  "demo": {
+   "peak": 28,
+   "base": 3.1,
+   "amp": 4.8,
+   "height": [
+    0.8,
+    2.4
+   ],
+   "period": [
+    12,
+    17
+   ]
+  }
+ },
+ {
+  "id": "brazil-barra-sol",
+  "name": "Barra Sol",
+  "region": "Brazil, Espirito Santo",
+  "lat": -20.3221,
+  "lon": -40.2721,
+  "spots": 10,
+  "exposure": 116,
+  "airport": {
+   "code": "VIX",
+   "lat": -20.258,
+   "lon": -40.285
+  },
+  "demo": {
+   "peak": 22,
+   "base": 2.6,
+   "amp": 6.0,
+   "height": [
+    0.5,
+    2.8
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "france-cap-saint-louis",
+  "name": "Cap Saint Louis",
+  "region": "France, Mediterranean",
+  "lat": 43.2119,
+  "lon": 5.5432,
+  "spots": 10,
+  "exposure": 195,
+  "airport": {
+   "code": "MRS",
+   "lat": 43.438088,
+   "lon": 5.2125
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.2,
+   "amp": 6.0,
+   "height": [
+    0.5,
+    2.5
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "italy-finale-ligure",
+  "name": "Finale Ligure",
+  "region": "Italy, Mainland",
+  "lat": 44.0482,
+  "lon": 8.2181,
+  "spots": 10,
+  "exposure": 147,
+  "airport": {
+   "code": "GOA",
+   "lat": 44.412039,
+   "lon": 8.840732
+  },
+  "demo": {
+   "peak": 0,
+   "base": 2.2,
+   "amp": 5.7,
+   "height": [
+    0.5,
+    2.7
+   ],
+   "period": [
+    8,
+    13
+   ]
+  }
+ },
+ {
+  "id": "italy-piscinas",
+  "name": "Piscinas",
+  "region": "Italy, Sicily Sardinia",
+  "lat": 39.5447,
+  "lon": 8.4046,
+  "spots": 10,
+  "exposure": 263,
+  "airport": {
+   "code": "CAG",
+   "lat": 39.251499,
+   "lon": 9.05428
+  },
+  "demo": {
+   "peak": 8,
+   "base": 2.7,
+   "amp": 5.0,
+   "height": [
+    0.5,
+    2.6
+   ],
+   "period": [
+    8,
+    14
+   ]
+  }
+ },
+ {
+  "id": "japan-hanakago",
+  "name": "Hanakago",
+  "region": "Japan, Kanagawa Chiba",
+  "lat": 35.2187,
+  "lon": 139.8132,
+  "spots": 10,
+  "exposure": 165,
+  "airport": {
+   "code": "HND",
+   "lat": 35.549678,
+   "lon": 139.786958
+  },
+  "demo": {
+   "peak": 3,
+   "base": 2.8,
+   "amp": 5.0,
+   "height": [
+    0.7,
+    2.0
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "japan-nakayama-center",
+  "name": "Nakayama - Center",
+  "region": "Japan, Kyushu, Tanegashima-Island",
+  "lat": 30.5669,
+  "lon": 131.0142,
+  "spots": 10,
+  "exposure": 124,
+  "airport": {
+   "code": "TNE",
+   "lat": 30.605100631699997,
+   "lon": 130.990997314
+  },
+  "demo": {
+   "peak": 8,
+   "base": 2.3,
+   "amp": 5.2,
+   "height": [
+    0.8,
+    3.0
+   ],
+   "period": [
+    9,
+    14
+   ]
+  }
+ },
+ {
+  "id": "madeira-lugar-de-baixo",
+  "name": "Lugar de baixo",
+  "region": "Madeira",
+  "lat": 32.6862,
+  "lon": -17.0743,
+  "spots": 10,
+  "exposure": 208,
+  "airport": {
+   "code": "FNC",
+   "lat": 32.697812,
+   "lon": -16.774613
+  },
+  "demo": {
+   "peak": 0,
+   "base": 2.3,
+   "amp": 5.1,
+   "height": [
+    0.9,
+    2.3
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "reunion-kelonia-la-ferme-corail",
+  "name": "Kelonia   la ferme corail",
+  "region": "Reunion",
+  "lat": -21.1582,
+  "lon": 55.2958,
+  "spots": 10,
+  "exposure": 248,
+  "airport": {
+   "code": "ZSE",
+   "lat": -21.319362,
+   "lon": 55.422506
+  },
+  "demo": {
+   "peak": 26,
+   "base": 3.2,
+   "amp": 6.2,
+   "height": [
+    0.5,
+    1.8
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "senegal-club-med",
+  "name": "Club Med",
+  "region": "Senegal",
+  "lat": 14.7019,
+  "lon": -17.4202,
+  "spots": 10,
+  "exposure": 266,
+  "airport": {
+   "code": "DSS",
+   "lat": 14.670878,
+   "lon": -17.072829
+  },
+  "demo": {
+   "peak": 5,
+   "base": 3.4,
+   "amp": 5.6,
+   "height": [
+    0.7,
+    2.0
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "spain-barbate",
+  "name": "Barbate",
+  "region": "Spain, Andalucia",
+  "lat": 36.2587,
+  "lon": -6.0303,
+  "spots": 10,
+  "exposure": 225,
+  "airport": {
+   "code": "XRY",
+   "lat": 36.744598,
+   "lon": -6.06011
+  },
+  "demo": {
+   "peak": 1,
+   "base": 3.4,
+   "amp": 4.9,
+   "height": [
+    1.0,
+    2.6
+   ],
+   "period": [
+    11,
+    16
+   ]
+  }
+ },
+ {
+  "id": "spain-foz-area",
+  "name": "Foz Area",
+  "region": "Spain, Asturias",
+  "lat": 43.5668,
+  "lon": -6.9295,
+  "spots": 10,
+  "exposure": 5,
+  "airport": {
+   "code": "OVD",
+   "lat": 43.563599,
+   "lon": -6.03462
+  },
+  "demo": {
+   "peak": 50,
+   "base": 2.5,
+   "amp": 5.3,
+   "height": [
+    0.6,
+    2.6
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "usa-alabama-point",
+  "name": "Alabama Point",
+  "region": "USA, Gulf Coast, Alabama",
+  "lat": 30.2873,
+  "lon": -87.5119,
+  "spots": 10,
+  "exposure": 173,
+  "airport": {
+   "code": "PNS",
+   "lat": 30.472718,
+   "lon": -87.186639
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.3,
+   "amp": 6.4,
+   "height": [
+    0.6,
+    2.9
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "usa-baldwin-beach",
+  "name": "Baldwin beach",
+  "region": "USA, Hawaii, Maui",
+  "lat": 20.9307,
+  "lon": -156.4266,
+  "spots": 10,
+  "exposure": 1,
+  "airport": {
+   "code": "OGG",
+   "lat": 20.896263,
+   "lon": -156.431837
+  },
+  "demo": {
+   "peak": 8,
+   "base": 1.9,
+   "amp": 4.8,
+   "height": [
+    1.0,
+    2.3
+   ],
+   "period": [
+    10,
+    14
+   ]
+  }
+ },
+ {
+  "id": "usa-deep-creek",
+  "name": "Deep Creek",
+  "region": "USA, North West, Washington",
+  "lat": 48.1917,
+  "lon": -123.9055,
+  "spots": 10,
+  "exposure": 0,
+  "airport": {
+   "code": "YYJ",
+   "lat": 48.647201,
+   "lon": -123.427792
+  },
+  "demo": {
+   "peak": 51,
+   "base": 1.8,
+   "amp": 6.0,
+   "height": [
+    0.9,
+    2.9
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "brazil-engenhoca",
+  "name": "Engenhoca",
+  "region": "Brazil, Bahia Sul",
+  "lat": -14.2747,
+  "lon": -38.9767,
+  "spots": 9,
+  "exposure": 92,
+  "airport": {
+   "code": "IOS",
+   "lat": -14.815929,
+   "lon": -39.033458
+  },
+  "demo": {
+   "peak": 33,
+   "base": 3.1,
+   "amp": 5.2,
+   "height": [
+    0.8,
+    2.8
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "brazil-icarai",
+  "name": "Icarai",
+  "region": "Brazil, Ceara",
+  "lat": -3.6662,
+  "lon": -38.6272,
+  "spots": 9,
+  "exposure": 35,
+  "airport": {
+   "code": "FOR",
+   "lat": -3.775833,
+   "lon": -38.532222
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.1,
+   "amp": 4.6,
+   "height": [
+    0.5,
+    1.9
+   ],
+   "period": [
+    9,
+    15
+   ]
+  }
+ },
+ {
+  "id": "canary-bajamar",
+  "name": "Bajamar",
+  "region": "Canary, Tenerife",
+  "lat": 28.4549,
+  "lon": -16.5148,
+  "spots": 9,
+  "exposure": 346,
+  "airport": {
+   "code": "TFN",
+   "lat": 28.482752,
+   "lon": -16.341707,
+   "nearEurope": true
+  },
+  "demo": {
+   "peak": 4,
+   "base": 2.5,
+   "amp": 6.2,
+   "height": [
+    0.7,
+    2.4
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "canary-los-lobos",
+  "name": "Los Lobos",
+  "region": "Canary, Fuerte Ventura",
+  "lat": 28.8573,
+  "lon": -13.7119,
+  "spots": 9,
+  "exposure": 62,
+  "airport": {
+   "code": "ACE",
+   "lat": 28.945499,
+   "lon": -13.6052,
+   "nearEurope": true
+  },
+  "demo": {
+   "peak": 49,
+   "base": 2.4,
+   "amp": 5.0,
+   "height": [
+    0.5,
+    2.7
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "canary-playa-grande",
+  "name": "Playa Grande",
+  "region": "Canary, Tenerife",
+  "lat": 28.2057,
+  "lon": -16.417,
+  "spots": 9,
+  "exposure": 130,
+  "airport": {
+   "code": "TFS",
+   "lat": 28.0445,
+   "lon": -16.5725,
+   "nearEurope": true
+  },
+  "demo": {
+   "peak": 1,
+   "base": 2.9,
+   "amp": 6.5,
+   "height": [
+    0.5,
+    2.0
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "cyprus-eucalyptus",
+  "name": "Eucalyptus",
+  "region": "Cyprus",
+  "lat": 34.7092,
+  "lon": 32.6917,
+  "spots": 9,
+  "exposure": 209,
+  "airport": {
+   "code": "PFO",
+   "lat": 34.717999,
+   "lon": 32.485699
+  },
+  "demo": {
+   "peak": 49,
+   "base": 3.0,
+   "amp": 5.5,
+   "height": [
+    0.7,
+    2.0
+   ],
+   "period": [
+    10,
+    16
+   ]
+  }
+ },
+ {
+  "id": "el-salvador-mizata",
+  "name": "Mizata",
+  "region": "El Salvador",
+  "lat": 13.5051,
+  "lon": -89.4574,
+  "spots": 9,
+  "exposure": 195,
+  "airport": {
+   "code": "ILS",
+   "lat": 13.6995,
+   "lon": -89.119904
+  },
+  "demo": {
+   "peak": 0,
+   "base": 3.4,
+   "amp": 6.3,
+   "height": [
+    0.9,
+    2.3
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "italy-il-convento",
+  "name": "Il Convento",
+  "region": "Italy, Sicily Sardinia",
+  "lat": 39.0913,
+  "lon": 9.2578,
+  "spots": 9,
+  "exposure": 157,
+  "airport": {
+   "code": "CAG",
+   "lat": 39.251499,
+   "lon": 9.05428
+  },
+  "demo": {
+   "peak": 7,
+   "base": 1.7,
+   "amp": 4.9,
+   "height": [
+    0.6,
+    2.2
+   ],
+   "period": [
+    11,
+    16
+   ]
+  }
+ },
+ {
+  "id": "spain-calita",
+  "name": "Calita",
+  "region": "Spain, Mediterranean",
+  "lat": 38.3871,
+  "lon": -0.3014,
+  "spots": 9,
+  "exposure": 128,
+  "airport": {
+   "code": "ALC",
+   "lat": 38.2822,
+   "lon": -0.558156
+  },
+  "demo": {
+   "peak": 51,
+   "base": 3.3,
+   "amp": 6.2,
+   "height": [
+    0.5,
+    1.8
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ },
+ {
+  "id": "st-barthelemy-airport-left",
+  "name": "Airport left",
+  "region": "St Barthelemy",
+  "lat": 17.9106,
+  "lon": -62.8297,
+  "spots": 9,
+  "exposure": null,
+  "airport": {
+   "code": "SBH",
+   "lat": 17.904398,
+   "lon": -62.843333
+  },
+  "demo": {
+   "peak": 49,
+   "base": 1.7,
+   "amp": 5.2,
+   "height": [
+    0.9,
+    2.4
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "uk-bexhill",
+  "name": "Bexhill",
+  "region": "UK, South East",
+  "lat": 50.8579,
+  "lon": 0.4071,
+  "spots": 9,
+  "exposure": 165,
+  "airport": {
+   "code": "LGW",
+   "lat": 51.148744,
+   "lon": -0.185739
+  },
+  "demo": {
+   "peak": 48,
+   "base": 2.9,
+   "amp": 5.9,
+   "height": [
+    1.0,
+    3.3
+   ],
+   "period": [
+    10,
+    15
+   ]
+  }
+ },
+ {
+  "id": "uruguay-polonio-sur",
+  "name": "Polonio Sur",
+  "region": "Uruguay",
+  "lat": -34.4022,
+  "lon": -53.9074,
+  "spots": 9,
+  "exposure": 136,
+  "airport": {
+   "code": "PDP",
+   "lat": -34.855099,
+   "lon": -55.094299
+  },
+  "demo": {
+   "peak": 30,
+   "base": 3.5,
+   "amp": 6.3,
+   "height": [
+    0.8,
+    3.1
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "usa-boiler",
+  "name": "Boiler",
+  "region": "USA, South East, North Carolina",
+  "lat": 35.7046,
+  "lon": -75.5571,
+  "spots": 9,
+  "exposure": 99,
+  "airport": {
+   "code": "ORF",
+   "lat": 36.895341,
+   "lon": -76.201
+  },
+  "demo": {
+   "peak": 48,
+   "base": 1.8,
+   "amp": 5.1,
+   "height": [
+    0.6,
+    2.0
+   ],
+   "period": [
+    8,
+    12
+   ]
+  }
+ },
+ {
+  "id": "usa-kua-bay",
+  "name": "Kua Bay",
+  "region": "USA, Hawaii, Hawaii Island",
+  "lat": 19.7904,
+  "lon": -155.9483,
+  "spots": 9,
+  "exposure": 276,
+  "airport": {
+   "code": "KOA",
+   "lat": 19.738783,
+   "lon": -156.045603
+  },
+  "demo": {
+   "peak": 50,
+   "base": 2.0,
+   "amp": 5.5,
+   "height": [
+    0.9,
+    2.6
+   ],
+   "period": [
+    8,
+    13
+   ]
+  }
+ },
+ {
+  "id": "australia-greenough",
+  "name": "Greenough",
+  "region": "Australia, WA, Perth North",
+  "lat": -28.9086,
+  "lon": 114.6834,
+  "spots": 8,
+  "exposure": 252,
+  "airport": {
+   "code": "GET",
+   "lat": -28.796101,
+   "lon": 114.707001
+  },
+  "demo": {
+   "peak": 25,
+   "base": 2.0,
+   "amp": 5.0,
+   "height": [
+    0.8,
+    2.5
+   ],
+   "period": [
+    7,
+    13
+   ]
+  }
+ },
+ {
+  "id": "australia-lowlands-beach",
+  "name": "Lowlands beach",
+  "region": "Australia, WA, Albany",
+  "lat": -35.0415,
+  "lon": 117.5703,
+  "spots": 8,
+  "exposure": 174,
+  "airport": {
+   "code": "ALH",
+   "lat": -34.943333,
+   "lon": 117.808889
+  },
+  "demo": {
+   "peak": 30,
+   "base": 2.5,
+   "amp": 6.2,
+   "height": [
+    0.4,
+    1.6
+   ],
+   "period": [
+    8,
+    13
+   ]
+  }
+ },
+ {
+  "id": "barbados-batts-rock",
+  "name": "Batts Rock",
+  "region": "Barbados",
+  "lat": 13.1458,
+  "lon": -59.621,
+  "spots": 8,
+  "exposure": 244,
+  "airport": {
+   "code": "BGI",
+   "lat": 13.074667,
+   "lon": -59.491034
+  },
+  "demo": {
+   "peak": 50,
+   "base": 1.7,
+   "amp": 5.4,
+   "height": [
+    0.9,
+    2.8
+   ],
+   "period": [
+    12,
+    16
+   ]
+  }
+ },
+ {
+  "id": "british-virgin-brewers-bay",
+  "name": "Brewers Bay",
+  "region": "British Virgin",
+  "lat": 18.4299,
+  "lon": -64.6171,
+  "spots": 8,
+  "exposure": 357,
+  "airport": {
+   "code": "EIS",
+   "lat": 18.445492,
+   "lon": -64.541707
+  },
+  "demo": {
+   "peak": 48,
+   "base": 2.8,
+   "amp": 5.2,
+   "height": [
+    0.7,
+    2.5
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "canary-el-lloret",
+  "name": "El Lloret",
+  "region": "Canary, Gran Canaria",
+  "lat": 28.1383,
+  "lon": -15.545,
+  "spots": 8,
+  "exposure": 10,
+  "airport": {
+   "code": "LPA",
+   "lat": 27.9319,
+   "lon": -15.3866,
+   "nearEurope": true
+  },
+  "demo": {
+   "peak": 1,
+   "base": 1.7,
+   "amp": 6.2,
+   "height": [
+    0.9,
+    3.2
+   ],
+   "period": [
+    8,
+    13
+   ]
+  }
+ },
+ {
+  "id": "ecuador-estero-de-platano",
+  "name": "Estero de Platano",
+  "region": "Ecuador",
+  "lat": 0.7969,
+  "lon": -79.886,
+  "spots": 8,
+  "exposure": 313,
+  "airport": {
+   "code": "ESM",
+   "lat": 0.978519,
+   "lon": -79.626602
+  },
+  "demo": {
+   "peak": 20,
+   "base": 3.4,
+   "amp": 6.3,
+   "height": [
+    0.9,
+    2.3
+   ],
+   "period": [
+    11,
+    17
+   ]
+  }
+ },
+ {
+  "id": "greece-amoudia-left",
+  "name": "Amoudia Left",
+  "region": "Greece, Ionian Sea",
+  "lat": 39.1454,
+  "lon": 20.5662,
+  "spots": 8,
+  "exposure": 228,
+  "airport": {
+   "code": "PVK",
+   "lat": 38.925499,
+   "lon": 20.765301
+  },
+  "demo": {
+   "peak": 51,
+   "base": 3.5,
+   "amp": 5.1,
+   "height": [
+    0.7,
+    3.0
+   ],
+   "period": [
+    12,
+    18
+   ]
+  }
+ }
 ]

@@ -75,16 +75,29 @@ function draw(){
   ctx.setLineDash([4,4]);ctx.strokeStyle=css("--accent");ctx.lineWidth=1.5;ctx.stroke();ctx.setLineDash([]);
   const c=proj.invert([cx,cy]);
   if(d3.geoDistance([d.lon,d.lat],c)<Math.PI/2){const p=proj([d.lon,d.lat]);ctx.beginPath();ctx.arc(p[0],p[1],3.5,0,7);ctx.fillStyle=css("--fg");ctx.fill()}
-  // zone
+  // zone: pallini che crescono con lo zoom, la selezionata disegnata per ultima (sopra le altre)
+  const fg=css("--fg"),k=Math.min(2,Math.sqrt(zoom)),shown=[];
   ZONES.forEach(zz=>{
-    if(d3.geoDistance([zz.lon,zz.lat],c)>Math.PI/2-.02)return;
-    const p=proj([zz.lon,zz.lat]),wk=zz.wk[state.week],rad=5+wk.h*3.2;
-    ctx.beginPath();ctx.arc(p[0],p[1],rad,0,7);ctx.fillStyle=SCALE[wk.q].color;ctx.globalAlpha=.9;ctx.fill();ctx.globalAlpha=1;
-    ctx.lineWidth=zz===state.zone?2.5:1;ctx.strokeStyle=zz===state.zone?css("--fg"):"rgba(0,0,0,.35)";ctx.stroke();
-    if(zz===state.zone||proj.scale()>base*1.6){
-      ctx.font="600 12px "+css("--f-body");ctx.fillStyle=css("--fg");ctx.fillText(zz.name,p[0]+rad+4,p[1]+4);
-    }
+    if(zz===state.zone||d3.geoDistance([zz.lon,zz.lat],c)>Math.PI/2-.02)return;
+    shown.push(dot(zz,k,1,"rgba(0,0,0,.35)"));
   });
+  if(d3.geoDistance([z.lon,z.lat],c)<=Math.PI/2-.02)shown.unshift(dot(z,k,2.5,fg));
+  // etichette: la selezionata sempre, le altre solo da zoom e solo se non si sovrappongono
+  ctx.font="600 12px "+css("--f-body");ctx.fillStyle=fg;
+  const boxes=[];
+  shown.forEach(({zz,p,rad})=>{
+    if(zz!==state.zone&&zoom<=LABEL_ZOOM)return;
+    const x=p[0]+rad+4,y=p[1]+4,b=[x-2,y-12,x+ctx.measureText(zz.name).width+2,y+4];
+    if(boxes.some(o=>b[0]<o[2]&&b[2]>o[0]&&b[1]<o[3]&&b[3]>o[1]))return;
+    boxes.push(b);ctx.fillText(zz.name,x,y);
+  });
+}
+const LABEL_ZOOM=1.6;
+function dot(zz,k,lw,stroke){
+  const p=proj([zz.lon,zz.lat]),wk=zz.wk[state.week],rad=(3.5+wk.h*2.2)*k;
+  ctx.beginPath();ctx.arc(p[0],p[1],rad,0,7);ctx.fillStyle=SCALE[wk.q].color;ctx.globalAlpha=.9;ctx.fill();ctx.globalAlpha=1;
+  ctx.lineWidth=lw;ctx.strokeStyle=stroke;ctx.stroke();
+  return{zz,p,rad};
 }
 function rotateTo(z){
   if(anim)anim.stop();
