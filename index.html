@@ -46,13 +46,13 @@
       <div>
         <div class="lbl">Volo</div>
         <div class="fly">
-          <div class="field"><label for="dep">Partenza</label><select id="dep"></select></div>
+          <div class="field"><label for="dep">Partenza</label><input id="dep" list="deps" autocomplete="off" spellcheck="false" placeholder="Città o codice, es. MXP"><datalist id="deps"></datalist></div>
           <div class="field"><label for="arr">Arrivo</label><select id="arr"></select></div>
         </div>
       </div>
       <div class="stats">
         <div class="stat"><div class="k">Distanza</div><div class="v" id="fd"></div></div>
-        <div class="stat"><div class="k">Ore di volo</div><div class="v" id="fh"></div></div>
+        <div class="stat"><div class="k">Ore di volo</div><div class="v" id="fh"></div><div class="sub" id="fs"></div></div>
         <div class="stat"><div class="k">Prezzo stimato</div><div class="v" id="fp"></div></div>
       </div>
       <div>
@@ -60,7 +60,7 @@
         <div style="padding-top:16px"><div class="bars" id="bars"></div></div>
         <div class="months" id="m2"></div>
       </div>
-      <div class="note">Ore di volo calcolate dalla distanza tra aeroporti più una stima per gli scali. I prezzi qui sono simulati, nella versione vera arriveranno da Travelpayouts o da una raccolta settimanale.</div>
+      <div class="note">Ore di volo e scali stimati dalla distanza ortodromica fino all'aeroporto internazionale di riferimento della zona, con tempi fissi per decollo, atterraggio e coincidenze: non sono orari reali. I prezzi sono simulati, nella versione vera arriveranno da Travelpayouts o da una raccolta settimanale.</div>
     </aside>
   </div>
 

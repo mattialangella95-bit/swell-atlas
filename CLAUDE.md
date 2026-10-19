@@ -30,5 +30,10 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Il download gira staccato dalla sessione e legge solo `data/raw/waves/_queue.json`. Stato: `.venv/bin/python scripts/fetch_waves.py --stato`; stop: `kill $(python3 -c "import json;print(json.load(open('data/raw/waves/_progress.json'))['pid'])")`. Non lanciarne un secondo in parallelo.
 - Prima di cambiare soglie, mostra la tabella mese per mese delle 5 zone di collaudo (`build_climate.py --verifica ...`) e spiega il perché.
 
+## Voli
+- Ore e scali sono stimati, mai presentati come reali: nella scheda sempre "stimato".
+- Tutti i parametri (velocità, tempi fissi, coincidenze, fasce di scali, hub, eccezioni) stanno in `data/flight-estimate.json`. Se il collaudo da Genova e Malpensa sbaglia di oltre il 15%, si correggono i parametri, non il codice.
+- Le zone hanno `airport_main` (usato per i voli) e `airport_local`. Le partenze italiane si rigenerano con `scripts/build_airports.py`.
+
 ## Test in locale
 `python3 -m http.server 8000` e apri http://localhost:8000 (con `file://` il fetch fallisce).

@@ -1,5 +1,48 @@
 # Diario
 
+## 2026-10-19 — Fase 4, ore di volo
+
+### Fatto
+- `scripts/build_airports.py`: scarica `airports.csv` e `runways.csv` di OurAirports in `data/raw/airports/`. Tiene solo large e medium con voli di linea e codice IATA. Scrive le partenze italiane in `data/airports.json`: 41 aeroporti, con nome italiano per la ricerca.
+- `apply_review.py`, per ogni zona:
+  - `airport_local`: il più vicino con voli di linea;
+  - `airport_main`: il large più vicino entro 300 km, altrimenti il medium con la pista più lunga (OurAirports non ha i passeggeri), altrimenti il locale;
+  - nuova colonna `aeroporto_manuale` (IATA) nel CSV, che vince se compilata;
+  - risultato: principale diverso dal locale in 55 zone su 150 (Lisbona LIS invece di CAT, Costa Rica LIR/SJO invece di Nosara e Quepos). Hossegor prende Bilbao (BIO) invece di Biarritz (BIQ): da decidere con `aeroporto_manuale`.
+- Stima voli riscritta, parametri tutti in `data/flight-estimate.json`:
+  - ore = distanza × (1 + 0,08 × scali) / 820 km/h + 0,5 h a tratta + 2,5 h a coincidenza;
+  - scali per fascia di distanza, diversa se si parte da un hub (MXP, FCO) o da un altro aeroporto;
+  - `extraStops` per gli arrivi senza voli dagli hub (per ora solo PDG +1); massimo 3 scali.
+  - OurAirports classifica "large" anche Genova, Perugia e Padang, quindi il tipo non basta: hub ed eccezioni sono dati nel JSON.
+- App:
+  - partenza con ricerca per nome o IATA (datalist), ricordata nel browser (localStorage);
+  - scheda: "diretto stimato" / "1 scalo stimato" / "N scali stimati", aeroporto principale e quello più vicino;
+  - zone senza climatologia in grigio, con "Dati in arrivo";
+  - corretto l'arrotondamento delle ore (poteva scrivere "19h 60").
+- Collaudo contro tempi tipici reali (itinerario veloce comune, da Trip.com, Rome2rio, FlightRoutes; Bali, Maldive e MXP-Lisbona a memoria):
+
+  | Partenza | Arrivo | km | Scali stimati | Stima | Tipico reale | Scarto |
+  |---|---|---|---|---|---|---|
+  | GOA | Bali (DPS) | 11.982 | 2 | 23h25 | ~21h | +12% |
+  | GOA | Oahu (HNL) | 12.583 | 2 | 24h20 | ~25h | -3% |
+  | GOA | Lisbona (LIS) | 1.616 | 1 | 5h40 | ~5h05 | +10% |
+  | GOA | Maldive (MLE) | 7.690 | 1 | 13h40 | ~14h | -3% |
+  | GOA | Costa Rica (LIR) | 9.529 | 2 | 20h00 | ~20h | 0% |
+  | GOA | Mentawai (PDG) | 10.183 | 3 | 24h55 | ~24h | +4% |
+  | MXP | Bali (DPS) | 11.978 | 1 | 19h15 | ~17h | +13% |
+  | MXP | Oahu (HNL) | 12.449 | 1 | 19h55 | ~21h40 | -8% |
+  | MXP | Lisbona (LIS) | 1.652 | 0 | 2h30 | 2h45 | -9% |
+  | MXP | Maldive (MLE) | 7.735 | 1 | 13h40 | ~12h30 | +10% |
+  | MXP | Costa Rica (LIR) | 9.496 | 1 | 16h00 | ~17h25 | -8% |
+  | MXP | Mentawai (PDG) | 10.191 | 2 | 20h55 | ~21h | 0% |
+
+  Unica correzione: da aeroporto non hub la fascia con 1 scalo è passata da 10.000 a 9.000 km (Genova-Costa Rica era -20%).
+
+### Aperti
+- Le fasce di distanza non conoscono le rotte vere: Genova-Bilbao esce "diretto stimato" anche se non esiste. Si risolve con i dati della fase 5.
+- Genova-Padang esce con 3 scali (2 di fascia + 1 di eccezione): il tempo torna, il numero di scali è probabilmente alto di uno.
+
+
 ## 2026-10-19 — Fase 3, download in background
 
 ### Fatto

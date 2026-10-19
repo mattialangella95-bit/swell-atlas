@@ -1,51 +1,371 @@
 [
-  {
-    "code": "GOA",
-    "name": "Genova",
-    "lat": 44.41,
-    "lon": 8.84,
-    "hub": false
-  },
-  {
-    "code": "MXP",
-    "name": "Milano Malpensa",
-    "lat": 45.63,
-    "lon": 8.72,
-    "hub": true
-  },
-  {
-    "code": "BGY",
-    "name": "Bergamo",
-    "lat": 45.67,
-    "lon": 9.7,
-    "hub": false
-  },
-  {
-    "code": "PSA",
-    "name": "Pisa",
-    "lat": 43.68,
-    "lon": 10.39,
-    "hub": false
-  },
-  {
-    "code": "NCE",
-    "name": "Nizza",
-    "lat": 43.66,
-    "lon": 7.21,
-    "hub": true
-  },
-  {
-    "code": "FCO",
-    "name": "Roma Fiumicino",
-    "lat": 41.8,
-    "lon": 12.25,
-    "hub": true
-  },
-  {
-    "code": "TRN",
-    "name": "Torino",
-    "lat": 45.2,
-    "lon": 7.65,
-    "hub": false
-  }
+ {
+  "code": "AHO",
+  "label": "Alghero",
+  "name": "Alghero-Fertilia Airport",
+  "city": "Alghero",
+  "type": "medium",
+  "lat": 40.6321,
+  "lon": 8.2908
+ },
+ {
+  "code": "AOI",
+  "label": "Ancona",
+  "name": "Marche Airport",
+  "city": "Falconara Marittima (AN)",
+  "type": "medium",
+  "lat": 43.6163,
+  "lon": 13.3623
+ },
+ {
+  "code": "BRI",
+  "label": "Bari",
+  "name": "Bari Karol Wojtyła International Airport",
+  "city": "Bari",
+  "type": "large",
+  "lat": 41.1389,
+  "lon": 16.7606
+ },
+ {
+  "code": "BGY",
+  "label": "Bergamo Orio al Serio",
+  "name": "Il Caravaggio International Airport",
+  "city": "Orio al Serio (BG)",
+  "type": "large",
+  "lat": 45.6694,
+  "lon": 9.7089
+ },
+ {
+  "code": "BLQ",
+  "label": "Bologna",
+  "name": "Bologna Guglielmo Marconi Airport",
+  "city": "Bologna",
+  "type": "large",
+  "lat": 44.5354,
+  "lon": 11.2887
+ },
+ {
+  "code": "BZO",
+  "label": "Bolzano",
+  "name": "Bolzano Airport",
+  "city": "Bolzano (BZ)",
+  "type": "medium",
+  "lat": 46.4592,
+  "lon": 11.3261
+ },
+ {
+  "code": "VBS",
+  "label": "Brescia",
+  "name": "Brescia Gabriele d'Annunzio Airport",
+  "city": "Montichiari (BS)",
+  "type": "medium",
+  "lat": 45.4289,
+  "lon": 10.3306
+ },
+ {
+  "code": "BDS",
+  "label": "Brindisi",
+  "name": "Brindisi Airport",
+  "city": "Brindisi",
+  "type": "large",
+  "lat": 40.6576,
+  "lon": 17.947
+ },
+ {
+  "code": "CAG",
+  "label": "Cagliari",
+  "name": "Cagliari Elmas Airport",
+  "city": "Cagliari",
+  "type": "large",
+  "lat": 39.2515,
+  "lon": 9.0543
+ },
+ {
+  "code": "CTA",
+  "label": "Catania",
+  "name": "Catania-Fontanarossa Airport",
+  "city": "Catania",
+  "type": "large",
+  "lat": 37.4668,
+  "lon": 15.0664
+ },
+ {
+  "code": "CIY",
+  "label": "Comiso",
+  "name": "Comiso Airport",
+  "city": "Comiso",
+  "type": "medium",
+  "lat": 36.9958,
+  "lon": 14.6089
+ },
+ {
+  "code": "CRV",
+  "label": "Crotone",
+  "name": "Crotone Sant'Anna Pythagoras Airport",
+  "city": "Isola di Capo Rizzuto (KR)",
+  "type": "medium",
+  "lat": 38.9972,
+  "lon": 17.0802
+ },
+ {
+  "code": "CUF",
+  "label": "Cuneo",
+  "name": "Cuneo International Airport",
+  "city": "Levaldigi (CN)",
+  "type": "medium",
+  "lat": 44.5475,
+  "lon": 7.623
+ },
+ {
+  "code": "FLR",
+  "label": "Firenze",
+  "name": "Florence Airport, Peretola",
+  "city": "Firenze (FI)",
+  "type": "large",
+  "lat": 43.8086,
+  "lon": 11.2028
+ },
+ {
+  "code": "FOG",
+  "label": "Foggia",
+  "name": "Foggia Gino Lisa Airport",
+  "city": "Foggia (FG)",
+  "type": "medium",
+  "lat": 41.4336,
+  "lon": 15.5346
+ },
+ {
+  "code": "FRL",
+  "label": "Forlì",
+  "name": "Forlì-Luigi Ridolfi International Airport",
+  "city": "Forlì (FC)",
+  "type": "medium",
+  "lat": 44.1948,
+  "lon": 12.0701
+ },
+ {
+  "code": "GOA",
+  "label": "Genova",
+  "name": "Genoa Cristoforo Colombo Airport",
+  "city": "Genova (GE)",
+  "type": "large",
+  "lat": 44.412,
+  "lon": 8.8407
+ },
+ {
+  "code": "EBA",
+  "label": "Isola d'Elba",
+  "name": "Marina di Campo Airport",
+  "city": "Campo nell'Elba (LI)",
+  "type": "medium",
+  "lat": 42.7609,
+  "lon": 10.2398
+ },
+ {
+  "code": "SUF",
+  "label": "Lamezia Terme",
+  "name": "Lamezia Terme Sant'Eufemia International Airport",
+  "city": "Lamezia Terme (CZ)",
+  "type": "large",
+  "lat": 38.9062,
+  "lon": 16.246
+ },
+ {
+  "code": "LMP",
+  "label": "Lampedusa",
+  "name": "Lampedusa Airport",
+  "city": "Lampedusa",
+  "type": "medium",
+  "lat": 35.4979,
+  "lon": 12.6181
+ },
+ {
+  "code": "LIN",
+  "label": "Milano Linate",
+  "name": "Milano Linate Airport",
+  "city": "Segrate (MI)",
+  "type": "large",
+  "lat": 45.4451,
+  "lon": 9.2767
+ },
+ {
+  "code": "MXP",
+  "label": "Milano Malpensa",
+  "name": "Milan Malpensa International Airport",
+  "city": "Ferno (VA)",
+  "type": "large",
+  "lat": 45.6306,
+  "lon": 8.7281
+ },
+ {
+  "code": "NAP",
+  "label": "Napoli",
+  "name": "Naples International Airport",
+  "city": "Napoli",
+  "type": "large",
+  "lat": 40.886,
+  "lon": 14.2908
+ },
+ {
+  "code": "OLB",
+  "label": "Olbia",
+  "name": "Olbia Costa Smeralda Airport",
+  "city": "Olbia (SS)",
+  "type": "large",
+  "lat": 40.899,
+  "lon": 9.5185
+ },
+ {
+  "code": "PMO",
+  "label": "Palermo",
+  "name": "Falcone–Borsellino Airport",
+  "city": "Palermo",
+  "type": "large",
+  "lat": 38.176,
+  "lon": 13.091
+ },
+ {
+  "code": "PNL",
+  "label": "Pantelleria",
+  "name": "Pantelleria Airport",
+  "city": "Pantelleria (TP)",
+  "type": "medium",
+  "lat": 36.8165,
+  "lon": 11.9689
+ },
+ {
+  "code": "PMF",
+  "label": "Parma",
+  "name": "Parma Airport",
+  "city": "Parma (PR)",
+  "type": "medium",
+  "lat": 44.8264,
+  "lon": 10.2971
+ },
+ {
+  "code": "PEG",
+  "label": "Perugia",
+  "name": "Perugia San Francesco d'Assisi – Umbria International Airport",
+  "city": "Perugia (PG)",
+  "type": "large",
+  "lat": 43.0959,
+  "lon": 12.5132
+ },
+ {
+  "code": "PSR",
+  "label": "Pescara",
+  "name": "Abruzzo Airport",
+  "city": "Pescara",
+  "type": "large",
+  "lat": 42.4311,
+  "lon": 14.183
+ },
+ {
+  "code": "PSA",
+  "label": "Pisa",
+  "name": "Pisa International Airport",
+  "city": "Pisa (PI)",
+  "type": "large",
+  "lat": 43.6839,
+  "lon": 10.3927
+ },
+ {
+  "code": "REG",
+  "label": "Reggio Calabria",
+  "name": "Reggio Calabria Airport",
+  "city": "Reggio Calabria",
+  "type": "medium",
+  "lat": 38.0712,
+  "lon": 15.6516
+ },
+ {
+  "code": "RMI",
+  "label": "Rimini",
+  "name": "Federico Fellini International Airport",
+  "city": "Rimini (RN)",
+  "type": "large",
+  "lat": 44.02,
+  "lon": 12.6122
+ },
+ {
+  "code": "CIA",
+  "label": "Roma Ciampino",
+  "name": "Ciampino–G. B. Pastine International Airport",
+  "city": "Rome",
+  "type": "large",
+  "lat": 41.7988,
+  "lon": 12.5953
+ },
+ {
+  "code": "FCO",
+  "label": "Roma Fiumicino",
+  "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
+  "city": "Rome",
+  "type": "large",
+  "lat": 41.8045,
+  "lon": 12.252
+ },
+ {
+  "code": "QSR",
+  "label": "Salerno",
+  "name": "Salerno Costa d'Amalfi Airport",
+  "city": "Salerno",
+  "type": "medium",
+  "lat": 40.6204,
+  "lon": 14.9113
+ },
+ {
+  "code": "TRN",
+  "label": "Torino",
+  "name": "Turin Airport",
+  "city": "Caselle Torinese (TO)",
+  "type": "large",
+  "lat": 45.2008,
+  "lon": 7.6496
+ },
+ {
+  "code": "TPS",
+  "label": "Trapani",
+  "name": "Vincenzo Florio Airport Trapani-Birgi",
+  "city": "Trapani (TP)",
+  "type": "medium",
+  "lat": 37.9114,
+  "lon": 12.488
+ },
+ {
+  "code": "TSF",
+  "label": "Treviso",
+  "name": "Treviso Airport",
+  "city": "Treviso (TV)",
+  "type": "large",
+  "lat": 45.6484,
+  "lon": 12.1944
+ },
+ {
+  "code": "TRS",
+  "label": "Trieste",
+  "name": "Trieste Airport",
+  "city": "Ronchi dei Legionari/Trieste",
+  "type": "large",
+  "lat": 45.8279,
+  "lon": 13.4667
+ },
+ {
+  "code": "VCE",
+  "label": "Venezia",
+  "name": "Venice Marco Polo Airport",
+  "city": "Venezia (VE)",
+  "type": "large",
+  "lat": 45.5053,
+  "lon": 12.3519
+ },
+ {
+  "code": "VRN",
+  "label": "Verona",
+  "name": "Verona Villafranca Valerio Catullo Airport",
+  "city": "Caselle (VR)",
+  "type": "large",
+  "lat": 45.395,
+  "lon": 10.8873
+ }
 ]

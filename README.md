@@ -16,17 +16,18 @@ data/
   zones.json        zone surf (generato da scripts/apply_review.py)
   climate.json      climatologia settimanale per zona (generato da scripts/build_climate.py)
   quality-rule.json soglie della regola qualità (Flat → Epic)
-  airports.json     aeroporti di partenza
+  airports.json     partenze italiane (generato da scripts/build_airports.py)
   scale.json        scala qualità Flat → Epic (indice 0-9, colore)
-  flight-estimate.json  parametri della stima finta di ore di volo e prezzi
+  flight-estimate.json  parametri della stima di ore di volo e scali, prezzi finti
   land-50m.json     coste Natural Earth 1:50m (world-atlas, TopoJSON)
   land-110m.json    coste 1:110m, usate durante trascinamento e animazioni
   review/
     zones_candidates.csv   zone candidate da revisionare a mano (Excel)
-  raw/              download grezzi, non versionati (spot, OurAirports, onde orarie)
+  raw/              download grezzi, non versionati (spot, OurAirports in raw/airports, onde orarie)
 scripts/
   build_zones.py    spot grezzi -> zone candidate (CSV)
-  apply_review.py   CSV revisionato -> data/zones.json
+  build_airports.py OurAirports -> partenze italiane (data/airports.json)
+  apply_review.py   CSV revisionato -> data/zones.json (con airport_main e airport_local)
   fetch_waves.py    onde e vento orari 2005-2024 da Open-Meteo (ERA5)
   era5_cds.py       stesso formato da Copernicus CDS, più costi e prove
   build_climate.py  dati orari + regola qualità -> data/climate.json
@@ -52,7 +53,7 @@ poi http://localhost:8000
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python scripts/build_zones.py      # scarica gli spot se mancano, scrive data/review/zones_candidates.csv
 # revisione in Excel: "tieni" = si per le zone da usare; "nome_manuale" ("Nome" o "Nome · Regione")
-# ed "esposizione_manuale" (gradi 0-359), se compilate, sostituiscono i valori calcolati; "note" libera
+# "esposizione_manuale" (gradi 0-359) e "aeroporto_manuale" (IATA), se compilate, sostituiscono i valori calcolati; "note" libera
 .venv/bin/python scripts/apply_review.py     # scrive data/zones.json
 ```
 
@@ -77,5 +78,5 @@ La regola qualità si tara solo in `data/quality-rule.json` (usa il periodo medi
 1. **Base** — prototipo trasformato in progetto: file separati, dati in JSON, GitHub Pages. *(completata)*
 2. **Zone** — zone reali da ~5900 spot: pulizia, clustering, esposizione della costa, aeroporto di riferimento, revisione a mano. *(completata)*
 3. **Onde ERA5** — climatologia 2005-2024 da ERA5 (Open-Meteo per il collaudo, Copernicus CDS per tutte le zone), regola qualità in JSON, `climate.json` letto da `getZoneWeeks()`. *(in corso: 5 zone di collaudo fatte)*
-4. **Ore di volo** — aeroporti e rotte da OurAirports al posto della stima da distanza.
+4. **Ore di volo** — aeroporto principale e locale per zona da OurAirports, partenza da tutti gli aeroporti italiani, ore e scali stimati con parametri in `data/flight-estimate.json`. *(fatta, stima senza rotte vere)*
 5. **Prezzi** — prezzi reali da Travelpayouts, oppure raccolta periodica salvata su Supabase.

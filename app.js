@@ -30,10 +30,12 @@ function getZoneWeeks(zone){
   const F=CLIMATE.fields,ix=k=>F.indexOf(k);
   return c.weeks.map(w=>({q:w[ix("q")],h:w[ix("h50")],h25:w[ix("h25")],h75:w[ix("h75")],t:w[ix("t50")],good:w[ix("good")]}));
 }
-ZONES.forEach(z=>z.wk=getZoneWeeks(z));
-ZONES=ZONES.filter(z=>z.wk);   // le zone senza climatologia non compaiono
+ZONES.forEach(z=>z.wk=getZoneWeeks(z));   // null = dati in arrivo (in grigio)
 
-const state={week:0,zone:ZONES[0],dep:DEPS[0]};
+// partenza: l'ultima scelta resta nel browser
+const DEP_KEY="swellatlas.partenza";
+function savedDep(){try{return DEPS.find(d=>d.code===localStorage.getItem(DEP_KEY))}catch(e){return null}}
+const state={week:0,zone:ZONES.find(z=>z.wk)||ZONES[0],dep:savedDep()||DEPS.find(d=>d.code==="GOA")||DEPS[0]};
 const weekMonth=w=>Math.min(11,Math.floor(w*12/52));
 const dec=x=>x.toFixed(1).replace(".",",");
 const fmtH=w=>dec(w.h25)+"–"+dec(w.h75)+" m";
@@ -64,7 +66,7 @@ function draw(){
   ctx.strokeStyle=css("--landline");ctx.lineWidth=.6;ctx.stroke();
   // rotta volo
   const z=state.zone,d=state.dep;
-  ctx.beginPath();path({type:"LineString",coordinates:[[d.lon,d.lat],[z.airport.lon,z.airport.lat]]});
+  ctx.beginPath();path({type:"LineString",coordinates:[[d.lon,d.lat],[z.airport_main.lon,z.airport_main.lat]]});
   ctx.setLineDash([4,4]);ctx.strokeStyle=css("--accent");ctx.lineWidth=1.5;ctx.stroke();ctx.setLineDash([]);
   const c=proj.invert([cx,cy]);
   if(d3.geoDistance([d.lon,d.lat],c)<Math.PI/2){const p=proj([d.lon,d.lat]);ctx.beginPath();ctx.arc(p[0],p[1],3.5,0,7);ctx.fillStyle=css("--fg");ctx.fill()}
@@ -87,8 +89,8 @@ function draw(){
 }
 const LABEL_ZOOM=1.6;
 function dot(zz,k,sel,fg){
-  const p=proj([zz.lon,zz.lat]),wk=zz.wk[state.week],rad=(sel?3.4:2.6)*k;
-  ctx.beginPath();ctx.arc(p[0],p[1],rad,0,7);ctx.fillStyle=SCALE[wk.q].color;ctx.fill();
+  const p=proj([zz.lon,zz.lat]),rad=(sel?3.4:2.6)*k;
+  ctx.beginPath();ctx.arc(p[0],p[1],rad,0,7);ctx.fillStyle=zoneColor(zz);ctx.fill();
   ctx.lineWidth=.75;ctx.strokeStyle="rgba(0,0,0,.45)";ctx.stroke();
   if(sel){ctx.beginPath();ctx.arc(p[0],p[1],rad+4,0,7);ctx.lineWidth=1.5;ctx.strokeStyle=fg;ctx.stroke()}
   return{zz,p,rad:sel?rad+4:rad};
@@ -122,14 +124,16 @@ cv.addEventListener("pointermove",e=>{if(!pts.has(e.pointerId))return;pts.set(e.
 const endP=e=>{pts.delete(e.pointerId);if(pts.size<2)pinch0=null};
 cv.addEventListener("pointerup",endP);cv.addEventListener("pointercancel",e=>{endP(e);dragging=false});
 
-// ---------- voli (stima finta, la fase 4 userà OurAirports e la fase 5 i prezzi veri)
-function km(a,b){return d3.geoDistance([a.lon,a.lat],[b.airport.lon,b.airport.lat])*6371}
+function zoneColor(z){return z.wk?SCALE[z.wk[state.week].q].color:css("--nodata")}
+
+// ---------- voli: ore e scali stimati da distanza e parametri (data/flight-estimate.json); prezzi ancora finti
+function km(a,b){return d3.geoDistance([a.lon,a.lat],[b.lon,b.lat])*6371}
 function flight(d,z){
-  const dist=km(d,z);
-  const [near,far]=FLY.stopsDistanceKm,P=FLY.price;
-  let stops=dist<near?(d.hub?0:1):dist<far?1:2;
-  if(z.airport.nearEurope)stops=d.hub?0:1;
-  const hrs=dist/FLY.speedKmh+FLY.fixedHours+stops*FLY.hoursPerStop;
+  const to=z.airport_main,dist=km(d,to),P=FLY.price;
+  const bands=FLY.stopsByDistance[FLY.hubs.includes(d.code)?"fromHub":"fromOther"];
+  let stops=bands.find(b=>b.maxKm===null||dist<=b.maxKm).stops;
+  stops=Math.min(FLY.maxStops,stops+(FLY.extraStops[to.code]||0));
+  const hrs=dist*(1+FLY.detourPerStop*stops)/FLY.speedKmh+FLY.legFixedHours*(stops+1)+FLY.connectionHours*stops;
   const baseP=Math.round((P.base+dist*P.perKm+stops*P.perStop)/10)*10;
   const r=rnd(d.code+z.id);
   const months=P.monthFactor.map(s=>Math.round(baseP*s*(P.noiseMin+r()*P.noiseRange)/10)*10);
@@ -139,21 +143,30 @@ function flight(d,z){
 // ---------- UI
 function selectZone(z,rot=true){state.zone=z;$("arr").value=z.id;if(rot)rotateTo(z);else draw();render()}
 function render(){
-  const z=state.zone,w=z.wk[state.week],m=weekMonth(state.week);
-  $("zn").textContent=z.name;$("zs").textContent=z.region+" · aeroporto "+z.airport.code;
-  const zq=$("zq");zq.textContent=SCALE[w.q].label;zq.style.background=SCALE[w.q].color;
-  $("sh").textContent=fmtH(w);$("sh").title="mediana "+dec(w.h)+" m";$("sp").textContent=Math.round(w.t)+" s";$("sg").textContent=w.good+"%";
-  $("strip").innerHTML=z.wk.map((x,i)=>`<i style="background:${SCALE[x.q].color}" class="${i===state.week?"on":""}" title="Settimana ${i+1}, ${SCALE[x.q].label}" data-w="${i}"></i>`).join("");
+  const z=state.zone,m=weekMonth(state.week),main=z.airport_main,local=z.airport_local;
+  $("zn").textContent=z.name;
+  $("zs").textContent=z.region+" · aeroporto "+main.code+(local.code!==main.code?" (il più vicino è "+local.code+")":"");
+  const zq=$("zq");
+  if(z.wk){
+    const w=z.wk[state.week];
+    zq.textContent=SCALE[w.q].label;zq.style.background=SCALE[w.q].color;
+    $("sh").textContent=fmtH(w);$("sh").title="mediana "+dec(w.h)+" m";$("sp").textContent=Math.round(w.t)+" s";$("sg").textContent=w.good+"%";
+    $("strip").innerHTML=z.wk.map((x,i)=>`<i style="background:${SCALE[x.q].color}" class="${i===state.week?"on":""}" title="Settimana ${i+1}, ${SCALE[x.q].label}" data-w="${i}"></i>`).join("");
+  }else{
+    zq.textContent="Dati in arrivo";zq.style.background=css("--nodata");
+    ["sh","sp","sg"].forEach(id=>{$(id).textContent="—";$(id).title=""});
+    $("strip").innerHTML=Array.from({length:52},(_,i)=>`<i style="background:var(--nodata)" class="${i===state.week?"on":""}" title="Settimana ${i+1}, dati in arrivo" data-w="${i}"></i>`).join("");
+  }
   const f=flight(state.dep,z);
   $("fd").textContent=Math.round(f.dist).toLocaleString("it-IT")+" km";
-  $("fh").textContent=(()=>{const h=Math.floor(f.hrs),mm=Math.round((f.hrs-h)*60/5)*5;return h+"h "+String(mm).padStart(2,"0")})();
-  $("fh").title=f.stops?f.stops+(f.stops>1?" scali stimati":" scalo stimato"):"diretto";
+  $("fh").textContent=(()=>{const t=Math.round(f.hrs*12)*5;return Math.floor(t/60)+"h "+String(t%60).padStart(2,"0")})();   // arrotondato a 5 minuti
+  $("fs").textContent=f.stops?f.stops+(f.stops>1?" scali stimati":" scalo stimato"):"diretto stimato";
   $("fp").textContent="~"+f.months[m].toLocaleString("it-IT")+" €";
   const mx=Math.max(...f.months);
   $("bars").innerHTML=f.months.map((p,i)=>`<div class="${i===m?"cur":""}" style="height:${Math.round(100*p/mx)}%" title="${MESI[i]} ~${p} €">${i===m?`<span>${p}</span>`:""}</div>`).join("");
   $("wk").textContent="Settimana "+(state.week+1)+" · "+MESI[m];
   $("wr").value=state.week;
-  document.querySelectorAll("#zlist button").forEach(b=>{const zz=ZONES.find(x=>x.id===b.dataset.id);b.classList.toggle("sel",zz===z);b.querySelector("i").style.background=SCALE[zz.wk[state.week].q].color});
+  document.querySelectorAll("#zlist button").forEach(b=>{const zz=ZONES.find(x=>x.id===b.dataset.id);b.classList.toggle("sel",zz===z);b.querySelector("i").style.background=zoneColor(zz)});
 }
 function setWeek(w){state.week=(w+52)%52;render();draw()}
 $("strip").addEventListener("click",e=>{if(e.target.dataset.w)setWeek(+e.target.dataset.w)});
@@ -162,9 +175,18 @@ $("wr").addEventListener("input",e=>setWeek(+e.target.value));
 $("legend").innerHTML=SCALE.map(s=>`<span><b style="background:${s.color}"></b>${s.label}</span>`).join("");
 $("zlist").innerHTML=ZONES.map(z=>`<button data-id="${z.id}"><i></i>${z.name}</button>`).join("");
 $("zlist").addEventListener("click",e=>{const b=e.target.closest("button");if(b)selectZone(ZONES.find(z=>z.id===b.dataset.id))});
-$("dep").innerHTML=DEPS.map(d=>`<option value="${d.code}">${d.name} (${d.code})</option>`).join("");
-$("arr").innerHTML=ZONES.map(z=>`<option value="${z.id}">${z.airport.code}, ${z.name}</option>`).join("");
-$("dep").onchange=e=>{state.dep=DEPS.find(d=>d.code===e.target.value);render();draw()};
+// partenza: campo con ricerca per nome o codice IATA (datalist), tutti gli aeroporti italiani large e medium
+const depText=d=>`${d.label} (${d.code})`;
+$("deps").innerHTML=DEPS.map(d=>`<option value="${depText(d)}" label="${d.name}"></option>`).join("");
+$("dep").value=depText(state.dep);
+function findDep(v){
+  v=v.trim();const code=(v.match(/\(([A-Za-z]{3})\)$/)||[,v])[1].toUpperCase();
+  return DEPS.find(d=>d.code===code)||DEPS.find(d=>depText(d).toLowerCase()===v.toLowerCase());
+}
+function setDep(d){state.dep=d;$("dep").value=depText(d);try{localStorage.setItem(DEP_KEY,d.code)}catch(e){}render();draw()}
+$("dep").addEventListener("change",e=>{const d=findDep(e.target.value);if(d)setDep(d);else e.target.value=depText(state.dep)});
+$("dep").addEventListener("focus",e=>e.target.select());
+$("arr").innerHTML=ZONES.map(z=>`<option value="${z.id}">${z.airport_main.code}, ${z.name}${z.wk?"":" (dati in arrivo)"}</option>`).join("");
 $("arr").onchange=e=>selectZone(ZONES.find(z=>z.id===e.target.value));
 let timer=null;
 $("play").onclick=()=>{if(timer){clearInterval(timer);timer=null;$("play").textContent="Avvia";return}

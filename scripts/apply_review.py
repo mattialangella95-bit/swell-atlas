@@ -2,29 +2,30 @@
 
 Tiene solo le righe con tieni = si. Se compilate, nome_manuale ed esposizione_manuale
 prendono il posto di nome ed esposizione_gradi (nome_manuale: "Nome" oppure "Nome · Regione";
-senza regione resta quella proposta). Per ogni zona aggiunge l'aeroporto di riferimento
-(il più vicino con voli di linea, da OurAirports).
+senza regione resta quella proposta). Per ogni zona aggiunge due aeroporti (OurAirports):
+  - airport_local: il più vicino con voli di linea (large o medium);
+  - airport_main: quello internazionale di riferimento per i voli, cioè il large più vicino
+    entro 300 km, altrimenti il medium con la pista più lunga entro 300 km, altrimenti il locale.
+    Se compilata, la colonna aeroporto_manuale (codice IATA) vince.
 
 Input:  data/review/zones_candidates.csv  (oppure il percorso passato con --csv)
-        data/raw/airports.csv              (OurAirports, scaricato se manca)
+        data/raw/airports/                 (OurAirports, scaricato se manca)
 Output: data/zones.json
 
 Uso:    .venv/bin/python scripts/apply_review.py
         .venv/bin/python scripts/apply_review.py --preseleziona 150   # segna "si" sulle 150 zone con più spot
 """
-import argparse, csv, io, json, math, sys, urllib.request
+import argparse, csv, io, json, sys
 from pathlib import Path
+
+from build_airports import km, load_by_iata, load_scheduled
 
 ROOT = Path(__file__).resolve().parent.parent
 CSV = ROOT / "data/review/zones_candidates.csv"
-AIRPORTS = ROOT / "data/raw/airports.csv"
-AIRPORTS_URL = "https://davidmegginson.github.io/ourairports-data/airports.csv"
 OUT = ROOT / "data/zones.json"
 
 YES = {"si", "sì", "s", "x", "1", "yes", "y"}
-AIRPORT_TYPES = {"large_airport", "medium_airport"}
-# come nel prototipo (Taghazout, Fuerteventura): da qui i voli si stimano come se fossero in Europa
-NEAR_EUROPE = {"Morocco", "Canary"}
+MAIN_KM = 300   # raggio per l'aeroporto principale (internazionale) di una zona
 
 
 def read_csv(path):
@@ -49,21 +50,23 @@ def num(s):
     return float(str(s).strip().replace(",", "."))
 
 
-def load_airports():
-    if not AIRPORTS.exists():
-        AIRPORTS.parent.mkdir(parents=True, exist_ok=True)
-        print("scarico", AIRPORTS_URL)
-        urllib.request.urlretrieve(AIRPORTS_URL, AIRPORTS)
-    with AIRPORTS.open(encoding="utf-8") as f:
-        return [{"code": r["iata_code"], "lat": float(r["latitude_deg"]), "lon": float(r["longitude_deg"])}
-                for r in csv.DictReader(f)
-                if r["type"] in AIRPORT_TYPES and r["scheduled_service"] == "yes" and len(r["iata_code"]) == 3]
+def airport_info(a):
+    return {"code": a["code"], "name": a["name"], "type": a["type"], "lat": round(a["lat"], 4), "lon": round(a["lon"], 4)}
 
 
-def km(lat1, lon1, lat2, lon2):
-    p1, p2 = math.radians(lat1), math.radians(lat2)
-    a = math.sin((p2 - p1) / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(math.radians(lon2 - lon1) / 2) ** 2
-    return 2 * 6371 * math.asin(math.sqrt(min(1, a)))
+def pick_airports(lat, lon, scheduled):
+    """(principale, locale). Locale: il più vicino con voli di linea. Principale: il large più vicino
+    entro MAIN_KM, altrimenti il medium con la pista più lunga entro MAIN_KM, altrimenti il locale."""
+    dist = [(km(lat, lon, a["lat"], a["lon"]), a) for a in scheduled]
+    local = min(dist, key=lambda x: x[0])[1]
+    near = [(d, a) for d, a in dist if d <= MAIN_KM]
+    large = [x for x in near if x[1]["type"] == "large"]
+    if large:
+        return min(large, key=lambda x: x[0])[1], local
+    medium = [x for x in near if x[1]["type"] == "medium"]
+    if medium:
+        return max(medium, key=lambda x: (x[1]["runway_ft"], -x[0]))[1], local
+    return local, local
 
 
 def main():
@@ -85,7 +88,7 @@ def main():
     kept = [r for r in rows if r["tieni"].strip().lower() in YES]
     if not kept:
         sys.exit("Nessuna riga con tieni = si.")
-    airports = load_airports()
+    scheduled, by_iata = load_scheduled(), load_by_iata()
     zones, ids = [], set()
     for r in kept:
         zid = r["id"].strip()
@@ -105,20 +108,25 @@ def main():
             expo = int(round(num(expo))) % 360 if expo else None
         except ValueError:
             sys.exit(f"{zid}: esposizione non valida {expo!r} (servono gradi 0-359)")
-        apt = min(airports, key=lambda p: km(lat, lon, p["lat"], p["lon"]))
-        airport = {"code": apt["code"], "lat": apt["lat"], "lon": apt["lon"]}
-        if country in NEAR_EUROPE:
-            airport["nearEurope"] = True
+        main_apt, local_apt = pick_airports(lat, lon, scheduled)
+        manual_apt = (r.get("aeroporto_manuale") or "").strip().upper()
+        if manual_apt:
+            if manual_apt not in by_iata:
+                sys.exit(f"{zid}: aeroporto_manuale {manual_apt!r} non trovato in OurAirports")
+            main_apt = by_iata[manual_apt]
         zones.append({"id": zid, "name": name.strip(), "region": ", ".join(x for x in (country, region.strip()) if x),
                       "lat": round(lat, 4), "lon": round(lon, 4), "spots": int(r["n_spot"]),
                       "exposure": expo,
-                      "airport": airport})
+                      "airport_main": airport_info(main_apt), "airport_local": airport_info(local_apt)})
 
     OUT.write_text(json.dumps(zones, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    far = [z for z in zones if km(z["lat"], z["lon"], z["airport"]["lat"], z["airport"]["lon"]) > 200]
-    print(f"scritte {len(zones)} zone in {OUT.relative_to(ROOT)} (aeroporto a più di 200 km: {len(far)})")
-    for z in far:
-        print(f'  {z["id"]}: {z["airport"]["code"]} a {km(z["lat"], z["lon"], z["airport"]["lat"], z["airport"]["lon"]):.0f} km')
+    d = lambda z: km(z["lat"], z["lon"], z["airport_main"]["lat"], z["airport_main"]["lon"])
+    changed = sum(z["airport_main"]["code"] != z["airport_local"]["code"] for z in zones)
+    print(f"scritte {len(zones)} zone in {OUT.relative_to(ROOT)}: aeroporto principale diverso dal locale in {changed}, "
+          f"principale a più di {MAIN_KM} km in {sum(d(z) > MAIN_KM for z in zones)}")
+    for z in zones:
+        if d(z) > MAIN_KM:
+            print(f'  {z["id"]}: {z["airport_main"]["code"]} a {d(z):.0f} km')
 
 
 if __name__ == "__main__":
