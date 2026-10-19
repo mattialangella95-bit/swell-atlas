@@ -1,4 +1,6 @@
 # Raccolta settimanale dei prezzi indicativi (fase 5): scripts/fetch_prices.py aggiunge righe a swell_prices.
+# DA ATTIVARE: per funzionare va spostato in .github/workflows/ (git mv), dopo aver dato a gh il permesso
+# `workflow` (gh auth refresh -h github.com -s workflow) e creato i due secret qui sotto.
 # Secret del repository da creare (Settings -> Secrets and variables -> Actions -> New repository secret):
 #   TRAVELPAYOUTS_TOKEN   token dell'API dati di Travelpayouts
 #   SUPABASE_SECRET_KEY   secret key del progetto Supabase (sb_secret_...)

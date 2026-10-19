@@ -19,6 +19,8 @@
 - Corretto: con chiamate contemporanee si creavano due client Supabase (avviso "Multiple GoTrueClient instances"); ora si memorizza la promessa.
 - Controllo segreti su tutta la cronologia (18 commit): nessuna secret key Supabase, nessun token Travelpayouts, nessuna chiave Copernicus, nessun `.env` o `.cdsapirc`; `data/raw` mai tracciato. Unica chiave presente la publishable, pubblica per natura.
 
+- Push: GitHub ha rifiutato il primo tentativo perché il token di `gh` non ha il permesso `workflow`. Il workflow dei prezzi (inutile finché mancano i secret) è stato spostato nei commit non pubblicati in `.github/workflows-da-attivare/prezzi.yml`: stesso contenuto, cartella che GitHub non esegue. Ramo locale `backup-prima-del-push` con la versione originale.
+
 ### Ripresa del download (comando esatto)
 ```
 cd /Users/mattia/Documents/swell-atlas
@@ -32,7 +34,7 @@ nohup caffeinate -i -w $! >/dev/null 2>&1 < /dev/null &
 
 ### Prossimi passi (domani, in quest'ordine)
 1. Calendario: rivederlo con più zone e ritoccare dove serve.
-2. Fase 5 prezzi: token Travelpayouts in `.env`, migrazione `20261020090000_swell_prices.sql`, collaudo su GOA-DPS, MXP-HNL, PSA-LIS, poi i secret su GitHub.
+2. Fase 5 prezzi: token Travelpayouts in `.env`, migrazione `20261020090000_swell_prices.sql`, collaudo su GOA-DPS, MXP-HNL, PSA-LIS; poi `gh auth refresh -h github.com -s workflow`, secret `TRAVELPAYOUTS_TOKEN` e `SUPABASE_SECRET_KEY` su GitHub, `git mv .github/workflows-da-attivare/prezzi.yml .github/workflows/prezzi.yml` e push.
 3. Ripresa del download onde con il comando qui sopra, poi `build_climate.py`.
 
 
@@ -48,7 +50,7 @@ nohup caffeinate -i -w $! >/dev/null 2>&1 < /dev/null &
 - Giro: 10 partenze × 115 aeroporti principali = 1.150 tratte (meno quelle con partenza uguale all'arrivo) × 12 mesi = circa 13.800 chiamate, a 8 al secondo (480 al minuto, sotto le 600): circa 29 minuti a settimana.
 - `supabase/migrations/20261020090000_swell_prices.sql`: tabella `swell_prices` solo in aggiunta (storico), lettura per tutti, scrittura solo con la secret key; vista `swell_prices_latest` (ultima rilevazione per tratta e mese, `security_invoker`).
 - `scripts/fetch_prices.py` (solo libreria standard): token da `TRAVELPAYOUTS_TOKEN`, scrive a blocchi di 500 righe con la stessa data di rilevazione; `--prova` e `--solo GOA-DPS ...` per i collaudi.
-- `.github/workflows/prezzi.yml`: ogni lunedì alle 04:17 UTC e a mano; secret `TRAVELPAYOUTS_TOKEN` e `SUPABASE_SECRET_KEY`.
+- `.github/workflows-da-attivare/prezzi.yml`: ogni lunedì alle 04:17 UTC e a mano; secret `TRAVELPAYOUTS_TOKEN` e `SUPABASE_SECRET_KEY`.
 - Nizza (NCE) aggiunta alle partenze dell'app come partenza di confine, altrimenti i suoi prezzi non si vedrebbero.
 - App: `prices.js` legge `swell_prices_latest` per la partenza scelta (publishable key, senza login). Scheda e calendario mostrano "circa X € indicativi" con la data di rilevazione (mediana delle offerte, altrimenti minimo), oppure "stima". Barre piene se rilevate, tratteggiate se stimate. Mai link o parole da offerta prenotabile.
 

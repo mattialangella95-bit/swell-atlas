@@ -17,7 +17,7 @@ profile.js          profilo e preferiti
 feedback.js         segnalazioni
 calendar.js         vista Calendario (mese e anno) · calendar.css i suoi stili
 prices.js           prezzi voli indicativi da Supabase (swell_prices), con la stima come riserva
-.github/workflows/prezzi.yml  raccolta settimanale dei prezzi
+.github/workflows-da-attivare/prezzi.yml  raccolta settimanale dei prezzi
 supabase-config.js  URL e chiave anon di Supabase (vuoti = account disattivati)
 supabase/migrations/ SQL delle tabelle swell_* con Row Level Security
 .env.example        nomi delle chiavi per gli script (.env resta fuori da git)
@@ -117,7 +117,7 @@ La publishable key sta in `supabase-config.js`; la secret key solo in `.env`, ma
 .venv/bin/python scripts/fetch_prices.py --prova --solo GOA-DPS MXP-HNL   # prova senza scrivere
 ```
 
-Il giro completo lo fa GitHub Actions ogni lunedì (`.github/workflows/prezzi.yml`) con i secret `TRAVELPAYOUTS_TOKEN` e `SUPABASE_SECRET_KEY`. Il token non va mai nel sito. Nell'app i prezzi sono sempre "indicativi" (rilevati) o "stima".
+Il giro completo lo farà GitHub Actions ogni lunedì: il workflow è pronto in `.github/workflows-da-attivare/prezzi.yml` e va spostato in `.github/workflows/` quando ci sono i secret con i secret `TRAVELPAYOUTS_TOKEN` e `SUPABASE_SECRET_KEY`. Il token non va mai nel sito. Nell'app i prezzi sono sempre "indicativi" (rilevati) o "stima".
 
 ## Fasi
 
