@@ -1,0 +1,52 @@
+[
+  {
+    "level": 0,
+    "label": "Flat",
+    "color": "#9aa6ab"
+  },
+  {
+    "level": 1,
+    "label": "Very Poor",
+    "color": "#7d8fa6"
+  },
+  {
+    "level": 2,
+    "label": "Poor",
+    "color": "#5f8fc4"
+  },
+  {
+    "level": 3,
+    "label": "Poor to Fair",
+    "color": "#3fa6b4"
+  },
+  {
+    "level": 4,
+    "label": "Fair",
+    "color": "#46b980"
+  },
+  {
+    "level": 5,
+    "label": "Fair to Good",
+    "color": "#a9c94a"
+  },
+  {
+    "level": 6,
+    "label": "Good",
+    "color": "#f2c23a"
+  },
+  {
+    "level": 7,
+    "label": "Very Good",
+    "color": "#f08c2e"
+  },
+  {
+    "level": 8,
+    "label": "Good to Epic",
+    "color": "#e3503c"
+  },
+  {
+    "level": 9,
+    "label": "Epic",
+    "color": "#c2338f"
+  }
+]

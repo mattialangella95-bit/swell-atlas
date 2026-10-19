@@ -1,0 +1,51 @@
+[
+  {
+    "code": "GOA",
+    "name": "Genova",
+    "lat": 44.41,
+    "lon": 8.84,
+    "hub": false
+  },
+  {
+    "code": "MXP",
+    "name": "Milano Malpensa",
+    "lat": 45.63,
+    "lon": 8.72,
+    "hub": true
+  },
+  {
+    "code": "BGY",
+    "name": "Bergamo",
+    "lat": 45.67,
+    "lon": 9.7,
+    "hub": false
+  },
+  {
+    "code": "PSA",
+    "name": "Pisa",
+    "lat": 43.68,
+    "lon": 10.39,
+    "hub": false
+  },
+  {
+    "code": "NCE",
+    "name": "Nizza",
+    "lat": 43.66,
+    "lon": 7.21,
+    "hub": true
+  },
+  {
+    "code": "FCO",
+    "name": "Roma Fiumicino",
+    "lat": 41.8,
+    "lon": 12.25,
+    "hub": true
+  },
+  {
+    "code": "TRN",
+    "name": "Torino",
+    "lat": 45.2,
+    "lon": 7.65,
+    "hub": false
+  }
+]

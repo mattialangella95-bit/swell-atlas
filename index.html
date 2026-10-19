@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swell Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Swell Atlas</h1>
+    <span class="demo">Prototipo, dati dimostrativi</span>
+  </header>
+
+  <div class="main">
+    <div class="globe-box" id="gbox">
+      <canvas id="g" aria-label="Globo con le zone surf colorate per qualità"></canvas>
+      <div class="hint">Trascina per ruotare, rotella o pizzico per lo zoom, tocca un punto</div>
+      <div class="gctl">
+        <button id="zin" aria-label="Zoom avanti">+</button>
+        <button id="zout" aria-label="Zoom indietro">−</button>
+      </div>
+    </div>
+
+    <aside class="panel" id="panel">
+      <div class="zone-head">
+        <div>
+          <h2 class="zone-name" id="zn"></h2>
+          <div class="zone-sub" id="zs"></div>
+        </div>
+        <span class="chip" id="zq"></span>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">Onda tipica</div><div class="v" id="sh"></div></div>
+        <div class="stat"><div class="k">Periodo</div><div class="v" id="sp"></div></div>
+        <div class="stat"><div class="k">Settimane Good+</div><div class="v" id="sg"></div></div>
+      </div>
+      <div>
+        <div class="lbl">Stagionalità, 52 settimane</div>
+        <div class="strip" id="strip"></div>
+        <div class="months" id="m1"></div>
+      </div>
+      <div>
+        <div class="lbl">Volo</div>
+        <div class="fly">
+          <div class="field"><label for="dep">Partenza</label><select id="dep"></select></div>
+          <div class="field"><label for="arr">Arrivo</label><select id="arr"></select></div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">Distanza</div><div class="v" id="fd"></div></div>
+        <div class="stat"><div class="k">Ore di volo</div><div class="v" id="fh"></div></div>
+        <div class="stat"><div class="k">Prezzo stimato</div><div class="v" id="fp"></div></div>
+      </div>
+      <div>
+        <div class="lbl">Prezzo indicativo andata e ritorno per mese</div>
+        <div style="padding-top:16px"><div class="bars" id="bars"></div></div>
+        <div class="months" id="m2"></div>
+      </div>
+      <div class="note">Ore di volo calcolate dalla distanza tra aeroporti più una stima per gli scali. I prezzi qui sono simulati, nella versione vera arriveranno da Travelpayouts o da una raccolta settimanale.</div>
+    </aside>
+  </div>
+
+  <section class="timeline">
+    <div class="tl-top">
+      <div class="week" id="wk"></div>
+      <div style="display:flex;gap:6px">
+        <button class="btn" id="play">Avvia</button>
+      </div>
+    </div>
+    <input type="range" id="wr" min="0" max="51" value="0" aria-label="Settimana dell'anno">
+    <div class="months" id="m3"></div>
+    <div class="legend" id="legend"></div>
+    <div class="list" id="zlist"></div>
+  </section>
+
+  <footer>Valori inventati per mostrare l'interfaccia. Nella versione completa ogni zona avrà la media di 20 o 30 anni di dati storici (ERA5 Copernicus o WaveWatch III), con altezza dell'onda lunga, periodo, direzione e vento tradotti in una scala qualità ispirata a quella di Surfline ma calcolata con una regola nostra. È una statistica storica, serve a scegliere quando partire, non è la previsione del giorno.</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
