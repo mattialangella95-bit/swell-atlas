@@ -23,7 +23,7 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 ## Script dati (Python)
 - Venv in `.venv`, dipendenze in `requirements.txt` (solo shapely). Lancia con `.venv/bin/python scripts/...`.
 - `data/zones.json` non si modifica a mano: si rigenera con `scripts/build_zones.py` -> revisione di `data/review/zones_candidates.csv` -> `scripts/apply_review.py`.
-- Il CSV di revisione è di Mattia: non sovrascriverlo se ha `tieni`/`note` compilati.
+- Il CSV di revisione è di Mattia: non sovrascriverlo se ha `nome_manuale`, `esposizione_manuale`, `tieni` o `note` compilati. Le colonne `*_manuale` vincono su quelle calcolate.
 - `data/raw/` contiene solo download, non è versionata.
 
 ## Test in locale

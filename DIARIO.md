@@ -17,6 +17,11 @@
   - `nearEurope` per Marocco e Canarie, come nel prototipo;
   - `exposure` e `spots`;
   - i parametri `demo` per i dati onda finti.
+- Colonne di revisione `nome_manuale` ed `esposizione_manuale`. Se sono compilate, `apply_review.py` le usa al posto di `nome` ed `esposizione_gradi`:
+  - `nome_manuale` può essere solo il nome ("North Shore", resta la regione proposta) oppure "Nome · Regione";
+  - un'esposizione non numerica blocca lo script indicando la zona.
+  - `build_zones.py` considera revisione anche queste colonne e non sovrascrive il CSV.
+  - CSV esistente aggiornato senza perdere i "si"; con le colonne vuote `zones.json` resta identico.
 - Preselezionate le 150 zone con più spot (`--preseleziona 150`). L'app gira con posizioni vere e onde ancora finte.
 - Globo con 150 zone:
   - pallini più piccoli, che crescono con lo zoom;
@@ -26,7 +31,7 @@
   - Misura in Chrome headless: ridisegno durante il trascinamento 1,5 ms; zoom con coste 1:50m ~16 ms come prima, dominato dalle coste.
 
 ### Aperti
-- Revisione a mano del CSV: nomi (lo spot centrale non è sempre il più noto, es. il North Shore si chiama "Graters"), zone da tenere, note.
+- Revisione a mano del CSV: nomi (lo spot centrale non è sempre il più noto, es. il North Shore si chiama "Graters", correggibile con `nome_manuale`), zone da tenere, esposizioni mancanti o sbagliate con `esposizione_manuale`.
 - Nomi di paesi e regioni in inglese, come nella fonte.
 - Nelle 150 tre zone sono senza esposizione: 4 Bobs (Mentawai), Temae (Polinesia), Airport Left (St Barth). Isolator (WA) ha l'aeroporto a 221 km.
 - Il menu "Arrivo" ha 150 voci in ordine di numero di spot.

@@ -46,7 +46,8 @@ poi http://localhost:8000
 ```
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python scripts/build_zones.py      # scarica gli spot se mancano, scrive data/review/zones_candidates.csv
-# revisione in Excel: colonna "tieni" = si per le zone da usare, nome e note a piacere
+# revisione in Excel: "tieni" = si per le zone da usare; "nome_manuale" ("Nome" o "Nome · Regione")
+# ed "esposizione_manuale" (gradi 0-359), se compilate, sostituiscono i valori calcolati; "note" libera
 .venv/bin/python scripts/apply_review.py     # scrive data/zones.json
 ```
 

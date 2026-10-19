@@ -1,6 +1,8 @@
 """Fase 2: dal CSV revisionato a data/zones.json (formato letto dall'app).
 
-Tiene solo le righe con tieni = si. Per ogni zona aggiunge l'aeroporto di riferimento
+Tiene solo le righe con tieni = si. Se compilate, nome_manuale ed esposizione_manuale
+prendono il posto di nome ed esposizione_gradi (nome_manuale: "Nome" oppure "Nome · Regione";
+senza regione resta quella proposta). Per ogni zona aggiunge l'aeroporto di riferimento
 (il più vicino con voli di linea, da OurAirports) e i parametri demo per i dati onda finti
 di getZoneWeeks, che spariranno in fase 3.
 
@@ -101,16 +103,25 @@ def main():
             sys.exit(f"id ripetuto nel CSV: {zid}")
         ids.add(zid)
         lat, lon = num(r["lat"]), num(r["lon"])
+        # le colonne *_manuale, se compilate, vincono su quelle calcolate
         name, _, region = r["nome"].partition(" · ")
+        manual = (r.get("nome_manuale") or "").strip()
+        if manual:
+            m_name, sep, m_region = manual.partition(" · ")
+            name, region = m_name, (m_region if sep else region)
         country = r["paese"].strip()
-        expo = r["esposizione_gradi"].strip()
+        expo = (r.get("esposizione_manuale") or "").strip() or r["esposizione_gradi"].strip()
+        try:
+            expo = int(round(num(expo))) % 360 if expo else None
+        except ValueError:
+            sys.exit(f"{zid}: esposizione non valida {expo!r} (servono gradi 0-359)")
         apt = min(airports, key=lambda p: km(lat, lon, p["lat"], p["lon"]))
         airport = {"code": apt["code"], "lat": apt["lat"], "lon": apt["lon"]}
         if country in NEAR_EUROPE:
             airport["nearEurope"] = True
         zones.append({"id": zid, "name": name.strip(), "region": ", ".join(x for x in (country, region.strip()) if x),
                       "lat": round(lat, 4), "lon": round(lon, 4), "spots": int(r["n_spot"]),
-                      "exposure": int(num(expo)) % 360 if expo else None,
+                      "exposure": expo,
                       "airport": airport, "demo": demo_params(zid, lat)})
 
     OUT.write_text(json.dumps(zones, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

@@ -19,6 +19,9 @@ RAW = ROOT / "data/raw/spots_raw.json"
 RAW_URL = "https://gist.githubusercontent.com/naotokui/01c384bf58ca43261eafe6a5e2ad6e85/raw"
 LAND = ROOT / "data/land-50m.json"
 OUT = ROOT / "data/review/zones_candidates.csv"
+# le colonne *_manuale, tieni e note sono della revisione a mano: lo script le lascia vuote
+COLUMNS = ["id", "nome", "nome_manuale", "paese", "lat", "lon", "n_spot", "esposizione_gradi", "esposizione_manuale", "tieni", "note"]
+MANUAL_COLS = ["nome_manuale", "esposizione_manuale", "tieni", "note"]
 
 R_EARTH = 6371.0
 LAND_MAX_KM = 10      # spot sulla terraferma più lontano di così dalla costa: scartato (fiumi, laghi, errori)
@@ -238,8 +241,8 @@ def main():
 
     if OUT.exists() and not a.force:
         with OUT.open(encoding="utf-8-sig") as f:
-            if any(r.get("tieni", "").strip() or r.get("note", "").strip() for r in csv.DictReader(f, delimiter=";")):
-                sys.exit(f"{OUT.relative_to(ROOT)} contiene già una revisione (tieni/note compilati). Usa --force per sovrascriverlo.")
+            if any((r.get(c) or "").strip() for r in csv.DictReader(f, delimiter=";") for c in MANUAL_COLS):
+                sys.exit(f"{OUT.relative_to(ROOT)} contiene già una revisione ({', '.join(MANUAL_COLS)}). Usa --force per sovrascriverlo.")
 
     if not RAW.exists():
         RAW.parent.mkdir(parents=True, exist_ok=True)
@@ -285,10 +288,10 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f, delimiter=";")
-        w.writerow(["id", "nome", "paese", "lat", "lon", "n_spot", "esposizione_gradi", "tieni", "note"])
+        w.writerow(COLUMNS)
         for r in rows:
-            w.writerow([r["id"], r["nome"], r["paese"], fmt(r["lat"], 4), fmt(r["lon"], 4), r["n_spot"],
-                        "" if r["esposizione_gradi"] is None else r["esposizione_gradi"], "", ""])
+            w.writerow([r["id"], r["nome"], "", r["paese"], fmt(r["lat"], 4), fmt(r["lon"], 4), r["n_spot"],
+                        "" if r["esposizione_gradi"] is None else r["esposizione_gradi"], "", "", ""])
     sizes = [r["n_spot"] for r in rows]
     print(f"zone {len(rows)} (raggio {a.raggio:g} km): con 1 spot {sizes.count(1)}, max {max(sizes)}, "
           f"senza esposizione {sum(r['esposizione_gradi'] is None for r in rows)}")
