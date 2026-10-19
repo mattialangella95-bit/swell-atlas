@@ -4,6 +4,8 @@ Atlante delle stagioni surf: un globo con le zone colorate per qualità media de
 
 Sito statico (HTML + CSS + JS, nessun build), pubblicato su GitHub Pages. Librerie da CDN: D3 7 e topojson-client 3.
 
+Online: https://mattialangella95-bit.github.io/swell-atlas/
+
 ## Struttura
 
 ```
@@ -14,6 +16,7 @@ data/
   zones.json        zone surf: coordinate, aeroporto, parametri demo
   airports.json     aeroporti di partenza
   scale.json        scala qualità Flat → Epic (indice 0-9, colore)
+  flight-estimate.json  parametri della stima finta di ore di volo e prezzi
   land-50m.json     coste Natural Earth 1:50m (world-atlas, TopoJSON)
   land-110m.json    coste 1:110m, usate durante trascinamento e animazioni
 README.md
@@ -33,7 +36,7 @@ poi http://localhost:8000
 
 ## Fasi
 
-1. **Base** — prototipo trasformato in progetto: file separati, dati in JSON, GitHub Pages. *(in corso)*
+1. **Base** — prototipo trasformato in progetto: file separati, dati in JSON, GitHub Pages. *(completata)*
 2. **Zone** — lista zone ampliata e curata (spot, coordinate, aeroporto di riferimento).
 3. **Onde ERA5** — medie storiche 20-30 anni da ERA5 Copernicus, calcolate offline in un JSON per zona e settimana; sostituisce `getZoneWeeks()`.
 4. **Ore di volo** — aeroporti e rotte da OurAirports al posto della stima da distanza.

@@ -1,4 +1,4 @@
-// Swell Atlas. Nessun dato qui dentro: zone, aeroporti, scala e coste arrivano da data/*.json
+// Swell Atlas. Nessun dato qui dentro: zone, aeroporti, scala, stima voli e coste arrivano da data/*.json
 const MESI=["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"];
 const $=id=>document.getElementById(id);
 
@@ -8,10 +8,10 @@ async function loadJSON(path){
   if(!r.ok)throw new Error(path+": HTTP "+r.status);
   return r.json();
 }
-let ZONES,DEPS,SCALE,LAND50,LAND110;
+let ZONES,DEPS,SCALE,FLY,LAND50,LAND110;
 try{
-  [ZONES,DEPS,SCALE,LAND50,LAND110]=await Promise.all(
-    ["data/zones.json","data/airports.json","data/scale.json","data/land-50m.json","data/land-110m.json"].map(loadJSON));
+  [ZONES,DEPS,SCALE,FLY,LAND50,LAND110]=await Promise.all(
+    ["data/zones.json","data/airports.json","data/scale.json","data/flight-estimate.json","data/land-50m.json","data/land-110m.json"].map(loadJSON));
 }catch(err){
   $("zn").textContent="Dati non caricati";
   $("zs").textContent="Apri il sito tramite un server (es. python3 -m http.server), non come file locale.";
@@ -119,13 +119,13 @@ cv.addEventListener("pointerup",endP);cv.addEventListener("pointercancel",e=>{en
 function km(a,b){return d3.geoDistance([a.lon,a.lat],[b.airport.lon,b.airport.lat])*6371}
 function flight(d,z){
   const dist=km(d,z);
-  let stops=dist<3500?(d.hub?0:1):dist<7500?1:2;
+  const [near,far]=FLY.stopsDistanceKm,P=FLY.price;
+  let stops=dist<near?(d.hub?0:1):dist<far?1:2;
   if(z.airport.nearEurope)stops=d.hub?0:1;
-  const hrs=dist/820+.6+stops*2.3;
-  const baseP=Math.round((90+dist*.085+stops*60)/10)*10;
-  const season=[1.0,.85,.9,1.0,1.0,1.15,1.45,1.6,1.1,.9,.85,1.3];
+  const hrs=dist/FLY.speedKmh+FLY.fixedHours+stops*FLY.hoursPerStop;
+  const baseP=Math.round((P.base+dist*P.perKm+stops*P.perStop)/10)*10;
   const r=rnd(d.code+z.id);
-  const months=season.map(s=>Math.round(baseP*s*(.9+r()*.2)/10)*10);
+  const months=P.monthFactor.map(s=>Math.round(baseP*s*(P.noiseMin+r()*P.noiseRange)/10)*10);
   return{dist,stops,hrs,months};
 }
 
