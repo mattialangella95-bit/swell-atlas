@@ -1,10 +1,10 @@
 // Accesso con link via mail (magic link di Supabase Auth). Senza configurazione o senza login
 // l'app funziona tutta; l'account serve solo per preferiti e profilo.
-import {SUPABASE_URL, SUPABASE_ANON_KEY} from "./supabase-config.js";
+import {SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY} from "./supabase-config.js";
 
 const SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/+esm";
 const $ = id => document.getElementById(id);
-export const configured = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
+export const configured = !!(SUPABASE_URL && SUPABASE_PUBLISHABLE_KEY);
 
 let client = null, user = null;
 const listeners = [];
@@ -13,7 +13,7 @@ export async function supabase(){
   if(!configured) return null;
   if(!client){
     const {createClient} = await import(SUPABASE_JS);
-    client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {auth:{persistSession:true, detectSessionInUrl:true}});
+    client = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {auth:{persistSession:true, detectSessionInUrl:true}});
   }
   return client;
 }

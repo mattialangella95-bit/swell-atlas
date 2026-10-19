@@ -46,6 +46,7 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Le zone hanno `airport_main` (usato per i voli) e `airport_local`. Le partenze italiane si rigenerano con `scripts/build_airports.py`.
 
 ## Supabase
+- Progetto dedicato "Swell Atlas": `https://macixwnxvlyhqbqvypao.supabase.co`, chiavi nuove (publishable e secret, non le legacy anon/service_role).
 - Tabelle solo con prefisso `swell_` (il progetto può essere condiviso con altre app). Ogni modifica allo schema è una nuova migrazione in `supabase/migrations/`, che esegue Mattia; non modificare le migrazioni già eseguite.
 - Row Level Security sempre attiva: profilo e preferiti solo propri, segnalazioni solo in inserimento.
 - La publishable key può stare in `supabase-config.js`; la secret key MAI nel repository o nel codice del sito, solo in `.env` (in `.gitignore`). Non leggere né stampare `.env`.

@@ -3,7 +3,12 @@
 ## 2026-10-19 — Chiavi Supabase
 
 ### Fatto
-- Publishable key in `supabase-config.js` (è pubblica: i permessi li decide la RLS). Manca ancora il Project URL: finché è vuoto l'app considera Supabase non configurato e funziona come prima.
+- Progetto Supabase dedicato "Swell Atlas" (`https://macixwnxvlyhqbqvypao.supabase.co`), chiavi nuove (non legacy). URL e publishable key in `supabase-config.js` (costante rinominata `SUPABASE_PUBLISHABLE_KEY`) e in `.env`.
+- Verifiche:
+  - `/auth/v1/settings` risponde con la publishable key, accesso via email attivo;
+  - nell'app supabase-js 2.116.0 crea il client e apre la sessione senza errori, e la richiesta arriva al database;
+  - le tabelle `swell_*` non esistono ancora: la migrazione va eseguita.
+- La publishable key può stare nel codice: è pubblica, i permessi li decide la RLS.
 - `.env` creato (fuori da git, verificato con `git check-ignore`, permessi 600) con publishable key, URL vuoto e riga della secret key vuota con le istruzioni.
 - Variabili allineate ai nomi nuovi di Supabase: `SUPABASE_PUBLISHABLE_KEY` e `SUPABASE_SECRET_KEY` (i vecchi `SUPABASE_ANON_KEY` e `SUPABASE_SERVICE_ROLE_KEY` restano validi). Le chiavi `sb_…` non sono JWT: gli script le mandano solo nell'header `apikey`.
 - supabase-js portato da 2.45.4 (2024, prima delle publishable key) a 2.116.0.
