@@ -1,5 +1,21 @@
 # Diario
 
+## 2026-10-19 — Id zona stabili
+
+### Fatto
+- Verifica: gli id nascevano da paese + spot centrale del clustering, quindi cambiavano con piccole variazioni dei dati. Su 5 prove per tipo, id delle 150 zone persi:
+
+  | Variazione | Senza registro | Con registro |
+  |---|---|---|
+  | tolgo l'1% degli spot | 4,0 | 0 |
+  | sposto le coordinate di ~100 m | 14,0 | 0,8 |
+  | aggiungo 50 spot | 4,8 | 0,4 |
+
+- `data/zone-ids.json`: registro degli id assegnati (paese, centro, esposizione), creato dagli id attuali, che sono già usati da `zones.json`, dal clima e dai download. `build_zones.py` abbina le zone ricalcolate agli id esistenti: stesso paese, esposizione compatibile, entro 30 km e poi un secondo giro entro 60. Gli id non si riusano mai.
+- Le perdite rimaste sono fusioni vere (due zone che diventano una). Il registro annota `unito_a`, `apply_review.py` mette gli id vecchi in `aliases` dentro `zones.json` e i preferiti salvati con un id vecchio finiscono sulla zona nuova.
+- `build_zones.py --force` ora riporta la revisione (colonne manuali, tieni, note) nel nuovo CSV per id. Rilanciato sui dati veri: CSV e `zones.json` identici byte per byte.
+
+
 ## 2026-10-19 — Fase 3, passaggio a Copernicus
 
 ### Fatto

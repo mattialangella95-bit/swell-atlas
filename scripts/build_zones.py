@@ -19,6 +19,8 @@ RAW = ROOT / "data/raw/spots_raw.json"
 RAW_URL = "https://gist.githubusercontent.com/naotokui/01c384bf58ca43261eafe6a5e2ad6e85/raw"
 LAND = ROOT / "data/land-50m.json"
 OUT = ROOT / "data/review/zones_candidates.csv"
+ID_REGISTRY = ROOT / "data/zone-ids.json"   # id già assegnati: preferiti e segnalazioni li usano, non devono cambiare
+MATCH_KM = (30, 60)   # una zona ricalcolata riprende un id esistente (stesso paese) entro 30 km; secondo giro fino a 60
 # le colonne *_manuale, tieni e note sono della revisione a mano: lo script le lascia vuote
 COLUMNS = ["id", "nome", "nome_manuale", "paese", "lat", "lon", "n_spot", "esposizione_gradi", "esposizione_manuale",
            "aeroporto_manuale", "tieni", "note"]
@@ -230,28 +232,11 @@ def center(spots):
     return math.degrees(math.atan2(z, math.hypot(x, y))), math.degrees(math.atan2(y, x))
 
 
-def fmt(v, nd):
-    return "" if v is None else f"{v:.{nd}f}".replace(".", ",")
-
-
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--raggio", type=float, default=60, help="raggio zona in km (default 60)")
-    ap.add_argument("--force", action="store_true", help="sovrascrive il CSV anche se contiene una revisione")
-    a = ap.parse_args()
-
-    if OUT.exists() and not a.force:
-        with OUT.open(encoding="utf-8-sig") as f:
-            if any((r.get(c) or "").strip() for r in csv.DictReader(f, delimiter=";") for c in MANUAL_COLS):
-                sys.exit(f"{OUT.relative_to(ROOT)} contiene già una revisione ({', '.join(MANUAL_COLS)}). Usa --force per sovrascriverlo.")
-
-    if not RAW.exists():
-        RAW.parent.mkdir(parents=True, exist_ok=True)
-        print("scarico", RAW_URL)
-        urllib.request.urlretrieve(RAW_URL, RAW)
-    raw = json.loads(RAW.read_text())
+def build_rows(raw, radius, verbose=True):
+    """Spot grezzi -> righe zona (id provvisorio da paese + spot centrale), ordinate per numero di spot."""
+    say = print if verbose else (lambda *x: None)
     spots, bad = parse_spots(raw)
-    print(f"spot grezzi {len(raw)}, coordinate non valide {bad}")
+    say(f"spot grezzi {len(raw)}, coordinate non valide {bad}")
 
     land = load_land(LAND)
     tree, pieces = coast_index(land)
@@ -259,18 +244,18 @@ def main():
     on_land = shapely.contains_xy(land, lon, lat)
     dist = coast_distance_km(lat, lon, tree, pieces)
     inland = on_land & (dist > LAND_MAX_KM)
-    print(f"sulla terraferma a più di {LAND_MAX_KM} km dalla costa: {int(inland.sum())} scartati")
+    say(f"sulla terraferma a più di {LAND_MAX_KM} km dalla costa: {int(inland.sum())} scartati")
     spots = [s for s, x in zip(spots, inland) if not x]
 
     n0 = len(spots)
     spots = dedupe(spots)
-    print(f"doppioni scartati {n0 - len(spots)}, spot validi {len(spots)}")
+    say(f"doppioni scartati {n0 - len(spots)}, spot validi {len(spots)}")
 
     expo = exposure(np.array([s["lat"] for s in spots]), np.array([s["lon"] for s in spots]), land)
     for s, e in zip(spots, expo):
         s["expo"] = e
 
-    zones = cluster(spots, a.raggio)
+    zones = cluster(spots, radius)
     rows, used = [], Counter()
     for z in zones:
         lead = z["leader"]
@@ -285,14 +270,114 @@ def main():
                      "lat": lat_c, "lon": lon_c, "n_spot": len(z["spots"]),
                      "esposizione_gradi": circular_mean([s["expo"] for s in z["spots"]])})
     rows.sort(key=lambda r: (-r["n_spot"], r["id"]))
+    return rows
+
+
+def assign_ids(rows, registry, dry_run=False):
+    """Rende stabili gli id. Ogni riga riprende l'id del registro più vicino (stesso paese, esposizione
+    compatibile, entro 30 km e poi in un secondo giro entro 60); abbinamento uno a uno per distanza crescente. Le zone nuove ricevono un id
+    nuovo (paese + spot centrale, con suffisso se già usato) e finiscono nel registro. Gli id del registro
+    non si riusano mai, nemmeno se la loro zona sparisce."""
+    if dry_run:   # prova senza toccare il registro passato
+        registry = json.loads(json.dumps(registry))
+    reg = registry.setdefault("zones", {})
+    pairs = []
+    for i, r in enumerate(rows):
+        for zid, a in reg.items():
+            if a["paese"] != r["paese"] or not same_side(a.get("esposizione"), r["esposizione_gradi"]):
+                continue
+            d = float(haversine(r["lat"], r["lon"], a["lat"], a["lon"]))
+            if d <= MATCH_KM[-1]:
+                pairs.append((d, i, zid))
+    taken_rows, taken_ids, out = set(), set(), [None] * len(rows)
+    # primo giro vicino, poi un giro più largo per le coste continue dove i confini delle zone scivolano
+    for limit in MATCH_KM:
+        for d, i, zid in sorted(pairs):
+            if d > limit or i in taken_rows or zid in taken_ids:
+                continue
+            taken_rows.add(i); taken_ids.add(zid)
+            out[i] = {**rows[i], "id": zid}
+    today = __import__("datetime").date.today().isoformat()
+    for i, r in enumerate(rows):
+        if out[i]:
+            continue
+        base = re.sub(r"-\d+$", "", r["id"]); zid, n = base, 1
+        while zid in reg:
+            n += 1; zid = f"{base}-{n}"
+        reg[zid] = {"paese": r["paese"], "lat": round(r["lat"], 4), "lon": round(r["lon"], 4),
+                    "esposizione": r["esposizione_gradi"], "nome": r["nome"], "assegnato": today}
+        out[i] = {**r, "id": zid}
+    # id che non trovano più una zona (fusioni): si annota in quale zona sono confluiti,
+    # così preferiti e segnalazioni vecchie restano raggiungibili (alias in zones.json)
+    current = {o["id"] for o in out}
+    for zid, a in reg.items():
+        if zid in current:
+            a.pop("unito_a", None); continue
+        near = [(float(haversine(a["lat"], a["lon"], o["lat"], o["lon"])), o["id"]) for o in out if o["paese"] == a["paese"]]
+        near = [x for x in near if x[0] <= MATCH_KM[-1]]
+        if near:
+            a["unito_a"] = min(near)[1]
+    return out
+
+
+def registry_from_csv():
+    """Primo registro: gli id del CSV attuale, già usati da zones.json, climate.json e dai dati scaricati."""
+    import apply_review
+    _, rows = apply_review.read_csv(OUT)
+    num = lambda v: float(str(v).replace(",", "."))
+    return {"_note": "Id zona assegnati, con il punto di riferimento usato per riconoscerle. Non cancellare righe: "
+                     "preferiti e segnalazioni su Supabase usano questi id.",
+            "zones": {r["id"]: {"paese": r["paese"], "lat": num(r["lat"]), "lon": num(r["lon"]),
+                                "esposizione": int(r["esposizione_gradi"]) if r["esposizione_gradi"].strip() else None,
+                                "nome": r["nome"], "assegnato": "2026-10-19"} for r in rows}}
+
+
+def fmt(v, nd):
+    return "" if v is None else f"{v:.{nd}f}".replace(".", ",")
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--raggio", type=float, default=60, help="raggio zona in km (default 60)")
+    ap.add_argument("--force", action="store_true", help="riscrive il CSV anche se contiene una revisione (che viene riportata per id)")
+    a = ap.parse_args()
+
+    if OUT.exists() and not a.force:
+        with OUT.open(encoding="utf-8-sig") as f:
+            if any((r.get(c) or "").strip() for r in csv.DictReader(f, delimiter=";") for c in MANUAL_COLS):
+                sys.exit(f"{OUT.relative_to(ROOT)} contiene già una revisione ({', '.join(MANUAL_COLS)}). "
+                         "Usa --force: la revisione passa al nuovo CSV per id.")
+
+    if not RAW.exists():
+        RAW.parent.mkdir(parents=True, exist_ok=True)
+        print("scarico", RAW_URL)
+        urllib.request.urlretrieve(RAW_URL, RAW)
+    raw = json.loads(RAW.read_text())
+    rows = build_rows(raw, a.raggio)
+
+    registry = json.loads(ID_REGISTRY.read_text()) if ID_REGISTRY.exists() else registry_from_csv()
+    n_before = len(registry.get("zones", {}))
+    rows = assign_ids(rows, registry)
+    rows.sort(key=lambda r: (-r["n_spot"], r["id"]))
+    ID_REGISTRY.write_text(json.dumps(registry, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(f"id: {len(rows) - (len(registry['zones']) - n_before)} ripresi dal registro, "
+          f"{len(registry['zones']) - n_before} nuovi ({ID_REGISTRY.relative_to(ROOT)})")
+
+    # con --force la revisione già fatta (colonne manuali, tieni, note) passa al nuovo CSV per id
+    old = {}
+    if OUT.exists():
+        import apply_review
+        old = {r["id"]: r for r in apply_review.read_csv(OUT)[1]}
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f, delimiter=";")
         w.writerow(COLUMNS)
         for r in rows:
-            w.writerow([r["id"], r["nome"], "", r["paese"], fmt(r["lat"], 4), fmt(r["lon"], 4), r["n_spot"],
-                        "" if r["esposizione_gradi"] is None else r["esposizione_gradi"], "", "", "", ""])
+            m = old.get(r["id"], {})
+            w.writerow([r["id"], r["nome"], m.get("nome_manuale", ""), r["paese"], fmt(r["lat"], 4), fmt(r["lon"], 4), r["n_spot"],
+                        "" if r["esposizione_gradi"] is None else r["esposizione_gradi"], m.get("esposizione_manuale", ""),
+                        m.get("aeroporto_manuale", ""), m.get("tieni", ""), m.get("note", "")])
     sizes = [r["n_spot"] for r in rows]
     print(f"zone {len(rows)} (raggio {a.raggio:g} km): con 1 spot {sizes.count(1)}, max {max(sizes)}, "
           f"senza esposizione {sum(r['esposizione_gradi'] is None for r in rows)}")

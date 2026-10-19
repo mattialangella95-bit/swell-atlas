@@ -23,6 +23,7 @@ from build_airports import km, load_by_iata, load_scheduled
 ROOT = Path(__file__).resolve().parent.parent
 CSV = ROOT / "data/review/zones_candidates.csv"
 OUT = ROOT / "data/zones.json"
+ID_REGISTRY = ROOT / "data/zone-ids.json"
 
 YES = {"si", "sì", "s", "x", "1", "yes", "y"}
 MAIN_KM = 300   # raggio per l'aeroporto principale (internazionale) di una zona
@@ -119,6 +120,16 @@ def main():
                       "exposure": expo,
                       "airport_main": airport_info(main_apt), "airport_local": airport_info(local_apt)})
 
+    # alias: id di zone confluite in un'altra (registro di build_zones.py), per non rompere preferiti e segnalazioni
+    if ID_REGISTRY.exists():
+        reg = json.loads(ID_REGISTRY.read_text())["zones"]
+        def final(i, seen=()):
+            j = reg.get(i, {}).get("unito_a")
+            return i if not j or j in seen else final(j, seen + (i,))
+        for z in zones:
+            al = sorted(i for i in reg if i != z["id"] and reg[i].get("unito_a") and final(i) == z["id"])
+            if al:
+                z["aliases"] = al
     OUT.write_text(json.dumps(zones, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     d = lambda z: km(z["lat"], z["lon"], z["airport_main"]["lat"], z["airport_main"]["lon"])
     changed = sum(z["airport_main"]["code"] != z["airport_local"]["code"] for z in zones)

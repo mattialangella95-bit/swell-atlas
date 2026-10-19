@@ -14,6 +14,7 @@ style.css           stili (tema chiaro/scuro)
 app.js              logica: globo, timeline, pannello zona, stima voli
 data/
   zones.json        zone surf (generato da scripts/apply_review.py)
+  zone-ids.json     registro degli id zona stabili (generato da scripts/build_zones.py)
   climate.json      climatologia settimanale per zona (generato da scripts/build_climate.py)
   quality-rule.json soglie della regola qualità (Flat → Epic)
   airports.json     partenze italiane (generato da scripts/build_airports.py)
@@ -57,7 +58,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python scripts/apply_review.py     # scrive data/zones.json
 ```
 
-`build_zones.py` non sovrascrive un CSV già revisionato (serve `--force`). `apply_review.py --preseleziona N` segna "si" sulle N zone con più spot, utile come punto di partenza.
+`build_zones.py` non sovrascrive un CSV già revisionato: con `--force` lo riscrive e riporta la revisione per id. Gli id restano stabili tra un ricalcolo e l'altro (registro `data/zone-ids.json`). `apply_review.py --preseleziona N` segna "si" sulle N zone con più spot, utile come punto di partenza.
 
 Fonti: spot dal gist pubblico di naotokui (~5900 spot), coste Natural Earth, aeroporti OurAirports.
 

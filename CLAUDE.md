@@ -23,6 +23,7 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 ## Script dati (Python)
 - Venv in `.venv`, dipendenze in `requirements.txt` (solo shapely). Lancia con `.venv/bin/python scripts/...`.
 - `data/zones.json` non si modifica a mano: si rigenera con `scripts/build_zones.py` -> revisione di `data/review/zones_candidates.csv` -> `scripts/apply_review.py`.
+- Gli id zona sono stabili grazie a `data/zone-ids.json`: preferiti e segnalazioni su Supabase li usano. Non cancellare righe dal registro e non rinominare id a mano; le zone confluite restano raggiungibili come `aliases`.
 - Il CSV di revisione è di Mattia: non sovrascriverlo se ha `nome_manuale`, `esposizione_manuale`, `tieni` o `note` compilati. Le colonne `*_manuale` vincono su quelle calcolate.
 - `data/raw/` contiene solo download, non è versionata.
 - Onde: le soglie della regola qualità stanno solo in `data/quality-rule.json`, mai nel codice. I dati orari passano dal formato intermedio parquet (`data/raw/waves/<id>.parquet`) sia da Open-Meteo (`fetch_waves.py`) sia da Copernicus (`era5_cds.py`); `build_climate.py` scrive `data/climate.json`.

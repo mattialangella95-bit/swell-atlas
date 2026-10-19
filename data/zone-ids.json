@@ -1,0 +1,8109 @@
+{
+ "_note": "Id zona assegnati, con il punto di riferimento usato per riconoscerle. Non cancellare righe: preferiti e segnalazioni su Supabase usano questi id.",
+ "zones": {
+  "australia-blue-bay": {
+   "paese": "Australia",
+   "lat": -33.4369,
+   "lon": 151.465,
+   "esposizione": 115,
+   "nome": "Blue Bay · NSW, Central",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-blinkklip-reef": {
+   "paese": "South Africa",
+   "lat": -34.1153,
+   "lon": 18.5901,
+   "esposizione": 232,
+   "nome": "Blinkklip Reef · Cape Town",
+   "assegnato": "2026-10-19"
+  },
+  "australia-spooks": {
+   "paese": "Australia",
+   "lat": -38.3792,
+   "lon": 144.7181,
+   "esposizione": 179,
+   "nome": "Spooks · VIC, Melbourne East",
+   "assegnato": "2026-10-19"
+  },
+  "australia-comerong-island": {
+   "paese": "Australia",
+   "lat": -34.9046,
+   "lon": 150.7336,
+   "esposizione": 111,
+   "nome": "Comerong island · NSW, South Coast",
+   "assegnato": "2026-10-19"
+  },
+  "usa-cassidy": {
+   "paese": "USA",
+   "lat": 33.0769,
+   "lon": -117.3964,
+   "esposizione": 241,
+   "nome": "Cassidy · California, San Diego County",
+   "assegnato": "2026-10-19"
+  },
+  "usa-manhattan-26th-street": {
+   "paese": "USA",
+   "lat": 33.8482,
+   "lon": -118.4266,
+   "esposizione": 214,
+   "nome": "Manhattan 26th street · California, LA County",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-tingua": {
+   "paese": "Brazil",
+   "lat": -27.3648,
+   "lon": -48.5209,
+   "esposizione": 89,
+   "nome": "Tingua · Santa Catarina North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-garden-island": {
+   "paese": "Australia",
+   "lat": -32.1188,
+   "lon": 115.6795,
+   "esposizione": 268,
+   "nome": "Garden Island · WA, Perth City",
+   "assegnato": "2026-10-19"
+  },
+  "france-audierne-la-gamelle": {
+   "paese": "France",
+   "lat": 48.0656,
+   "lon": -4.4732,
+   "esposizione": 240,
+   "nome": "Audierne - La Gamelle · Brittany South",
+   "assegnato": "2026-10-19"
+  },
+  "australia-blackrocks": {
+   "paese": "Australia",
+   "lat": -28.3491,
+   "lon": 153.5363,
+   "esposizione": 83,
+   "nome": "Blackrocks · NSW, North",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-magoito": {
+   "paese": "Portugal",
+   "lat": 38.8886,
+   "lon": -9.3491,
+   "esposizione": 261,
+   "nome": "Magoito · Central Lisboa",
+   "assegnato": "2026-10-19"
+  },
+  "france-le-penon": {
+   "paese": "France",
+   "lat": 43.6411,
+   "lon": -1.5038,
+   "esposizione": 304,
+   "nome": "Le Penon · Landes",
+   "assegnato": "2026-10-19"
+  },
+  "australia-isolators": {
+   "paese": "Australia",
+   "lat": -33.7753,
+   "lon": 115.0644,
+   "esposizione": 287,
+   "nome": "Isolators · WA, Margaret River North",
+   "assegnato": "2026-10-19"
+  },
+  "usa-carpinteria-beach": {
+   "paese": "USA",
+   "lat": 34.3379,
+   "lon": -119.6015,
+   "esposizione": 201,
+   "nome": "Carpinteria Beach · California, Santa Barbara",
+   "assegnato": "2026-10-19"
+  },
+  "usa-dutches-wedge": {
+   "paese": "USA",
+   "lat": 39.3048,
+   "lon": -74.5192,
+   "esposizione": 128,
+   "nome": "Dutches Wedge · North East, New Jersey",
+   "assegnato": "2026-10-19"
+  },
+  "spain-islares": {
+   "paese": "Spain",
+   "lat": 43.43,
+   "lon": -3.364,
+   "esposizione": 1,
+   "nome": "Islares · Cantabria",
+   "assegnato": "2026-10-19"
+  },
+  "uk-boobies": {
+   "paese": "UK",
+   "lat": 50.4782,
+   "lon": -5.0353,
+   "esposizione": 300,
+   "nome": "Boobies · Cornwall West",
+   "assegnato": "2026-10-19"
+  },
+  "france-oleron-vert-bois-les-allassins": {
+   "paese": "France",
+   "lat": 45.8736,
+   "lon": -1.2558,
+   "esposizione": 253,
+   "nome": "Oléron - Vert bois - Les Allassins · Charente maritime",
+   "assegnato": "2026-10-19"
+  },
+  "japan-hitotsuba": {
+   "paese": "Japan",
+   "lat": 31.9347,
+   "lon": 131.4962,
+   "esposizione": 109,
+   "nome": "Hitotsuba · Kyushu",
+   "assegnato": "2026-10-19"
+  },
+  "australia-broulee-north": {
+   "paese": "Australia",
+   "lat": -35.8114,
+   "lon": 150.2536,
+   "esposizione": 109,
+   "nome": "Broulee North · NSW, Far South",
+   "assegnato": "2026-10-19"
+  },
+  "usa-scott-s-creek": {
+   "paese": "USA",
+   "lat": 36.9557,
+   "lon": -122.08,
+   "esposizione": 242,
+   "nome": "Scott's Creek · California, Santa Cruz",
+   "assegnato": "2026-10-19"
+  },
+  "australia-austinmer-beach": {
+   "paese": "Australia",
+   "lat": -34.1326,
+   "lon": 151.0952,
+   "esposizione": 115,
+   "nome": "Austinmer Beach · NSW, Sydney South",
+   "assegnato": "2026-10-19"
+  },
+  "australia-noosa-main-beach": {
+   "paese": "Australia",
+   "lat": -26.4799,
+   "lon": 153.1168,
+   "esposizione": 83,
+   "nome": "Noosa Main Beach · QLD, Sunshine Coast",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-laguna": {
+   "paese": "Brazil",
+   "lat": -28.3244,
+   "lon": -48.7313,
+   "esposizione": 114,
+   "nome": "Laguna · Santa Catarina",
+   "assegnato": "2026-10-19"
+  },
+  "chile-cap-ducal": {
+   "paese": "Chile",
+   "lat": -33.0368,
+   "lon": -71.5719,
+   "esposizione": 278,
+   "nome": "Cap Ducal · Central Santiago",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-camboinhas": {
+   "paese": "Brazil",
+   "lat": -22.9859,
+   "lon": -43.1748,
+   "esposizione": 170,
+   "nome": "Camboinhas · Rio de Janeiro City",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-a-ver-o-mar": {
+   "paese": "Portugal",
+   "lat": 41.2988,
+   "lon": -8.7391,
+   "esposizione": 265,
+   "nome": "A-ver-o-mar · North Porto",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-pirata-or-ponta-do-levante": {
+   "paese": "Portugal",
+   "lat": 37.0559,
+   "lon": -8.4694,
+   "esposizione": 195,
+   "nome": "Pirata or Ponta do Levante · Algarve",
+   "assegnato": "2026-10-19"
+  },
+  "spain-bastiagueiro": {
+   "paese": "Spain",
+   "lat": 43.4376,
+   "lon": -8.4135,
+   "esposizione": 328,
+   "nome": "Bastiagueiro · Galicia",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-lagoinha": {
+   "paese": "Brazil",
+   "lat": -23.5842,
+   "lon": -45.2003,
+   "esposizione": 156,
+   "nome": "Lagoinha · Sao Paulo North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "france-grand-crohot": {
+   "paese": "France",
+   "lat": 44.7702,
+   "lon": -1.2326,
+   "esposizione": 276,
+   "nome": "Grand Crohot · Gironde",
+   "assegnato": "2026-10-19"
+  },
+  "peru-ala-moana": {
+   "paese": "Peru",
+   "lat": -12.2055,
+   "lon": -76.9502,
+   "esposizione": 239,
+   "nome": "Ala Moana · Lima",
+   "assegnato": "2026-10-19"
+  },
+  "usa-block-island": {
+   "paese": "USA",
+   "lat": 41.3432,
+   "lon": -71.518,
+   "esposizione": 156,
+   "nome": "Block Island · North East, Southern New England",
+   "assegnato": "2026-10-19"
+  },
+  "australia-seal-rocks-lighthouse-beach": {
+   "paese": "Australia",
+   "lat": -32.4339,
+   "lon": 152.3831,
+   "esposizione": 122,
+   "nome": "Seal Rocks-Lighthouse Beach · NSW, Mid North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-4-bobs": {
+   "paese": "Indonesia",
+   "lat": -1.9524,
+   "lon": 99.4098,
+   "esposizione": null,
+   "nome": "4 Bobs · Mentawai",
+   "assegnato": "2026-10-19"
+  },
+  "netherlands-langevelderslag": {
+   "paese": "Netherlands",
+   "lat": 52.2955,
+   "lon": 4.3821,
+   "esposizione": 298,
+   "nome": "Langevelderslag",
+   "assegnato": "2026-10-19"
+  },
+  "australia-turtles": {
+   "paese": "Australia",
+   "lat": -29.9083,
+   "lon": 153.2454,
+   "esposizione": 102,
+   "nome": "Turtles · NSW, Banana Coast",
+   "assegnato": "2026-10-19"
+  },
+  "french-polynesia-temae": {
+   "paese": "French Polynesia",
+   "lat": -17.5697,
+   "lon": -149.5614,
+   "esposizione": null,
+   "nome": "Temae · Tahiti",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-green-ball": {
+   "paese": "Indonesia",
+   "lat": -8.7026,
+   "lon": 115.2619,
+   "esposizione": 168,
+   "nome": "Green ball · Bali",
+   "assegnato": "2026-10-19"
+  },
+  "usa-klamath-rivermouth": {
+   "paese": "USA",
+   "lat": 41.565,
+   "lon": -124.1709,
+   "esposizione": 263,
+   "nome": "Klamath Rivermouth · California, Del Norte",
+   "assegnato": "2026-10-19"
+  },
+  "canary-el-centro": {
+   "paese": "Canary",
+   "lat": 28.974,
+   "lon": -13.7388,
+   "esposizione": 347,
+   "nome": "El centro · Lanzarote",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-montanita": {
+   "paese": "Ecuador",
+   "lat": -1.9296,
+   "lon": -80.8576,
+   "esposizione": 261,
+   "nome": "Montañita",
+   "assegnato": "2026-10-19"
+  },
+  "uk-pembrey-beach": {
+   "paese": "UK",
+   "lat": 51.5956,
+   "lon": -4.3106,
+   "esposizione": 223,
+   "nome": "Pembrey Beach · South Wales",
+   "assegnato": "2026-10-19"
+  },
+  "usa-ocean-isle": {
+   "paese": "USA",
+   "lat": 33.808,
+   "lon": -78.5364,
+   "esposizione": 141,
+   "nome": "Ocean Isle · South East, South Carolina",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-picama": {
+   "paese": "Brazil",
+   "lat": -26.4607,
+   "lon": -48.6195,
+   "esposizione": 89,
+   "nome": "Picama · Santa Catarina North",
+   "assegnato": "2026-10-19"
+  },
+  "france-anse-st-martin": {
+   "paese": "France",
+   "lat": 49.6064,
+   "lon": -1.7924,
+   "esposizione": 302,
+   "nome": "Anse st Martin · Normandy",
+   "assegnato": "2026-10-19"
+  },
+  "france-st-jean-de-monts": {
+   "paese": "France",
+   "lat": 46.7656,
+   "lon": -1.9602,
+   "esposizione": 234,
+   "nome": "St jean de monts · Vendee",
+   "assegnato": "2026-10-19"
+  },
+  "spain-montalvo-beach": {
+   "paese": "Spain",
+   "lat": 42.3398,
+   "lon": -8.9124,
+   "esposizione": 269,
+   "nome": "Montalvo Beach · Galicia",
+   "assegnato": "2026-10-19"
+  },
+  "usa-13th-street": {
+   "paese": "USA",
+   "lat": 28.1908,
+   "lon": -80.5694,
+   "esposizione": 74,
+   "nome": "13th Street · South East, North Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-7th-avenue": {
+   "paese": "USA",
+   "lat": 30.218,
+   "lon": -81.3494,
+   "esposizione": 79,
+   "nome": "7th Avenue · South East, North Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-fire-island-point-of-woods": {
+   "paese": "USA",
+   "lat": 40.6738,
+   "lon": -73.1932,
+   "esposizione": 158,
+   "nome": "Fire Island Point of Woods · North East, Long Island NY",
+   "assegnato": "2026-10-19"
+  },
+  "costa-rica-marbella": {
+   "paese": "Costa Rica",
+   "lat": 10.1176,
+   "lon": -85.7207,
+   "esposizione": 241,
+   "nome": "Marbella · Guanacaste",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-buarcos": {
+   "paese": "Portugal",
+   "lat": 40.1531,
+   "lon": -8.8908,
+   "esposizione": 283,
+   "nome": "Buarcos · North Beira",
+   "assegnato": "2026-10-19"
+  },
+  "usa-double-point": {
+   "paese": "USA",
+   "lat": 37.868,
+   "lon": -122.687,
+   "esposizione": 242,
+   "nome": "Double point · California, SF Marin",
+   "assegnato": "2026-10-19"
+  },
+  "usa-main-street": {
+   "paese": "USA",
+   "lat": 34.9916,
+   "lon": -120.6914,
+   "esposizione": 239,
+   "nome": "Main Street · California, San Luis Obispo",
+   "assegnato": "2026-10-19"
+  },
+  "israel-ha-arubot": {
+   "paese": "Israel",
+   "lat": 32.4352,
+   "lon": 34.8725,
+   "esposizione": 288,
+   "nome": "HA-ARUBOT",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-odeceixe": {
+   "paese": "Portugal",
+   "lat": 37.4972,
+   "lon": -8.8489,
+   "esposizione": 262,
+   "nome": "Odeceixe · Algarve",
+   "assegnato": "2026-10-19"
+  },
+  "puerto-rico-cochino": {
+   "paese": "Puerto Rico",
+   "lat": 18.4605,
+   "lon": -66.1973,
+   "esposizione": 10,
+   "nome": "Cochino",
+   "assegnato": "2026-10-19"
+  },
+  "seychelles-anse-kerlan": {
+   "paese": "Seychelles",
+   "lat": -4.5843,
+   "lon": 55.5952,
+   "esposizione": 203,
+   "nome": "Anse Kerlan · Mahe",
+   "assegnato": "2026-10-19"
+  },
+  "usa-abalolo-reef": {
+   "paese": "USA",
+   "lat": 21.3086,
+   "lon": -157.9461,
+   "esposizione": 198,
+   "nome": "Abalolo Reef · Hawaii, Oahu",
+   "assegnato": "2026-10-19"
+  },
+  "belgium-bay-of-heist": {
+   "paese": "Belgium",
+   "lat": 51.2638,
+   "lon": 3.0125,
+   "esposizione": 331,
+   "nome": "Bay of Heist",
+   "assegnato": "2026-10-19"
+  },
+  "costa-rica-perro-fino": {
+   "paese": "Costa Rica",
+   "lat": 9.6293,
+   "lon": -84.6549,
+   "esposizione": 215,
+   "nome": "Perro Fino · Pacific South",
+   "assegnato": "2026-10-19"
+  },
+  "france-belle-ile-en-mer-donnant": {
+   "paese": "France",
+   "lat": 47.583,
+   "lon": -3.2001,
+   "esposizione": 209,
+   "nome": "Belle Ile en Mer - Donnant · Brittany South",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-ansteys-beach": {
+   "paese": "South Africa",
+   "lat": -29.9131,
+   "lon": 30.9905,
+   "esposizione": 119,
+   "nome": "Ansteys Beach · Durban",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-doughnuts-backreef": {
+   "paese": "South Africa",
+   "lat": -34.014,
+   "lon": 25.3703,
+   "esposizione": 148,
+   "nome": "Doughnuts Backreef · South East Port Elizabeth",
+   "assegnato": "2026-10-19"
+  },
+  "usa-boiler-bay": {
+   "paese": "USA",
+   "lat": 44.8496,
+   "lon": -124.0424,
+   "esposizione": 274,
+   "nome": "Boiler bay · North West, Oregon North",
+   "assegnato": "2026-10-19"
+  },
+  "usa-graters": {
+   "paese": "USA",
+   "lat": 21.6151,
+   "lon": -157.9983,
+   "esposizione": 352,
+   "nome": "Graters · Hawaii, Oahu",
+   "assegnato": "2026-10-19"
+  },
+  "australia-bashams-bommie": {
+   "paese": "Australia",
+   "lat": -35.5739,
+   "lon": 138.5981,
+   "esposizione": 186,
+   "nome": "Bashams bommie · SA, York Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-asturias": {
+   "paese": "Brazil",
+   "lat": -23.9151,
+   "lon": -46.1435,
+   "esposizione": 156,
+   "nome": "Astúrias · Sao Paulo North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-bay-break": {
+   "paese": "Ireland",
+   "lat": 54.4356,
+   "lon": -8.6035,
+   "esposizione": 319,
+   "nome": "Bay Break · North West",
+   "assegnato": "2026-10-19"
+  },
+  "sri-lanka-devils-rock": {
+   "paese": "Sri Lanka",
+   "lat": 6.0059,
+   "lon": 80.3539,
+   "esposizione": 201,
+   "nome": "Devils rock",
+   "assegnato": "2026-10-19"
+  },
+  "usa-allenhurst": {
+   "paese": "USA",
+   "lat": 40.1324,
+   "lon": -74.0256,
+   "esposizione": 105,
+   "nome": "Allenhurst · North East, New Jersey",
+   "assegnato": "2026-10-19"
+  },
+  "usa-delray-public-beach": {
+   "paese": "USA",
+   "lat": 26.4301,
+   "lon": -80.071,
+   "esposizione": 93,
+   "nome": "Delray public beach · South East, South Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-plum-island": {
+   "paese": "USA",
+   "lat": 42.8181,
+   "lon": -70.7295,
+   "esposizione": 101,
+   "nome": "Plum Island · North East, Southern New England",
+   "assegnato": "2026-10-19"
+  },
+  "usa-sunset-beach": {
+   "paese": "USA",
+   "lat": 27.7598,
+   "lon": -82.7614,
+   "esposizione": 259,
+   "nome": "Sunset Beach · Gulf Coast, Florida",
+   "assegnato": "2026-10-19"
+  },
+  "australia-apollo-bay": {
+   "paese": "Australia",
+   "lat": -38.6862,
+   "lon": 143.735,
+   "esposizione": 158,
+   "nome": "Apollo Bay · VIC, Melbourne West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-clifton-beach": {
+   "paese": "Australia",
+   "lat": -43.0717,
+   "lon": 147.5726,
+   "esposizione": 141,
+   "nome": "Clifton Beach · TAS, Hobart",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-atlantida-pier": {
+   "paese": "Brazil",
+   "lat": -29.6325,
+   "lon": -49.9112,
+   "esposizione": 121,
+   "nome": "Atlântida - Pier · Rio Grande do Sul",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-costazul": {
+   "paese": "Brazil",
+   "lat": -22.7748,
+   "lon": -41.9778,
+   "esposizione": 136,
+   "nome": "Costazul · Rio de Janeiro Norte",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-ballybunion": {
+   "paese": "Ireland",
+   "lat": 52.6895,
+   "lon": -9.587,
+   "esposizione": 285,
+   "nome": "Ballybunion · West",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-daniels-reef": {
+   "paese": "New Zealand",
+   "lat": -36.3377,
+   "lon": 174.719,
+   "esposizione": 76,
+   "nome": "Daniels Reef · New Zealand NI, NE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-hewies-ayuki-island": {
+   "paese": "Philippines",
+   "lat": 9.4422,
+   "lon": 126.0916,
+   "esposizione": 56,
+   "nome": "Hewies Ayuki  Island · Mindanao",
+   "assegnato": "2026-10-19"
+  },
+  "spain-garraf": {
+   "paese": "Spain",
+   "lat": 41.3228,
+   "lon": 1.9621,
+   "esposizione": 151,
+   "nome": "Garraf · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-rodiles": {
+   "paese": "Spain",
+   "lat": 43.5244,
+   "lon": -5.4793,
+   "esposizione": 7,
+   "nome": "Rodiles · Asturias",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-alfonsina": {
+   "paese": "Argentina",
+   "lat": -38.0756,
+   "lon": -57.5992,
+   "esposizione": 125,
+   "nome": "Alfonsina · North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-crescent-head": {
+   "paese": "Australia",
+   "lat": -31.2705,
+   "lon": 152.9378,
+   "esposizione": 103,
+   "nome": "Crescent Head · NSW, Mid North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-medewi": {
+   "paese": "Indonesia",
+   "lat": -8.6895,
+   "lon": 114.9598,
+   "esposizione": 217,
+   "nome": "Medewi · Bali",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-chacala": {
+   "paese": "Mexico",
+   "lat": 21.0851,
+   "lon": -105.3665,
+   "esposizione": 262,
+   "nome": "Chacala · Sinaloa-Nayarit",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-14th-km": {
+   "paese": "Morocco",
+   "lat": 30.5199,
+   "lon": -9.7413,
+   "esposizione": 260,
+   "nome": "14th km. · South",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-oubaha-camping-mimosas": {
+   "paese": "Morocco",
+   "lat": 33.7557,
+   "lon": -7.3124,
+   "esposizione": 327,
+   "nome": "Oubaha   camping mimosas · North",
+   "assegnato": "2026-10-19"
+  },
+  "nicaragua-pochomil-beach-break": {
+   "paese": "Nicaragua",
+   "lat": 11.9029,
+   "lon": -86.5553,
+   "esposizione": 228,
+   "nome": "Pochomil Beach Break",
+   "assegnato": "2026-10-19"
+  },
+  "peru-el-nuro": {
+   "paese": "Peru",
+   "lat": -4.2826,
+   "lon": -81.1796,
+   "esposizione": 293,
+   "nome": "El Nuro · North",
+   "assegnato": "2026-10-19"
+  },
+  "usa-48th-street-ocean-city": {
+   "paese": "USA",
+   "lat": 38.4947,
+   "lon": -75.0981,
+   "esposizione": 104,
+   "nome": "48th Street (Ocean City) · North East, Virginia",
+   "assegnato": "2026-10-19"
+  },
+  "australia-merimbula-bar": {
+   "paese": "Australia",
+   "lat": -36.799,
+   "lon": 149.9952,
+   "esposizione": 99,
+   "nome": "Merimbula bar · NSW, Far South",
+   "assegnato": "2026-10-19"
+  },
+  "france-dossen": {
+   "paese": "France",
+   "lat": 48.697,
+   "lon": -3.975,
+   "esposizione": 334,
+   "nome": "Dossen · Brittany North",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-3-emes": {
+   "paese": "Mexico",
+   "lat": 32.0211,
+   "lon": -116.836,
+   "esposizione": 238,
+   "nome": "3 emes · Baja Norte",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-cliffs": {
+   "paese": "New Zealand",
+   "lat": -38.7408,
+   "lon": 178.0105,
+   "esposizione": 130,
+   "nome": "Cliffs · New Zealand NI, East Cape",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-herolds-bay": {
+   "paese": "South Africa",
+   "lat": -34.1064,
+   "lon": 22.4897,
+   "esposizione": 170,
+   "nome": "Herolds Bay · South George",
+   "assegnato": "2026-10-19"
+  },
+  "uruguay-el-pehue": {
+   "paese": "Uruguay",
+   "lat": -34.8923,
+   "lon": -55.1528,
+   "esposizione": 175,
+   "nome": "El Pehue",
+   "assegnato": "2026-10-19"
+  },
+  "usa-bicentenial-park": {
+   "paese": "USA",
+   "lat": 29.256,
+   "lon": -81.01,
+   "esposizione": 67,
+   "nome": "Bicentenial Park · South East, North Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-big-beach": {
+   "paese": "USA",
+   "lat": 20.7646,
+   "lon": -156.5925,
+   "esposizione": 228,
+   "nome": "Big Beach · Hawaii, Maui",
+   "assegnato": "2026-10-19"
+  },
+  "france-cap-blanc-nez": {
+   "paese": "France",
+   "lat": 50.809,
+   "lon": 1.7253,
+   "esposizione": 307,
+   "nome": "Cap Blanc Nez · Normandy",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-tropical-s": {
+   "paese": "Indonesia",
+   "lat": -8.8954,
+   "lon": 116.5867,
+   "esposizione": 225,
+   "nome": "Tropical's · Sumbawa",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-long-strand": {
+   "paese": "Ireland",
+   "lat": 51.5796,
+   "lon": -8.9368,
+   "esposizione": 170,
+   "nome": "Long Strand · South West",
+   "assegnato": "2026-10-19"
+  },
+  "italy-46": {
+   "paese": "Italy",
+   "lat": 43.7949,
+   "lon": 10.2104,
+   "esposizione": 234,
+   "nome": "46° · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "maldives-chickens": {
+   "paese": "Maldives",
+   "lat": 4.2038,
+   "lon": 73.5687,
+   "esposizione": 124,
+   "nome": "Chickens",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-clark-island": {
+   "paese": "New Zealand",
+   "lat": -37.1982,
+   "lon": 175.9218,
+   "esposizione": 55,
+   "nome": "Clark Island · New Zealand NI, Coromandel",
+   "assegnato": "2026-10-19"
+  },
+  "puerto-rico-crashboats": {
+   "paese": "Puerto Rico",
+   "lat": 18.4249,
+   "lon": -67.1801,
+   "esposizione": 302,
+   "nome": "Crashboats",
+   "assegnato": "2026-10-19"
+  },
+  "uk-highcliffe": {
+   "paese": "UK",
+   "lat": 50.6957,
+   "lon": -1.5927,
+   "esposizione": 180,
+   "nome": "Highcliffe · South",
+   "assegnato": "2026-10-19"
+  },
+  "uk-saltburn": {
+   "paese": "UK",
+   "lat": 54.5977,
+   "lon": -0.861,
+   "esposizione": 55,
+   "nome": "Saltburn · East England",
+   "assegnato": "2026-10-19"
+  },
+  "usa-hakalau": {
+   "paese": "USA",
+   "lat": 19.8174,
+   "lon": -155.1239,
+   "esposizione": 52,
+   "nome": "Hakalau · Hawaii, Hawaii Island",
+   "assegnato": "2026-10-19"
+  },
+  "usa-seaside-cove": {
+   "paese": "USA",
+   "lat": 46.0122,
+   "lon": -123.9903,
+   "esposizione": 268,
+   "nome": "Seaside Cove · North West, Oregon North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-3-poles-reef": {
+   "paese": "Australia",
+   "lat": -35.0896,
+   "lon": 138.4768,
+   "esposizione": 268,
+   "nome": "3-poles reef · SA, York Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-childers-cove": {
+   "paese": "Australia",
+   "lat": -38.4448,
+   "lon": 142.5098,
+   "esposizione": 196,
+   "nome": "Childers Cove · VIC, Western Victoria",
+   "assegnato": "2026-10-19"
+  },
+  "australia-cullens": {
+   "paese": "Australia",
+   "lat": -37.6546,
+   "lon": 140.2038,
+   "esposizione": 225,
+   "nome": "cullens · SA, East",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-barra-sol": {
+   "paese": "Brazil",
+   "lat": -20.3221,
+   "lon": -40.2721,
+   "esposizione": 116,
+   "nome": "Barra Sol · Espirito Santo",
+   "assegnato": "2026-10-19"
+  },
+  "france-cap-saint-louis": {
+   "paese": "France",
+   "lat": 43.2119,
+   "lon": 5.5432,
+   "esposizione": 195,
+   "nome": "Cap Saint Louis · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "italy-finale-ligure": {
+   "paese": "Italy",
+   "lat": 44.0482,
+   "lon": 8.2181,
+   "esposizione": 147,
+   "nome": "Finale Ligure · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-piscinas": {
+   "paese": "Italy",
+   "lat": 39.5447,
+   "lon": 8.4046,
+   "esposizione": 263,
+   "nome": "Piscinas · Sicily Sardinia",
+   "assegnato": "2026-10-19"
+  },
+  "japan-hanakago": {
+   "paese": "Japan",
+   "lat": 35.2187,
+   "lon": 139.8132,
+   "esposizione": 165,
+   "nome": "Hanakago · Kanagawa Chiba",
+   "assegnato": "2026-10-19"
+  },
+  "japan-nakayama-center": {
+   "paese": "Japan",
+   "lat": 30.5669,
+   "lon": 131.0142,
+   "esposizione": 124,
+   "nome": "Nakayama - Center · Kyushu, Tanegashima-Island",
+   "assegnato": "2026-10-19"
+  },
+  "madeira-lugar-de-baixo": {
+   "paese": "Madeira",
+   "lat": 32.6862,
+   "lon": -17.0743,
+   "esposizione": 208,
+   "nome": "Lugar de baixo",
+   "assegnato": "2026-10-19"
+  },
+  "reunion-kelonia-la-ferme-corail": {
+   "paese": "Reunion",
+   "lat": -21.1582,
+   "lon": 55.2958,
+   "esposizione": 248,
+   "nome": "Kelonia   la ferme corail",
+   "assegnato": "2026-10-19"
+  },
+  "senegal-club-med": {
+   "paese": "Senegal",
+   "lat": 14.7019,
+   "lon": -17.4202,
+   "esposizione": 266,
+   "nome": "Club Med",
+   "assegnato": "2026-10-19"
+  },
+  "spain-barbate": {
+   "paese": "Spain",
+   "lat": 36.2587,
+   "lon": -6.0303,
+   "esposizione": 225,
+   "nome": "Barbate · Andalucia",
+   "assegnato": "2026-10-19"
+  },
+  "spain-foz-area": {
+   "paese": "Spain",
+   "lat": 43.5668,
+   "lon": -6.9295,
+   "esposizione": 5,
+   "nome": "Foz Area · Asturias",
+   "assegnato": "2026-10-19"
+  },
+  "usa-alabama-point": {
+   "paese": "USA",
+   "lat": 30.2873,
+   "lon": -87.5119,
+   "esposizione": 173,
+   "nome": "Alabama Point · Gulf Coast, Alabama",
+   "assegnato": "2026-10-19"
+  },
+  "usa-baldwin-beach": {
+   "paese": "USA",
+   "lat": 20.9307,
+   "lon": -156.4266,
+   "esposizione": 1,
+   "nome": "Baldwin beach · Hawaii, Maui",
+   "assegnato": "2026-10-19"
+  },
+  "usa-deep-creek": {
+   "paese": "USA",
+   "lat": 48.1917,
+   "lon": -123.9055,
+   "esposizione": 0,
+   "nome": "Deep Creek · North West, Washington",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-engenhoca": {
+   "paese": "Brazil",
+   "lat": -14.2747,
+   "lon": -38.9767,
+   "esposizione": 92,
+   "nome": "Engenhoca · Bahia Sul",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-icarai": {
+   "paese": "Brazil",
+   "lat": -3.6662,
+   "lon": -38.6272,
+   "esposizione": 35,
+   "nome": "Icarai · Ceara",
+   "assegnato": "2026-10-19"
+  },
+  "canary-bajamar": {
+   "paese": "Canary",
+   "lat": 28.4549,
+   "lon": -16.5148,
+   "esposizione": 346,
+   "nome": "Bajamar · Tenerife",
+   "assegnato": "2026-10-19"
+  },
+  "canary-los-lobos": {
+   "paese": "Canary",
+   "lat": 28.8573,
+   "lon": -13.7119,
+   "esposizione": 62,
+   "nome": "Los Lobos · Fuerte Ventura",
+   "assegnato": "2026-10-19"
+  },
+  "canary-playa-grande": {
+   "paese": "Canary",
+   "lat": 28.2057,
+   "lon": -16.417,
+   "esposizione": 130,
+   "nome": "Playa Grande · Tenerife",
+   "assegnato": "2026-10-19"
+  },
+  "cyprus-eucalyptus": {
+   "paese": "Cyprus",
+   "lat": 34.7092,
+   "lon": 32.6917,
+   "esposizione": 209,
+   "nome": "Eucalyptus",
+   "assegnato": "2026-10-19"
+  },
+  "el-salvador-mizata": {
+   "paese": "El Salvador",
+   "lat": 13.5051,
+   "lon": -89.4574,
+   "esposizione": 195,
+   "nome": "Mizata",
+   "assegnato": "2026-10-19"
+  },
+  "italy-il-convento": {
+   "paese": "Italy",
+   "lat": 39.0913,
+   "lon": 9.2578,
+   "esposizione": 157,
+   "nome": "Il Convento · Sicily Sardinia",
+   "assegnato": "2026-10-19"
+  },
+  "spain-calita": {
+   "paese": "Spain",
+   "lat": 38.3871,
+   "lon": -0.3014,
+   "esposizione": 128,
+   "nome": "Calita · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "st-barthelemy-airport-left": {
+   "paese": "St Barthelemy",
+   "lat": 17.9106,
+   "lon": -62.8297,
+   "esposizione": null,
+   "nome": "Airport left",
+   "assegnato": "2026-10-19"
+  },
+  "uk-bexhill": {
+   "paese": "UK",
+   "lat": 50.8579,
+   "lon": 0.4071,
+   "esposizione": 165,
+   "nome": "Bexhill · South East",
+   "assegnato": "2026-10-19"
+  },
+  "uruguay-polonio-sur": {
+   "paese": "Uruguay",
+   "lat": -34.4022,
+   "lon": -53.9074,
+   "esposizione": 136,
+   "nome": "Polonio Sur",
+   "assegnato": "2026-10-19"
+  },
+  "usa-boiler": {
+   "paese": "USA",
+   "lat": 35.7046,
+   "lon": -75.5571,
+   "esposizione": 99,
+   "nome": "Boiler · South East, North Carolina",
+   "assegnato": "2026-10-19"
+  },
+  "usa-kua-bay": {
+   "paese": "USA",
+   "lat": 19.7904,
+   "lon": -155.9483,
+   "esposizione": 276,
+   "nome": "Kua Bay · Hawaii, Hawaii Island",
+   "assegnato": "2026-10-19"
+  },
+  "australia-greenough": {
+   "paese": "Australia",
+   "lat": -28.9086,
+   "lon": 114.6834,
+   "esposizione": 252,
+   "nome": "Greenough · WA, Perth North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-lowlands-beach": {
+   "paese": "Australia",
+   "lat": -35.0415,
+   "lon": 117.5703,
+   "esposizione": 174,
+   "nome": "Lowlands beach · WA, Albany",
+   "assegnato": "2026-10-19"
+  },
+  "barbados-batts-rock": {
+   "paese": "Barbados",
+   "lat": 13.1458,
+   "lon": -59.621,
+   "esposizione": 244,
+   "nome": "Batts Rock",
+   "assegnato": "2026-10-19"
+  },
+  "british-virgin-brewers-bay": {
+   "paese": "British Virgin",
+   "lat": 18.4299,
+   "lon": -64.6171,
+   "esposizione": 357,
+   "nome": "Brewers Bay",
+   "assegnato": "2026-10-19"
+  },
+  "canary-el-lloret": {
+   "paese": "Canary",
+   "lat": 28.1383,
+   "lon": -15.545,
+   "esposizione": 10,
+   "nome": "El Lloret · Gran Canaria",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-estero-de-platano": {
+   "paese": "Ecuador",
+   "lat": 0.7969,
+   "lon": -79.886,
+   "esposizione": 313,
+   "nome": "Estero de Platano",
+   "assegnato": "2026-10-19"
+  },
+  "greece-amoudia-left": {
+   "paese": "Greece",
+   "lat": 39.1454,
+   "lon": 20.5662,
+   "esposizione": 228,
+   "nome": "Amoudia Left · Ionian Sea",
+   "assegnato": "2026-10-19"
+  },
+  "italy-fano-sassonia": {
+   "paese": "Italy",
+   "lat": 43.7739,
+   "lon": 13.1598,
+   "esposizione": 47,
+   "nome": "Fano-Sassonia · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-fiumicino-nord": {
+   "paese": "Italy",
+   "lat": 41.819,
+   "lon": 12.1689,
+   "esposizione": 220,
+   "nome": "Fiumicino Nord · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-rocchette": {
+   "paese": "Italy",
+   "lat": 42.6711,
+   "lon": 10.5638,
+   "esposizione": 213,
+   "nome": "Rocchette · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "japan-ikumi": {
+   "paese": "Japan",
+   "lat": 33.5154,
+   "lon": 134.2208,
+   "esposizione": 140,
+   "nome": "Ikumi · Shikoku",
+   "assegnato": "2026-10-19"
+  },
+  "japan-irita-hama": {
+   "paese": "Japan",
+   "lat": 34.6003,
+   "lon": 139.0998,
+   "esposizione": 154,
+   "nome": "Irita Hama · Izu Islands",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-troia": {
+   "paese": "Portugal",
+   "lat": 38.3595,
+   "lon": -8.9087,
+   "esposizione": 251,
+   "nome": "Troia · South",
+   "assegnato": "2026-10-19"
+  },
+  "puerto-rico-the-search": {
+   "paese": "Puerto Rico",
+   "lat": 18.0383,
+   "lon": -65.8513,
+   "esposizione": 147,
+   "nome": "The Search",
+   "assegnato": "2026-10-19"
+  },
+  "spain-deba": {
+   "paese": "Spain",
+   "lat": 43.3208,
+   "lon": -2.2816,
+   "esposizione": 359,
+   "nome": "Deba · Pais Vasco",
+   "assegnato": "2026-10-19"
+  },
+  "uk-coombesgate-beach": {
+   "paese": "UK",
+   "lat": 51.1592,
+   "lon": -4.079,
+   "esposizione": 312,
+   "nome": "Coombesgate Beach · Devon North",
+   "assegnato": "2026-10-19"
+  },
+  "usa-1st-street-jetty": {
+   "paese": "USA",
+   "lat": 36.8901,
+   "lon": -76.0051,
+   "esposizione": 71,
+   "nome": "1st Street Jetty · North East, Virginia",
+   "assegnato": "2026-10-19"
+  },
+  "usa-galveston": {
+   "paese": "USA",
+   "lat": 29.2436,
+   "lon": -94.9143,
+   "esposizione": 140,
+   "nome": "Galveston · Gulf Coast, Texas",
+   "assegnato": "2026-10-19"
+  },
+  "usa-kilauea-bay-beach-rock-quarry": {
+   "paese": "USA",
+   "lat": 22.2129,
+   "lon": -159.4726,
+   "esposizione": 9,
+   "nome": "Kilauea Bay Beach (Rock Quarry) · Hawaii, Kauai",
+   "assegnato": "2026-10-19"
+  },
+  "usa-usal-beach": {
+   "paese": "USA",
+   "lat": 39.6615,
+   "lon": -123.8975,
+   "esposizione": 251,
+   "nome": "Usal Beach · California, Mendocino",
+   "assegnato": "2026-10-19"
+  },
+  "venezuela-la-sabana-baja": {
+   "paese": "Venezuela",
+   "lat": 10.6188,
+   "lon": -66.5312,
+   "esposizione": 7,
+   "nome": "La Sabana (Baja)",
+   "assegnato": "2026-10-19"
+  },
+  "angola-barra-da-kwanza": {
+   "paese": "Angola",
+   "lat": -9.1585,
+   "lon": 13.1148,
+   "esposizione": 271,
+   "nome": "Barra da Kwanza",
+   "assegnato": "2026-10-19"
+  },
+  "australia-chinamans": {
+   "paese": "Australia",
+   "lat": -35.2304,
+   "lon": 136.8891,
+   "esposizione": 239,
+   "nome": "Chinamans · SA, York Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-derrs": {
+   "paese": "Australia",
+   "lat": -31.3587,
+   "lon": 115.5121,
+   "esposizione": 246,
+   "nome": "Derrs · WA, Perth North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-kilcunda": {
+   "paese": "Australia",
+   "lat": -38.4926,
+   "lon": 145.4051,
+   "esposizione": 219,
+   "nome": "Kilcunda · VIC, Melbourne East",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-ponta-negra": {
+   "paese": "Brazil",
+   "lat": -6.0944,
+   "lon": -35.0986,
+   "esposizione": 72,
+   "nome": "Ponta negra · Rio Grande Do Norte",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-praia-do-forte": {
+   "paese": "Brazil",
+   "lat": -12.8349,
+   "lon": -38.268,
+   "esposizione": 143,
+   "nome": "Praia do forte · Bahia North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-chesterman-beach": {
+   "paese": "Canada",
+   "lat": 49.0713,
+   "lon": -125.7943,
+   "esposizione": 223,
+   "nome": "Chesterman Beach · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canary-campo-de-futbol": {
+   "paese": "Canary",
+   "lat": 28.3954,
+   "lon": -14.1576,
+   "esposizione": 289,
+   "nome": "campo de futbol · Fuerte Ventura",
+   "assegnato": "2026-10-19"
+  },
+  "canary-el-conquistador": {
+   "paese": "Canary",
+   "lat": 28.1518,
+   "lon": -16.7862,
+   "esposizione": 237,
+   "nome": "El Conquistador · Tenerife",
+   "assegnato": "2026-10-19"
+  },
+  "chile-la-marmola": {
+   "paese": "Chile",
+   "lat": -32.2132,
+   "lon": -71.4786,
+   "esposizione": 263,
+   "nome": "La Marmola · Central Santiago",
+   "assegnato": "2026-10-19"
+  },
+  "chile-matanzas": {
+   "paese": "Chile",
+   "lat": -34.1868,
+   "lon": -71.9441,
+   "esposizione": 284,
+   "nome": "Matanzas · Central Santiago",
+   "assegnato": "2026-10-19"
+  },
+  "dominican-republic-la-preciosa": {
+   "paese": "Dominican Republic",
+   "lat": 19.6884,
+   "lon": -70.2515,
+   "esposizione": 21,
+   "nome": "La Preciosa",
+   "assegnato": "2026-10-19"
+  },
+  "france-canet-plage": {
+   "paese": "France",
+   "lat": 42.8119,
+   "lon": 3.1023,
+   "esposizione": 100,
+   "nome": "Canet plage · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "france-deauville": {
+   "paese": "France",
+   "lat": 49.476,
+   "lon": -0.0106,
+   "esposizione": 332,
+   "nome": "Deauville · Normandy",
+   "assegnato": "2026-10-19"
+  },
+  "french-polynesia-faaroa": {
+   "paese": "French Polynesia",
+   "lat": -16.7312,
+   "lon": -151.2736,
+   "esposizione": 45,
+   "nome": "faaroa · Raiatea Tahaa",
+   "assegnato": "2026-10-19"
+  },
+  "germany-lippe": {
+   "paese": "Germany",
+   "lat": 54.3399,
+   "lon": 10.6645,
+   "esposizione": 46,
+   "nome": "Lippe",
+   "assegnato": "2026-10-19"
+  },
+  "ghana-axim": {
+   "paese": "Ghana",
+   "lat": 4.8261,
+   "lon": -2.1555,
+   "esposizione": 184,
+   "nome": "Axim",
+   "assegnato": "2026-10-19"
+  },
+  "hong-kong-cheung-sha-beach-lantau": {
+   "paese": "Hong Kong",
+   "lat": 22.3311,
+   "lon": 114.2232,
+   "esposizione": 154,
+   "nome": "Cheung Sha Beach, Lantau",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-banana-island": {
+   "paese": "Indonesia",
+   "lat": -5.2158,
+   "lon": 103.9251,
+   "esposizione": 225,
+   "nome": "Banana Island · Sumatra Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-roti-island-nembrala-t-land": {
+   "paese": "Indonesia",
+   "lat": -10.9058,
+   "lon": 122.817,
+   "esposizione": 234,
+   "nome": "Roti Island - Nembrala - T Land · Savu Sea",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-castlerock": {
+   "paese": "Ireland",
+   "lat": 55.2044,
+   "lon": -6.8113,
+   "esposizione": 351,
+   "nome": "Castlerock · North East and East",
+   "assegnato": "2026-10-19"
+  },
+  "lebanon-board-n-surf": {
+   "paese": "Lebanon",
+   "lat": 34.0875,
+   "lon": 35.6245,
+   "esposizione": 290,
+   "nome": "Board n Surf",
+   "assegnato": "2026-10-19"
+  },
+  "madeira-faial": {
+   "paese": "Madeira",
+   "lat": 32.8448,
+   "lon": -16.8911,
+   "esposizione": 12,
+   "nome": "Faial",
+   "assegnato": "2026-10-19"
+  },
+  "maldives-adonis": {
+   "paese": "Maldives",
+   "lat": 2.1038,
+   "lon": 73.2874,
+   "esposizione": null,
+   "nome": "Adonis",
+   "assegnato": "2026-10-19"
+  },
+  "maldives-blue-bowls": {
+   "paese": "Maldives",
+   "lat": 0.187,
+   "lon": 73.3653,
+   "esposizione": null,
+   "nome": "Blue bowls",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-costa-azul": {
+   "paese": "Mexico",
+   "lat": 23.0179,
+   "lon": -109.7023,
+   "esposizione": 148,
+   "nome": "Costa Azul · Baja Sur",
+   "assegnato": "2026-10-19"
+  },
+  "netherlands-callantsoog": {
+   "paese": "Netherlands",
+   "lat": 53.1055,
+   "lon": 4.819,
+   "esposizione": 310,
+   "nome": "Callantsoog",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-airport-rights": {
+   "paese": "New Zealand",
+   "lat": -41.3796,
+   "lon": 174.9097,
+   "esposizione": 209,
+   "nome": "Airport Rights · New Zealand NI, South East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-bethells": {
+   "paese": "New Zealand",
+   "lat": -36.9773,
+   "lon": 174.4855,
+   "esposizione": 248,
+   "nome": "Bethells · New Zealand NI, West Coast Auckland",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-stent-road": {
+   "paese": "New Zealand",
+   "lat": -39.1312,
+   "lon": 173.9747,
+   "esposizione": 303,
+   "nome": "Stent Road · New Zealand NI, West Coast Taranaki",
+   "assegnato": "2026-10-19"
+  },
+  "peru-chicama": {
+   "paese": "Peru",
+   "lat": -7.6468,
+   "lon": -79.4561,
+   "esposizione": 241,
+   "nome": "Chicama · North",
+   "assegnato": "2026-10-19"
+  },
+  "russia-emar-left": {
+   "paese": "Russia",
+   "lat": 43.0604,
+   "lon": 132.0863,
+   "esposizione": 172,
+   "nome": "Emar left · Far East, Primorsky Krai",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-anne-avenue-st-francis-bay": {
+   "paese": "South Africa",
+   "lat": -34.186,
+   "lon": 24.8121,
+   "esposizione": 163,
+   "nome": "Anne Avenue (St Francis Bay) · South J Bay",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-banana-beach": {
+   "paese": "South Africa",
+   "lat": -30.693,
+   "lon": 30.4948,
+   "esposizione": 121,
+   "nome": "Banana Beach · Hibiscous Coast",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-pearly-beach-edit": {
+   "paese": "South Africa",
+   "lat": -34.6974,
+   "lon": 19.6415,
+   "esposizione": 199,
+   "nome": "Pearly Beach edit · South Garden Route",
+   "assegnato": "2026-10-19"
+  },
+  "spain-jucar": {
+   "paese": "Spain",
+   "lat": 39.1377,
+   "lon": -0.1303,
+   "esposizione": 82,
+   "nome": "Jucar · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "tanzania-caves": {
+   "paese": "Tanzania",
+   "lat": -6.8514,
+   "lon": 39.4063,
+   "esposizione": 65,
+   "nome": "Caves",
+   "assegnato": "2026-10-19"
+  },
+  "uk-aberdaron": {
+   "paese": "UK",
+   "lat": 52.7288,
+   "lon": -4.3687,
+   "esposizione": 248,
+   "nome": "Aberdaron · North Wales and NW England",
+   "assegnato": "2026-10-19"
+  },
+  "uk-bantham": {
+   "paese": "UK",
+   "lat": 50.3532,
+   "lon": -3.9497,
+   "esposizione": 185,
+   "nome": "Bantham · Devon South",
+   "assegnato": "2026-10-19"
+  },
+  "usa-35th-street-iop": {
+   "paese": "USA",
+   "lat": 32.7,
+   "lon": -79.9131,
+   "esposizione": 141,
+   "nome": "35th Street, IOP · South East, South Carolina",
+   "assegnato": "2026-10-19"
+  },
+  "usa-frankport": {
+   "paese": "USA",
+   "lat": 42.54,
+   "lon": -124.4135,
+   "esposizione": 264,
+   "nome": "Frankport · North West, Oregon South",
+   "assegnato": "2026-10-19"
+  },
+  "usa-sand-dollar-beach": {
+   "paese": "USA",
+   "lat": 35.8324,
+   "lon": -121.3788,
+   "esposizione": 232,
+   "nome": "Sand Dollar Beach · California, San Luis Obispo",
+   "assegnato": "2026-10-19"
+  },
+  "venezuela-cumboto": {
+   "paese": "Venezuela",
+   "lat": 10.4863,
+   "lon": -67.8819,
+   "esposizione": 8,
+   "nome": "Cumboto",
+   "assegnato": "2026-10-19"
+  },
+  "aruba-outside-rodger-s-beach": {
+   "paese": "Aruba",
+   "lat": 12.5329,
+   "lon": -69.9702,
+   "esposizione": 14,
+   "nome": "Outside Rodger's Beach",
+   "assegnato": "2026-10-19"
+  },
+  "australia-bandy-creek-groyne": {
+   "paese": "Australia",
+   "lat": -33.8946,
+   "lon": 121.9662,
+   "esposizione": 188,
+   "nome": "Bandy Creek Groyne · WA, Fitzgerald River",
+   "assegnato": "2026-10-19"
+  },
+  "australia-dolphin-heads": {
+   "paese": "Australia",
+   "lat": -21.0695,
+   "lon": 149.2107,
+   "esposizione": 58,
+   "nome": "Dolphin Heads · QLD, Far North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-vivonne-bay": {
+   "paese": "Australia",
+   "lat": -35.9826,
+   "lon": 137.1331,
+   "esposizione": 180,
+   "nome": "Vivonne Bay · SA, Kangeroo Island",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-cruz-das-almas": {
+   "paese": "Brazil",
+   "lat": -9.584,
+   "lon": -35.652,
+   "esposizione": 130,
+   "nome": "Cruz das Almas · Sergipe-Alagoas",
+   "assegnato": "2026-10-19"
+  },
+  "bulgaria-ahtony": {
+   "paese": "Bulgaria",
+   "lat": 42.1935,
+   "lon": 27.8595,
+   "esposizione": 66,
+   "nome": "Ahtony",
+   "assegnato": "2026-10-19"
+  },
+  "denmark-agger": {
+   "paese": "Denmark",
+   "lat": 56.9526,
+   "lon": 8.3893,
+   "esposizione": 303,
+   "nome": "Agger",
+   "assegnato": "2026-10-19"
+  },
+  "egypt-agami": {
+   "paese": "Egypt",
+   "lat": 31.1677,
+   "lon": 29.8288,
+   "esposizione": 336,
+   "nome": "Agami",
+   "assegnato": "2026-10-19"
+  },
+  "france-cap-frehel": {
+   "paese": "France",
+   "lat": 48.6538,
+   "lon": -2.2648,
+   "esposizione": 357,
+   "nome": "Cap frehel · Brittany North",
+   "assegnato": "2026-10-19"
+  },
+  "greece-bouka": {
+   "paese": "Greece",
+   "lat": 37.0606,
+   "lon": 21.65,
+   "esposizione": 247,
+   "nome": "Bouka · Pelloponisos",
+   "assegnato": "2026-10-19"
+  },
+  "guadeloupe-anse-a-la-barque": {
+   "paese": "Guadeloupe",
+   "lat": 16.1925,
+   "lon": -61.3929,
+   "esposizione": 155,
+   "nome": "Anse à la barque",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-asu": {
+   "paese": "Indonesia",
+   "lat": 0.8269,
+   "lon": 97.4463,
+   "esposizione": 223,
+   "nome": "Asu · Sumatra Islands",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-cimaja": {
+   "paese": "Indonesia",
+   "lat": -7.0811,
+   "lon": 106.4156,
+   "esposizione": 225,
+   "nome": "Cimaja · West Java",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-puri-s-point": {
+   "paese": "Indonesia",
+   "lat": -8.4847,
+   "lon": 116.0094,
+   "esposizione": 289,
+   "nome": "Puri's point · Lombok",
+   "assegnato": "2026-10-19"
+  },
+  "italy-la-speranza": {
+   "paese": "Italy",
+   "lat": 40.336,
+   "lon": 8.389,
+   "esposizione": 267,
+   "nome": "La Speranza · Sicily Sardinia",
+   "assegnato": "2026-10-19"
+  },
+  "japan-kudaka-left": {
+   "paese": "Japan",
+   "lat": 26.2745,
+   "lon": 127.8461,
+   "esposizione": 148,
+   "nome": "Kudaka Left · Okinawa",
+   "assegnato": "2026-10-19"
+  },
+  "malaysia-nexus": {
+   "paese": "Malaysia",
+   "lat": 6.1318,
+   "lon": 116.1448,
+   "esposizione": 304,
+   "nome": "Nexus · Borneo",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-boca-de-apisa": {
+   "paese": "Mexico",
+   "lat": 19.1095,
+   "lon": -104.456,
+   "esposizione": 213,
+   "nome": "Boca de Apisa · Jalisco",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-las-gatas": {
+   "paese": "Mexico",
+   "lat": 17.6906,
+   "lon": -101.6102,
+   "esposizione": 214,
+   "nome": "Las Gatas · Guerrero",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-rucos": {
+   "paese": "Mexico",
+   "lat": 23.4557,
+   "lon": -106.6121,
+   "esposizione": 233,
+   "nome": "Rucos · Sinaloa-Nayarit",
+   "assegnato": "2026-10-19"
+  },
+  "namibia-donkey-bay": {
+   "paese": "Namibia",
+   "lat": -22.7987,
+   "lon": 14.4986,
+   "esposizione": 274,
+   "nome": "Donkey Bay",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-aramoana": {
+   "paese": "New Zealand",
+   "lat": -45.8862,
+   "lon": 170.484,
+   "esposizione": 128,
+   "nome": "Aramoana · New Zealand SI, SE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-eddies-south-shore": {
+   "paese": "New Zealand",
+   "lat": -43.5993,
+   "lon": 172.8585,
+   "esposizione": 86,
+   "nome": "Eddies - South Shore · New Zealand SI, NE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-haumoana": {
+   "paese": "New Zealand",
+   "lat": -39.6708,
+   "lon": 176.9784,
+   "esposizione": 103,
+   "nome": "Haumoana · New Zealand NI, Napier",
+   "assegnato": "2026-10-19"
+  },
+  "panama-chame-banks": {
+   "paese": "Panama",
+   "lat": 8.5238,
+   "lon": -79.8828,
+   "esposizione": 134,
+   "nome": "Chame Banks",
+   "assegnato": "2026-10-19"
+  },
+  "panama-playa-guanico": {
+   "paese": "Panama",
+   "lat": 7.3235,
+   "lon": -80.3642,
+   "esposizione": 154,
+   "nome": "Playa guanico",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-16-mile-beach": {
+   "paese": "South Africa",
+   "lat": -33.2026,
+   "lon": 18.077,
+   "esposizione": 254,
+   "nome": "16 MILE BEACH · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-doring-bay": {
+   "paese": "South Africa",
+   "lat": -31.8658,
+   "lon": 18.2256,
+   "esposizione": 254,
+   "nome": "Doring Bay · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "sri-lanka-arugam-bay": {
+   "paese": "Sri Lanka",
+   "lat": 6.8109,
+   "lon": 81.8257,
+   "esposizione": 107,
+   "nome": "Arugam Bay",
+   "assegnato": "2026-10-19"
+  },
+  "taiwan-fulong-beach": {
+   "paese": "Taiwan",
+   "lat": 24.8677,
+   "lon": 121.8358,
+   "esposizione": 77,
+   "nome": "Fulong Beach",
+   "assegnato": "2026-10-19"
+  },
+  "turkey-aglayankaya": {
+   "paese": "Turkey",
+   "lat": 41.1623,
+   "lon": 30.009,
+   "esposizione": 357,
+   "nome": "Aglayankaya · Black-Sea",
+   "assegnato": "2026-10-19"
+  },
+  "uae-moscow-beach": {
+   "paese": "UAE",
+   "lat": 25.2091,
+   "lon": 55.2321,
+   "esposizione": 317,
+   "nome": "Moscow Beach",
+   "assegnato": "2026-10-19"
+  },
+  "usa-baby-makapuu": {
+   "paese": "USA",
+   "lat": 21.3471,
+   "lon": -157.6932,
+   "esposizione": 93,
+   "nome": "Baby Makapuu · Hawaii, Oahu",
+   "assegnato": "2026-10-19"
+  },
+  "usa-ballston-beach": {
+   "paese": "USA",
+   "lat": 41.9344,
+   "lon": -70.0878,
+   "esposizione": 75,
+   "nome": "Ballston Beach · North East, Southern New England",
+   "assegnato": "2026-10-19"
+  },
+  "usa-bob-hall-pier": {
+   "paese": "USA",
+   "lat": 27.7267,
+   "lon": -97.1226,
+   "esposizione": 114,
+   "nome": "Bob Hall Pier · Gulf Coast, Texas",
+   "assegnato": "2026-10-19"
+  },
+  "usa-cape-elizabeth": {
+   "paese": "USA",
+   "lat": 47.1528,
+   "lon": -124.2242,
+   "esposizione": 256,
+   "nome": "Cape Elizabeth · North West, Washington",
+   "assegnato": "2026-10-19"
+  },
+  "usa-emerald-isle": {
+   "paese": "USA",
+   "lat": 34.6022,
+   "lon": -76.9566,
+   "esposizione": 150,
+   "nome": "Emerald Isle · South East, Southern North Carolina",
+   "assegnato": "2026-10-19"
+  },
+  "australia-archies": {
+   "paese": "Australia",
+   "lat": -24.8163,
+   "lon": 152.4289,
+   "esposizione": 54,
+   "nome": "Archies · QLD, North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-bay-left-wall": {
+   "paese": "Australia",
+   "lat": -33.2249,
+   "lon": 115.6452,
+   "esposizione": 285,
+   "nome": "Bay (left wall) · WA, Perth South",
+   "assegnato": "2026-10-19"
+  },
+  "australia-cody-s-right": {
+   "paese": "Australia",
+   "lat": -30.2173,
+   "lon": 114.9767,
+   "esposizione": 260,
+   "nome": "Cody's Right · WA, Perth North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-scamander-river-mouth": {
+   "paese": "Australia",
+   "lat": -41.6957,
+   "lon": 148.3024,
+   "esposizione": 91,
+   "nome": "Scamander River Mouth · TAS, East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "azores-areias": {
+   "paese": "Azores",
+   "lat": 37.833,
+   "lon": -25.5993,
+   "esposizione": 346,
+   "nome": "Areias · Eastern group",
+   "assegnato": "2026-10-19"
+  },
+  "barbados-surfer-s-point": {
+   "paese": "Barbados",
+   "lat": 13.0607,
+   "lon": -59.5079,
+   "esposizione": 164,
+   "nome": "Surfer's Point",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-aventureiro": {
+   "paese": "Brazil",
+   "lat": -23.1483,
+   "lon": -44.3747,
+   "esposizione": 159,
+   "nome": "Aventureiro · Rio de Janeiro City",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-balneario-costa-azul": {
+   "paese": "Brazil",
+   "lat": -25.701,
+   "lon": -48.432,
+   "esposizione": 116,
+   "nome": "Balneário Costa azul · Parana",
+   "assegnato": "2026-10-19"
+  },
+  "chile-buchupureo": {
+   "paese": "Chile",
+   "lat": -35.9112,
+   "lon": -72.7093,
+   "esposizione": 291,
+   "nome": "Buchupureo · Sur",
+   "assegnato": "2026-10-19"
+  },
+  "dominica-pauga-bay": {
+   "paese": "Dominica",
+   "lat": 15.5284,
+   "lon": -61.3027,
+   "esposizione": 52,
+   "nome": "Pauga Bay",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-5-1-2km-8-1-2km": {
+   "paese": "Ecuador",
+   "lat": -2.651,
+   "lon": -80.3872,
+   "esposizione": 224,
+   "nome": "5 1 2km  &  8 1 2km",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-la-bellaca": {
+   "paese": "Ecuador",
+   "lat": -0.6683,
+   "lon": -80.5886,
+   "esposizione": 298,
+   "nome": "La bellaca",
+   "assegnato": "2026-10-19"
+  },
+  "france-algajola": {
+   "paese": "France",
+   "lat": 42.6129,
+   "lon": 8.9096,
+   "esposizione": 329,
+   "nome": "Algajola · Corsica",
+   "assegnato": "2026-10-19"
+  },
+  "france-cannes-l-aerospatiale": {
+   "paese": "France",
+   "lat": 43.4942,
+   "lon": 6.9399,
+   "esposizione": 144,
+   "nome": "Cannes  l'Aérospatiale · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "ghana-kokrobite": {
+   "paese": "Ghana",
+   "lat": 5.5076,
+   "lon": -0.2837,
+   "esposizione": 155,
+   "nome": "Kokrobite",
+   "assegnato": "2026-10-19"
+  },
+  "guatemala-iztapa": {
+   "paese": "Guatemala",
+   "lat": 13.9144,
+   "lon": -90.7742,
+   "esposizione": 188,
+   "nome": "Iztapa",
+   "assegnato": "2026-10-19"
+  },
+  "iceland-hafnir": {
+   "paese": "Iceland",
+   "lat": 64.0122,
+   "lon": -22.4071,
+   "esposizione": 265,
+   "nome": "Hafnir",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-back-beach": {
+   "paese": "Ireland",
+   "lat": 53.409,
+   "lon": -6.1137,
+   "esposizione": 89,
+   "nome": "back beach · North East and East",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-ballinskelligs": {
+   "paese": "Ireland",
+   "lat": 51.938,
+   "lon": -10.2486,
+   "esposizione": 239,
+   "nome": "Ballinskelligs · South West",
+   "assegnato": "2026-10-19"
+  },
+  "italy-badesi": {
+   "paese": "Italy",
+   "lat": 41.112,
+   "lon": 9.0451,
+   "esposizione": 326,
+   "nome": "Badesi · Sicily Sardinia",
+   "assegnato": "2026-10-19"
+  },
+  "italy-bogliasco": {
+   "paese": "Italy",
+   "lat": 44.2917,
+   "lon": 9.3264,
+   "esposizione": 203,
+   "nome": "Bogliasco · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-isola-delle-femmine-pa-la-baia-sic": {
+   "paese": "Italy",
+   "lat": 38.1616,
+   "lon": 13.0138,
+   "esposizione": 347,
+   "nome": "Isola Delle Femmine(PA)-LA BAIA (Sicily) · Sicily",
+   "assegnato": "2026-10-19"
+  },
+  "japan-akaehama": {
+   "paese": "Japan",
+   "lat": 31.4136,
+   "lon": 131.202,
+   "esposizione": 156,
+   "nome": "Akaehama · Kyushu",
+   "assegnato": "2026-10-19"
+  },
+  "japan-atashika": {
+   "paese": "Japan",
+   "lat": 33.8678,
+   "lon": 136.0969,
+   "esposizione": 131,
+   "nome": "Atashika · Kii Hanto",
+   "assegnato": "2026-10-19"
+  },
+  "japan-tokumitsu": {
+   "paese": "Japan",
+   "lat": 36.477,
+   "lon": 136.3904,
+   "esposizione": 306,
+   "nome": "Tokumitsu · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "liberia-8th-street": {
+   "paese": "Liberia",
+   "lat": 6.2612,
+   "lon": -10.7211,
+   "esposizione": 215,
+   "nome": "8th street",
+   "assegnato": "2026-10-19"
+  },
+  "malta-gozo-ramla-bay": {
+   "paese": "Malta",
+   "lat": 35.9768,
+   "lon": 14.3611,
+   "esposizione": 325,
+   "nome": "Gozo - Ramla Bay",
+   "assegnato": "2026-10-19"
+  },
+  "mauritius-le-morne": {
+   "paese": "Mauritius",
+   "lat": -20.3599,
+   "lon": 57.3635,
+   "esposizione": 265,
+   "nome": "Le Morne",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-camaronera": {
+   "paese": "Mexico",
+   "lat": 19.1054,
+   "lon": -96.0536,
+   "esposizione": 50,
+   "nome": "Camaronera · Gulf",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-mukerau-beach": {
+   "paese": "New Zealand",
+   "lat": -35.1754,
+   "lon": 172.9969,
+   "esposizione": 278,
+   "nome": "Mukerau Beach · New Zealand NI, NW Coast",
+   "assegnato": "2026-10-19"
+  },
+  "nicaragua-colorado": {
+   "paese": "Nicaragua",
+   "lat": 11.3078,
+   "lon": -85.9403,
+   "esposizione": 230,
+   "nome": "Colorado",
+   "assegnato": "2026-10-19"
+  },
+  "norway-alnes-lighthouse-godoy": {
+   "paese": "Norway",
+   "lat": 62.3745,
+   "lon": 5.652,
+   "esposizione": 312,
+   "nome": "Alnes Lighthouse (Godoy)",
+   "assegnato": "2026-10-19"
+  },
+  "norway-bore": {
+   "paese": "Norway",
+   "lat": 58.7675,
+   "lon": 5.5881,
+   "esposizione": 261,
+   "nome": "Bore",
+   "assegnato": "2026-10-19"
+  },
+  "panama-rio-tabasara": {
+   "paese": "Panama",
+   "lat": 8.0247,
+   "lon": -81.7707,
+   "esposizione": 209,
+   "nome": "Rio Tabasara'",
+   "assegnato": "2026-10-19"
+  },
+  "papua-new-guinea-go-go-s": {
+   "paese": "Papua New Guinea",
+   "lat": -2.5895,
+   "lon": 150.7582,
+   "esposizione": null,
+   "nome": "Go Go's",
+   "assegnato": "2026-10-19"
+  },
+  "peru-asia-del-mar": {
+   "paese": "Peru",
+   "lat": -12.8878,
+   "lon": -76.5415,
+   "esposizione": 240,
+   "nome": "Asia del Mar · Lima",
+   "assegnato": "2026-10-19"
+  },
+  "samoa-western-sales": {
+   "paese": "Samoa Western",
+   "lat": -13.9783,
+   "lon": -171.8529,
+   "esposizione": 183,
+   "nome": "Sales",
+   "assegnato": "2026-10-19"
+  },
+  "spain-el-chanquete": {
+   "paese": "Spain",
+   "lat": 36.6169,
+   "lon": -4.4082,
+   "esposizione": 161,
+   "nome": "El chanquete · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "thailand-karon-beach": {
+   "paese": "Thailand",
+   "lat": 7.9019,
+   "lon": 98.2875,
+   "esposizione": 239,
+   "nome": "Karon Beach",
+   "assegnato": "2026-10-19"
+  },
+  "tunisia-la-marsa-dream-land": {
+   "paese": "Tunisia",
+   "lat": 37.1039,
+   "lon": 10.1314,
+   "esposizione": 41,
+   "nome": "La Marsa dream land",
+   "assegnato": "2026-10-19"
+  },
+  "uk-mousehole-reef": {
+   "paese": "UK",
+   "lat": 50.0705,
+   "lon": -5.3494,
+   "esposizione": 192,
+   "nome": "Mousehole Reef · Cornwall South",
+   "assegnato": "2026-10-19"
+  },
+  "uk-torrisdale-bay": {
+   "paese": "UK",
+   "lat": 58.5618,
+   "lon": -4.312,
+   "esposizione": 351,
+   "nome": "Torrisdale Bay · North Scotland",
+   "assegnato": "2026-10-19"
+  },
+  "usa-gillin-s": {
+   "paese": "USA",
+   "lat": 21.8951,
+   "lon": -159.4272,
+   "esposizione": 157,
+   "nome": "Gillin's · Hawaii, Kauai",
+   "assegnato": "2026-10-19"
+  },
+  "usa-higgins-beach": {
+   "paese": "USA",
+   "lat": 43.5908,
+   "lon": -70.1482,
+   "esposizione": 135,
+   "nome": "Higgins Beach · North East, Northern New England",
+   "assegnato": "2026-10-19"
+  },
+  "vietnam-da-nang": {
+   "paese": "Vietnam",
+   "lat": 16.0953,
+   "lon": 108.1977,
+   "esposizione": 51,
+   "nome": "Da Nang",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-mar-de-ajo": {
+   "paese": "Argentina",
+   "lat": -36.7892,
+   "lon": -56.7345,
+   "esposizione": 94,
+   "nome": "Mar de Ajo · North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-baird-bay-reef": {
+   "paese": "Australia",
+   "lat": -33.0592,
+   "lon": 134.3158,
+   "esposizione": 231,
+   "nome": "Baird Bay Reef · SA, Eyre Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-ellis-beach-north": {
+   "paese": "Australia",
+   "lat": -16.627,
+   "lon": 145.5604,
+   "esposizione": 59,
+   "nome": "Ellis Beach North · QLD, Far North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-greenly-beach": {
+   "paese": "Australia",
+   "lat": -34.3731,
+   "lon": 135.3168,
+   "esposizione": 241,
+   "nome": "Greenly Beach · SA, Eyre Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-picnic-bay": {
+   "paese": "Australia",
+   "lat": -38.9786,
+   "lon": 146.2591,
+   "esposizione": 208,
+   "nome": "Picnic Bay · VIC, Wilson Promentary",
+   "assegnato": "2026-10-19"
+  },
+  "australia-port-gregory": {
+   "paese": "Australia",
+   "lat": -27.9844,
+   "lon": 114.2226,
+   "esposizione": 249,
+   "nome": "Port Gregory · WA, Kalbarri",
+   "assegnato": "2026-10-19"
+  },
+  "australia-red-bluff": {
+   "paese": "Australia",
+   "lat": -37.9032,
+   "lon": 148.1,
+   "esposizione": 159,
+   "nome": "Red Bluff · VIC, East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "azores-porto-martins": {
+   "paese": "Azores",
+   "lat": 38.6873,
+   "lon": -27.0614,
+   "esposizione": 107,
+   "nome": "Porto Martins · Central group",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-borete": {
+   "paese": "Brazil",
+   "lat": -8.451,
+   "lon": -34.9862,
+   "esposizione": 108,
+   "nome": "Borete · Paraiba Pernambucco",
+   "assegnato": "2026-10-19"
+  },
+  "canada-china-beach": {
+   "paese": "Canada",
+   "lat": 48.4788,
+   "lon": -124.2139,
+   "esposizione": 210,
+   "nome": "China Beach · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-cow-bay-moose-rocks": {
+   "paese": "Canada",
+   "lat": 44.6371,
+   "lon": -63.3514,
+   "esposizione": 164,
+   "nome": "Cow Bay - Moose Rocks · East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canary-juan-grande": {
+   "paese": "Canary",
+   "lat": 27.7792,
+   "lon": -15.5136,
+   "esposizione": 155,
+   "nome": "Juan Grande · Gran Canaria",
+   "assegnato": "2026-10-19"
+  },
+  "canary-playa-de-salinas": {
+   "paese": "Canary",
+   "lat": 28.0997,
+   "lon": -14.2816,
+   "esposizione": 184,
+   "nome": "Playa de Salinas · Fuerte Ventura",
+   "assegnato": "2026-10-19"
+  },
+  "chile-baul": {
+   "paese": "Chile",
+   "lat": -20.2258,
+   "lon": -70.1449,
+   "esposizione": 272,
+   "nome": "Baul · Tarapaca",
+   "assegnato": "2026-10-19"
+  },
+  "chile-caleta-vitor": {
+   "paese": "Chile",
+   "lat": -18.5476,
+   "lon": -70.3228,
+   "esposizione": 255,
+   "nome": "Caleta Vitor · Tarapaca",
+   "assegnato": "2026-10-19"
+  },
+  "chile-las-penas-point": {
+   "paese": "Chile",
+   "lat": -37.2413,
+   "lon": -73.3399,
+   "esposizione": 296,
+   "nome": "Las Peñas Point · Sur",
+   "assegnato": "2026-10-19"
+  },
+  "china-dadonghai": {
+   "paese": "China",
+   "lat": 18.2822,
+   "lon": 109.7112,
+   "esposizione": 165,
+   "nome": "Dadonghai · South China Sea",
+   "assegnato": "2026-10-19"
+  },
+  "costa-rica-black-beach": {
+   "paese": "Costa Rica",
+   "lat": 9.6534,
+   "lon": -82.7298,
+   "esposizione": 36,
+   "nome": "Black Beach · Caribbean",
+   "assegnato": "2026-10-19"
+  },
+  "costa-rica-laverinto-laverint": {
+   "paese": "Costa Rica",
+   "lat": 10.826,
+   "lon": -85.7857,
+   "esposizione": 239,
+   "nome": "Laverinto (Laverint) · Guanacaste",
+   "assegnato": "2026-10-19"
+  },
+  "denmark-gilleleje-havn": {
+   "paese": "Denmark",
+   "lat": 56.0762,
+   "lon": 12.2063,
+   "esposizione": 330,
+   "nome": "Gilleleje havn",
+   "assegnato": "2026-10-19"
+  },
+  "dominican-republic-el-chinchorro": {
+   "paese": "Dominican Republic",
+   "lat": 18.3851,
+   "lon": -69.9344,
+   "esposizione": 167,
+   "nome": "El chinchorro",
+   "assegnato": "2026-10-19"
+  },
+  "fiji-beachouse": {
+   "paese": "Fiji",
+   "lat": -18.2259,
+   "lon": 177.7148,
+   "esposizione": 195,
+   "nome": "Beachouse",
+   "assegnato": "2026-10-19"
+  },
+  "fiji-canoes": {
+   "paese": "Fiji",
+   "lat": -17.8488,
+   "lon": 177.1691,
+   "esposizione": 277,
+   "nome": "Canoes",
+   "assegnato": "2026-10-19"
+  },
+  "france-berneval": {
+   "paese": "France",
+   "lat": 49.9583,
+   "lon": 1.1015,
+   "esposizione": 325,
+   "nome": "Berneval · Normandy",
+   "assegnato": "2026-10-19"
+  },
+  "gabon-gombe": {
+   "paese": "Gabon",
+   "lat": 0.2733,
+   "lon": 9.3356,
+   "esposizione": 279,
+   "nome": "Gombé",
+   "assegnato": "2026-10-19"
+  },
+  "germany-k4": {
+   "paese": "Germany",
+   "lat": 54.6952,
+   "lon": 8.3656,
+   "esposizione": 262,
+   "nome": "K4",
+   "assegnato": "2026-10-19"
+  },
+  "greece-ateni-beach": {
+   "paese": "Greece",
+   "lat": 37.7483,
+   "lon": 25.0396,
+   "esposizione": 50,
+   "nome": "Ateni Beach · Aegean Sea",
+   "assegnato": "2026-10-19"
+  },
+  "greece-chorefto": {
+   "paese": "Greece",
+   "lat": 39.2991,
+   "lon": 23.2902,
+   "esposizione": 67,
+   "nome": "Chorefto · Aegean Sea",
+   "assegnato": "2026-10-19"
+  },
+  "greece-limani-pasa-beach": {
+   "paese": "Greece",
+   "lat": 37.8843,
+   "lon": 23.9628,
+   "esposizione": 131,
+   "nome": "Limani Pasa Beach · Pelloponisos",
+   "assegnato": "2026-10-19"
+  },
+  "guadeloupe-anse-bertrand": {
+   "paese": "Guadeloupe",
+   "lat": 16.4161,
+   "lon": -61.5914,
+   "esposizione": 308,
+   "nome": "Anse Bertrand",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-green-bush": {
+   "paese": "Indonesia",
+   "lat": -2.7619,
+   "lon": 100.0148,
+   "esposizione": 212,
+   "nome": "Green Bush · Mentawai",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-tanjung-lesung": {
+   "paese": "Indonesia",
+   "lat": -6.3963,
+   "lon": 105.6626,
+   "esposizione": 298,
+   "nome": "Tanjung Lesung · West Java",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-carrowniskey": {
+   "paese": "Ireland",
+   "lat": 53.861,
+   "lon": -9.9705,
+   "esposizione": 286,
+   "nome": "Carrowniskey · West",
+   "assegnato": "2026-10-19"
+  },
+  "italy-sant-agostino": {
+   "paese": "Italy",
+   "lat": 41.0234,
+   "lon": 13.6312,
+   "esposizione": 218,
+   "nome": "Sant'Agostino · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "japan-katahama": {
+   "paese": "Japan",
+   "lat": 34.6784,
+   "lon": 138.2129,
+   "esposizione": 145,
+   "nome": "Katahama · Shizuoka",
+   "assegnato": "2026-10-19"
+  },
+  "lithuania-juodkrante": {
+   "paese": "Lithuania",
+   "lat": 55.6246,
+   "lon": 21.0528,
+   "esposizione": 270,
+   "nome": "Juodkrante",
+   "assegnato": "2026-10-19"
+  },
+  "martinique-grand-riviere-slab": {
+   "paese": "Martinique",
+   "lat": 14.8538,
+   "lon": -61.1873,
+   "esposizione": 319,
+   "nome": "Grand Rivière Slab.",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-barra-de-coyuca": {
+   "paese": "Mexico",
+   "lat": 16.7842,
+   "lon": -99.8049,
+   "esposizione": 203,
+   "nome": "Barra de coyuca · Guerrero",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-chen-rio": {
+   "paese": "Mexico",
+   "lat": 20.385,
+   "lon": -86.8716,
+   "esposizione": 125,
+   "nome": "Chen Rio · Gulf, Isla-do-cozumel",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-la-punta": {
+   "paese": "Mexico",
+   "lat": 15.8006,
+   "lon": -96.933,
+   "esposizione": 197,
+   "nome": "La Punta · Oaxaca-Chiapas",
+   "assegnato": "2026-10-19"
+  },
+  "micronesia-boat-basin-lefts": {
+   "paese": "Micronesia",
+   "lat": 13.4732,
+   "lon": 144.7018,
+   "esposizione": 313,
+   "nome": "Boat Basin Lefts · Guam",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-la-bokana": {
+   "paese": "Morocco",
+   "lat": 35.3269,
+   "lon": -2.9718,
+   "esposizione": 7,
+   "nome": "La Bokana · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "mozambique-guinjata-bay": {
+   "paese": "Mozambique",
+   "lat": -24.0612,
+   "lon": 35.4439,
+   "esposizione": 100,
+   "nome": "Guinjata Bay",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-matata": {
+   "paese": "New Zealand",
+   "lat": -37.8162,
+   "lon": 176.6218,
+   "esposizione": 23,
+   "nome": "Matata · New Zealand NI, Coromandel",
+   "assegnato": "2026-10-19"
+  },
+  "panama-bluff": {
+   "paese": "Panama",
+   "lat": 9.3686,
+   "lon": -82.2322,
+   "esposizione": 57,
+   "nome": "BLUFF",
+   "assegnato": "2026-10-19"
+  },
+  "panama-el-playon": {
+   "paese": "Panama",
+   "lat": 9.581,
+   "lon": -79.6108,
+   "esposizione": 345,
+   "nome": "EL Playon",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-chelsea-s-point": {
+   "paese": "Philippines",
+   "lat": 15.0567,
+   "lon": 120.0478,
+   "esposizione": 253,
+   "nome": "Chelsea's Point · Luzon",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-belgas": {
+   "paese": "Portugal",
+   "lat": 39.5149,
+   "lon": -9.1622,
+   "esposizione": 295,
+   "nome": "Belgas · Central Peniche",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-bonza-bay": {
+   "paese": "South Africa",
+   "lat": -32.9458,
+   "lon": 28.0118,
+   "esposizione": 138,
+   "nome": "Bonza Bay · East London",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-hondeklip-bay-reef": {
+   "paese": "South Africa",
+   "lat": -30.3659,
+   "lon": 17.3098,
+   "esposizione": 247,
+   "nome": "Hondeklip Bay Reef · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "south-korea-38th-parallel": {
+   "paese": "South Korea",
+   "lat": 37.9542,
+   "lon": 128.7804,
+   "esposizione": 58,
+   "nome": "38th Parallel",
+   "assegnato": "2026-10-19"
+  },
+  "spain-comillas": {
+   "paese": "Spain",
+   "lat": 43.3943,
+   "lon": -4.4144,
+   "esposizione": 1,
+   "nome": "Comillas · Cantabria",
+   "assegnato": "2026-10-19"
+  },
+  "taiwan-bashiendong": {
+   "paese": "Taiwan",
+   "lat": 23.616,
+   "lon": 121.5319,
+   "esposizione": 104,
+   "nome": "BashienDong",
+   "assegnato": "2026-10-19"
+  },
+  "tanzania-mangroves": {
+   "paese": "Tanzania",
+   "lat": -9.6931,
+   "lon": 39.7311,
+   "esposizione": 71,
+   "nome": "Mangroves",
+   "assegnato": "2026-10-19"
+  },
+  "uk-bamburgh": {
+   "paese": "UK",
+   "lat": 55.6373,
+   "lon": -1.9168,
+   "esposizione": 53,
+   "nome": "Bamburgh · Borders and NE England",
+   "assegnato": "2026-10-19"
+  },
+  "uk-skerrys": {
+   "paese": "UK",
+   "lat": 53.5764,
+   "lon": 0.1064,
+   "esposizione": 66,
+   "nome": "skerrys · East England",
+   "assegnato": "2026-10-19"
+  },
+  "usa-bunkers": {
+   "paese": "USA",
+   "lat": 40.6763,
+   "lon": -124.2752,
+   "esposizione": 279,
+   "nome": "Bunkers · California, Humboldt",
+   "assegnato": "2026-10-19"
+  },
+  "usa-destin": {
+   "paese": "USA",
+   "lat": 30.3851,
+   "lon": -86.5882,
+   "esposizione": 186,
+   "nome": "Destin · Gulf Coast, Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-fort-pierce-north-jetty": {
+   "paese": "USA",
+   "lat": 27.2865,
+   "lon": -80.2102,
+   "esposizione": 70,
+   "nome": "Fort Pierce North Jetty · South East, South Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-neah-bay-hobuck": {
+   "paese": "USA",
+   "lat": 48.1866,
+   "lon": -124.6679,
+   "esposizione": 276,
+   "nome": "Neah Bay - Hobuck · North West, Washington",
+   "assegnato": "2026-10-19"
+  },
+  "venezuela-isla-margarita-playa-el-agua": {
+   "paese": "Venezuela",
+   "lat": 11.1154,
+   "lon": -63.86,
+   "esposizione": 24,
+   "nome": "Isla Margarita - playa el agua",
+   "assegnato": "2026-10-19"
+  },
+  "australia-augusta-rivermouth": {
+   "paese": "Australia",
+   "lat": -34.371,
+   "lon": 115.2893,
+   "esposizione": 211,
+   "nome": "Augusta Rivermouth · WA, Margaret River South",
+   "assegnato": "2026-10-19"
+  },
+  "australia-balding-bay": {
+   "paese": "Australia",
+   "lat": -19.1273,
+   "lon": 146.8724,
+   "esposizione": 28,
+   "nome": "Balding Bay · QLD, Far North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-ball-bay": {
+   "paese": "Australia",
+   "lat": -29.0564,
+   "lon": 167.9671,
+   "esposizione": null,
+   "nome": "Ball Bay · Norfolk Island",
+   "assegnato": "2026-10-19"
+  },
+  "australia-cable-beach": {
+   "paese": "Australia",
+   "lat": -17.8009,
+   "lon": 122.1816,
+   "esposizione": 271,
+   "nome": "Cable Beach · WA, North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-emu-park": {
+   "paese": "Australia",
+   "lat": -23.1444,
+   "lon": 150.7982,
+   "esposizione": 76,
+   "nome": "Emu Park · QLD, Central-Queensland",
+   "assegnato": "2026-10-19"
+  },
+  "australia-mandalay-beach": {
+   "paese": "Australia",
+   "lat": -34.9541,
+   "lon": 116.4607,
+   "esposizione": 198,
+   "nome": "Mandalay Beach · WA, Walpole",
+   "assegnato": "2026-10-19"
+  },
+  "australia-nambucca-heads-breakwater": {
+   "paese": "Australia",
+   "lat": -30.5804,
+   "lon": 153.0213,
+   "esposizione": 99,
+   "nome": "Nambucca Heads - Breakwater · NSW, Banana Coast",
+   "assegnato": "2026-10-19"
+  },
+  "australia-quobba": {
+   "paese": "Australia",
+   "lat": -24.0928,
+   "lon": 113.4443,
+   "esposizione": 277,
+   "nome": "Quobba · WA, North West",
+   "assegnato": "2026-10-19"
+  },
+  "azores-baia-das-quatro-ribeiras": {
+   "paese": "Azores",
+   "lat": 38.7875,
+   "lon": -27.1335,
+   "esposizione": 26,
+   "nome": "Baia das Quatro Ribeiras · Central group",
+   "assegnato": "2026-10-19"
+  },
+  "bahamas-hatchet-bay": {
+   "paese": "Bahamas",
+   "lat": 25.3831,
+   "lon": -76.517,
+   "esposizione": null,
+   "nome": "Hatchet Bay",
+   "assegnato": "2026-10-19"
+  },
+  "benin-la-meduse": {
+   "paese": "Benin",
+   "lat": 6.3489,
+   "lon": 2.364,
+   "esposizione": 174,
+   "nome": "la Méduse",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-abras": {
+   "paese": "Brazil",
+   "lat": -3.8373,
+   "lon": -32.4145,
+   "esposizione": null,
+   "nome": "Abras · Fernando do Noronha",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-arroio-do-silva": {
+   "paese": "Brazil",
+   "lat": -29.032,
+   "lon": -49.4423,
+   "esposizione": 131,
+   "nome": "Arroio do Silva · Santa Catarina",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-praia-do-cassino": {
+   "paese": "Brazil",
+   "lat": -32.1264,
+   "lon": -52.082,
+   "esposizione": 122,
+   "nome": "Praia do Cassino · Rio Grande do Sul",
+   "assegnato": "2026-10-19"
+  },
+  "brunei-berakas-coastal-park": {
+   "paese": "Brunei",
+   "lat": 5.0045,
+   "lon": 114.9502,
+   "esposizione": 343,
+   "nome": "Berakas Coastal Park",
+   "assegnato": "2026-10-19"
+  },
+  "canada-cherry-hill": {
+   "paese": "Canada",
+   "lat": 44.2096,
+   "lon": -64.4015,
+   "esposizione": 133,
+   "nome": "Cherry Hill · East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "chile-la-cupula": {
+   "paese": "Chile",
+   "lat": -23.6518,
+   "lon": -70.409,
+   "esposizione": 276,
+   "nome": "La Cupula · Antofagasta",
+   "assegnato": "2026-10-19"
+  },
+  "colombia-el-bolsillo": {
+   "paese": "Colombia",
+   "lat": 11.0138,
+   "lon": -74.9433,
+   "esposizione": 329,
+   "nome": "El bolsillo · Caribbean",
+   "assegnato": "2026-10-19"
+  },
+  "denmark-borsmose": {
+   "paese": "Denmark",
+   "lat": 55.7659,
+   "lon": 8.1257,
+   "esposizione": 262,
+   "nome": "borsmose",
+   "assegnato": "2026-10-19"
+  },
+  "east-timor-dili-rock": {
+   "paese": "East Timor",
+   "lat": -8.6349,
+   "lon": 125.3865,
+   "esposizione": 338,
+   "nome": "Dili Rock",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-carola": {
+   "paese": "Ecuador",
+   "lat": -0.9097,
+   "lon": -89.6182,
+   "esposizione": 254,
+   "nome": "Carola · Galapagos Islands",
+   "assegnato": "2026-10-19"
+  },
+  "france-capo-di-feno": {
+   "paese": "France",
+   "lat": 41.9393,
+   "lon": 8.7171,
+   "esposizione": 260,
+   "nome": "capo di feno · Corsica",
+   "assegnato": "2026-10-19"
+  },
+  "france-palavas-les-flots": {
+   "paese": "France",
+   "lat": 43.4202,
+   "lon": 3.9334,
+   "esposizione": 165,
+   "nome": "Palavas les Flots · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "french-guiana-ilet-du-novotel-2": {
+   "paese": "French Guiana",
+   "lat": 5.0335,
+   "lon": -52.3792,
+   "esposizione": 37,
+   "nome": "ilet du novotel 2 · Iles-du-salut",
+   "assegnato": "2026-10-19"
+  },
+  "gabon-cap-lopez": {
+   "paese": "Gabon",
+   "lat": -0.669,
+   "lon": 8.7235,
+   "esposizione": 279,
+   "nome": "Cap Lopez",
+   "assegnato": "2026-10-19"
+  },
+  "gambia-kololi-kotu-kombo": {
+   "paese": "Gambia",
+   "lat": 13.3354,
+   "lon": -16.7498,
+   "esposizione": 289,
+   "nome": "Kololi Kotu & Kombo",
+   "assegnato": "2026-10-19"
+  },
+  "germany-borkum-nordstrand": {
+   "paese": "Germany",
+   "lat": 53.6374,
+   "lon": 6.8189,
+   "esposizione": 337,
+   "nome": "Borkum, Nordstrand",
+   "assegnato": "2026-10-19"
+  },
+  "germany-kuhlungsborn": {
+   "paese": "Germany",
+   "lat": 54.2053,
+   "lon": 12.0534,
+   "esposizione": 336,
+   "nome": "Kühlungsborn",
+   "assegnato": "2026-10-19"
+  },
+  "greece-ammes-beach": {
+   "paese": "Greece",
+   "lat": 38.1245,
+   "lon": 20.5375,
+   "esposizione": 221,
+   "nome": "Ammes Beach · Ionian Sea",
+   "assegnato": "2026-10-19"
+  },
+  "greece-kalamitsi": {
+   "paese": "Greece",
+   "lat": 40.0243,
+   "lon": 23.9733,
+   "esposizione": 124,
+   "nome": "kalamitsi · Aegean Sea",
+   "assegnato": "2026-10-19"
+  },
+  "guadeloupe-anse-a-la-bouelle": {
+   "paese": "Guadeloupe",
+   "lat": 16.3325,
+   "lon": -61.3331,
+   "esposizione": 51,
+   "nome": "Anse à la Bouelle",
+   "assegnato": "2026-10-19"
+  },
+  "iceland-grindavik-antenas": {
+   "paese": "Iceland",
+   "lat": 63.8351,
+   "lon": -22.0734,
+   "esposizione": 195,
+   "nome": "Grindavik Antenas",
+   "assegnato": "2026-10-19"
+  },
+  "india-arambol": {
+   "paese": "India",
+   "lat": 15.4124,
+   "lon": 73.8414,
+   "esposizione": 245,
+   "nome": "Arambol · North-West",
+   "assegnato": "2026-10-19"
+  },
+  "india-boar-rice": {
+   "paese": "India",
+   "lat": 8.6113,
+   "lon": 76.797,
+   "esposizione": 229,
+   "nome": "Boar rice · Kerala",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-belongas": {
+   "paese": "Indonesia",
+   "lat": -8.8845,
+   "lon": 116.2159,
+   "esposizione": 190,
+   "nome": "Belongas · Lombok",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-black-sands": {
+   "paese": "Indonesia",
+   "lat": -2.6189,
+   "lon": 140.7946,
+   "esposizione": 17,
+   "nome": "Black Sands · Others",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-lakey-peak": {
+   "paese": "Indonesia",
+   "lat": -8.7976,
+   "lon": 118.3693,
+   "esposizione": 203,
+   "nome": "Lakey Peak · Sumbawa",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-mengkudu": {
+   "paese": "Indonesia",
+   "lat": -10.1751,
+   "lon": 120.2102,
+   "esposizione": 189,
+   "nome": "Mengkudu · Savu Sea",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-payangan": {
+   "paese": "Indonesia",
+   "lat": -8.4753,
+   "lon": 113.6931,
+   "esposizione": 195,
+   "nome": "Payangan · East Java",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-wanyapu": {
+   "paese": "Indonesia",
+   "lat": -9.6755,
+   "lon": 119.1208,
+   "esposizione": 227,
+   "nome": "Wanyapu · Savu Sea",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-annestown": {
+   "paese": "Ireland",
+   "lat": 52.141,
+   "lon": -7.2539,
+   "esposizione": 161,
+   "nome": "Annestown · South East",
+   "assegnato": "2026-10-19"
+  },
+  "israel-ashdod-hshover": {
+   "paese": "Israel",
+   "lat": 31.7942,
+   "lon": 34.6279,
+   "esposizione": 299,
+   "nome": "Ashdod -hshover",
+   "assegnato": "2026-10-19"
+  },
+  "japan-futami": {
+   "paese": "Japan",
+   "lat": 32.8971,
+   "lon": 132.9363,
+   "esposizione": 144,
+   "nome": "Futami · Shikoku",
+   "assegnato": "2026-10-19"
+  },
+  "japan-nagahama": {
+   "paese": "Japan",
+   "lat": 30.6051,
+   "lon": 130.9434,
+   "esposizione": 261,
+   "nome": "Nagahama · Kyushu, Tanegashima-Island",
+   "assegnato": "2026-10-19"
+  },
+  "latvia-pavilosta": {
+   "paese": "Latvia",
+   "lat": 56.9003,
+   "lon": 21.1954,
+   "esposizione": 288,
+   "nome": "Pavilosta",
+   "assegnato": "2026-10-19"
+  },
+  "madagascar-flameballs": {
+   "paese": "Madagascar",
+   "lat": -23.4161,
+   "lon": 43.6066,
+   "esposizione": 260,
+   "nome": "Flameballs",
+   "assegnato": "2026-10-19"
+  },
+  "madagascar-libanono": {
+   "paese": "Madagascar",
+   "lat": -25.039,
+   "lon": 46.9946,
+   "esposizione": 140,
+   "nome": "Libanono",
+   "assegnato": "2026-10-19"
+  },
+  "madeira-achadas-da-cruz": {
+   "paese": "Madeira",
+   "lat": 32.8336,
+   "lon": -17.2076,
+   "esposizione": 313,
+   "nome": "Achadas da Cruz",
+   "assegnato": "2026-10-19"
+  },
+  "malaysia-cherating": {
+   "paese": "Malaysia",
+   "lat": 4.0917,
+   "lon": 103.4148,
+   "esposizione": 94,
+   "nome": "Cherating",
+   "assegnato": "2026-10-19"
+  },
+  "maldives-airport-right": {
+   "paese": "Maldives",
+   "lat": -0.6909,
+   "lon": 73.1847,
+   "esposizione": null,
+   "nome": "Airport right",
+   "assegnato": "2026-10-19"
+  },
+  "martinique-diam-s": {
+   "paese": "Martinique",
+   "lat": 14.4575,
+   "lon": -60.9866,
+   "esposizione": 193,
+   "nome": "Diam's",
+   "assegnato": "2026-10-19"
+  },
+  "mauritius-darne": {
+   "paese": "Mauritius",
+   "lat": -20.4361,
+   "lon": 57.731,
+   "esposizione": 128,
+   "nome": "Darne",
+   "assegnato": "2026-10-19"
+  },
+  "mayotte-les-aviateurs": {
+   "paese": "Mayotte",
+   "lat": -12.8005,
+   "lon": 45.2813,
+   "esposizione": 81,
+   "nome": "les aviateurs",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-chacmool": {
+   "paese": "Mexico",
+   "lat": 21.1506,
+   "lon": -86.7469,
+   "esposizione": 88,
+   "nome": "Chacmool · Gulf",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-cuatro-casas": {
+   "paese": "Mexico",
+   "lat": 31.1799,
+   "lon": -116.3579,
+   "esposizione": 238,
+   "nome": "Cuatro Casas · Baja Norte",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-essaouira": {
+   "paese": "Morocco",
+   "lat": 31.3184,
+   "lon": -9.7996,
+   "esposizione": 280,
+   "nome": "Essaouira · South",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-lalla-fatna": {
+   "paese": "Morocco",
+   "lat": 32.4867,
+   "lon": -9.1854,
+   "esposizione": 294,
+   "nome": "Lalla fatna · North",
+   "assegnato": "2026-10-19"
+  },
+  "namibia-affenrucken-point": {
+   "paese": "Namibia",
+   "lat": -27.7807,
+   "lon": 15.5821,
+   "esposizione": 239,
+   "nome": "Affenrucken point",
+   "assegnato": "2026-10-19"
+  },
+  "namibia-hottentot-bay": {
+   "paese": "Namibia",
+   "lat": -26.0569,
+   "lon": 14.9115,
+   "esposizione": 259,
+   "nome": "Hottentot Bay",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-dinner-plates": {
+   "paese": "New Zealand",
+   "lat": -46.6351,
+   "lon": 169.2009,
+   "esposizione": 174,
+   "nome": "Dinner Plates · New Zealand SI, Far South",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-kahutara": {
+   "paese": "New Zealand",
+   "lat": -42.2468,
+   "lon": 173.7852,
+   "esposizione": 123,
+   "nome": "Kahutara · New Zealand SI, NE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-matauri-bay": {
+   "paese": "New Zealand",
+   "lat": -35.1001,
+   "lon": 173.9734,
+   "esposizione": 21,
+   "nome": "matauri bay · New Zealand NI, NE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-otaki-river-mouth": {
+   "paese": "New Zealand",
+   "lat": -40.9491,
+   "lon": 174.9653,
+   "esposizione": 289,
+   "nome": "Otaki River mouth · New Zealand NI, SW Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-raglan-indicators": {
+   "paese": "New Zealand",
+   "lat": -37.8612,
+   "lon": 174.7957,
+   "esposizione": 281,
+   "nome": "Raglan - Indicators · New Zealand NI, West Coast Auckland",
+   "assegnato": "2026-10-19"
+  },
+  "papua-new-guinea-vanimo-reef": {
+   "paese": "Papua New Guinea",
+   "lat": -2.6747,
+   "lon": 141.3048,
+   "esposizione": 20,
+   "nome": "Vanimo Reef",
+   "assegnato": "2026-10-19"
+  },
+  "poland-rurociag": {
+   "paese": "Poland",
+   "lat": 54.7773,
+   "lon": 18.1509,
+   "esposizione": 16,
+   "nome": "Rurociag",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-ilha-de-tavira": {
+   "paese": "Portugal",
+   "lat": 37.1513,
+   "lon": -7.5112,
+   "esposizione": 169,
+   "nome": "Ilha de Tavira · Algarve",
+   "assegnato": "2026-10-19"
+  },
+  "puerto-rico-ballenas": {
+   "paese": "Puerto Rico",
+   "lat": 17.9457,
+   "lon": -66.8692,
+   "esposizione": 182,
+   "nome": "Ballenas",
+   "assegnato": "2026-10-19"
+  },
+  "russia-atlantis": {
+   "paese": "Russia",
+   "lat": 60.1423,
+   "lon": 29.6703,
+   "esposizione": 236,
+   "nome": "Atlantis · Finnish Bay",
+   "assegnato": "2026-10-19"
+  },
+  "russia-chaika": {
+   "paese": "Russia",
+   "lat": 43.473,
+   "lon": 39.8908,
+   "esposizione": 220,
+   "nome": "Chaika · Black Sea",
+   "assegnato": "2026-10-19"
+  },
+  "russia-kuda": {
+   "paese": "Russia",
+   "lat": 42.732,
+   "lon": 132.9192,
+   "esposizione": 193,
+   "nome": "Kuda · Far East, Primorsky Krai",
+   "assegnato": "2026-10-19"
+  },
+  "sao-tome-alfonsita": {
+   "paese": "Sao Tome",
+   "lat": 0.2307,
+   "lon": 6.7233,
+   "esposizione": 110,
+   "nome": "alfonsita",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-camps-bay-shorey": {
+   "paese": "South Africa",
+   "lat": -33.9222,
+   "lon": 18.3866,
+   "esposizione": 276,
+   "nome": "Camps Bay shorey · Cape Town",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-cape-infanta": {
+   "paese": "South Africa",
+   "lat": -34.4136,
+   "lon": 21.211,
+   "esposizione": 169,
+   "nome": "Cape Infanta · South Garden Route",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-coffee-bay-beach-point": {
+   "paese": "South Africa",
+   "lat": -31.9285,
+   "lon": 29.2188,
+   "esposizione": 133,
+   "nome": "Coffee Bay Beach Point · Wild Coast",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-lookout-beach": {
+   "paese": "South Africa",
+   "lat": -34.0379,
+   "lon": 23.3333,
+   "esposizione": 174,
+   "nome": "Lookout beach · South George",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-port-nolloth-reef": {
+   "paese": "South Africa",
+   "lat": -29.3084,
+   "lon": 16.8909,
+   "esposizione": 247,
+   "nome": "Port Nolloth Reef · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "spain-cala-mesquida-palma": {
+   "paese": "Spain",
+   "lat": 39.784,
+   "lon": 3.2624,
+   "esposizione": 48,
+   "nome": "Cala Mesquida ( Palma) · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-calblanque": {
+   "paese": "Spain",
+   "lat": 37.6292,
+   "lon": -0.7714,
+   "esposizione": 129,
+   "nome": "Calblanque · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-mallorca-cala-major": {
+   "paese": "Spain",
+   "lat": 39.4761,
+   "lon": 2.6842,
+   "esposizione": 205,
+   "nome": "Mallorca - Cala Major · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-mazagon": {
+   "paese": "Spain",
+   "lat": 37.0054,
+   "lon": -6.7663,
+   "esposizione": 214,
+   "nome": "Mazagón · Andalucia",
+   "assegnato": "2026-10-19"
+  },
+  "st-martin-blake-s-break": {
+   "paese": "St Martin",
+   "lat": 18.0955,
+   "lon": -63.0147,
+   "esposizione": 75,
+   "nome": "Blake's break",
+   "assegnato": "2026-10-19"
+  },
+  "sweden-a-land": {
+   "paese": "Sweden",
+   "lat": 57.2559,
+   "lon": 12.1275,
+   "esposizione": 249,
+   "nome": "Å-land",
+   "assegnato": "2026-10-19"
+  },
+  "thailand-bang-niang-rivermouth": {
+   "paese": "Thailand",
+   "lat": 8.6857,
+   "lon": 98.2353,
+   "esposizione": 271,
+   "nome": "Bang Niang Rivermouth",
+   "assegnato": "2026-10-19"
+  },
+  "togo-aneho-beach": {
+   "paese": "Togo",
+   "lat": 6.1604,
+   "lon": 1.367,
+   "esposizione": 160,
+   "nome": "Aneho Beach",
+   "assegnato": "2026-10-19"
+  },
+  "tunisia-la-droite-du-fort": {
+   "paese": "Tunisia",
+   "lat": 36.9639,
+   "lon": 8.7447,
+   "esposizione": 342,
+   "nome": "La Droite du Fort",
+   "assegnato": "2026-10-19"
+  },
+  "turkey-castles": {
+   "paese": "Turkey",
+   "lat": 36.5537,
+   "lon": 34.2789,
+   "esposizione": 143,
+   "nome": "Castles",
+   "assegnato": "2026-10-19"
+  },
+  "uk-broadstairs": {
+   "paese": "UK",
+   "lat": 51.3561,
+   "lon": 1.4375,
+   "esposizione": 67,
+   "nome": "Broadstairs · South East",
+   "assegnato": "2026-10-19"
+  },
+  "uk-caerfai-bay": {
+   "paese": "UK",
+   "lat": 51.8297,
+   "lon": -5.2563,
+   "esposizione": 259,
+   "nome": "Caerfai Bay · West Wales",
+   "assegnato": "2026-10-19"
+  },
+  "uk-sandend": {
+   "paese": "UK",
+   "lat": 57.6952,
+   "lon": -2.6726,
+   "esposizione": 23,
+   "nome": "Sandend · NE Scotland",
+   "assegnato": "2026-10-19"
+  },
+  "usa-bellingham-bay": {
+   "paese": "USA",
+   "lat": 48.6174,
+   "lon": -122.6847,
+   "esposizione": 260,
+   "nome": "Bellingham Bay · North West, Washington",
+   "assegnato": "2026-10-19"
+  },
+  "usa-bill-s-bowls": {
+   "paese": "USA",
+   "lat": 38.6304,
+   "lon": -123.3697,
+   "esposizione": 236,
+   "nome": "Bill's Bowls · California, Sonoma",
+   "assegnato": "2026-10-19"
+  },
+  "usa-cisco-beach-nantucket-island": {
+   "paese": "USA",
+   "lat": 41.2573,
+   "lon": -70.146,
+   "esposizione": 181,
+   "nome": "Cisco Beach (Nantucket Island) · North East, Southern New England",
+   "assegnato": "2026-10-19"
+  },
+  "usa-coos-bay-bastendorf-beach": {
+   "paese": "USA",
+   "lat": 43.3434,
+   "lon": -124.3631,
+   "esposizione": 290,
+   "nome": "Coos Bay - Bastendorf Beach · North West, Oregon South",
+   "assegnato": "2026-10-19"
+  },
+  "usa-coronado-silver-strand-state-beach": {
+   "paese": "USA",
+   "lat": 32.586,
+   "lon": -117.1343,
+   "esposizione": 252,
+   "nome": "Coronado Silver Strand State Beach · California, San Diego County",
+   "assegnato": "2026-10-19"
+  },
+  "usa-garden-city-pier": {
+   "paese": "USA",
+   "lat": 33.4696,
+   "lon": -79.0776,
+   "esposizione": 127,
+   "nome": "Garden City Pier · South East, South Carolina",
+   "assegnato": "2026-10-19"
+  },
+  "vanuatu-efate-breakas": {
+   "paese": "Vanuatu",
+   "lat": -17.7877,
+   "lon": 168.318,
+   "esposizione": 210,
+   "nome": "Efate - Breakas",
+   "assegnato": "2026-10-19"
+  },
+  "virgin-islands-turner-bay": {
+   "paese": "Virgin Islands",
+   "lat": 18.3412,
+   "lon": -64.9127,
+   "esposizione": 256,
+   "nome": "Turner Bay",
+   "assegnato": "2026-10-19"
+  },
+  "albania-bishtpala-out": {
+   "paese": "Albania",
+   "lat": 41.3445,
+   "lon": 19.4437,
+   "esposizione": 266,
+   "nome": "Bishtpala Out",
+   "assegnato": "2026-10-19"
+  },
+  "algeria-annaba": {
+   "paese": "Algeria",
+   "lat": 36.8812,
+   "lon": 8.1062,
+   "esposizione": 2,
+   "nome": "Annaba",
+   "assegnato": "2026-10-19"
+  },
+  "angola-cabgo": {
+   "paese": "Angola",
+   "lat": -5.3194,
+   "lon": 12.1713,
+   "esposizione": 252,
+   "nome": "cabgo",
+   "assegnato": "2026-10-19"
+  },
+  "angola-quicombo": {
+   "paese": "Angola",
+   "lat": -11.272,
+   "lon": 13.8226,
+   "esposizione": 274,
+   "nome": "Quicombo",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-escollera-necochea": {
+   "paese": "Argentina",
+   "lat": -38.5787,
+   "lon": -58.6956,
+   "esposizione": 159,
+   "nome": "Escollera Necochea · North",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-espigon": {
+   "paese": "Argentina",
+   "lat": -41.0909,
+   "lon": -62.929,
+   "esposizione": 158,
+   "nome": "Espigon · South",
+   "assegnato": "2026-10-19"
+  },
+  "australia-agnes-water": {
+   "paese": "Australia",
+   "lat": -24.2206,
+   "lon": 151.9225,
+   "esposizione": 54,
+   "nome": "Agnes Water · QLD, Central-Queensland",
+   "assegnato": "2026-10-19"
+  },
+  "australia-ann-bay": {
+   "paese": "Australia",
+   "lat": -40.8967,
+   "lon": 144.6793,
+   "esposizione": 290,
+   "nome": "Ann bay · TAS",
+   "assegnato": "2026-10-19"
+  },
+  "australia-anson-bay": {
+   "paese": "Australia",
+   "lat": -31.5331,
+   "lon": 159.0733,
+   "esposizione": null,
+   "nome": "Anson Bay · NSW, North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-bingil-bay": {
+   "paese": "Australia",
+   "lat": -17.7064,
+   "lon": 146.1016,
+   "esposizione": 84,
+   "nome": "Bingil Bay · QLD, Far North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-blackfellows": {
+   "paese": "Australia",
+   "lat": -33.74,
+   "lon": 134.9903,
+   "esposizione": 236,
+   "nome": "Blackfellows · SA, Eyre Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-bribie-island": {
+   "paese": "Australia",
+   "lat": -27.2404,
+   "lon": 153.367,
+   "esposizione": 75,
+   "nome": "Bribie Island · QLD, Sunshine Coast",
+   "assegnato": "2026-10-19"
+  },
+  "australia-browns-beach": {
+   "paese": "Australia",
+   "lat": -38.0522,
+   "lon": 140.8635,
+   "esposizione": 199,
+   "nome": "Browns Beach · SA, East",
+   "assegnato": "2026-10-19"
+  },
+  "australia-copeys-left": {
+   "paese": "Australia",
+   "lat": -33.5872,
+   "lon": 115.0972,
+   "esposizione": 344,
+   "nome": "Copeys left · WA, Margaret River North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-dunes-exmouth": {
+   "paese": "Australia",
+   "lat": -21.7305,
+   "lon": 114.2445,
+   "esposizione": 338,
+   "nome": "Dunes - Exmouth · WA, North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-fishery-bay": {
+   "paese": "Australia",
+   "lat": -34.9409,
+   "lon": 135.8951,
+   "esposizione": 163,
+   "nome": "Fishery Bay · SA, Eyre Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-fraser-island": {
+   "paese": "Australia",
+   "lat": -24.9303,
+   "lon": 153.3066,
+   "esposizione": 58,
+   "nome": "Fraser Island · QLD, North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-middle-river-wedge": {
+   "paese": "Australia",
+   "lat": -35.644,
+   "lon": 137.1406,
+   "esposizione": 339,
+   "nome": "Middle river wedge · SA, Kangeroo Island",
+   "assegnato": "2026-10-19"
+  },
+  "australia-old-pier-beach": {
+   "paese": "Australia",
+   "lat": -40.9789,
+   "lon": 147.2126,
+   "esposizione": 358,
+   "nome": "Old Pier beach · TAS, North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "australia-robe-long-beach": {
+   "paese": "Australia",
+   "lat": -37.1513,
+   "lon": 139.7696,
+   "esposizione": 256,
+   "nome": "Robe Long Beach · SA, East",
+   "assegnato": "2026-10-19"
+  },
+  "bahamas-garbanzo": {
+   "paese": "Bahamas",
+   "lat": 26.5117,
+   "lon": -76.9709,
+   "esposizione": 62,
+   "nome": "Garbanzo",
+   "assegnato": "2026-10-19"
+  },
+  "barbados-cattlewash": {
+   "paese": "Barbados",
+   "lat": 13.1922,
+   "lon": -59.4806,
+   "esposizione": 60,
+   "nome": "Cattlewash",
+   "assegnato": "2026-10-19"
+  },
+  "barbados-duppies": {
+   "paese": "Barbados",
+   "lat": 13.3006,
+   "lon": -59.6471,
+   "esposizione": 314,
+   "nome": "Duppies",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-dique-de-cabedelo": {
+   "paese": "Brazil",
+   "lat": -7.0042,
+   "lon": -34.842,
+   "esposizione": 77,
+   "nome": "Dique de Cabedelo · Paraiba Pernambucco",
+   "assegnato": "2026-10-19"
+  },
+  "bulgaria-kabakum-beach": {
+   "paese": "Bulgaria",
+   "lat": 43.3993,
+   "lon": 28.3169,
+   "esposizione": 116,
+   "nome": "kabakum beach",
+   "assegnato": "2026-10-19"
+  },
+  "burma-chaungtha-beach-burma-brother-sist": {
+   "paese": "Burma",
+   "lat": 16.9233,
+   "lon": 94.4202,
+   "esposizione": 280,
+   "nome": "Chaungtha Beach Burma - Brother sister twin pagoda",
+   "assegnato": "2026-10-19"
+  },
+  "cameroon-lonely-left": {
+   "paese": "Cameroon",
+   "lat": 4.0144,
+   "lon": 9.1212,
+   "esposizione": 211,
+   "nome": "Lonely Left",
+   "assegnato": "2026-10-19"
+  },
+  "canada-29th-street": {
+   "paese": "Canada",
+   "lat": 49.33,
+   "lon": -123.1732,
+   "esposizione": 226,
+   "nome": "29th Street · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-habitat-67-montreal": {
+   "paese": "Canada",
+   "lat": 45.4598,
+   "lon": -73.5727,
+   "esposizione": 325,
+   "nome": "Habitat '67 - Montreal · East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-hansons": {
+   "paese": "Canada",
+   "lat": 49.7812,
+   "lon": -124.4262,
+   "esposizione": 202,
+   "nome": "Hansons · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-kennington-cove": {
+   "paese": "Canada",
+   "lat": 45.7327,
+   "lon": -60.3708,
+   "esposizione": 148,
+   "nome": "Kennington Cove · East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canary-muelle-de-san-cristobal": {
+   "paese": "Canary",
+   "lat": 28.0356,
+   "lon": -15.3941,
+   "esposizione": 78,
+   "nome": "Muelle de San Cristobal · Gran Canaria",
+   "assegnato": "2026-10-19"
+  },
+  "cape-verde-coca-s-beach-praia": {
+   "paese": "Cape Verde",
+   "lat": 14.9096,
+   "lon": -23.5144,
+   "esposizione": 156,
+   "nome": "Coca's Beach,Praia",
+   "assegnato": "2026-10-19"
+  },
+  "chile-avenida-del-mar": {
+   "paese": "Chile",
+   "lat": -29.9952,
+   "lon": -71.3267,
+   "esposizione": 282,
+   "nome": "Avenida del mar · Coquimbo",
+   "assegnato": "2026-10-19"
+  },
+  "chile-barrancon": {
+   "paese": "Chile",
+   "lat": -21.6284,
+   "lon": -70.1019,
+   "esposizione": 276,
+   "nome": "Barrancon · Tarapaca",
+   "assegnato": "2026-10-19"
+  },
+  "china-gloden-beach": {
+   "paese": "China",
+   "lat": 36.1163,
+   "lon": 120.4671,
+   "esposizione": 122,
+   "nome": "Gloden beach · Yellow Sea",
+   "assegnato": "2026-10-19"
+  },
+  "colombia-7-olas": {
+   "paese": "Colombia",
+   "lat": 11.2927,
+   "lon": -73.9343,
+   "esposizione": 350,
+   "nome": "7 olas · Caribbean",
+   "assegnato": "2026-10-19"
+  },
+  "colombia-cartagena-jetty": {
+   "paese": "Colombia",
+   "lat": 10.3968,
+   "lon": -75.5599,
+   "esposizione": 294,
+   "nome": "Cartagena Jetty · Caribbean",
+   "assegnato": "2026-10-19"
+  },
+  "congo-cote-sauvage": {
+   "paese": "Congo",
+   "lat": -4.7933,
+   "lon": 11.8342,
+   "esposizione": 239,
+   "nome": "Cote sauvage",
+   "assegnato": "2026-10-19"
+  },
+  "costa-rica-backwash": {
+   "paese": "Costa Rica",
+   "lat": 8.3922,
+   "lon": -83.2092,
+   "esposizione": 211,
+   "nome": "Backwash · Pacific South",
+   "assegnato": "2026-10-19"
+  },
+  "curacao-klein-curacao-rights": {
+   "paese": "Curacao",
+   "lat": 12.0875,
+   "lon": -68.7566,
+   "esposizione": 30,
+   "nome": "Klein Curaçao Rights",
+   "assegnato": "2026-10-19"
+  },
+  "cyprus-caretta-caretta": {
+   "paese": "Cyprus",
+   "lat": 35.1673,
+   "lon": 32.683,
+   "esposizione": 308,
+   "nome": "Caretta Caretta",
+   "assegnato": "2026-10-19"
+  },
+  "denmark-d-bay": {
+   "paese": "Denmark",
+   "lat": 55.2549,
+   "lon": 12.3906,
+   "esposizione": 126,
+   "nome": "D´Bay",
+   "assegnato": "2026-10-19"
+  },
+  "denmark-hirtshals": {
+   "paese": "Denmark",
+   "lat": 57.4863,
+   "lon": 9.835,
+   "esposizione": 324,
+   "nome": "Hirtshals",
+   "assegnato": "2026-10-19"
+  },
+  "dominican-republic-coco-nuts": {
+   "paese": "Dominican Republic",
+   "lat": 18.7421,
+   "lon": -68.4863,
+   "esposizione": 50,
+   "nome": "Coco nuts",
+   "assegnato": "2026-10-19"
+  },
+  "dominican-republic-el-manda": {
+   "paese": "Dominican Republic",
+   "lat": 18.0093,
+   "lon": -71.1498,
+   "esposizione": 136,
+   "nome": "El Manda",
+   "assegnato": "2026-10-19"
+  },
+  "easter-mataveri": {
+   "paese": "Easter",
+   "lat": -27.1591,
+   "lon": -109.441,
+   "esposizione": 242,
+   "nome": "Mataveri",
+   "assegnato": "2026-10-19"
+  },
+  "el-salvador-las-flores": {
+   "paese": "El Salvador",
+   "lat": 13.165,
+   "lon": -88.162,
+   "esposizione": 186,
+   "nome": "Las Flores",
+   "assegnato": "2026-10-19"
+  },
+  "france-etang-de-l-ovu-santu": {
+   "paese": "France",
+   "lat": 41.7036,
+   "lon": 9.3973,
+   "esposizione": 104,
+   "nome": "Etang de l'Ovu Santu · Corsica",
+   "assegnato": "2026-10-19"
+  },
+  "france-penfoul": {
+   "paese": "France",
+   "lat": 48.3144,
+   "lon": -4.6091,
+   "esposizione": 290,
+   "nome": "Penfoul · Brittany North",
+   "assegnato": "2026-10-19"
+  },
+  "french-polynesia-te-ava-iti": {
+   "paese": "French Polynesia",
+   "lat": -17.8536,
+   "lon": -149.2751,
+   "esposizione": 196,
+   "nome": "te ava iti · Tahiti",
+   "assegnato": "2026-10-19"
+  },
+  "greece-abrami-beach": {
+   "paese": "Greece",
+   "lat": 36.979,
+   "lon": 25.3786,
+   "esposizione": 324,
+   "nome": "Abrami Beach · Greek Islands",
+   "assegnato": "2026-10-19"
+  },
+  "greece-agios-dimitrios": {
+   "paese": "Greece",
+   "lat": 37.8126,
+   "lon": 23.8311,
+   "esposizione": 196,
+   "nome": "Agios Dimitrios · Pelloponisos",
+   "assegnato": "2026-10-19"
+  },
+  "greece-agios-giorgios-corfu": {
+   "paese": "Greece",
+   "lat": 39.6536,
+   "lon": 19.7434,
+   "esposizione": 240,
+   "nome": "Agios Giorgios - Corfu · Ionian Sea",
+   "assegnato": "2026-10-19"
+  },
+  "greece-almiros": {
+   "paese": "Greece",
+   "lat": 35.151,
+   "lon": 25.7264,
+   "esposizione": 71,
+   "nome": "Almiros · Crete Island",
+   "assegnato": "2026-10-19"
+  },
+  "greece-falasarna-reef": {
+   "paese": "Greece",
+   "lat": 35.4518,
+   "lon": 23.5621,
+   "esposizione": 284,
+   "nome": "Falasarna Reef · Crete Island",
+   "assegnato": "2026-10-19"
+  },
+  "greece-kalyves": {
+   "paese": "Greece",
+   "lat": 35.4827,
+   "lon": 24.0647,
+   "esposizione": 12,
+   "nome": "Kalyves · Crete Island",
+   "assegnato": "2026-10-19"
+  },
+  "greece-konaki-beach": {
+   "paese": "Greece",
+   "lat": 35.3136,
+   "lon": 25.3386,
+   "esposizione": 14,
+   "nome": "Konaki Beach · Crete Island",
+   "assegnato": "2026-10-19"
+  },
+  "greece-makrys-gyalos": {
+   "paese": "Greece",
+   "lat": 35.0205,
+   "lon": 25.8712,
+   "esposizione": 168,
+   "nome": "Makrys Gyalos · Crete Island",
+   "assegnato": "2026-10-19"
+  },
+  "iceland-dalkur": {
+   "paese": "Iceland",
+   "lat": 64.3626,
+   "lon": -14.7334,
+   "esposizione": 137,
+   "nome": "Dálkur",
+   "assegnato": "2026-10-19"
+  },
+  "india-near-repos-beach": {
+   "paese": "India",
+   "lat": 11.9656,
+   "lon": 79.8425,
+   "esposizione": 108,
+   "nome": "near repos beach · Tamil Nadu",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-apocalypse": {
+   "paese": "Indonesia",
+   "lat": -6.635,
+   "lon": 105.1516,
+   "esposizione": 241,
+   "nome": "Apocalypse · West Java",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-batu-karas": {
+   "paese": "Indonesia",
+   "lat": -7.7204,
+   "lon": 108.5781,
+   "esposizione": 166,
+   "nome": "Batu Karas · West Java",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-jackals": {
+   "paese": "Indonesia",
+   "lat": 2.5065,
+   "lon": 96.1536,
+   "esposizione": 206,
+   "nome": "Jackals · Sumatra Islands",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-pacitan": {
+   "paese": "Indonesia",
+   "lat": -8.2552,
+   "lon": 111.088,
+   "esposizione": 188,
+   "nome": "Pacitan · East Java",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-suicide": {
+   "paese": "Indonesia",
+   "lat": -0.0549,
+   "lon": 98.2813,
+   "esposizione": 281,
+   "nome": "suicide · Sumatra Islands",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-bloody-foreland": {
+   "paese": "Ireland",
+   "lat": 55.1536,
+   "lon": -8.1988,
+   "esposizione": 324,
+   "nome": "Bloody foreland · North West",
+   "assegnato": "2026-10-19"
+  },
+  "italy-capo-bianco-elba-island": {
+   "paese": "Italy",
+   "lat": 42.8123,
+   "lon": 10.2905,
+   "esposizione": 297,
+   "nome": "Capo bianco ( Elba island ) · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-la-lampara-civitanova-marche": {
+   "paese": "Italy",
+   "lat": 43.2461,
+   "lon": 13.7632,
+   "esposizione": 66,
+   "nome": "La Lampara, Civitanova Marche · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-lido-carabiniere": {
+   "paese": "Italy",
+   "lat": 44.5331,
+   "lon": 12.2803,
+   "esposizione": 80,
+   "nome": "Lido Carabiniere · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-lignano-pineta": {
+   "paese": "Italy",
+   "lat": 45.5516,
+   "lon": 12.7718,
+   "esposizione": 149,
+   "nome": "Lignano Pineta · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "ivory-coast-assinie": {
+   "paese": "Ivory Coast",
+   "lat": 5.1386,
+   "lon": -3.36,
+   "esposizione": 182,
+   "nome": "Assinie",
+   "assegnato": "2026-10-19"
+  },
+  "japan-akabane-long-beach": {
+   "paese": "Japan",
+   "lat": 34.6077,
+   "lon": 137.2131,
+   "esposizione": 178,
+   "nome": "Akabane Long Beach · Shizuoka",
+   "assegnato": "2026-10-19"
+  },
+  "japan-momoishi": {
+   "paese": "Japan",
+   "lat": 40.723,
+   "lon": 141.4257,
+   "esposizione": 68,
+   "nome": "Momoishi · Tohoku",
+   "assegnato": "2026-10-19"
+  },
+  "kenya-malindi-bay": {
+   "paese": "Kenya",
+   "lat": -3.2751,
+   "lon": 40.0762,
+   "esposizione": 120,
+   "nome": "Malindi bay",
+   "assegnato": "2026-10-19"
+  },
+  "malaysia-tanjung-resang": {
+   "paese": "Malaysia",
+   "lat": 2.6848,
+   "lon": 104.0119,
+   "esposizione": 64,
+   "nome": "Tanjung Resang",
+   "assegnato": "2026-10-19"
+  },
+  "mariana-islands-sugar-dock": {
+   "paese": "Mariana Islands",
+   "lat": 15.1404,
+   "lon": 145.6922,
+   "esposizione": 264,
+   "nome": "Sugar Dock",
+   "assegnato": "2026-10-19"
+  },
+  "martinique-anse-charpentier-right": {
+   "paese": "Martinique",
+   "lat": 14.7909,
+   "lon": -60.9544,
+   "esposizione": 46,
+   "nome": "Anse Charpentier (right)",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-punta-baja": {
+   "paese": "Mexico",
+   "lat": 29.7837,
+   "lon": -115.627,
+   "esposizione": 229,
+   "nome": "Punta Baja · Baja Norte",
+   "assegnato": "2026-10-19"
+  },
+  "micronesia-pickop-s-point": {
+   "paese": "Micronesia",
+   "lat": 13.3388,
+   "lon": 144.7675,
+   "esposizione": 123,
+   "nome": "Pickop's Point · Guam",
+   "assegnato": "2026-10-19"
+  },
+  "micronesia-sidedish": {
+   "paese": "Micronesia",
+   "lat": 5.3248,
+   "lon": 162.9281,
+   "esposizione": null,
+   "nome": "Sidedish · Federated States of Micronesia, Kosrae",
+   "assegnato": "2026-10-19"
+  },
+  "montenegro-bar": {
+   "paese": "Montenegro",
+   "lat": 42.0458,
+   "lon": 19.1171,
+   "esposizione": 234,
+   "nome": "Bar",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-charatan": {
+   "paese": "Morocco",
+   "lat": 34.2595,
+   "lon": -6.6744,
+   "esposizione": 300,
+   "nome": "Charatan · South",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-mirleft": {
+   "paese": "Morocco",
+   "lat": 29.47,
+   "lon": -10.1154,
+   "esposizione": 304,
+   "nome": "mirleft · South",
+   "assegnato": "2026-10-19"
+  },
+  "mozambique-pomene": {
+   "paese": "Mozambique",
+   "lat": -23.0771,
+   "lon": 35.5479,
+   "esposizione": 94,
+   "nome": "pomene",
+   "assegnato": "2026-10-19"
+  },
+  "namibia-bocock-s-bay": {
+   "paese": "Namibia",
+   "lat": -21.6365,
+   "lon": 13.9078,
+   "esposizione": 242,
+   "nome": "Bocock's Bay",
+   "assegnato": "2026-10-19"
+  },
+  "netherlands-domburg": {
+   "paese": "Netherlands",
+   "lat": 51.6923,
+   "lon": 3.6807,
+   "esposizione": 304,
+   "nome": "Domburg",
+   "assegnato": "2026-10-19"
+  },
+  "new-caledonia-nera-rivermouth": {
+   "paese": "New Caledonia",
+   "lat": -21.7653,
+   "lon": 165.6082,
+   "esposizione": 210,
+   "nome": "Néra Rivermouth",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-green-meadows": {
+   "paese": "New Zealand",
+   "lat": -39.4786,
+   "lon": 173.8714,
+   "esposizione": 232,
+   "nome": "Green Meadows · New Zealand NI, West Coast Taranaki",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-haast-beach": {
+   "paese": "New Zealand",
+   "lat": -43.9122,
+   "lon": 168.8032,
+   "esposizione": 332,
+   "nome": "Haast Beach · New Zealand SI, West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-pataua": {
+   "paese": "New Zealand",
+   "lat": -35.634,
+   "lon": 174.4998,
+   "esposizione": 78,
+   "nome": "Pataua · New Zealand NI, NE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-waiheke-is": {
+   "paese": "New Zealand",
+   "lat": -36.6928,
+   "lon": 175.3051,
+   "esposizione": 22,
+   "nome": "Waiheke Is · New Zealand NI, NE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "nicaragua-aserradores": {
+   "paese": "Nicaragua",
+   "lat": 12.4976,
+   "lon": -87.1955,
+   "esposizione": 223,
+   "nome": "Aserradores",
+   "assegnato": "2026-10-19"
+  },
+  "nigeria-lighthouse-beach": {
+   "paese": "Nigeria",
+   "lat": 6.3976,
+   "lon": 3.2664,
+   "esposizione": 172,
+   "nome": "Lighthouse beach",
+   "assegnato": "2026-10-19"
+  },
+  "norway-njervesanden": {
+   "paese": "Norway",
+   "lat": 58.0648,
+   "lon": 6.889,
+   "esposizione": 196,
+   "nome": "Njervesanden",
+   "assegnato": "2026-10-19"
+  },
+  "norway-saltstein": {
+   "paese": "Norway",
+   "lat": 59.1286,
+   "lon": 10.1773,
+   "esposizione": 164,
+   "nome": "Saltstein",
+   "assegnato": "2026-10-19"
+  },
+  "oman-bandar-al-saqlah": {
+   "paese": "Oman",
+   "lat": 21.73,
+   "lon": 59.5146,
+   "esposizione": 118,
+   "nome": "Bandar al Saqlah",
+   "assegnato": "2026-10-19"
+  },
+  "panama-estero-beach": {
+   "paese": "Panama",
+   "lat": 7.6288,
+   "lon": -81.2619,
+   "esposizione": 188,
+   "nome": "Estero Beach",
+   "assegnato": "2026-10-19"
+  },
+  "papua-new-guinea-toro-s": {
+   "paese": "Papua New Guinea",
+   "lat": -5.0042,
+   "lon": 154.6167,
+   "esposizione": 348,
+   "nome": "Toro's",
+   "assegnato": "2026-10-19"
+  },
+  "peru-las-delicias": {
+   "paese": "Peru",
+   "lat": -8.3059,
+   "lon": -78.9694,
+   "esposizione": 236,
+   "nome": "Las Delicias · North",
+   "assegnato": "2026-10-19"
+  },
+  "peru-nonura": {
+   "paese": "Peru",
+   "lat": -5.8626,
+   "lon": -81.1278,
+   "esposizione": 290,
+   "nome": "Nonura · North",
+   "assegnato": "2026-10-19"
+  },
+  "peru-playuela": {
+   "paese": "Peru",
+   "lat": -16.7144,
+   "lon": -72.4397,
+   "esposizione": 208,
+   "nome": "Playuela · South",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-baler": {
+   "paese": "Philippines",
+   "lat": 15.7587,
+   "lon": 121.5836,
+   "esposizione": 98,
+   "nome": "Baler · Luzon",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-calicoan-island": {
+   "paese": "Philippines",
+   "lat": 11.1785,
+   "lon": 125.6902,
+   "esposizione": 96,
+   "nome": "Calicoan Island · Center Islands",
+   "assegnato": "2026-10-19"
+  },
+  "saba-fort-bay": {
+   "paese": "Saba",
+   "lat": 17.6303,
+   "lon": -63.2541,
+   "esposizione": null,
+   "nome": "Fort Bay",
+   "assegnato": "2026-10-19"
+  },
+  "samoa-western-tiav-a-rivermouth": {
+   "paese": "Samoa Western",
+   "lat": -13.9161,
+   "lon": -171.5664,
+   "esposizione": 46,
+   "nome": "Tiav'a Rivermouth",
+   "assegnato": "2026-10-19"
+  },
+  "sierra-leone-aberdeen-area-beach": {
+   "paese": "Sierra Leone",
+   "lat": 8.3502,
+   "lon": -13.2249,
+   "esposizione": 250,
+   "nome": "Aberdeen Area Beach",
+   "assegnato": "2026-10-19"
+  },
+  "solomon-dari-rights": {
+   "paese": "Solomon",
+   "lat": -7.5015,
+   "lon": 158.5506,
+   "esposizione": 15,
+   "nome": "Dari Rights",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-cape-st-martin-reef": {
+   "paese": "South Africa",
+   "lat": -32.7104,
+   "lon": 17.9431,
+   "esposizione": 312,
+   "nome": "Cape st. Martin reef · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-kaalkop-strand": {
+   "paese": "South Africa",
+   "lat": -46.8666,
+   "lon": 37.8529,
+   "esposizione": 54,
+   "nome": "Kaalkop Strand · Marion Island",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-port-alfred": {
+   "paese": "South Africa",
+   "lat": -33.4817,
+   "lon": 27.1364,
+   "esposizione": 150,
+   "nome": "Port Alfred · South East Port Elizabeth",
+   "assegnato": "2026-10-19"
+  },
+  "south-korea-busan": {
+   "paese": "South Korea",
+   "lat": 35.168,
+   "lon": 129.1803,
+   "esposizione": 140,
+   "nome": "Busan",
+   "assegnato": "2026-10-19"
+  },
+  "spain-formentera": {
+   "paese": "Spain",
+   "lat": 38.8326,
+   "lon": 1.5455,
+   "esposizione": 144,
+   "nome": "FORMENTERA · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-miami-platja": {
+   "paese": "Spain",
+   "lat": 40.909,
+   "lon": 0.8374,
+   "esposizione": 122,
+   "nome": "Miami Platja · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-platja-de-sant-pol": {
+   "paese": "Spain",
+   "lat": 41.8147,
+   "lon": 3.0722,
+   "esposizione": 133,
+   "nome": "Platja de Sant Pol · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "st-lucia-commaret-point": {
+   "paese": "St Lucia",
+   "lat": 14.0859,
+   "lon": -60.9366,
+   "esposizione": 6,
+   "nome": "Commaret Point",
+   "assegnato": "2026-10-19"
+  },
+  "st-martin-cupecoy": {
+   "paese": "St Martin",
+   "lat": 18.0468,
+   "lon": -63.1305,
+   "esposizione": 238,
+   "nome": "Cupecoy",
+   "assegnato": "2026-10-19"
+  },
+  "sweden-brantevik": {
+   "paese": "Sweden",
+   "lat": 55.5792,
+   "lon": 14.3165,
+   "esposizione": 110,
+   "nome": "Brantevik",
+   "assegnato": "2026-10-19"
+  },
+  "taiwan-chunan": {
+   "paese": "Taiwan",
+   "lat": 24.5417,
+   "lon": 120.7184,
+   "esposizione": 308,
+   "nome": "Chunan",
+   "assegnato": "2026-10-19"
+  },
+  "taiwan-houbihu": {
+   "paese": "Taiwan",
+   "lat": 21.9508,
+   "lon": 120.753,
+   "esposizione": 198,
+   "nome": "Houbihu",
+   "assegnato": "2026-10-19"
+  },
+  "taiwan-paisawan": {
+   "paese": "Taiwan",
+   "lat": 25.2379,
+   "lon": 121.4654,
+   "esposizione": 347,
+   "nome": "Paisawan",
+   "assegnato": "2026-10-19"
+  },
+  "tanzania-dongwe-doughnuts": {
+   "paese": "Tanzania",
+   "lat": -5.9477,
+   "lon": 39.4194,
+   "esposizione": 60,
+   "nome": "Dongwe Doughnuts",
+   "assegnato": "2026-10-19"
+  },
+  "thailand-ko-samet": {
+   "paese": "Thailand",
+   "lat": 12.5829,
+   "lon": 101.4314,
+   "esposizione": 189,
+   "nome": "Ko Samet",
+   "assegnato": "2026-10-19"
+  },
+  "turkey-antalya": {
+   "paese": "Turkey",
+   "lat": 36.8102,
+   "lon": 31.0999,
+   "esposizione": 187,
+   "nome": "Antalya",
+   "assegnato": "2026-10-19"
+  },
+  "turkey-kusadasie": {
+   "paese": "Turkey",
+   "lat": 37.9255,
+   "lon": 27.1956,
+   "esposizione": 241,
+   "nome": "Kusadasie",
+   "assegnato": "2026-10-19"
+  },
+  "uae-fujairah-port": {
+   "paese": "UAE",
+   "lat": 25.3179,
+   "lon": 56.3603,
+   "esposizione": 80,
+   "nome": "Fujairah Port",
+   "assegnato": "2026-10-19"
+  },
+  "uk-aberdeen": {
+   "paese": "UK",
+   "lat": 57.1489,
+   "lon": -2.069,
+   "esposizione": 101,
+   "nome": "Aberdeen · East Scotland",
+   "assegnato": "2026-10-19"
+  },
+  "uk-beer-point": {
+   "paese": "UK",
+   "lat": 50.5648,
+   "lon": -3.3264,
+   "esposizione": 149,
+   "nome": "Beer Point · Devon South",
+   "assegnato": "2026-10-19"
+  },
+  "uk-east-runton": {
+   "paese": "UK",
+   "lat": 52.935,
+   "lon": 1.2906,
+   "esposizione": 30,
+   "nome": "East Runton · East England",
+   "assegnato": "2026-10-19"
+  },
+  "uk-guernsey-centres": {
+   "paese": "UK",
+   "lat": 49.4642,
+   "lon": -2.6359,
+   "esposizione": 298,
+   "nome": "Guernsey - Centres · Channel Islands",
+   "assegnato": "2026-10-19"
+  },
+  "uk-kingsbarns": {
+   "paese": "UK",
+   "lat": 56.3171,
+   "lon": -2.7082,
+   "esposizione": 80,
+   "nome": "Kingsbarns · East Scotland",
+   "assegnato": "2026-10-19"
+  },
+  "uk-llangrannog": {
+   "paese": "UK",
+   "lat": 52.285,
+   "lon": -4.282,
+   "esposizione": 302,
+   "nome": "Llangrannog · West Wales",
+   "assegnato": "2026-10-19"
+  },
+  "ukraine-arcadia": {
+   "paese": "Ukraine",
+   "lat": 46.358,
+   "lon": 30.7154,
+   "esposizione": 124,
+   "nome": "Arcadia",
+   "assegnato": "2026-10-19"
+  },
+  "usa-anahola-bay": {
+   "paese": "USA",
+   "lat": 22.1235,
+   "lon": -159.3046,
+   "esposizione": 82,
+   "nome": "Anahola Bay · Hawaii, Kauai",
+   "assegnato": "2026-10-19"
+  },
+  "usa-carmel": {
+   "paese": "USA",
+   "lat": 36.4854,
+   "lon": -121.9242,
+   "esposizione": 260,
+   "nome": "Carmel · California, Monterey",
+   "assegnato": "2026-10-19"
+  },
+  "usa-egypt-beach": {
+   "paese": "USA",
+   "lat": 42.2049,
+   "lon": -70.7304,
+   "esposizione": 66,
+   "nome": "Egypt beach · North East, Southern New England",
+   "assegnato": "2026-10-19"
+  },
+  "usa-florence-north-jetty": {
+   "paese": "USA",
+   "lat": 44.0189,
+   "lon": -124.1398,
+   "esposizione": 275,
+   "nome": "Florence North Jetty · North West, Oregon Central",
+   "assegnato": "2026-10-19"
+  },
+  "usa-fossil-beach-kodiak": {
+   "paese": "USA",
+   "lat": 57.4315,
+   "lon": -152.3797,
+   "esposizione": 134,
+   "nome": "Fossil Beach (Kodiak) · Alaska",
+   "assegnato": "2026-10-19"
+  },
+  "usa-fourchon": {
+   "paese": "USA",
+   "lat": 29.1523,
+   "lon": -90.1092,
+   "esposizione": 164,
+   "nome": "Fourchon · Gulf Coast, Louisiana",
+   "assegnato": "2026-10-19"
+  },
+  "usa-harbor-house": {
+   "paese": "USA",
+   "lat": 25.8343,
+   "lon": -80.1256,
+   "esposizione": 110,
+   "nome": "Harbor House · South East, South Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-kapaniah": {
+   "paese": "USA",
+   "lat": 20.2359,
+   "lon": -155.7633,
+   "esposizione": 6,
+   "nome": "Kapaniah · Hawaii, Hawaii Island",
+   "assegnato": "2026-10-19"
+  },
+  "usa-mansfield-jetty": {
+   "paese": "USA",
+   "lat": 26.3297,
+   "lon": -97.221,
+   "esposizione": 77,
+   "nome": "Mansfield Jetty · Gulf Coast, Texas",
+   "assegnato": "2026-10-19"
+  },
+  "usa-naples-pier": {
+   "paese": "USA",
+   "lat": 26.2156,
+   "lon": -81.8148,
+   "esposizione": 248,
+   "nome": "Naples Pier · Gulf Coast, Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-port-st-joe-cape": {
+   "paese": "USA",
+   "lat": 29.9689,
+   "lon": -85.5185,
+   "esposizione": 217,
+   "nome": "Port st.joe cape · Gulf Coast, Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-sandy-beach": {
+   "paese": "USA",
+   "lat": 57.0407,
+   "lon": -135.5066,
+   "esposizione": 220,
+   "nome": "Sandy Beach · Alaska",
+   "assegnato": "2026-10-19"
+  },
+  "usa-sea-island": {
+   "paese": "USA",
+   "lat": 31.1608,
+   "lon": -81.3594,
+   "esposizione": 117,
+   "nome": "Sea Island · South East, Georgia",
+   "assegnato": "2026-10-19"
+  },
+  "usa-shark-park": {
+   "paese": "USA",
+   "lat": 34.2511,
+   "lon": -120.4562,
+   "esposizione": 226,
+   "nome": "Shark park · California, Santa Barbara",
+   "assegnato": "2026-10-19"
+  },
+  "venezuela-chaguarama-de-sotillo": {
+   "paese": "Venezuela",
+   "lat": 10.7053,
+   "lon": -62.9777,
+   "esposizione": 8,
+   "nome": "Chaguarama de sotillo",
+   "assegnato": "2026-10-19"
+  },
+  "vietnam-bai-dai-beach-nha-trang": {
+   "paese": "Vietnam",
+   "lat": 12.1389,
+   "lon": 109.2006,
+   "esposizione": 94,
+   "nome": "Bai Dai Beach, Nha Trang",
+   "assegnato": "2026-10-19"
+  },
+  "western-sahara-oumlabouir": {
+   "paese": "Western Sahara",
+   "lat": 23.9204,
+   "lon": -15.7542,
+   "esposizione": 302,
+   "nome": "OumLabouir",
+   "assegnato": "2026-10-19"
+  },
+  "algeria-ain-el-turk": {
+   "paese": "Algeria",
+   "lat": 35.7378,
+   "lon": -0.7359,
+   "esposizione": 333,
+   "nome": "Ain El Turk",
+   "assegnato": "2026-10-19"
+  },
+  "algeria-cherchell-tizirine": {
+   "paese": "Algeria",
+   "lat": 36.6114,
+   "lon": 2.2041,
+   "esposizione": 352,
+   "nome": "cherchell tizirine",
+   "assegnato": "2026-10-19"
+  },
+  "algeria-decaplage": {
+   "paese": "Algeria",
+   "lat": 36.7868,
+   "lon": 3.3235,
+   "esposizione": 354,
+   "nome": "Decaplage",
+   "assegnato": "2026-10-19"
+  },
+  "anguilla-dolphins": {
+   "paese": "Anguilla",
+   "lat": 18.1793,
+   "lon": -63.1453,
+   "esposizione": 247,
+   "nome": "Dolphins",
+   "assegnato": "2026-10-19"
+  },
+  "anguilla-junk-s-hole": {
+   "paese": "Anguilla",
+   "lat": 18.2551,
+   "lon": -62.9851,
+   "esposizione": 71,
+   "nome": "Junk's Hole",
+   "assegnato": "2026-10-19"
+  },
+  "antigua-palmetto-point": {
+   "paese": "Antigua",
+   "lat": 17.5807,
+   "lon": -61.8575,
+   "esposizione": 237,
+   "nome": "Palmetto Point",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-cabo-raso": {
+   "paese": "Argentina",
+   "lat": -44.3415,
+   "lon": -65.2478,
+   "esposizione": 107,
+   "nome": "Cabo Raso · South",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-falkland-islands": {
+   "paese": "Argentina",
+   "lat": -51.693,
+   "lon": -57.7771,
+   "esposizione": 105,
+   "nome": "Falkland Islands · South",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-monte-hermoso": {
+   "paese": "Argentina",
+   "lat": -38.9898,
+   "lon": -61.2982,
+   "esposizione": 175,
+   "nome": "Monte Hermoso · North",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-playa-anchorena": {
+   "paese": "Argentina",
+   "lat": -34.4852,
+   "lon": -58.4804,
+   "esposizione": 72,
+   "nome": "playa anchorena · North",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-playa-union": {
+   "paese": "Argentina",
+   "lat": -43.3302,
+   "lon": -65.0507,
+   "esposizione": 123,
+   "nome": "Playa Unión · South",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-rada-tilly": {
+   "paese": "Argentina",
+   "lat": -45.9298,
+   "lon": -67.5515,
+   "esposizione": 111,
+   "nome": "Rada Tilly · South",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-rio-grande-tierra-del-fuego": {
+   "paese": "Argentina",
+   "lat": -53.7744,
+   "lon": -67.7011,
+   "esposizione": 50,
+   "nome": "Rio Grande-Tierra del Fuego · South",
+   "assegnato": "2026-10-19"
+  },
+  "argentina-villa-gesell": {
+   "paese": "Argentina",
+   "lat": -37.256,
+   "lon": -56.9625,
+   "esposizione": 117,
+   "nome": "Villa Gesell · North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-andys-peak": {
+   "paese": "Australia",
+   "lat": -16.9727,
+   "lon": 149.9072,
+   "esposizione": null,
+   "nome": "Andys' Peak · QLD",
+   "assegnato": "2026-10-19"
+  },
+  "australia-berry-bay": {
+   "paese": "Australia",
+   "lat": -34.899,
+   "lon": 137.011,
+   "esposizione": 321,
+   "nome": "Berry Bay · SA, York Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-blacknose": {
+   "paese": "Australia",
+   "lat": -38.3749,
+   "lon": 141.6398,
+   "esposizione": 171,
+   "nome": "Blacknose · VIC, Western Victoria",
+   "assegnato": "2026-10-19"
+  },
+  "australia-bora": {
+   "paese": "Australia",
+   "lat": -41.1657,
+   "lon": 146.3651,
+   "esposizione": 0,
+   "nome": "Bora · TAS, North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "australia-cactus": {
+   "paese": "Australia",
+   "lat": -32.0956,
+   "lon": 132.9957,
+   "esposizione": 204,
+   "nome": "Cactus · SA, Nullarbor",
+   "assegnato": "2026-10-19"
+  },
+  "australia-cape-conran": {
+   "paese": "Australia",
+   "lat": -37.8007,
+   "lon": 148.7441,
+   "esposizione": 173,
+   "nome": "Cape Conran · VIC, East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "australia-cyclops": {
+   "paese": "Australia",
+   "lat": -33.9893,
+   "lon": 123.1014,
+   "esposizione": 183,
+   "nome": "Cyclops · WA, Fitzgerald River",
+   "assegnato": "2026-10-19"
+  },
+  "australia-diamond-head": {
+   "paese": "Australia",
+   "lat": -31.7166,
+   "lon": 152.7964,
+   "esposizione": 113,
+   "nome": "Diamond Head · NSW, Mid North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "australia-evans-head-main-beach": {
+   "paese": "Australia",
+   "lat": -29.1124,
+   "lon": 153.4363,
+   "esposizione": 109,
+   "nome": "Evans Head - Main Beach · NSW, North",
+   "assegnato": "2026-10-19"
+  },
+  "australia-gumboots": {
+   "paese": "Australia",
+   "lat": -33.4105,
+   "lon": 124.0068,
+   "esposizione": 122,
+   "nome": "gumboots · WA, Fitzgerald River",
+   "assegnato": "2026-10-19"
+  },
+  "australia-mini-bluff": {
+   "paese": "Australia",
+   "lat": -40.8627,
+   "lon": 145.4209,
+   "esposizione": 14,
+   "nome": "Mini Bluff · TAS, North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "australia-narracoopa-beach": {
+   "paese": "Australia",
+   "lat": -39.8773,
+   "lon": 144.1064,
+   "esposizione": 86,
+   "nome": "Narracoopa Beach · TAS, King Island",
+   "assegnato": "2026-10-19"
+  },
+  "australia-nightcliff-beach": {
+   "paese": "Australia",
+   "lat": -12.3781,
+   "lon": 130.8466,
+   "esposizione": 316,
+   "nome": "Nightcliff beach",
+   "assegnato": "2026-10-19"
+  },
+  "australia-pelican-point": {
+   "paese": "Australia",
+   "lat": -24.9041,
+   "lon": 113.6376,
+   "esposizione": 251,
+   "nome": "Pelican Point · WA, North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-red-banks": {
+   "paese": "Australia",
+   "lat": -33.9001,
+   "lon": 136.6617,
+   "esposizione": 146,
+   "nome": "Red Banks · SA, Eyre Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-roaring-beach": {
+   "paese": "Australia",
+   "lat": -43.0881,
+   "lon": 147.6725,
+   "esposizione": 201,
+   "nome": "Roaring Beach · TAS, Hobart",
+   "assegnato": "2026-10-19"
+  },
+  "australia-sams-island": {
+   "paese": "Australia",
+   "lat": -20.6501,
+   "lon": 116.7051,
+   "esposizione": 344,
+   "nome": "Sams Island · WA, North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-sandy-creek": {
+   "paese": "Australia",
+   "lat": -35.965,
+   "lon": 136.653,
+   "esposizione": 225,
+   "nome": "Sandy Creek · SA, Kangeroo Island",
+   "assegnato": "2026-10-19"
+  },
+  "australia-satans-shank": {
+   "paese": "Australia",
+   "lat": -53.0233,
+   "lon": 73.3794,
+   "esposizione": 325,
+   "nome": "Satans Shank · TAS, Hobart, Heard Island and McDonald Islands",
+   "assegnato": "2026-10-19"
+  },
+  "australia-second-beach-tannum-sands": {
+   "paese": "Australia",
+   "lat": -23.9429,
+   "lon": 151.3724,
+   "esposizione": 41,
+   "nome": "Second Beach Tannum Sands · QLD, Far North West",
+   "assegnato": "2026-10-19"
+  },
+  "australia-stockton-signa-shipwreck": {
+   "paese": "Australia",
+   "lat": -32.8593,
+   "lon": 151.8448,
+   "esposizione": 137,
+   "nome": "Stockton - signa shipwreck · NSW, Newcastle",
+   "assegnato": "2026-10-19"
+  },
+  "australia-trial-harbour": {
+   "paese": "Australia",
+   "lat": -41.9317,
+   "lon": 145.1732,
+   "esposizione": 242,
+   "nome": "Trial Harbour · TAS, West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "australia-troubridge-point": {
+   "paese": "Australia",
+   "lat": -35.1679,
+   "lon": 137.6769,
+   "esposizione": 162,
+   "nome": "Troubridge Point · SA, York Peninsula",
+   "assegnato": "2026-10-19"
+  },
+  "australia-trousers-point": {
+   "paese": "Australia",
+   "lat": -40.2287,
+   "lon": 148.0376,
+   "esposizione": 234,
+   "nome": "Trousers Point · TAS, Flinders Island",
+   "assegnato": "2026-10-19"
+  },
+  "australia-west-montalivet-island": {
+   "paese": "Australia",
+   "lat": -14.2909,
+   "lon": 125.2117,
+   "esposizione": 325,
+   "nome": "West Montalivet Island · WA, North West",
+   "assegnato": "2026-10-19"
+  },
+  "azores-anjos": {
+   "paese": "Azores",
+   "lat": 37.0054,
+   "lon": -25.1566,
+   "esposizione": 322,
+   "nome": "Anjos · Eastern group",
+   "assegnato": "2026-10-19"
+  },
+  "azores-caldeira": {
+   "paese": "Azores",
+   "lat": 38.6251,
+   "lon": -27.998,
+   "esposizione": 35,
+   "nome": "Caldeira · Central group",
+   "assegnato": "2026-10-19"
+  },
+  "azores-populo": {
+   "paese": "Azores",
+   "lat": 37.7499,
+   "lon": -25.6239,
+   "esposizione": 199,
+   "nome": "Populo · Eastern group",
+   "assegnato": "2026-10-19"
+  },
+  "bahamas-french-bay": {
+   "paese": "Bahamas",
+   "lat": 23.9465,
+   "lon": -74.5204,
+   "esposizione": 184,
+   "nome": "French Bay",
+   "assegnato": "2026-10-19"
+  },
+  "bahamas-paradise-island": {
+   "paese": "Bahamas",
+   "lat": 25.0896,
+   "lon": -77.3254,
+   "esposizione": 29,
+   "nome": "Paradise Island",
+   "assegnato": "2026-10-19"
+  },
+  "bangladesh-cox-s-bazar": {
+   "paese": "Bangladesh",
+   "lat": 21.4144,
+   "lon": 91.9817,
+   "esposizione": 253,
+   "nome": "Cox's Bazar",
+   "assegnato": "2026-10-19"
+  },
+  "belize-east-point": {
+   "paese": "Belize",
+   "lat": 17.1959,
+   "lon": -87.6033,
+   "esposizione": null,
+   "nome": "East Point",
+   "assegnato": "2026-10-19"
+  },
+  "bermuda-horseshoe-bay-beach": {
+   "paese": "Bermuda",
+   "lat": 32.2519,
+   "lon": -64.8213,
+   "esposizione": 188,
+   "nome": "Horseshoe Bay Beach",
+   "assegnato": "2026-10-19"
+  },
+  "bermuda-tucks": {
+   "paese": "Bermuda",
+   "lat": 32.3351,
+   "lon": -64.6805,
+   "esposizione": 105,
+   "nome": "Tucks",
+   "assegnato": "2026-10-19"
+  },
+  "bonaire-chop-chop": {
+   "paese": "Bonaire",
+   "lat": 12.0774,
+   "lon": -68.2314,
+   "esposizione": 125,
+   "nome": "Chop Chop",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-aracaju": {
+   "paese": "Brazil",
+   "lat": -10.9877,
+   "lon": -37.0411,
+   "esposizione": 127,
+   "nome": "Aracaju · Sergipe-Alagoas",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-araruna": {
+   "paese": "Brazil",
+   "lat": -0.6885,
+   "lon": -48.4833,
+   "esposizione": 88,
+   "nome": "Araruna · Para",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-camaracu": {
+   "paese": "Brazil",
+   "lat": -0.8688,
+   "lon": -46.4308,
+   "esposizione": 19,
+   "nome": "Camaraçu · Para",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-grussai": {
+   "paese": "Brazil",
+   "lat": -21.69,
+   "lon": -41.0223,
+   "esposizione": 96,
+   "nome": "Grussaí · Rio de Janeiro Norte",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-guarau-peruibe-sp": {
+   "paese": "Brazil",
+   "lat": -24.3695,
+   "lon": -47.0117,
+   "esposizione": 138,
+   "nome": "Guarau, Peruibe SP · Sao Paulo South Coast",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-guriri": {
+   "paese": "Brazil",
+   "lat": -18.7394,
+   "lon": -39.7464,
+   "esposizione": 95,
+   "nome": "Guriri · Espirito Santo",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-hermenegildo": {
+   "paese": "Brazil",
+   "lat": -33.6684,
+   "lon": -53.2624,
+   "esposizione": 134,
+   "nome": "Hermenegildo · Rio Grande do Sul",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-jericoacoara": {
+   "paese": "Brazil",
+   "lat": -2.7871,
+   "lon": -40.5126,
+   "esposizione": 357,
+   "nome": "Jericoacoara · Ceara",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-marahu": {
+   "paese": "Brazil",
+   "lat": -1.0734,
+   "lon": -48.4032,
+   "esposizione": 324,
+   "nome": "marahu · Para",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-morro-branco": {
+   "paese": "Brazil",
+   "lat": -4.1508,
+   "lon": -38.1097,
+   "esposizione": 46,
+   "nome": "Morro Branco · Ceara",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-pedra-do-moleque": {
+   "paese": "Brazil",
+   "lat": -13.377,
+   "lon": -38.9126,
+   "esposizione": 94,
+   "nome": "Pedra do Moleque · Bahia Sul",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-quintao": {
+   "paese": "Brazil",
+   "lat": -30.4108,
+   "lon": -50.2927,
+   "esposizione": 120,
+   "nome": "Quintão · Rio Grande do Sul",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-regencia": {
+   "paese": "Brazil",
+   "lat": -19.6592,
+   "lon": -39.8416,
+   "esposizione": 127,
+   "nome": "Regencia · Espirito Santo",
+   "assegnato": "2026-10-19"
+  },
+  "brazil-travosa": {
+   "paese": "Brazil",
+   "lat": -2.359,
+   "lon": -43.2439,
+   "esposizione": 4,
+   "nome": "Travosa · Maranhao",
+   "assegnato": "2026-10-19"
+  },
+  "british-indian-ocean-petite-soeur": {
+   "paese": "British Indian Ocean",
+   "lat": -5.3777,
+   "lon": 71.7555,
+   "esposizione": null,
+   "nome": "Petite Soeur",
+   "assegnato": "2026-10-19"
+  },
+  "burma-thandwe-airport": {
+   "paese": "Burma",
+   "lat": 18.4509,
+   "lon": 94.2952,
+   "esposizione": 246,
+   "nome": "Thandwe Airport",
+   "assegnato": "2026-10-19"
+  },
+  "cambodia-bamboo-island": {
+   "paese": "Cambodia",
+   "lat": 10.4947,
+   "lon": 103.5597,
+   "esposizione": 220,
+   "nome": "Bamboo Island",
+   "assegnato": "2026-10-19"
+  },
+  "cameroon-kribi": {
+   "paese": "Cameroon",
+   "lat": 2.9334,
+   "lon": 9.9048,
+   "esposizione": 279,
+   "nome": "Kribi",
+   "assegnato": "2026-10-19"
+  },
+  "canada-banc-de-pabos": {
+   "paese": "Canada",
+   "lat": 48.372,
+   "lon": -64.5875,
+   "esposizione": 137,
+   "nome": "Banc de Pabos · East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-bowie-seamount": {
+   "paese": "Canada",
+   "lat": 53.3071,
+   "lon": -135.6599,
+   "esposizione": null,
+   "nome": "Bowie Seamount · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-ingonish-beach": {
+   "paese": "Canada",
+   "lat": 46.647,
+   "lon": -60.3876,
+   "esposizione": 90,
+   "nome": "Ingonish Beach · East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-midgets": {
+   "paese": "Canada",
+   "lat": 48.4973,
+   "lon": -123.3329,
+   "esposizione": 86,
+   "nome": "Midgets · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-nootka-island": {
+   "paese": "Canada",
+   "lat": 49.659,
+   "lon": -126.8443,
+   "esposizione": 228,
+   "nome": "Nootka Island · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-raft-cove": {
+   "paese": "Canada",
+   "lat": 50.5865,
+   "lon": -128.2376,
+   "esposizione": 241,
+   "nome": "Raft Cove · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-sable-island": {
+   "paese": "Canada",
+   "lat": 43.9288,
+   "lon": -59.876,
+   "esposizione": null,
+   "nome": "Sable Island · East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canada-waldo-s-cove": {
+   "paese": "Canada",
+   "lat": 54.1713,
+   "lon": -133.0343,
+   "esposizione": 328,
+   "nome": "Waldo's Cove · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "canary-arguineguin": {
+   "paese": "Canary",
+   "lat": 27.7553,
+   "lon": -15.679,
+   "esposizione": 202,
+   "nome": "Arguineguin · Gran Canaria",
+   "assegnato": "2026-10-19"
+  },
+  "canary-la-laja-de-tecoron": {
+   "paese": "Canary",
+   "lat": 27.6787,
+   "lon": -18.0302,
+   "esposizione": 197,
+   "nome": "La laja de Tecoron · Outer Isles",
+   "assegnato": "2026-10-19"
+  },
+  "canary-las-cucharas": {
+   "paese": "Canary",
+   "lat": 28.9985,
+   "lon": -13.4874,
+   "esposizione": 119,
+   "nome": "Las Cucharas · Lanzarote",
+   "assegnato": "2026-10-19"
+  },
+  "canary-playa-blanca": {
+   "paese": "Canary",
+   "lat": 28.4745,
+   "lon": -13.8658,
+   "esposizione": 98,
+   "nome": "Playa blanca · Fuerte Ventura",
+   "assegnato": "2026-10-19"
+  },
+  "cape-verde-curralinho": {
+   "paese": "Cape Verde",
+   "lat": 16.9223,
+   "lon": -25.3136,
+   "esposizione": 223,
+   "nome": "curralinho",
+   "assegnato": "2026-10-19"
+  },
+  "cape-verde-laginha": {
+   "paese": "Cape Verde",
+   "lat": 16.8953,
+   "lon": -24.992,
+   "esposizione": 358,
+   "nome": "Laginha",
+   "assegnato": "2026-10-19"
+  },
+  "cape-verde-palmeira-ilha-do-sal": {
+   "paese": "Cape Verde",
+   "lat": 16.7521,
+   "lon": -22.9791,
+   "esposizione": 270,
+   "nome": "Palmeira - ilha do sal",
+   "assegnato": "2026-10-19"
+  },
+  "cape-verde-ponta-preta": {
+   "paese": "Cape Verde",
+   "lat": 16.6125,
+   "lon": -22.9326,
+   "esposizione": 200,
+   "nome": "Ponta Preta",
+   "assegnato": "2026-10-19"
+  },
+  "cape-verde-praia-do-chaves": {
+   "paese": "Cape Verde",
+   "lat": 16.1419,
+   "lon": -22.9071,
+   "esposizione": 285,
+   "nome": "Praia do Chaves",
+   "assegnato": "2026-10-19"
+  },
+  "cape-verde-sandy-beach-sao-vincente": {
+   "paese": "Cape Verde",
+   "lat": 16.8634,
+   "lon": -24.8791,
+   "esposizione": 88,
+   "nome": "Sandy Beach - Sao Vincente",
+   "assegnato": "2026-10-19"
+  },
+  "cape-verde-santa-monica-boa-vista": {
+   "paese": "Cape Verde",
+   "lat": 15.9937,
+   "lon": -22.8948,
+   "esposizione": 206,
+   "nome": "Santa Monica, Boa Vista",
+   "assegnato": "2026-10-19"
+  },
+  "cayman-lighthouse-restaurant": {
+   "paese": "Cayman",
+   "lat": 19.2938,
+   "lon": -81.1987,
+   "esposizione": 161,
+   "nome": "Lighthouse Restaurant",
+   "assegnato": "2026-10-19"
+  },
+  "chile-carelmapu": {
+   "paese": "Chile",
+   "lat": -41.7378,
+   "lon": -73.7334,
+   "esposizione": 256,
+   "nome": "Carelmapu · Sur",
+   "assegnato": "2026-10-19"
+  },
+  "chile-hornito": {
+   "paese": "Chile",
+   "lat": -22.8636,
+   "lon": -70.2966,
+   "esposizione": 288,
+   "nome": "Hornito · Antofagasta",
+   "assegnato": "2026-10-19"
+  },
+  "chile-lebu-beachie": {
+   "paese": "Chile",
+   "lat": -37.597,
+   "lon": -73.6572,
+   "esposizione": 275,
+   "nome": "Lebu beachie · Sur",
+   "assegnato": "2026-10-19"
+  },
+  "chile-playa-blanca": {
+   "paese": "Chile",
+   "lat": -26.2363,
+   "lon": -70.6544,
+   "esposizione": 273,
+   "nome": "Playa Blanca · Antofagasta",
+   "assegnato": "2026-10-19"
+  },
+  "chile-pucatrihue": {
+   "paese": "Chile",
+   "lat": -40.5364,
+   "lon": -73.7167,
+   "esposizione": 282,
+   "nome": "Pucatrihue · Sur",
+   "assegnato": "2026-10-19"
+  },
+  "chile-punta-choros": {
+   "paese": "Chile",
+   "lat": -29.243,
+   "lon": -71.4648,
+   "esposizione": 253,
+   "nome": "Punta Choros · Coquimbo",
+   "assegnato": "2026-10-19"
+  },
+  "chile-teniente": {
+   "paese": "Chile",
+   "lat": -31.0025,
+   "lon": -71.6335,
+   "esposizione": 267,
+   "nome": "Teniente · Coquimbo",
+   "assegnato": "2026-10-19"
+  },
+  "chile-tirua": {
+   "paese": "Chile",
+   "lat": -38.339,
+   "lon": -73.5069,
+   "esposizione": 271,
+   "nome": "Tirua · Sur",
+   "assegnato": "2026-10-19"
+  },
+  "china-dong-sha": {
+   "paese": "China",
+   "lat": 29.8821,
+   "lon": 122.4145,
+   "esposizione": 100,
+   "nome": "Dong Sha · Yellow Sea",
+   "assegnato": "2026-10-19"
+  },
+  "china-dongshan-dao": {
+   "paese": "China",
+   "lat": 23.6691,
+   "lon": 117.4562,
+   "esposizione": 132,
+   "nome": "Dongshan Dao · South China Sea",
+   "assegnato": "2026-10-19"
+  },
+  "china-funingwan": {
+   "paese": "China",
+   "lat": 26.7535,
+   "lon": 120.0948,
+   "esposizione": 114,
+   "nome": "Funingwan · East China Sea",
+   "assegnato": "2026-10-19"
+  },
+  "china-macau-hacsa-beach": {
+   "paese": "China",
+   "lat": 22.1229,
+   "lon": 113.5713,
+   "esposizione": 148,
+   "nome": "Macau HacSa Beach · South China Sea",
+   "assegnato": "2026-10-19"
+  },
+  "china-mazu-eikon": {
+   "paese": "China",
+   "lat": 23.2261,
+   "lon": 116.6849,
+   "esposizione": 137,
+   "nome": "Mazu Eikon · East China Sea",
+   "assegnato": "2026-10-19"
+  },
+  "china-qingshan-wan-fujian": {
+   "paese": "China",
+   "lat": 24.8917,
+   "lon": 118.8736,
+   "esposizione": 136,
+   "nome": "Qingshan Wan, Fujian · East China Sea",
+   "assegnato": "2026-10-19"
+  },
+  "china-seal-tub-beach": {
+   "paese": "China",
+   "lat": 37.5417,
+   "lon": 122.1005,
+   "esposizione": 21,
+   "nome": "Seal Tub Beach · Yellow Sea",
+   "assegnato": "2026-10-19"
+  },
+  "china-the-silver-dragon": {
+   "paese": "China",
+   "lat": 30.2885,
+   "lon": 120.2794,
+   "esposizione": 106,
+   "nome": "The silver dragon · East China Sea",
+   "assegnato": "2026-10-19"
+  },
+  "christmas-jetty-s": {
+   "paese": "Christmas",
+   "lat": -10.4292,
+   "lon": 105.6693,
+   "esposizione": 357,
+   "nome": "Jetty's",
+   "assegnato": "2026-10-19"
+  },
+  "colombia-colpipe": {
+   "paese": "Colombia",
+   "lat": 9.3957,
+   "lon": -76.1701,
+   "esposizione": 315,
+   "nome": "colpipe · Caribbean",
+   "assegnato": "2026-10-19"
+  },
+  "colombia-el-frances": {
+   "paese": "Colombia",
+   "lat": 9.6013,
+   "lon": -75.5717,
+   "esposizione": 282,
+   "nome": "El frances · Caribbean",
+   "assegnato": "2026-10-19"
+  },
+  "colombia-juanchaco": {
+   "paese": "Colombia",
+   "lat": 3.9054,
+   "lon": -77.319,
+   "esposizione": 253,
+   "nome": "Juanchaco · Pacific",
+   "assegnato": "2026-10-19"
+  },
+  "colombia-playa-el-almejal-el-valle": {
+   "paese": "Colombia",
+   "lat": 6.0313,
+   "lon": -77.3987,
+   "esposizione": 252,
+   "nome": "Playa El Almejal, El Valle · Pacific",
+   "assegnato": "2026-10-19"
+  },
+  "colombia-punta-sur": {
+   "paese": "Colombia",
+   "lat": 12.4802,
+   "lon": -81.7286,
+   "esposizione": null,
+   "nome": "Punta Sur · Caribbean",
+   "assegnato": "2026-10-19"
+  },
+  "comoros-moya-1": {
+   "paese": "Comoros",
+   "lat": -12.7858,
+   "lon": 45.2996,
+   "esposizione": null,
+   "nome": "moya 1",
+   "assegnato": "2026-10-19"
+  },
+  "cook-motutapu": {
+   "paese": "Cook",
+   "lat": -21.2449,
+   "lon": -159.7235,
+   "esposizione": 115,
+   "nome": "Motutapu",
+   "assegnato": "2026-10-19"
+  },
+  "costa-rica-dominical": {
+   "paese": "Costa Rica",
+   "lat": 9.2486,
+   "lon": -83.8617,
+   "esposizione": 218,
+   "nome": "Dominical · Pacific South",
+   "assegnato": "2026-10-19"
+  },
+  "costa-rica-playa-coyote": {
+   "paese": "Costa Rica",
+   "lat": 9.7896,
+   "lon": -85.2827,
+   "esposizione": 214,
+   "nome": "Playa Coyote · Guanacaste",
+   "assegnato": "2026-10-19"
+  },
+  "croatia-camp-kazela-medulin": {
+   "paese": "Croatia",
+   "lat": 44.8032,
+   "lon": 13.9665,
+   "esposizione": 191,
+   "nome": "Camp Kazela (Medulin)",
+   "assegnato": "2026-10-19"
+  },
+  "croatia-sakarun": {
+   "paese": "Croatia",
+   "lat": 44.1254,
+   "lon": 14.8757,
+   "esposizione": 244,
+   "nome": "sakarun",
+   "assegnato": "2026-10-19"
+  },
+  "cyprus-cripplers": {
+   "paese": "Cyprus",
+   "lat": 34.9423,
+   "lon": 32.3129,
+   "esposizione": 263,
+   "nome": "Cripplers",
+   "assegnato": "2026-10-19"
+  },
+  "cyprus-fig-tree": {
+   "paese": "Cyprus",
+   "lat": 35.0126,
+   "lon": 34.0589,
+   "esposizione": 98,
+   "nome": "Fig Tree",
+   "assegnato": "2026-10-19"
+  },
+  "cyprus-ladies-mile": {
+   "paese": "Cyprus",
+   "lat": 34.638,
+   "lon": 33.01,
+   "esposizione": 154,
+   "nome": "Ladies Mile",
+   "assegnato": "2026-10-19"
+  },
+  "cyprus-vulcansurf": {
+   "paese": "Cyprus",
+   "lat": 34.9784,
+   "lon": 33.7009,
+   "esposizione": 145,
+   "nome": "Vulcansurf",
+   "assegnato": "2026-10-19"
+  },
+  "denmark-bnnerup-st-mole": {
+   "paese": "Denmark",
+   "lat": 56.5356,
+   "lon": 10.7148,
+   "esposizione": 30,
+   "nome": "Bønnerup Øst mole",
+   "assegnato": "2026-10-19"
+  },
+  "denmark-nexo-harbour": {
+   "paese": "Denmark",
+   "lat": 55.0646,
+   "lon": 15.1378,
+   "esposizione": 106,
+   "nome": "Nexo Harbour · Bornholm",
+   "assegnato": "2026-10-19"
+  },
+  "dominica-scotts-head": {
+   "paese": "Dominica",
+   "lat": 15.21,
+   "lon": -61.3671,
+   "esposizione": 194,
+   "nome": "Scotts Head",
+   "assegnato": "2026-10-19"
+  },
+  "dominican-republic-el-coson": {
+   "paese": "Dominican Republic",
+   "lat": 19.2961,
+   "lon": -69.5987,
+   "esposizione": 18,
+   "nome": "El Coson",
+   "assegnato": "2026-10-19"
+  },
+  "dominican-republic-shipwreck": {
+   "paese": "Dominican Republic",
+   "lat": 20.7124,
+   "lon": -69.7151,
+   "esposizione": null,
+   "nome": "Shipwreck",
+   "assegnato": "2026-10-19"
+  },
+  "east-timor-digger": {
+   "paese": "East Timor",
+   "lat": -9.3565,
+   "lon": 125.2745,
+   "esposizione": 146,
+   "nome": "digger",
+   "assegnato": "2026-10-19"
+  },
+  "easter-papa-tangaroa": {
+   "paese": "Easter",
+   "lat": -27.1699,
+   "lon": -109.3872,
+   "esposizione": 185,
+   "nome": "Papa Tangaroa",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-el-canon": {
+   "paese": "Ecuador",
+   "lat": -2.7126,
+   "lon": -85.1001,
+   "esposizione": null,
+   "nome": "El Canon · Galapagos Islands",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-el-faro": {
+   "paese": "Ecuador",
+   "lat": -0.9589,
+   "lon": -90.9822,
+   "esposizione": 156,
+   "nome": "El Faro · Galapagos Islands",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-las-pinas-la-antena": {
+   "paese": "Ecuador",
+   "lat": -1.1022,
+   "lon": -80.8919,
+   "esposizione": 274,
+   "nome": "Las piñas, La Antena",
+   "assegnato": "2026-10-19"
+  },
+  "ecuador-tortuga-bay": {
+   "paese": "Ecuador",
+   "lat": -0.7634,
+   "lon": -90.3329,
+   "esposizione": 160,
+   "nome": "Tortuga Bay · Galapagos Islands",
+   "assegnato": "2026-10-19"
+  },
+  "egypt-marsa-alaam": {
+   "paese": "Egypt",
+   "lat": 25.1081,
+   "lon": 34.8822,
+   "esposizione": 64,
+   "nome": "Marsa Alaam",
+   "assegnato": "2026-10-19"
+  },
+  "estonia-ristna-hiiumaa-island": {
+   "paese": "Estonia",
+   "lat": 58.9312,
+   "lon": 22.0509,
+   "esposizione": 282,
+   "nome": "Ristna, Hiiumaa Island",
+   "assegnato": "2026-10-19"
+  },
+  "estonia-vaana": {
+   "paese": "Estonia",
+   "lat": 59.4323,
+   "lon": 24.3457,
+   "esposizione": 330,
+   "nome": "Vaana",
+   "assegnato": "2026-10-19"
+  },
+  "faroe-tjornuvik-bay": {
+   "paese": "Faroe",
+   "lat": 62.3024,
+   "lon": -7.1919,
+   "esposizione": 308,
+   "nome": "Tjornuvik Bay",
+   "assegnato": "2026-10-19"
+  },
+  "fiji-rangs": {
+   "paese": "Fiji",
+   "lat": -16.1804,
+   "lon": 179.0502,
+   "esposizione": 340,
+   "nome": "Rangs",
+   "assegnato": "2026-10-19"
+  },
+  "fiji-tavewa": {
+   "paese": "Fiji",
+   "lat": -30.3243,
+   "lon": 153.1618,
+   "esposizione": 104,
+   "nome": "Tavewa",
+   "assegnato": "2026-10-19"
+  },
+  "fiji-vinakaland": {
+   "paese": "Fiji",
+   "lat": -19.153,
+   "lon": 179.7332,
+   "esposizione": null,
+   "nome": "Vinakaland",
+   "assegnato": "2026-10-19"
+  },
+  "finland-tulliniemi": {
+   "paese": "Finland",
+   "lat": 59.8207,
+   "lon": 22.9216,
+   "esposizione": 221,
+   "nome": "Tulliniemi",
+   "assegnato": "2026-10-19"
+  },
+  "france-carolles": {
+   "paese": "France",
+   "lat": 48.7583,
+   "lon": -1.573,
+   "esposizione": 292,
+   "nome": "Carolles · Normandy",
+   "assegnato": "2026-10-19"
+  },
+  "french-polynesia-avatoru-pass-rangiroa": {
+   "paese": "French Polynesia",
+   "lat": -14.9363,
+   "lon": -147.7101,
+   "esposizione": null,
+   "nome": "Avatoru Pass, Rangiroa · Tuamotu Islands",
+   "assegnato": "2026-10-19"
+  },
+  "gabon-mayumba": {
+   "paese": "Gabon",
+   "lat": -3.4345,
+   "lon": 10.6394,
+   "esposizione": 228,
+   "nome": "Mayumba",
+   "assegnato": "2026-10-19"
+  },
+  "germany-helgoland": {
+   "paese": "Germany",
+   "lat": 54.1897,
+   "lon": 7.9147,
+   "esposizione": 311,
+   "nome": "Helgoland",
+   "assegnato": "2026-10-19"
+  },
+  "germany-westermarkelsdorf": {
+   "paese": "Germany",
+   "lat": 54.5236,
+   "lon": 11.045,
+   "esposizione": 339,
+   "nome": "Westermarkelsdorf",
+   "assegnato": "2026-10-19"
+  },
+  "ghana-sunset-point": {
+   "paese": "Ghana",
+   "lat": 5.0501,
+   "lon": -2.8994,
+   "esposizione": 192,
+   "nome": "Sunset Point",
+   "assegnato": "2026-10-19"
+  },
+  "greece-acropolis": {
+   "paese": "Greece",
+   "lat": 36.0963,
+   "lon": 28.0854,
+   "esposizione": 129,
+   "nome": "Acropolis · Greek Islands",
+   "assegnato": "2026-10-19"
+  },
+  "greece-agia-fotia": {
+   "paese": "Greece",
+   "lat": 35.1961,
+   "lon": 26.1509,
+   "esposizione": 19,
+   "nome": "Agia Fotia · Crete Island",
+   "assegnato": "2026-10-19"
+  },
+  "greece-alykes": {
+   "paese": "Greece",
+   "lat": 38.318,
+   "lon": 21.4261,
+   "esposizione": 230,
+   "nome": "alykes · Ionian Sea",
+   "assegnato": "2026-10-19"
+  },
+  "greece-apollonas-naxos": {
+   "paese": "Greece",
+   "lat": 37.18,
+   "lon": 25.5542,
+   "esposizione": 36,
+   "nome": "Apollonas. Naxos · Aegean Sea",
+   "assegnato": "2026-10-19"
+  },
+  "greece-evia-kimi": {
+   "paese": "Greece",
+   "lat": 38.6317,
+   "lon": 24.1266,
+   "esposizione": 55,
+   "nome": "Evia - Kimi · Greek Islands",
+   "assegnato": "2026-10-19"
+  },
+  "greece-golden-beach-thassos": {
+   "paese": "Greece",
+   "lat": 40.7277,
+   "lon": 24.7599,
+   "esposizione": 120,
+   "nome": "Golden Beach, Thassos · Aegean Sea",
+   "assegnato": "2026-10-19"
+  },
+  "greece-great-palouki": {
+   "paese": "Greece",
+   "lat": 37.7536,
+   "lon": 21.3027,
+   "esposizione": 245,
+   "nome": "Great Palouki · Pelloponisos",
+   "assegnato": "2026-10-19"
+  },
+  "greece-ikaria-armenistis": {
+   "paese": "Greece",
+   "lat": 37.6311,
+   "lon": 26.0906,
+   "esposizione": 316,
+   "nome": "Ikaria - Armenistis · Greek Islands",
+   "assegnato": "2026-10-19"
+  },
+  "greece-koroni": {
+   "paese": "Greece",
+   "lat": 36.7827,
+   "lon": 21.9387,
+   "esposizione": 166,
+   "nome": "koroni",
+   "assegnato": "2026-10-19"
+  },
+  "greece-mircos-point": {
+   "paese": "Greece",
+   "lat": 36.3836,
+   "lon": 28.0213,
+   "esposizione": 325,
+   "nome": "Mircos Point · Greek Islands",
+   "assegnato": "2026-10-19"
+  },
+  "greece-niforeika": {
+   "paese": "Greece",
+   "lat": 38.1625,
+   "lon": 21.5144,
+   "esposizione": 320,
+   "nome": "Niforeika · Ionian Sea",
+   "assegnato": "2026-10-19"
+  },
+  "greece-prasonisi": {
+   "paese": "Greece",
+   "lat": 35.8821,
+   "lon": 27.752,
+   "esposizione": 198,
+   "nome": "prasonisi · Greek Islands",
+   "assegnato": "2026-10-19"
+  },
+  "greece-preveli": {
+   "paese": "Greece",
+   "lat": 35.1424,
+   "lon": 24.4775,
+   "esposizione": 205,
+   "nome": "Preveli · Crete Island",
+   "assegnato": "2026-10-19"
+  },
+  "greece-tis-poutanas-to-kangelo": {
+   "paese": "Greece",
+   "lat": 38.835,
+   "lon": 20.6579,
+   "esposizione": 283,
+   "nome": "tis poutanas to kangelo · Ionian Sea",
+   "assegnato": "2026-10-19"
+  },
+  "grenada-cherry-hill": {
+   "paese": "Grenada",
+   "lat": 12.0619,
+   "lon": -61.7567,
+   "esposizione": 257,
+   "nome": "Cherry Hill",
+   "assegnato": "2026-10-19"
+  },
+  "grenada-prickly-point": {
+   "paese": "Grenada",
+   "lat": 11.9891,
+   "lon": -61.7621,
+   "esposizione": 200,
+   "nome": "Prickly Point",
+   "assegnato": "2026-10-19"
+  },
+  "guatemala-champerico": {
+   "paese": "Guatemala",
+   "lat": 14.2928,
+   "lon": -91.9155,
+   "esposizione": 216,
+   "nome": "Champerico",
+   "assegnato": "2026-10-19"
+  },
+  "guinea-bissau-varela": {
+   "paese": "Guinea-Bissau",
+   "lat": 12.2829,
+   "lon": -16.5897,
+   "esposizione": 218,
+   "nome": "Varela",
+   "assegnato": "2026-10-19"
+  },
+  "haiti-haiti-the-point": {
+   "paese": "Haiti",
+   "lat": 19.9481,
+   "lon": -72.7707,
+   "esposizione": 353,
+   "nome": "Haiti The Point",
+   "assegnato": "2026-10-19"
+  },
+  "haiti-jacmel": {
+   "paese": "Haiti",
+   "lat": 18.2204,
+   "lon": -72.5406,
+   "esposizione": 179,
+   "nome": "Jacmel",
+   "assegnato": "2026-10-19"
+  },
+  "honduras-palma-real": {
+   "paese": "Honduras",
+   "lat": 15.8147,
+   "lon": -86.5105,
+   "esposizione": 358,
+   "nome": "Palma Real",
+   "assegnato": "2026-10-19"
+  },
+  "iceland-breidavik": {
+   "paese": "Iceland",
+   "lat": 65.5575,
+   "lon": -24.3609,
+   "esposizione": 110,
+   "nome": "Breidavik",
+   "assegnato": "2026-10-19"
+  },
+  "iceland-brimur": {
+   "paese": "Iceland",
+   "lat": 63.4061,
+   "lon": -20.2725,
+   "esposizione": 199,
+   "nome": "Brimurð",
+   "assegnato": "2026-10-19"
+  },
+  "iceland-eyvik": {
+   "paese": "Iceland",
+   "lat": 66.0942,
+   "lon": -17.3165,
+   "esposizione": 145,
+   "nome": "Eyvik",
+   "assegnato": "2026-10-19"
+  },
+  "iceland-husavik": {
+   "paese": "Iceland",
+   "lat": 65.4056,
+   "lon": -13.6759,
+   "esposizione": 266,
+   "nome": "Húsavik",
+   "assegnato": "2026-10-19"
+  },
+  "iceland-vik": {
+   "paese": "Iceland",
+   "lat": 63.4123,
+   "lon": -19.0088,
+   "esposizione": 185,
+   "nome": "Vik",
+   "assegnato": "2026-10-19"
+  },
+  "india-anjarle": {
+   "paese": "India",
+   "lat": 17.844,
+   "lon": 73.0875,
+   "esposizione": 254,
+   "nome": "Anjarle · North-West",
+   "assegnato": "2026-10-19"
+  },
+  "india-gokarna": {
+   "paese": "India",
+   "lat": 14.5454,
+   "lon": 74.3184,
+   "esposizione": 243,
+   "nome": "Gokarna · North-West",
+   "assegnato": "2026-10-19"
+  },
+  "india-hanuman-point": {
+   "paese": "India",
+   "lat": 17.7481,
+   "lon": 83.3509,
+   "esposizione": 137,
+   "nome": "Hanuman point · North-East",
+   "assegnato": "2026-10-19"
+  },
+  "india-kalpeni-left": {
+   "paese": "India",
+   "lat": 10.0579,
+   "lon": 73.6388,
+   "esposizione": null,
+   "nome": "Kalpeni left · Kerala",
+   "assegnato": "2026-10-19"
+  },
+  "india-kannur": {
+   "paese": "India",
+   "lat": 11.876,
+   "lon": 75.3474,
+   "esposizione": 234,
+   "nome": "Kannur · Kerala",
+   "assegnato": "2026-10-19"
+  },
+  "india-mahaballipuram": {
+   "paese": "India",
+   "lat": 12.6181,
+   "lon": 80.1987,
+   "esposizione": 108,
+   "nome": "Mahaballipuram · Tamil Nadu",
+   "assegnato": "2026-10-19"
+  },
+  "india-minicoy-pier": {
+   "paese": "India",
+   "lat": 8.2886,
+   "lon": 73.0679,
+   "esposizione": null,
+   "nome": "Minicoy pier · Kerala",
+   "assegnato": "2026-10-19"
+  },
+  "india-pirawadi": {
+   "paese": "India",
+   "lat": 16.1994,
+   "lon": 73.4345,
+   "esposizione": 251,
+   "nome": "Pirawadi · North-West",
+   "assegnato": "2026-10-19"
+  },
+  "india-shipwreck": {
+   "paese": "India",
+   "lat": 10.5415,
+   "lon": 72.6193,
+   "esposizione": null,
+   "nome": "Shipwreck · Kerala",
+   "assegnato": "2026-10-19"
+  },
+  "india-west-twin": {
+   "paese": "India",
+   "lat": 11.3438,
+   "lon": 92.6241,
+   "esposizione": 202,
+   "nome": "West Twin · Andaman Islands",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-banyaks": {
+   "paese": "Indonesia",
+   "lat": 2.1967,
+   "lon": 97.2949,
+   "esposizione": 28,
+   "nome": "Banyaks · Sumatra Islands",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-bay-of-plenty": {
+   "paese": "Indonesia",
+   "lat": 2.0559,
+   "lon": 97.3186,
+   "esposizione": 195,
+   "nome": "Bay of Plenty · Sumatra Islands",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-bintan-lagoon-resort": {
+   "paese": "Indonesia",
+   "lat": 1.1919,
+   "lon": 104.4281,
+   "esposizione": 5,
+   "nome": "Bintan Lagoon Resort · Others",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-bono": {
+   "paese": "Indonesia",
+   "lat": 0.1741,
+   "lon": 102.5553,
+   "esposizione": 47,
+   "nome": "Bono · Sumatra Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-churches-left": {
+   "paese": "Indonesia",
+   "lat": -0.8244,
+   "lon": 135.9998,
+   "esposizione": 37,
+   "nome": "Churches left · Others",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-dutchies": {
+   "paese": "Indonesia",
+   "lat": -2.7569,
+   "lon": 99.9845,
+   "esposizione": 259,
+   "nome": "Dutchies · Mentawai",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-gorontalo-beach": {
+   "paese": "Indonesia",
+   "lat": 0.4882,
+   "lon": 122.9921,
+   "esposizione": 186,
+   "nome": "Gorontalo beach · Sulawesi",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-grajagan": {
+   "paese": "Indonesia",
+   "lat": -8.7343,
+   "lon": 114.3397,
+   "esposizione": 188,
+   "nome": "Grajagan · East Java",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-ht-s": {
+   "paese": "Indonesia",
+   "lat": -2.3756,
+   "lon": 99.8595,
+   "esposizione": 141,
+   "nome": "HT's · Mentawai",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-lhoknga": {
+   "paese": "Indonesia",
+   "lat": 5.4751,
+   "lon": 95.2327,
+   "esposizione": 280,
+   "nome": "Lhoknga · Sumatra Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-meat-pai": {
+   "paese": "Indonesia",
+   "lat": -1.2426,
+   "lon": 136.4537,
+   "esposizione": null,
+   "nome": "Meat Pai · Others",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-no-name": {
+   "paese": "Indonesia",
+   "lat": -0.5913,
+   "lon": 98.4133,
+   "esposizione": 178,
+   "nome": "No Name · Sumatra Islands",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-one-tree": {
+   "paese": "Indonesia",
+   "lat": 2.3394,
+   "lon": 96.4686,
+   "esposizione": 139,
+   "nome": "One Tree · Sumatra Islands",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-pantai-air-manis": {
+   "paese": "Indonesia",
+   "lat": -0.9936,
+   "lon": 100.3614,
+   "esposizione": 247,
+   "nome": "Pantai Air Manis · Sumatra Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-rockstar": {
+   "paese": "Indonesia",
+   "lat": 0.6008,
+   "lon": 97.8796,
+   "esposizione": 134,
+   "nome": "Rockstar · Sumatra Islands",
+   "assegnato": "2026-10-19"
+  },
+  "indonesia-timmy-turner-s-new-left": {
+   "paese": "Indonesia",
+   "lat": -7.7182,
+   "lon": 107.833,
+   "esposizione": 197,
+   "nome": "Timmy Turner's New Left · West Java",
+   "assegnato": "2026-10-19"
+  },
+  "iran-ramin": {
+   "paese": "Iran",
+   "lat": 25.2686,
+   "lon": 60.7494,
+   "esposizione": 196,
+   "nome": "Ramin",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-fanore": {
+   "paese": "Ireland",
+   "lat": 53.1171,
+   "lon": -9.257,
+   "esposizione": 295,
+   "nome": "Fanore · West",
+   "assegnato": "2026-10-19"
+  },
+  "ireland-muckros": {
+   "paese": "Ireland",
+   "lat": 54.6163,
+   "lon": -8.5849,
+   "esposizione": 258,
+   "nome": "Muckros · North West",
+   "assegnato": "2026-10-19"
+  },
+  "italy-backdoor": {
+   "paese": "Italy",
+   "lat": 37.3332,
+   "lon": 13.3938,
+   "esposizione": 215,
+   "nome": "Backdoor · Sicily",
+   "assegnato": "2026-10-19"
+  },
+  "italy-bassa-trinita": {
+   "paese": "Italy",
+   "lat": 41.2426,
+   "lon": 9.4005,
+   "esposizione": 39,
+   "nome": "Bassa Trinita · Sicily Sardinia",
+   "assegnato": "2026-10-19"
+  },
+  "italy-capo-vieste": {
+   "paese": "Italy",
+   "lat": 41.9254,
+   "lon": 16.1092,
+   "esposizione": 35,
+   "nome": "Capo Vieste · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-foddini": {
+   "paese": "Italy",
+   "lat": 39.8033,
+   "lon": 9.6723,
+   "esposizione": 98,
+   "nome": "Foddini · Sicily Sardinia",
+   "assegnato": "2026-10-19"
+  },
+  "italy-la-diga-sottomarina": {
+   "paese": "Italy",
+   "lat": 45.2286,
+   "lon": 12.3018,
+   "esposizione": 86,
+   "nome": "La Diga sottomarina · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-morghella": {
+   "paese": "Italy",
+   "lat": 36.7006,
+   "lon": 15.1245,
+   "esposizione": 135,
+   "nome": "Morghella · Sicily",
+   "assegnato": "2026-10-19"
+  },
+  "italy-paloma-silvi-marina": {
+   "paese": "Italy",
+   "lat": 42.5397,
+   "lon": 14.1345,
+   "esposizione": 52,
+   "nome": "Paloma Silvi Marina · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-playa-sicily": {
+   "paese": "Italy",
+   "lat": 37.4694,
+   "lon": 15.0854,
+   "esposizione": 100,
+   "nome": "Playa (Sicily) · Sicily",
+   "assegnato": "2026-10-19"
+  },
+  "italy-salerno-rivermouth": {
+   "paese": "Italy",
+   "lat": 40.6719,
+   "lon": 14.7729,
+   "esposizione": 207,
+   "nome": "Salerno Rivermouth · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-saraceno": {
+   "paese": "Italy",
+   "lat": 42.1524,
+   "lon": 14.7186,
+   "esposizione": 38,
+   "nome": "Saraceno · Mainland",
+   "assegnato": "2026-10-19"
+  },
+  "italy-turri": {
+   "paese": "Italy",
+   "lat": 38.9644,
+   "lon": 8.4377,
+   "esposizione": 204,
+   "nome": "Turri · Sicily Sardinia",
+   "assegnato": "2026-10-19"
+  },
+  "ivory-coast-grand-drewin": {
+   "paese": "Ivory Coast",
+   "lat": 4.9156,
+   "lon": -6.1477,
+   "esposizione": 159,
+   "nome": "Grand Drewin",
+   "assegnato": "2026-10-19"
+  },
+  "jamaica-long-bay": {
+   "paese": "Jamaica",
+   "lat": 18.0998,
+   "lon": -76.3121,
+   "esposizione": 63,
+   "nome": "Long bay",
+   "assegnato": "2026-10-19"
+  },
+  "japan-fingers": {
+   "paese": "Japan",
+   "lat": 30.3626,
+   "lon": 130.9028,
+   "esposizione": 174,
+   "nome": "Fingers · Kyushu, Tanegashima-Island",
+   "assegnato": "2026-10-19"
+  },
+  "japan-isonoura": {
+   "paese": "Japan",
+   "lat": 34.2589,
+   "lon": 135.0946,
+   "esposizione": 254,
+   "nome": "Isonoura · Kii Hanto",
+   "assegnato": "2026-10-19"
+  },
+  "japan-katagai": {
+   "paese": "Japan",
+   "lat": 35.5334,
+   "lon": 140.4612,
+   "esposizione": 125,
+   "nome": "Katagai · Kanagawa Chiba",
+   "assegnato": "2026-10-19"
+  },
+  "japan-niyodogawakakou": {
+   "paese": "Japan",
+   "lat": 33.4589,
+   "lon": 133.481,
+   "esposizione": 158,
+   "nome": "Niyodogawakakou · Shikoku",
+   "assegnato": "2026-10-19"
+  },
+  "japan-oniguchi": {
+   "paese": "Japan",
+   "lat": 31.2304,
+   "lon": 130.4924,
+   "esposizione": 194,
+   "nome": "Oniguchi · Kyushu",
+   "assegnato": "2026-10-19"
+  },
+  "japan-sakawa-rivermouth": {
+   "paese": "Japan",
+   "lat": 35.2598,
+   "lon": 139.1836,
+   "esposizione": 143,
+   "nome": "Sakawa Rivermouth · Kanagawa Chiba",
+   "assegnato": "2026-10-19"
+  },
+  "japan-sendai-shinko": {
+   "paese": "Japan",
+   "lat": 38.2599,
+   "lon": 141.0232,
+   "esposizione": 120,
+   "nome": "Sendai shinko · Tohoku",
+   "assegnato": "2026-10-19"
+  },
+  "japan-tottori-sakyu": {
+   "paese": "Japan",
+   "lat": 35.5448,
+   "lon": 134.2189,
+   "esposizione": 349,
+   "nome": "Tottori-sakyu · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "japan-tsunoshima": {
+   "paese": "Japan",
+   "lat": 34.355,
+   "lon": 130.857,
+   "esposizione": 311,
+   "nome": "Tsunoshima · West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "japan-under-the-sunrepo": {
+   "paese": "Japan",
+   "lat": 34.4279,
+   "lon": 136.9203,
+   "esposizione": 117,
+   "nome": "Under the Sunrepo · Kii Hanto",
+   "assegnato": "2026-10-19"
+  },
+  "kazakhstan-aktau": {
+   "paese": "Kazakhstan",
+   "lat": 43.6204,
+   "lon": 51.1892,
+   "esposizione": 236,
+   "nome": "Aktau",
+   "assegnato": "2026-10-19"
+  },
+  "kenya-mombasa-channel": {
+   "paese": "Kenya",
+   "lat": -4.0874,
+   "lon": 39.6831,
+   "esposizione": 117,
+   "nome": "Mombasa Channel",
+   "assegnato": "2026-10-19"
+  },
+  "kiribati-fanning-island": {
+   "paese": "Kiribati",
+   "lat": 3.8581,
+   "lon": -159.3646,
+   "esposizione": null,
+   "nome": "Fanning Island",
+   "assegnato": "2026-10-19"
+  },
+  "kiribati-naa": {
+   "paese": "Kiribati",
+   "lat": 1.6387,
+   "lon": 172.959,
+   "esposizione": null,
+   "nome": "Naa",
+   "assegnato": "2026-10-19"
+  },
+  "kuwait-mangaf": {
+   "paese": "Kuwait",
+   "lat": 29.1025,
+   "lon": 48.1386,
+   "esposizione": 76,
+   "nome": "mangaf",
+   "assegnato": "2026-10-19"
+  },
+  "liberia-robertsport": {
+   "paese": "Liberia",
+   "lat": 6.7398,
+   "lon": -11.3841,
+   "esposizione": 219,
+   "nome": "Robertsport",
+   "assegnato": "2026-10-19"
+  },
+  "liberia-tico-s-point": {
+   "paese": "Liberia",
+   "lat": 5.8397,
+   "lon": -10.0269,
+   "esposizione": 221,
+   "nome": "Tico's Point",
+   "assegnato": "2026-10-19"
+  },
+  "libya-leptis-magna": {
+   "paese": "Libya",
+   "lat": 32.6403,
+   "lon": 14.3016,
+   "esposizione": 31,
+   "nome": "Leptis Magna",
+   "assegnato": "2026-10-19"
+  },
+  "madagascar-ambila-lamentsa": {
+   "paese": "Madagascar",
+   "lat": -18.8593,
+   "lon": 49.1497,
+   "esposizione": 111,
+   "nome": "Ambila Lamentsa",
+   "assegnato": "2026-10-19"
+  },
+  "madagascar-lavanono": {
+   "paese": "Madagascar",
+   "lat": -25.4248,
+   "lon": 44.9385,
+   "esposizione": 209,
+   "nome": "Lavanono",
+   "assegnato": "2026-10-19"
+  },
+  "madagascar-mahambo": {
+   "paese": "Madagascar",
+   "lat": -17.4789,
+   "lon": 49.473,
+   "esposizione": 89,
+   "nome": "Mahambo",
+   "assegnato": "2026-10-19"
+  },
+  "madeira-machico": {
+   "paese": "Madeira",
+   "lat": 32.7171,
+   "lon": -16.7638,
+   "esposizione": 113,
+   "nome": "Machico",
+   "assegnato": "2026-10-19"
+  },
+  "malaysia-desaru": {
+   "paese": "Malaysia",
+   "lat": 1.5538,
+   "lon": 104.2593,
+   "esposizione": 89,
+   "nome": "Desaru",
+   "assegnato": "2026-10-19"
+  },
+  "malaysia-kudat": {
+   "paese": "Malaysia",
+   "lat": 7.0311,
+   "lon": 116.7413,
+   "esposizione": 342,
+   "nome": "Kudat · Borneo",
+   "assegnato": "2026-10-19"
+  },
+  "malaysia-pandan-beach": {
+   "paese": "Malaysia",
+   "lat": 1.7642,
+   "lon": 109.8653,
+   "esposizione": 18,
+   "nome": "PANDAN BEACH · Borneo",
+   "assegnato": "2026-10-19"
+  },
+  "maldives-bodu-kanmathi": {
+   "paese": "Maldives",
+   "lat": 5.3308,
+   "lon": 73.4649,
+   "esposizione": null,
+   "nome": "bodu kanmathi",
+   "assegnato": "2026-10-19"
+  },
+  "maldives-muli-s-right": {
+   "paese": "Maldives",
+   "lat": 2.9275,
+   "lon": 73.5871,
+   "esposizione": null,
+   "nome": "Muli's right",
+   "assegnato": "2026-10-19"
+  },
+  "mariana-islands-bird-island-saipan": {
+   "paese": "Mariana Islands",
+   "lat": 15.2582,
+   "lon": 145.8136,
+   "esposizione": 49,
+   "nome": "Bird Island (Saipan)",
+   "assegnato": "2026-10-19"
+  },
+  "mariana-islands-obyan": {
+   "paese": "Mariana Islands",
+   "lat": 15.1049,
+   "lon": 145.7389,
+   "esposizione": 156,
+   "nome": "Obyan",
+   "assegnato": "2026-10-19"
+  },
+  "marshall-islands-kwajalein-atoll": {
+   "paese": "Marshall Islands",
+   "lat": 9.3001,
+   "lon": 167.2631,
+   "esposizione": null,
+   "nome": "kwajalein atoll",
+   "assegnato": "2026-10-19"
+  },
+  "mauritius-bernache": {
+   "paese": "Mauritius",
+   "lat": -20.0061,
+   "lon": 57.6952,
+   "esposizione": 37,
+   "nome": "bernache",
+   "assegnato": "2026-10-19"
+  },
+  "mauritius-grand-sancho": {
+   "paese": "Mauritius",
+   "lat": -20.5071,
+   "lon": 57.4494,
+   "esposizione": 193,
+   "nome": "Grand Sancho",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-baja-malibu": {
+   "paese": "Mexico",
+   "lat": 32.4195,
+   "lon": -117.0958,
+   "esposizione": 250,
+   "nome": "Baja Malibu · Baja Norte",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-chacahua": {
+   "paese": "Mexico",
+   "lat": 15.9676,
+   "lon": -97.6769,
+   "esposizione": 193,
+   "nome": "Chacahua · Oaxaca-Chiapas",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-el-tecuan": {
+   "paese": "Mexico",
+   "lat": 20.2377,
+   "lon": -105.5738,
+   "esposizione": 257,
+   "nome": "El Tecuan · Jalisco",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-escolleras": {
+   "paese": "Mexico",
+   "lat": 22.2661,
+   "lon": -97.7833,
+   "esposizione": 80,
+   "nome": "Escolleras · Gulf",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-isla-natividad": {
+   "paese": "Mexico",
+   "lat": 27.8575,
+   "lon": -115.1608,
+   "esposizione": 272,
+   "nome": "Isla Natividad · Baja Sur",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-la-jolla": {
+   "paese": "Mexico",
+   "lat": 15.8752,
+   "lon": -95.7771,
+   "esposizione": 159,
+   "nome": "La jolla · Oaxaca-Chiapas",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-la-ticla": {
+   "paese": "Mexico",
+   "lat": 18.4541,
+   "lon": -103.5586,
+   "esposizione": 224,
+   "nome": "La Ticla · Michoacan",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-playa-bagdad": {
+   "paese": "Mexico",
+   "lat": 25.8342,
+   "lon": -97.1548,
+   "esposizione": 94,
+   "nome": "playa bagdad · Gulf",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-playa-los-cerritos": {
+   "paese": "Mexico",
+   "lat": 23.3426,
+   "lon": -110.1884,
+   "esposizione": 237,
+   "nome": "Playa Los Cerritos · Baja Sur",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-playa-novillero": {
+   "paese": "Mexico",
+   "lat": 22.3781,
+   "lon": -105.6868,
+   "esposizione": 248,
+   "nome": "Playa Novillero · Sinaloa-Nayarit",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-puerto-arista": {
+   "paese": "Mexico",
+   "lat": 15.931,
+   "lon": -93.8087,
+   "esposizione": 217,
+   "nome": "Puerto Arista · Oaxaca-Chiapas",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-puerto-madero": {
+   "paese": "Mexico",
+   "lat": 14.7218,
+   "lon": -92.428,
+   "esposizione": 225,
+   "nome": "Puerto Madero · Oaxaca-Chiapas",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-punta-abreojos": {
+   "paese": "Mexico",
+   "lat": 26.7093,
+   "lon": -113.576,
+   "esposizione": 192,
+   "nome": "Punta Abreojos · Baja Sur",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-punta-conejo": {
+   "paese": "Mexico",
+   "lat": 24.0743,
+   "lon": -111.0078,
+   "esposizione": 220,
+   "nome": "Punta Conejo · Baja Sur",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-rio-nexpa-nexpa-river": {
+   "paese": "Mexico",
+   "lat": 18.0855,
+   "lon": -102.7911,
+   "esposizione": 201,
+   "nome": "Rio Nexpa (Nexpa River) · Michoacan",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-salina-cruze-jetty": {
+   "paese": "Mexico",
+   "lat": 16.1537,
+   "lon": -95.2376,
+   "esposizione": 154,
+   "nome": "Salina Cruze -Jetty · Oaxaca-Chiapas",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-scorpion-bay": {
+   "paese": "Mexico",
+   "lat": 26.2338,
+   "lon": -112.4854,
+   "esposizione": 213,
+   "nome": "Scorpion Bay · Baja Sur",
+   "assegnato": "2026-10-19"
+  },
+  "mexico-terranova": {
+   "paese": "Mexico",
+   "lat": -23.1545,
+   "lon": -109.4931,
+   "esposizione": null,
+   "nome": "Terranova · Baja Sur",
+   "assegnato": "2026-10-19"
+  },
+  "micronesia-p-pass": {
+   "paese": "Micronesia",
+   "lat": 7.0136,
+   "lon": 158.2072,
+   "esposizione": 356,
+   "nome": "P-Pass · Federated States of Micronesia, Pohnpei",
+   "assegnato": "2026-10-19"
+  },
+  "micronesia-umatac-bay": {
+   "paese": "Micronesia",
+   "lat": 13.2971,
+   "lon": 144.6589,
+   "esposizione": 231,
+   "nome": "Umatac Bay · Guam",
+   "assegnato": "2026-10-19"
+  },
+  "montserrat-belham-valley-rivermouth": {
+   "paese": "Montserrat",
+   "lat": 16.7414,
+   "lon": -62.2331,
+   "esposizione": 265,
+   "nome": "Belham Valley Rivermouth",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-drika": {
+   "paese": "Morocco",
+   "lat": 33.1629,
+   "lon": -8.63,
+   "esposizione": 313,
+   "nome": "DriKa · North",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-jack-beach": {
+   "paese": "Morocco",
+   "lat": 33.4764,
+   "lon": -7.9726,
+   "esposizione": 333,
+   "nome": "Jack beach · North",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-moulay-bousselham": {
+   "paese": "Morocco",
+   "lat": 34.8994,
+   "lon": -6.289,
+   "esposizione": 293,
+   "nome": "Moulay Bousselham · North",
+   "assegnato": "2026-10-19"
+  },
+  "morocco-targha": {
+   "paese": "Morocco",
+   "lat": 35.3853,
+   "lon": -4.9928,
+   "esposizione": 36,
+   "nome": "Targha · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "mozambique-maragra": {
+   "paese": "Mozambique",
+   "lat": -25.4763,
+   "lon": 32.9717,
+   "esposizione": 138,
+   "nome": "Maragra",
+   "assegnato": "2026-10-19"
+  },
+  "mozambique-mussage": {
+   "paese": "Mozambique",
+   "lat": -12.9576,
+   "lon": 40.5724,
+   "esposizione": 83,
+   "nome": "Mussage",
+   "assegnato": "2026-10-19"
+  },
+  "mozambique-ponta-do-ouro": {
+   "paese": "Mozambique",
+   "lat": -26.8438,
+   "lon": 32.8949,
+   "esposizione": 97,
+   "nome": "Ponta do Ouro",
+   "assegnato": "2026-10-19"
+  },
+  "namibia-east-hill-point": {
+   "paese": "Namibia",
+   "lat": -25.4383,
+   "lon": 14.8412,
+   "esposizione": 261,
+   "nome": "East Hill Point",
+   "assegnato": "2026-10-19"
+  },
+  "namibia-elizabeth-bay": {
+   "paese": "Namibia",
+   "lat": -26.945,
+   "lon": 15.2296,
+   "esposizione": 253,
+   "nome": "Elizabeth Bay",
+   "assegnato": "2026-10-19"
+  },
+  "namibia-ovahimba-point": {
+   "paese": "Namibia",
+   "lat": -18.8329,
+   "lon": 12.3872,
+   "esposizione": 235,
+   "nome": "Ovahimba Point",
+   "assegnato": "2026-10-19"
+  },
+  "nauru-menen": {
+   "paese": "Nauru",
+   "lat": -0.544,
+   "lon": 166.9526,
+   "esposizione": null,
+   "nome": "Menen",
+   "assegnato": "2026-10-19"
+  },
+  "new-caledonia-dumbea-right": {
+   "paese": "New Caledonia",
+   "lat": -22.3615,
+   "lon": 166.2575,
+   "esposizione": 201,
+   "nome": "Dumbéa Right",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-blaketown-wedge": {
+   "paese": "New Zealand",
+   "lat": -42.4428,
+   "lon": 171.1931,
+   "esposizione": 299,
+   "nome": "Blaketown wedge · New Zealand SI, West Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-diversion": {
+   "paese": "New Zealand",
+   "lat": -41.44,
+   "lon": 174.0318,
+   "esposizione": 80,
+   "nome": "Diversion · New Zealand SI, North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-farmers-tokomaru-bay": {
+   "paese": "New Zealand",
+   "lat": -38.126,
+   "lon": 178.324,
+   "esposizione": 93,
+   "nome": "Farmers - Tokomaru Bay · New Zealand NI, East Cape",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-henderson-beach": {
+   "paese": "New Zealand",
+   "lat": -34.7518,
+   "lon": 173.1279,
+   "esposizione": 36,
+   "nome": "Henderson Beach · New Zealand NI, NW Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-jacks-point": {
+   "paese": "New Zealand",
+   "lat": -44.4318,
+   "lon": 171.2622,
+   "esposizione": 111,
+   "nome": "Jacks Point · New Zealand SI, SE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-kakanui": {
+   "paese": "New Zealand",
+   "lat": -45.1831,
+   "lon": 170.9055,
+   "esposizione": 110,
+   "nome": "Kakanui · New Zealand SI, SE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-magnet-bay": {
+   "paese": "New Zealand",
+   "lat": -43.8434,
+   "lon": 172.7405,
+   "esposizione": 171,
+   "nome": "Magnet Bay · New Zealand SI, NE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-magnets": {
+   "paese": "New Zealand",
+   "lat": -41.1138,
+   "lon": 173.5079,
+   "esposizione": 343,
+   "nome": "Magnets · New Zealand SI, North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-saber-reef": {
+   "paese": "New Zealand",
+   "lat": -47.1875,
+   "lon": 167.7944,
+   "esposizione": 173,
+   "nome": "Saber Reef · New Zealand SI, Far South",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-the-gap": {
+   "paese": "New Zealand",
+   "lat": -40.9078,
+   "lon": 176.2223,
+   "esposizione": 126,
+   "nome": "The Gap · New Zealand NI, South East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-tora": {
+   "paese": "New Zealand",
+   "lat": -41.5072,
+   "lon": 175.5153,
+   "esposizione": 153,
+   "nome": "Tora · New Zealand NI, South East Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-tuapeka-point": {
+   "paese": "New Zealand",
+   "lat": -43.727,
+   "lon": -176.4915,
+   "esposizione": 5,
+   "nome": "Tuapeka Point · New Zealand SI, NE Coast",
+   "assegnato": "2026-10-19"
+  },
+  "new-zealand-wairaiki": {
+   "paese": "New Zealand",
+   "lat": -40.5038,
+   "lon": 172.6671,
+   "esposizione": 352,
+   "nome": "Wairaiki · New Zealand SI, North Coast",
+   "assegnato": "2026-10-19"
+  },
+  "nicaragua-el-bluff": {
+   "paese": "Nicaragua",
+   "lat": 12.0016,
+   "lon": -83.6839,
+   "esposizione": 107,
+   "nome": "El Bluff",
+   "assegnato": "2026-10-19"
+  },
+  "nicaragua-the-finca": {
+   "paese": "Nicaragua",
+   "lat": 13.0286,
+   "lon": -87.6091,
+   "esposizione": 280,
+   "nome": "The Finca",
+   "assegnato": "2026-10-19"
+  },
+  "norway-farstadstranda-farstad": {
+   "paese": "Norway",
+   "lat": 62.9838,
+   "lon": 7.1506,
+   "esposizione": 328,
+   "nome": "Farstadstranda-Farstad",
+   "assegnato": "2026-10-19"
+  },
+  "norway-unstad": {
+   "paese": "Norway",
+   "lat": 68.2719,
+   "lon": 13.575,
+   "esposizione": 131,
+   "nome": "Unstad",
+   "assegnato": "2026-10-19"
+  },
+  "oman-masirah-island": {
+   "paese": "Oman",
+   "lat": 20.2828,
+   "lon": 58.7315,
+   "esposizione": 145,
+   "nome": "Masirah Island",
+   "assegnato": "2026-10-19"
+  },
+  "oman-salalah": {
+   "paese": "Oman",
+   "lat": 17.0231,
+   "lon": 54.0852,
+   "esposizione": 165,
+   "nome": "Salalah",
+   "assegnato": "2026-10-19"
+  },
+  "palau-melekeok": {
+   "paese": "Palau",
+   "lat": 7.491,
+   "lon": 134.6416,
+   "esposizione": 108,
+   "nome": "melekeok",
+   "assegnato": "2026-10-19"
+  },
+  "palau-ngardmau-channel": {
+   "paese": "Palau",
+   "lat": 7.6458,
+   "lon": 134.544,
+   "esposizione": 329,
+   "nome": "Ngardmau  Channel",
+   "assegnato": "2026-10-19"
+  },
+  "palau-santa-maria-anguar": {
+   "paese": "Palau",
+   "lat": 6.9218,
+   "lon": 134.1236,
+   "esposizione": null,
+   "nome": "Santa Maria Anguar",
+   "assegnato": "2026-10-19"
+  },
+  "panama-kuna-an": {
+   "paese": "Panama",
+   "lat": 9.5887,
+   "lon": -78.8886,
+   "esposizione": 9,
+   "nome": "Kuna An",
+   "assegnato": "2026-10-19"
+  },
+  "panama-la-barqueta": {
+   "paese": "Panama",
+   "lat": 8.3042,
+   "lon": -82.5777,
+   "esposizione": 189,
+   "nome": "La Barqueta",
+   "assegnato": "2026-10-19"
+  },
+  "panama-lajas": {
+   "paese": "Panama",
+   "lat": 8.6229,
+   "lon": -79.0384,
+   "esposizione": 218,
+   "nome": "Lajas",
+   "assegnato": "2026-10-19"
+  },
+  "papua-new-guinea-kragur-village-kairiru-": {
+   "paese": "Papua New Guinea",
+   "lat": -3.3455,
+   "lon": 143.559,
+   "esposizione": 23,
+   "nome": "Kragur Village, Kairiru Island",
+   "assegnato": "2026-10-19"
+  },
+  "papua-new-guinea-simberi-island": {
+   "paese": "Papua New Guinea",
+   "lat": -2.6203,
+   "lon": 151.9758,
+   "esposizione": null,
+   "nome": "simberi island",
+   "assegnato": "2026-10-19"
+  },
+  "papua-new-guinea-tupira-mira": {
+   "paese": "Papua New Guinea",
+   "lat": -4.4865,
+   "lon": 145.4477,
+   "esposizione": 42,
+   "nome": "Tupira Mira",
+   "assegnato": "2026-10-19"
+  },
+  "peru-bermejo": {
+   "paese": "Peru",
+   "lat": -10.564,
+   "lon": -77.9078,
+   "esposizione": 239,
+   "nome": "Bermejo · Central",
+   "assegnato": "2026-10-19"
+  },
+  "peru-centinela": {
+   "paese": "Peru",
+   "lat": -11.0665,
+   "lon": -77.6375,
+   "esposizione": 252,
+   "nome": "Centinela · Central",
+   "assegnato": "2026-10-19"
+  },
+  "peru-ilo-moquegua-big-sister": {
+   "paese": "Peru",
+   "lat": -17.6403,
+   "lon": -71.3472,
+   "esposizione": 236,
+   "nome": "Ilo Moquegua - Big sister · South, Ilo- Moquegua",
+   "assegnato": "2026-10-19"
+  },
+  "peru-mejia": {
+   "paese": "Peru",
+   "lat": -17.1035,
+   "lon": -71.9099,
+   "esposizione": 217,
+   "nome": "Mejia · South",
+   "assegnato": "2026-10-19"
+  },
+  "peru-playa-grande": {
+   "paese": "Peru",
+   "lat": -9.7763,
+   "lon": -78.2459,
+   "esposizione": 247,
+   "nome": "Playa Grande · Central",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-aparri": {
+   "paese": "Philippines",
+   "lat": 18.3608,
+   "lon": 121.6269,
+   "esposizione": 20,
+   "nome": "Aparri · Luzon",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-bagasbas-beach": {
+   "paese": "Philippines",
+   "lat": 14.1376,
+   "lon": 122.9842,
+   "esposizione": 44,
+   "nome": "Bagasbas Beach · Luzon",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-bobon": {
+   "paese": "Philippines",
+   "lat": 6.8527,
+   "lon": 126.3471,
+   "esposizione": 136,
+   "nome": "Bobon · Mindanao",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-g1": {
+   "paese": "Philippines",
+   "lat": 9.7473,
+   "lon": 126.0989,
+   "esposizione": 131,
+   "nome": "G1 · Siargao Islands",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-geron": {
+   "paese": "Philippines",
+   "lat": 12.6765,
+   "lon": 124.3694,
+   "esposizione": 1,
+   "nome": "geron · Center Islands",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-pagudpud": {
+   "paese": "Philippines",
+   "lat": 18.3394,
+   "lon": 120.6046,
+   "esposizione": 296,
+   "nome": "Pagudpud · Luzon",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-pururan-bay-majestics": {
+   "paese": "Philippines",
+   "lat": 13.6922,
+   "lon": 124.3976,
+   "esposizione": 100,
+   "nome": "Pururan Bay (Majestics) · Luzon",
+   "assegnato": "2026-10-19"
+  },
+  "philippines-san-juan": {
+   "paese": "Philippines",
+   "lat": 16.6579,
+   "lon": 120.3205,
+   "esposizione": 276,
+   "nome": "San juan · Luzon",
+   "assegnato": "2026-10-19"
+  },
+  "poland-dabki": {
+   "paese": "Poland",
+   "lat": 54.3796,
+   "lon": 16.3171,
+   "esposizione": 320,
+   "nome": "Dabki",
+   "assegnato": "2026-10-19"
+  },
+  "portugal-praia-da-torreira": {
+   "paese": "Portugal",
+   "lat": 40.7618,
+   "lon": -8.7134,
+   "esposizione": 279,
+   "nome": "praia da torreira · North Porto",
+   "assegnato": "2026-10-19"
+  },
+  "puerto-rico-el-misto": {
+   "paese": "Puerto Rico",
+   "lat": 18.3817,
+   "lon": -65.6145,
+   "esposizione": 57,
+   "nome": "El Misto",
+   "assegnato": "2026-10-19"
+  },
+  "puerto-rico-el-penon-amador": {
+   "paese": "Puerto Rico",
+   "lat": 18.4909,
+   "lon": -66.8678,
+   "esposizione": 358,
+   "nome": "El Peñon Amador",
+   "assegnato": "2026-10-19"
+  },
+  "qatar-dukhan-beach": {
+   "paese": "Qatar",
+   "lat": 25.4051,
+   "lon": 50.7555,
+   "esposizione": 299,
+   "nome": "dukhan beach",
+   "assegnato": "2026-10-19"
+  },
+  "reunion-butor": {
+   "paese": "Reunion",
+   "lat": -21.0389,
+   "lon": 55.7226,
+   "esposizione": 55,
+   "nome": "Butor",
+   "assegnato": "2026-10-19"
+  },
+  "reunion-manapany": {
+   "paese": "Reunion",
+   "lat": -21.3736,
+   "lon": 55.5875,
+   "esposizione": 187,
+   "nome": "Manapany",
+   "assegnato": "2026-10-19"
+  },
+  "robinson-crusoe-french-point": {
+   "paese": "Robinson Crusoe",
+   "lat": -33.8104,
+   "lon": -80.8016,
+   "esposizione": null,
+   "nome": "french point",
+   "assegnato": "2026-10-19"
+  },
+  "russia-ashe": {
+   "paese": "Russia",
+   "lat": 43.9566,
+   "lon": 39.2637,
+   "esposizione": 222,
+   "nome": "Ashe · Black Sea",
+   "assegnato": "2026-10-19"
+  },
+  "russia-kholmsk": {
+   "paese": "Russia",
+   "lat": 47.1934,
+   "lon": 141.8445,
+   "esposizione": 271,
+   "nome": "Kholmsk · Far East, Sakhalin, Sakhalin",
+   "assegnato": "2026-10-19"
+  },
+  "russia-okhotsk-beachbreak": {
+   "paese": "Russia",
+   "lat": 46.8529,
+   "lon": 143.1714,
+   "esposizione": 66,
+   "nome": "Okhotsk Beachbreak · Far East, Sakhalin, Sakhalin",
+   "assegnato": "2026-10-19"
+  },
+  "russia-park-pobedy": {
+   "paese": "Russia",
+   "lat": 44.6104,
+   "lon": 33.4571,
+   "esposizione": 261,
+   "nome": "Park Pobedy · Black Sea",
+   "assegnato": "2026-10-19"
+  },
+  "russia-prigorodnoye": {
+   "paese": "Russia",
+   "lat": 46.6205,
+   "lon": 142.9303,
+   "esposizione": 179,
+   "nome": "Prigorodnoye · Far East, Sakhalin, Sakhalin",
+   "assegnato": "2026-10-19"
+  },
+  "russia-southern-cape": {
+   "paese": "Russia",
+   "lat": 44.8921,
+   "lon": 37.2952,
+   "esposizione": 238,
+   "nome": "Southern Cape · Black Sea",
+   "assegnato": "2026-10-19"
+  },
+  "samoa-american-coarlhead": {
+   "paese": "Samoa American",
+   "lat": -14.3071,
+   "lon": -170.6915,
+   "esposizione": 123,
+   "nome": "CoarlHead",
+   "assegnato": "2026-10-19"
+  },
+  "samoa-western-pebbles": {
+   "paese": "Samoa Western",
+   "lat": -13.7447,
+   "lon": -172.4222,
+   "esposizione": 178,
+   "nome": "Pebbles",
+   "assegnato": "2026-10-19"
+  },
+  "sao-tome-porto-alegre": {
+   "paese": "Sao Tome",
+   "lat": 0.0359,
+   "lon": 6.5364,
+   "esposizione": 199,
+   "nome": "porto alegre",
+   "assegnato": "2026-10-19"
+  },
+  "senegal-cap-skirring": {
+   "paese": "Senegal",
+   "lat": 12.363,
+   "lon": -16.7373,
+   "esposizione": 237,
+   "nome": "Cap Skirring",
+   "assegnato": "2026-10-19"
+  },
+  "senegal-saint-louis": {
+   "paese": "Senegal",
+   "lat": 16.012,
+   "lon": -16.5112,
+   "esposizione": 277,
+   "nome": "Saint Louis",
+   "assegnato": "2026-10-19"
+  },
+  "seychelles-coevity-island-the-handle": {
+   "paese": "Seychelles",
+   "lat": -7.1821,
+   "lon": 56.2573,
+   "esposizione": null,
+   "nome": "Coevity Island-The Handle · Other Islands",
+   "assegnato": "2026-10-19"
+  },
+  "sierra-leone-sulima": {
+   "paese": "Sierra Leone",
+   "lat": 6.9636,
+   "lon": -11.5748,
+   "esposizione": 217,
+   "nome": "Sulima",
+   "assegnato": "2026-10-19"
+  },
+  "sierra-leone-turtle-island": {
+   "paese": "Sierra Leone",
+   "lat": 7.6456,
+   "lon": -13.0987,
+   "esposizione": 240,
+   "nome": "Turtle Island",
+   "assegnato": "2026-10-19"
+  },
+  "somalia-north-hafun-beach": {
+   "paese": "Somalia",
+   "lat": 10.5273,
+   "lon": 51.2161,
+   "esposizione": 70,
+   "nome": "North Hafun Beach",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-cape-vidal": {
+   "paese": "South Africa",
+   "lat": -28.1261,
+   "lon": 32.5577,
+   "esposizione": 105,
+   "nome": "Cape Vidal · East Coast North",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-richards-bay": {
+   "paese": "South Africa",
+   "lat": -28.8052,
+   "lon": 32.099,
+   "esposizione": 135,
+   "nome": "Richards Bay · East Coast North",
+   "assegnato": "2026-10-19"
+  },
+  "south-africa-waenhuiskrans-point": {
+   "paese": "South Africa",
+   "lat": -34.6927,
+   "lon": 20.2366,
+   "esposizione": 155,
+   "nome": "Waenhuiskrans Point · South Garden Route",
+   "assegnato": "2026-10-19"
+  },
+  "south-korea-jeju-island-jungmun-beach": {
+   "paese": "South Korea",
+   "lat": 33.2446,
+   "lon": 126.4128,
+   "esposizione": 184,
+   "nome": "Jeju Island - Jungmun Beach",
+   "assegnato": "2026-10-19"
+  },
+  "south-korea-songdojin-ni": {
+   "paese": "South Korea",
+   "lat": 38.5993,
+   "lon": 128.3698,
+   "esposizione": 60,
+   "nome": "Songdojin-ni",
+   "assegnato": "2026-10-19"
+  },
+  "spain-es-secret": {
+   "paese": "Spain",
+   "lat": 40.0612,
+   "lon": 4.0758,
+   "esposizione": 15,
+   "nome": "es secret · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-irta": {
+   "paese": "Spain",
+   "lat": 40.296,
+   "lon": 0.3459,
+   "esposizione": 126,
+   "nome": "Irta · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-la-linea-de-la-concepcion": {
+   "paese": "Spain",
+   "lat": 36.1685,
+   "lon": -5.3371,
+   "esposizione": 125,
+   "nome": "La Linea de la Concepcion · Andalucia",
+   "assegnato": "2026-10-19"
+  },
+  "spain-menorca-son-bou": {
+   "paese": "Spain",
+   "lat": 39.9017,
+   "lon": 4.0694,
+   "esposizione": 200,
+   "nome": "Menorca - Son Bou · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "spain-nemina": {
+   "paese": "Spain",
+   "lat": 43.0119,
+   "lon": -9.2667,
+   "esposizione": 273,
+   "nome": "Nemiña · Galicia",
+   "assegnato": "2026-10-19"
+  },
+  "spain-playa-las-negras": {
+   "paese": "Spain",
+   "lat": 36.8797,
+   "lon": -2.0033,
+   "esposizione": 137,
+   "nome": "playa las Negras · Andalucia",
+   "assegnato": "2026-10-19"
+  },
+  "spain-the-chucha": {
+   "paese": "Spain",
+   "lat": 36.6963,
+   "lon": -3.4605,
+   "esposizione": 181,
+   "nome": "The chucha · Mediterranean",
+   "assegnato": "2026-10-19"
+  },
+  "st-kitts-st-kitts-marriott-reef": {
+   "paese": "St Kitts",
+   "lat": 17.3087,
+   "lon": -62.7319,
+   "esposizione": 177,
+   "nome": "St. Kitts Marriott Reef",
+   "assegnato": "2026-10-19"
+  },
+  "st-lucia-marigot-bay": {
+   "paese": "St Lucia",
+   "lat": 13.9678,
+   "lon": -61.0274,
+   "esposizione": 297,
+   "nome": "Marigot Bay",
+   "assegnato": "2026-10-19"
+  },
+  "st-vincent-grenadines-blue-lagoon": {
+   "paese": "St Vincent Grenadines",
+   "lat": 13.1264,
+   "lon": -61.2025,
+   "esposizione": 182,
+   "nome": "Blue Lagoon",
+   "assegnato": "2026-10-19"
+  },
+  "sweden-big-farmers-break": {
+   "paese": "Sweden",
+   "lat": 58.3007,
+   "lon": 11.2846,
+   "esposizione": 248,
+   "nome": "Big Farmers break",
+   "assegnato": "2026-10-19"
+  },
+  "sweden-kaseberga": {
+   "paese": "Sweden",
+   "lat": 55.3943,
+   "lon": 14.0584,
+   "esposizione": 165,
+   "nome": "Kåseberga",
+   "assegnato": "2026-10-19"
+  },
+  "sweden-molle-hamn": {
+   "paese": "Sweden",
+   "lat": 56.2842,
+   "lon": 12.4918,
+   "esposizione": 296,
+   "nome": "Mölle-hamn",
+   "assegnato": "2026-10-19"
+  },
+  "sweden-salusand": {
+   "paese": "Sweden",
+   "lat": 63.4581,
+   "lon": 19.2685,
+   "esposizione": 136,
+   "nome": "Salusand",
+   "assegnato": "2026-10-19"
+  },
+  "sweden-smitingen": {
+   "paese": "Sweden",
+   "lat": 62.5992,
+   "lon": 18.0321,
+   "esposizione": 115,
+   "nome": "Smitingen",
+   "assegnato": "2026-10-19"
+  },
+  "sweden-toro-stenstrand": {
+   "paese": "Sweden",
+   "lat": 58.799,
+   "lon": 17.8095,
+   "esposizione": 135,
+   "nome": "Torö Stenstrand",
+   "assegnato": "2026-10-19"
+  },
+  "taiwan-jia-le-shui": {
+   "paese": "Taiwan",
+   "lat": 21.9873,
+   "lon": 120.8458,
+   "esposizione": 138,
+   "nome": "Jia le Shui",
+   "assegnato": "2026-10-19"
+  },
+  "thailand-koh-lanta-klong-dao": {
+   "paese": "Thailand",
+   "lat": 7.6391,
+   "lon": 99.0283,
+   "esposizione": 239,
+   "nome": "Koh Lanta - Klong Dao",
+   "assegnato": "2026-10-19"
+  },
+  "thailand-koh-phangan": {
+   "paese": "Thailand",
+   "lat": 9.6796,
+   "lon": 100.0734,
+   "esposizione": 88,
+   "nome": "Koh phangan",
+   "assegnato": "2026-10-19"
+  },
+  "thailand-koh-phayam": {
+   "paese": "Thailand",
+   "lat": 9.7192,
+   "lon": 98.3936,
+   "esposizione": 285,
+   "nome": "Koh Phayam",
+   "assegnato": "2026-10-19"
+  },
+  "tobago-mount-irvine-bay": {
+   "paese": "Tobago",
+   "lat": 11.1967,
+   "lon": -60.7974,
+   "esposizione": 278,
+   "nome": "Mount Irvine Bay",
+   "assegnato": "2026-10-19"
+  },
+  "tokelau-utua-mamao": {
+   "paese": "Tokelau",
+   "lat": -8.5578,
+   "lon": -172.4623,
+   "esposizione": null,
+   "nome": "utua mamao",
+   "assegnato": "2026-10-19"
+  },
+  "tonga-ha-apia-group": {
+   "paese": "Tonga",
+   "lat": -19.7403,
+   "lon": -175.0768,
+   "esposizione": null,
+   "nome": "Ha'apia Group",
+   "assegnato": "2026-10-19"
+  },
+  "tonga-middles": {
+   "paese": "Tonga",
+   "lat": -18.7571,
+   "lon": -174.1009,
+   "esposizione": null,
+   "nome": "Middles",
+   "assegnato": "2026-10-19"
+  },
+  "tunisia-hamamet": {
+   "paese": "Tunisia",
+   "lat": 36.3702,
+   "lon": 10.5459,
+   "esposizione": 112,
+   "nome": "Hamamet",
+   "assegnato": "2026-10-19"
+  },
+  "tunisia-kelibya": {
+   "paese": "Tunisia",
+   "lat": 36.8341,
+   "lon": 11.1174,
+   "esposizione": 93,
+   "nome": "Kelibya",
+   "assegnato": "2026-10-19"
+  },
+  "turkey-alacati": {
+   "paese": "Turkey",
+   "lat": 38.2391,
+   "lon": 26.3106,
+   "esposizione": 232,
+   "nome": "Alacati",
+   "assegnato": "2026-10-19"
+  },
+  "turkey-alanya-keykubat": {
+   "paese": "Turkey",
+   "lat": 36.5397,
+   "lon": 32.0234,
+   "esposizione": 212,
+   "nome": "Alanya, Keykubat",
+   "assegnato": "2026-10-19"
+  },
+  "turkey-anamur": {
+   "paese": "Turkey",
+   "lat": 36.0927,
+   "lon": 32.9358,
+   "esposizione": 175,
+   "nome": "Anamur",
+   "assegnato": "2026-10-19"
+  },
+  "turkey-karatas": {
+   "paese": "Turkey",
+   "lat": 36.5656,
+   "lon": 35.3894,
+   "esposizione": 189,
+   "nome": "Karatas",
+   "assegnato": "2026-10-19"
+  },
+  "turks-caicos-pine-cay": {
+   "paese": "Turks   Caicos",
+   "lat": 21.8636,
+   "lon": -72.1107,
+   "esposizione": null,
+   "nome": "Pine Cay · Pine Cay",
+   "assegnato": "2026-10-19"
+  },
+  "uk-gansey": {
+   "paese": "UK",
+   "lat": 54.0829,
+   "lon": -4.7289,
+   "esposizione": 210,
+   "nome": "Gansey · North Wales and NW England",
+   "assegnato": "2026-10-19"
+  },
+  "uk-jersey-la-mare": {
+   "paese": "UK",
+   "lat": 49.1693,
+   "lon": -2.085,
+   "esposizione": 238,
+   "nome": "Jersey - La mare · Channel Islands",
+   "assegnato": "2026-10-19"
+  },
+  "uk-machrihanish": {
+   "paese": "UK",
+   "lat": 55.4716,
+   "lon": -5.7148,
+   "esposizione": 274,
+   "nome": "Machrihanish · West Scotland",
+   "assegnato": "2026-10-19"
+  },
+  "uk-sennen": {
+   "paese": "UK",
+   "lat": 50.0827,
+   "lon": -5.6985,
+   "esposizione": 245,
+   "nome": "Sennen · Cornwall West",
+   "assegnato": "2026-10-19"
+  },
+  "uk-the-dee-bore": {
+   "paese": "UK",
+   "lat": 53.2007,
+   "lon": -2.9886,
+   "esposizione": 315,
+   "nome": "the Dee bore · North Wales and NW England",
+   "assegnato": "2026-10-19"
+  },
+  "uk-the-point-isle-of-man": {
+   "paese": "UK",
+   "lat": 53.9949,
+   "lon": -3.6475,
+   "esposizione": 250,
+   "nome": "The Point (isle of man) · North Wales and NW England",
+   "assegnato": "2026-10-19"
+  },
+  "uruguay-playa-honda": {
+   "paese": "Uruguay",
+   "lat": -34.8972,
+   "lon": -56.0945,
+   "esposizione": 171,
+   "nome": "Playa Honda",
+   "assegnato": "2026-10-19"
+  },
+  "usa-chandeleur-islands": {
+   "paese": "USA",
+   "lat": 29.8476,
+   "lon": -88.8354,
+   "esposizione": 153,
+   "nome": "Chandeleur Islands · Gulf Coast, Louisiana",
+   "assegnato": "2026-10-19"
+  },
+  "usa-cortez-bank": {
+   "paese": "USA",
+   "lat": 32.3962,
+   "lon": -119.1165,
+   "esposizione": null,
+   "nome": "Cortez Bank · California, San Diego County",
+   "assegnato": "2026-10-19"
+  },
+  "usa-frisco-pier": {
+   "paese": "USA",
+   "lat": 35.2249,
+   "lon": -75.6361,
+   "esposizione": 147,
+   "nome": "Frisco Pier · South East, North Carolina",
+   "assegnato": "2026-10-19"
+  },
+  "usa-holly-beach": {
+   "paese": "USA",
+   "lat": 29.7705,
+   "lon": -93.4618,
+   "esposizione": 178,
+   "nome": "Holly Beach · Gulf Coast, Louisiana",
+   "assegnato": "2026-10-19"
+  },
+  "usa-kepuhi-beach-molokai": {
+   "paese": "USA",
+   "lat": 21.1889,
+   "lon": -157.2509,
+   "esposizione": 299,
+   "nome": "Kepuhi Beach - Molokai · Hawaii, Maui",
+   "assegnato": "2026-10-19"
+  },
+  "usa-kualoa-point-the-point-kualoa-valley": {
+   "paese": "USA",
+   "lat": 21.5351,
+   "lon": -157.8386,
+   "esposizione": 59,
+   "nome": "kualoa point (the point, kualoa valley) · Hawaii, Oahu",
+   "assegnato": "2026-10-19"
+  },
+  "usa-makaha": {
+   "paese": "USA",
+   "lat": 21.4779,
+   "lon": -158.223,
+   "esposizione": 251,
+   "nome": "Makaha · Hawaii, Oahu",
+   "assegnato": "2026-10-19"
+  },
+  "usa-manchester-beach": {
+   "paese": "USA",
+   "lat": 38.9669,
+   "lon": -123.7205,
+   "esposizione": 254,
+   "nome": "Manchester Beach · California, Mendocino",
+   "assegnato": "2026-10-19"
+  },
+  "usa-mason-s-inlet": {
+   "paese": "USA",
+   "lat": 34.1913,
+   "lon": -77.8093,
+   "esposizione": 130,
+   "nome": "Mason's Inlet · South East, Southern North Carolina",
+   "assegnato": "2026-10-19"
+  },
+  "usa-matagorda": {
+   "paese": "USA",
+   "lat": 28.5967,
+   "lon": -95.9767,
+   "esposizione": 161,
+   "nome": "Matagorda · Gulf Coast, Texas",
+   "assegnato": "2026-10-19"
+  },
+  "usa-mill-bay": {
+   "paese": "USA",
+   "lat": 57.821,
+   "lon": -152.3514,
+   "esposizione": 71,
+   "nome": "Mill Bay · Alaska",
+   "assegnato": "2026-10-19"
+  },
+  "usa-mount-augustine-peak": {
+   "paese": "USA",
+   "lat": 59.4062,
+   "lon": -153.3867,
+   "esposizione": 116,
+   "nome": "Mount Augustine Peak · Alaska",
+   "assegnato": "2026-10-19"
+  },
+  "usa-mushrooms": {
+   "paese": "USA",
+   "lat": 20.9694,
+   "lon": -156.6812,
+   "esposizione": 300,
+   "nome": "Mushrooms · Hawaii, Maui",
+   "assegnato": "2026-10-19"
+  },
+  "usa-pakala": {
+   "paese": "USA",
+   "lat": 21.9338,
+   "lon": -159.651,
+   "esposizione": 215,
+   "nome": "Pakala · Hawaii, Kauai",
+   "assegnato": "2026-10-19"
+  },
+  "usa-pohoiki": {
+   "paese": "USA",
+   "lat": 19.4575,
+   "lon": -154.8428,
+   "esposizione": 118,
+   "nome": "Pohoiki · Hawaii, Hawaii Island",
+   "assegnato": "2026-10-19"
+  },
+  "usa-point-roberts-point": {
+   "paese": "USA",
+   "lat": 48.9897,
+   "lon": -123.0531,
+   "esposizione": 203,
+   "nome": "Point roberts point · North West, Washington",
+   "assegnato": "2026-10-19"
+  },
+  "usa-polihale-state-park": {
+   "paese": "USA",
+   "lat": 22.0756,
+   "lon": -159.7694,
+   "esposizione": 284,
+   "nome": "Polihale State Park · Hawaii, Kauai",
+   "assegnato": "2026-10-19"
+  },
+  "usa-scotchmans-cove": {
+   "paese": "USA",
+   "lat": 33.5534,
+   "lon": -117.8277,
+   "esposizione": 215,
+   "nome": "Scotchmans Cove · California, Orange County",
+   "assegnato": "2026-10-19"
+  },
+  "usa-skunk-point": {
+   "paese": "USA",
+   "lat": 33.982,
+   "lon": -119.9835,
+   "esposizione": 141,
+   "nome": "Skunk Point · California, Santa Barbara",
+   "assegnato": "2026-10-19"
+  },
+  "usa-st-george-island": {
+   "paese": "USA",
+   "lat": 29.6567,
+   "lon": -84.8814,
+   "esposizione": 171,
+   "nome": "St. George Island · Gulf Coast, Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-tybee-pier": {
+   "paese": "USA",
+   "lat": 31.9917,
+   "lon": -80.8458,
+   "esposizione": 123,
+   "nome": "Tybee pier · South East, Georgia",
+   "assegnato": "2026-10-19"
+  },
+  "usa-venice-north-jetty": {
+   "paese": "USA",
+   "lat": 27.1131,
+   "lon": -82.4693,
+   "esposizione": 245,
+   "nome": "Venice North Jetty · Gulf Coast, Florida",
+   "assegnato": "2026-10-19"
+  },
+  "usa-white-alice": {
+   "paese": "USA",
+   "lat": 51.8776,
+   "lon": -176.7618,
+   "esposizione": 295,
+   "nome": "White Alice · Alaska",
+   "assegnato": "2026-10-19"
+  },
+  "venezuela-playa-los-cocos-chichiriviche": {
+   "paese": "Venezuela",
+   "lat": 10.9482,
+   "lon": -68.2845,
+   "esposizione": 60,
+   "nome": "Playa Los Cocos Chichiriviche",
+   "assegnato": "2026-10-19"
+  },
+  "venezuela-punto-la-gillette": {
+   "paese": "Venezuela",
+   "lat": 11.9539,
+   "lon": -66.6813,
+   "esposizione": null,
+   "nome": "Punto La Gillette",
+   "assegnato": "2026-10-19"
+  },
+  "vietnam-mui-ne": {
+   "paese": "Vietnam",
+   "lat": 10.9231,
+   "lon": 108.2951,
+   "esposizione": 149,
+   "nome": "Mui Ne",
+   "assegnato": "2026-10-19"
+  },
+  "vietnam-vung-tau-back-beach": {
+   "paese": "Vietnam",
+   "lat": 10.3375,
+   "lon": 107.0935,
+   "esposizione": 166,
+   "nome": "Vung Tau - Back Beach",
+   "assegnato": "2026-10-19"
+  },
+  "virgin-islands-carambola": {
+   "paese": "Virgin Islands",
+   "lat": 17.7627,
+   "lon": -64.834,
+   "esposizione": 323,
+   "nome": "carambola",
+   "assegnato": "2026-10-19"
+  },
+  "western-sahara-bing-s-point": {
+   "paese": "Western Sahara",
+   "lat": 23.224,
+   "lon": -16.1188,
+   "esposizione": 298,
+   "nome": "Bing's Point",
+   "assegnato": "2026-10-19"
+  },
+  "western-sahara-cape-boujdour": {
+   "paese": "Western Sahara",
+   "lat": 26.1271,
+   "lon": -14.5016,
+   "esposizione": 295,
+   "nome": "Cape Boujdour",
+   "assegnato": "2026-10-19"
+  },
+  "yemen-qulansiyah": {
+   "paese": "Yemen",
+   "lat": 12.7123,
+   "lon": 53.5048,
+   "esposizione": 333,
+   "nome": "qulansiyah",
+   "assegnato": "2026-10-19"
+  }
+ }
+}
