@@ -2,7 +2,7 @@
 
 Scarica airports.csv e runways.csv in data/raw/airports/ (se mancano) e scrive
 data/airports.json: le partenze italiane, cioè gli aeroporti large e medium con voli di
-linea e codice IATA. Le funzioni di caricamento servono anche a scripts/apply_review.py.
+linea e codice IATA, più poche partenze di confine (Nizza). Le funzioni di caricamento servono anche a scripts/apply_review.py.
 
 Uso:    .venv/bin/python scripts/build_airports.py            # usa i CSV già scaricati
         .venv/bin/python scripts/build_airports.py --scarica  # riscarica da OurAirports
@@ -23,7 +23,9 @@ LABELS = {"BRI": "Bari", "BLQ": "Bologna", "BDS": "Brindisi", "CAG": "Cagliari",
           "TRS": "Trieste", "LIN": "Milano Linate", "TSF": "Treviso", "VCE": "Venezia", "AHO": "Alghero",
           "BZO": "Bolzano", "EBA": "Isola d'Elba", "CIY": "Comiso", "AOI": "Ancona", "FOG": "Foggia", "FRL": "Forlì",
           "CRV": "Crotone", "LMP": "Lampedusa", "CUF": "Cuneo", "VBS": "Brescia", "PNL": "Pantelleria", "PMF": "Parma",
-          "REG": "Reggio Calabria", "QSR": "Salerno", "TPS": "Trapani"}
+          "REG": "Reggio Calabria", "QSR": "Salerno", "TPS": "Trapani", "NCE": "Nizza"}
+# partenze fuori dall'Italia ma comode da qui
+EXTRA_DEPARTURES = {"NCE"}
 
 
 def download(force=False):
@@ -79,7 +81,8 @@ def main():
     ap.add_argument("--scarica", action="store_true", help="riscarica i CSV da OurAirports")
     a = ap.parse_args()
     download(a.scarica)
-    it = sorted((x for x in load_scheduled() if x["country"] == "IT"), key=lambda x: (x["type"] != "large", x["city"], x["code"]))
+    it = sorted((x for x in load_scheduled() if x["country"] == "IT" or x["code"] in EXTRA_DEPARTURES),
+                key=lambda x: (x["type"] != "large", x["city"], x["code"]))
     deps = [{"code": x["code"], "label": LABELS.get(x["code"], x["city"]), "name": x["name"], "city": x["city"],
              "type": x["type"], "lat": round(x["lat"], 4), "lon": round(x["lon"], 4)} for x in it]
     deps.sort(key=lambda d: d["label"])

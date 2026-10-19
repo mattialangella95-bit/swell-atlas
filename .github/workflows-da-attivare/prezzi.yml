@@ -1,0 +1,33 @@
+# Raccolta settimanale dei prezzi indicativi (fase 5): scripts/fetch_prices.py aggiunge righe a swell_prices.
+# Secret del repository da creare (Settings -> Secrets and variables -> Actions -> New repository secret):
+#   TRAVELPAYOUTS_TOKEN   token dell'API dati di Travelpayouts
+#   SUPABASE_SECRET_KEY   secret key del progetto Supabase (sb_secret_...)
+name: Prezzi voli settimanali
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"   # lunedì alle 04:17 UTC
+  workflow_dispatch:         # avvio a mano dalla scheda Actions
+
+permissions:
+  contents: read
+
+concurrency:
+  group: prezzi
+  cancel-in-progress: false
+
+jobs:
+  prezzi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Raccolta prezzi
+        env:
+          TRAVELPAYOUTS_TOKEN: ${{ secrets.TRAVELPAYOUTS_TOKEN }}
+          SUPABASE_URL: https://macixwnxvlyhqbqvypao.supabase.co
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: python scripts/fetch_prices.py

@@ -90,8 +90,10 @@ function groupNote(g){
 function row(e){
   const m = e.months[ui.month], s = SCALE[m.q];
   const where = ui.group === "country" ? e.region : [e.region || e.country, ui.group === "airport" ? "" : city(e.airport)].filter(Boolean).join(" · ");
+  const pr = app.monthPrices(app.state.dep, e.z, e.f)[ui.month];
+  const price = `circa ${pr.value.toLocaleString("it-IT")} € ${pr.real ? "indicativi" : "(stima)"}`;
   const detail = [`<span class="q" style="--q:${s.color}">${s.label}</span>`, `onde ${dec(m.h25)}–${dec(m.h75)} m`,
-    ui.group === "airport" ? "" : `${hours(e.f.hrs)} di volo`].filter(Boolean).join(" · ");
+    ui.group === "airport" ? "" : `${hours(e.f.hrs)} di volo`, price].filter(Boolean).join(" · ");
   return `<button class="cal-row" data-id="${e.z.id}" style="--q:${s.color}">
     <span class="cal-main"><b>${esc(e.z.name)}</b> <span class="cal-where">${esc(where)}</span></span>
     <span class="cal-good">${goodDays(m.good)}</span>
@@ -158,6 +160,8 @@ app.hooks.user.push(u => {
   if(u.level && LEVELS.includes(u.level)){ ui.level = u.level; $("cal-level").value = u.level; }
   render();
 });
+// prezzi rilevati arrivati da Supabase (prices.js)
+document.addEventListener("swell:prezzi", () => render());
 // la partenza cambia la stima voli: si ricalcola al prossimo render dell'app
 app.hooks.render.push(() => { if(indexDep !== app.state.dep) render(); });
 

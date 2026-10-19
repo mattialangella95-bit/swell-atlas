@@ -1,0 +1,9 @@
+{
+  "_note": "Raccolta settimanale dei prezzi indicativi (scripts/fetch_prices.py). Destinazioni: gli airport_main unici di data/zones.json.",
+  "origins": ["GOA", "MXP", "LIN", "BGY", "PSA", "FCO", "BLQ", "VCE", "TRN", "NCE"],
+  "monthsAhead": 12,
+  "currency": "eur",
+  "market": "it",
+  "requestsPerSecond": 8,
+  "source": "Aviasales via Travelpayouts (prezzi in cache delle ricerche degli utenti, andata e ritorno)"
+}

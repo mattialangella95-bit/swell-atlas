@@ -93,4 +93,6 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
 .all-zones summary{cursor:pointer;font-size:13px;color:var(--muted);width:max-content}
 .all-zones[open] summary{margin-bottom:8px}
 #btn-account{background:none;border:none;color:var(--fg);text-decoration:underline;text-underline-offset:3px;padding:4px}
+.bars div.est{background:repeating-linear-gradient(135deg,var(--line) 0 4px,transparent 4px 7px)}
+.bars div.cur.est{background:repeating-linear-gradient(135deg,var(--accent) 0 4px,transparent 4px 7px)}
 

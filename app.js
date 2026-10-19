@@ -126,8 +126,10 @@ const endP=e=>{pts.delete(e.pointerId);if(pts.size<2)pinch0=null};
 cv.addEventListener("pointerup",endP);cv.addEventListener("pointercancel",e=>{endP(e);dragging=false});
 
 // agganci per profile.js e feedback.js: filtro zone visibili (es. solo preferiti) e callback dopo ogni render
-const hooks={filter:null,render:[],user:[]};
+const hooks={filter:null,render:[],user:[],prices:null};
 const visible=z=>!hooks.filter||hooks.filter(z);
+// prezzi del mese: prices.js li sostituisce con quelli rilevati; senza, la stima di flight()
+const monthPrices=(dep,z,f)=>hooks.prices?hooks.prices(dep,z,f):f.months.map(value=>({value,real:false}));
 function zoneColor(z){return z.wk?SCALE[z.wk[state.week].q].color:css("--nodata")}
 
 // ---------- voli: ore e scali stimati da distanza e parametri (data/flight-estimate.json); prezzi ancora finti
@@ -165,9 +167,12 @@ function render(){
   $("fd").textContent=Math.round(f.dist).toLocaleString("it-IT")+" km";
   $("fh").textContent=(()=>{const t=Math.round(f.hrs*12)*5;return Math.floor(t/60)+"h "+String(t%60).padStart(2,"0")})();   // arrotondato a 5 minuti
   $("fs").textContent=f.stops?f.stops+(f.stops>1?" scali stimati":" scalo stimato"):"diretto stimato";
-  $("fp").textContent="~"+f.months[m].toLocaleString("it-IT")+" €";
-  const mx=Math.max(...f.months);
-  $("bars").innerHTML=f.months.map((p,i)=>`<div class="${i===m?"cur":""}" style="height:${Math.round(100*p/mx)}%" title="${MESI[i]} ~${p} €">${i===m?`<span>${p}</span>`:""}</div>`).join("");
+  // prezzi: rilevati (prices.js, swell_prices) dove ci sono, altrimenti la stima; sempre indicativi
+  const pm=monthPrices(state.dep,z,f),cur=pm[m],eur=v=>v.toLocaleString("it-IT")+" €";
+  $("fp").textContent="circa "+eur(cur.value);
+  $("fps").textContent=cur.real?"indicativo, rilevato il "+new Date(cur.observed).toLocaleDateString("it-IT",{day:"numeric",month:"short"}):"stima";
+  const mx=Math.max(...pm.map(p=>p.value));
+  $("bars").innerHTML=pm.map((p,i)=>`<div class="${i===m?"cur":""} ${p.real?"":"est"}" style="height:${Math.round(100*p.value/mx)}%" title="${MESI[i]}: circa ${eur(p.value)}, ${p.real?"indicativo (ricerche recenti su Aviasales)":"stima"}">${i===m?`<span>${p.value}</span>`:""}</div>`).join("");
   $("wk").textContent="Settimana "+(state.week+1)+" · "+MESI[m];
   $("wr").value=state.week;
   document.querySelectorAll("#zlist button").forEach(b=>{const zz=ZONES.find(x=>x.id===b.dataset.id);b.classList.toggle("sel",zz===z);b.querySelector("i").style.background=zoneColor(zz)});
@@ -204,6 +209,6 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
 new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 render();resize();
 
-export const app={state,ZONES,DEPS,SCALE,MESI,CLIMATE,DEP_KEY,hooks,depText,findDep,setDep,selectZone,flight,
+export const app={state,ZONES,DEPS,SCALE,MESI,CLIMATE,DEP_KEY,hooks,depText,findDep,setDep,selectZone,flight,monthPrices,
   user:{loggedIn:false,favs:new Set(),level:null},   // aggiornato da profile.js, letto da calendar.js
   refresh(){buildZoneList();render();draw()}};

@@ -1,5 +1,26 @@
 # Diario
 
+## 2026-10-20 — Fase 5, prezzi voli indicativi
+
+### Fatto
+- Verifica di Travelpayouts (Aviasales Data API), ottobre 2026:
+  - gratuita con token, dopo l'iscrizione a Travelpayouts ("Access is allowed without restrictions, but you must have a token");
+  - prezzi dalla cache delle ricerche degli utenti Aviasales, conservati da 2 a 7 giorni (le tratte poco cercate possono avere mesi vuoti);
+  - limiti per minuto (dal 14/06/2024): 600 al minuto per `/aviasales/v3/prices_for_dates` e `/aviasales/v3/grouped_prices`, nessun tetto giornaliero dichiarato; oltre il limite risponde 429 per il resto del minuto;
+  - nessun obbligo di attribuzione trovato nella documentazione né nei Termini; si indica comunque la fonte.
+- Metodo scelto: `prices_for_dates` con `one_way=false` e `departure_at=AAAA-MM`. Una chiamata per tratta e mese, offerte di andata e ritorno: minimo, mediana, numero di offerte. Mercato `it`, euro (`data/prices.json`).
+- Giro: 10 partenze × 115 aeroporti principali = 1.150 tratte (meno quelle con partenza uguale all'arrivo) × 12 mesi = circa 13.800 chiamate, a 8 al secondo (480 al minuto, sotto le 600): circa 29 minuti a settimana.
+- `supabase/migrations/20261020090000_swell_prices.sql`: tabella `swell_prices` solo in aggiunta (storico), lettura per tutti, scrittura solo con la secret key; vista `swell_prices_latest` (ultima rilevazione per tratta e mese, `security_invoker`).
+- `scripts/fetch_prices.py` (solo libreria standard): token da `TRAVELPAYOUTS_TOKEN`, scrive a blocchi di 500 righe con la stessa data di rilevazione; `--prova` e `--solo GOA-DPS ...` per i collaudi.
+- `.github/workflows/prezzi.yml`: ogni lunedì alle 04:17 UTC e a mano; secret `TRAVELPAYOUTS_TOKEN` e `SUPABASE_SECRET_KEY`.
+- Nizza (NCE) aggiunta alle partenze dell'app come partenza di confine, altrimenti i suoi prezzi non si vedrebbero.
+- App: `prices.js` legge `swell_prices_latest` per la partenza scelta (publishable key, senza login). Scheda e calendario mostrano "circa X € indicativi" con la data di rilevazione (mediana delle offerte, altrimenti minimo), oppure "stima". Barre piene se rilevate, tratteggiate se stimate. Mai link o parole da offerta prenotabile.
+
+### Aperti
+- Collaudo sulle 3 tratte (GOA-DPS, MXP-HNL, PSA-LIS) in attesa del token Travelpayouts e della migrazione dei prezzi.
+- GitHub sospende i workflow pianificati dopo 60 giorni senza attività nel repository: se il progetto resta fermo, va riattivato dalla scheda Actions.
+
+
 ## 2026-10-19 — Collaudo Supabase
 
 ### Fatto

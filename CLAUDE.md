@@ -52,5 +52,11 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - La publishable key può stare in `supabase-config.js`; la secret key MAI nel repository o nel codice del sito, solo in `.env` (in `.gitignore`). Non leggere né stampare `.env`.
 - L'app deve funzionare tutta senza login e anche con `supabase-config.js` vuoto. Le funzioni di account stanno in `auth.js`, `profile.js` e `feedback.js`; `app.js` espone solo gli agganci.
 
+## Prezzi
+- Fonte: API dati di Travelpayouts (cache Aviasales). Il token sta solo in `.env` o nei secret di GitHub (`TRAVELPAYOUTS_TOKEN`), mai nel sito.
+- `swell_prices` è uno storico: si aggiungono righe, non si aggiornano né cancellano. L'app legge `swell_prices_latest`.
+- Nell'interfaccia un prezzo è sempre "indicativo" o "stima": niente link, pulsanti o parole che lo facciano sembrare prenotabile.
+- Limite Travelpayouts: 600 richieste al minuto per i metodi v3; lo script va a 8 al secondo.
+
 ## Test in locale
 `python3 -m http.server 8000` e apri http://localhost:8000 (con `file://` il fetch fallisce).

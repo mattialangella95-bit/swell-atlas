@@ -62,14 +62,14 @@
       <div class="stats">
         <div class="stat"><div class="k">Distanza</div><div class="v" id="fd"></div></div>
         <div class="stat"><div class="k">Ore di volo</div><div class="v" id="fh"></div><div class="sub" id="fs"></div></div>
-        <div class="stat"><div class="k">Prezzo stimato</div><div class="v" id="fp"></div></div>
+        <div class="stat"><div class="k">Prezzo indicativo</div><div class="v" id="fp"></div><div class="sub" id="fps"></div></div>
       </div>
       <div>
         <div class="lbl">Prezzo indicativo andata e ritorno, mese per mese</div>
         <div style="padding-top:16px"><div class="bars" id="bars"></div></div>
         <div class="months" id="m2"></div>
       </div>
-      <div class="note">Ore e scali sono stimati dalla distanza, non sono orari veri. I prezzi per ora sono simulati.</div>
+      <div class="note">Ore e scali sono stimati dalla distanza, non sono orari veri. I prezzi sono indicativi, andata e ritorno: dalle ricerche recenti su Aviasales quando ci sono (barre piene), altrimenti una stima (barre tratteggiate). Non sono offerte prenotabili.</div>
     </aside>
   </div>
 
@@ -112,7 +112,7 @@
     <div id="cal-body"></div>
   </section>
 
-  <footer>Le onde sono la media di vent'anni di dati ERA5 (2005-2024, Open-Meteo e Copernicus), solo nelle ore di luce, misurate al largo e non sulla riva. Servono a scegliere quando partire: non sono la previsione del giorno. Voli e prezzi sono stime.</footer>
+  <footer>Le onde sono la media di vent'anni di dati ERA5 (2005-2024, Open-Meteo e Copernicus), solo nelle ore di luce, misurate al largo e non sulla riva. Servono a scegliere quando partire: non sono la previsione del giorno. Ore di volo stimate; prezzi indicativi dalla cache di Aviasales via Travelpayouts, o stimati quando mancano.</footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
@@ -160,6 +160,7 @@
 <script type="module" src="app.js"></script>
 <script type="module" src="profile.js"></script>
 <script type="module" src="feedback.js"></script>
+<script type="module" src="prices.js"></script>
 <script type="module" src="calendar.js"></script>
 </body>
 </html>

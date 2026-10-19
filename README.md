@@ -16,6 +16,8 @@ auth.js             accesso con link via mail (Supabase Auth)
 profile.js          profilo e preferiti
 feedback.js         segnalazioni
 calendar.js         vista Calendario (mese e anno) · calendar.css i suoi stili
+prices.js           prezzi voli indicativi da Supabase (swell_prices), con la stima come riserva
+.github/workflows/prezzi.yml  raccolta settimanale dei prezzi
 supabase-config.js  URL e chiave anon di Supabase (vuoti = account disattivati)
 supabase/migrations/ SQL delle tabelle swell_* con Row Level Security
 .env.example        nomi delle chiavi per gli script (.env resta fuori da git)
@@ -24,7 +26,8 @@ data/
   zone-ids.json     registro degli id zona stabili (generato da scripts/build_zones.py)
   climate.json      climatologia settimanale per zona (generato da scripts/build_climate.py)
   quality-rule.json soglie della regola qualità (Flat → Epic) e altezza massima per livello surf
-  calendar.json     fasce di ore di volo della vista Calendario
+  calendar.json     fasce di ore di volo e nomi d'aeroporto della vista Calendario
+  prices.json       partenze, mesi, valuta e ritmo della raccolta prezzi
   airports.json     partenze italiane (generato da scripts/build_airports.py)
   scale.json        scala qualità Flat → Epic (indice 0-9, colore)
   flight-estimate.json  parametri della stima di ore di volo e scali, prezzi finti
@@ -42,6 +45,7 @@ scripts/
   build_climate.py  dati orari + regola qualità -> data/climate.json
   feedback.py       legge le segnalazioni e ne cambia lo stato (chiave di servizio da .env)
   test_rls.py       collaudo dei permessi Supabase con due utenti di prova
+  fetch_prices.py   prezzi indicativi da Travelpayouts -> swell_prices (GitHub Actions, settimanale)
 requirements.txt    dipendenze Python degli script
 README.md
 DIARIO.md           diario di lavoro
@@ -100,10 +104,18 @@ L'app funziona tutta senza account; il login (link via mail) serve solo per pref
 
 La publishable key sta in `supabase-config.js`; la secret key solo in `.env`, mai nel repository.
 
+## Prezzi (fase 5)
+
+```
+.venv/bin/python scripts/fetch_prices.py --prova --solo GOA-DPS MXP-HNL   # prova senza scrivere
+```
+
+Il giro completo lo fa GitHub Actions ogni lunedì (`.github/workflows/prezzi.yml`) con i secret `TRAVELPAYOUTS_TOKEN` e `SUPABASE_SECRET_KEY`. Il token non va mai nel sito. Nell'app i prezzi sono sempre "indicativi" (rilevati) o "stima".
+
 ## Fasi
 
 1. **Base** — prototipo trasformato in progetto: file separati, dati in JSON, GitHub Pages. *(completata)*
 2. **Zone** — zone reali da ~5900 spot: pulizia, clustering, esposizione della costa, aeroporto di riferimento, revisione a mano. *(completata)*
 3. **Onde ERA5** — climatologia 2005-2024 da ERA5 (Open-Meteo per il collaudo, Copernicus CDS per tutte le zone), regola qualità in JSON, `climate.json` letto da `getZoneWeeks()`. *(in corso: 5 zone di collaudo fatte)*
 4. **Ore di volo** — aeroporto principale e locale per zona da OurAirports, partenza da tutti gli aeroporti italiani, ore e scali stimati con parametri in `data/flight-estimate.json`. *(fatta, stima senza rotte vere)*
-5. **Prezzi** — prezzi reali da Travelpayouts, oppure raccolta periodica salvata su Supabase.
+5. **Prezzi** — prezzi indicativi dalla cache di Aviasales (Travelpayouts), raccolti ogni settimana da GitHub Actions in `swell_prices` su Supabase; storico per vedere la stagionalità vera. *(in corso)*

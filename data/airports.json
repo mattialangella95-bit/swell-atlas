@@ -207,6 +207,15 @@
   "lon": 14.2908
  },
  {
+  "code": "NCE",
+  "label": "Nizza",
+  "name": "Nice-Côte d'Azur Airport",
+  "city": "Nice, Alpes-Maritimes",
+  "type": "large",
+  "lat": 43.6584,
+  "lon": 7.2159
+ },
+ {
   "code": "OLB",
   "label": "Olbia",
   "name": "Olbia Costa Smeralda Airport",
