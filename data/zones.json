@@ -10,6 +10,7 @@
   "airport_main": {
    "code": "SYD",
    "name": "Sydney Kingsford Smith International Airport",
+   "city": "Sydney (Mascot)",
    "type": "large",
    "lat": -33.9461,
    "lon": 151.177
@@ -17,6 +18,7 @@
   "airport_local": {
    "code": "SYD",
    "name": "Sydney Kingsford Smith International Airport",
+   "city": "Sydney (Mascot)",
    "type": "large",
    "lat": -33.9461,
    "lon": 151.177
@@ -33,6 +35,7 @@
   "airport_main": {
    "code": "CPT",
    "name": "Cape Town International Airport",
+   "city": "Cape Town",
    "type": "large",
    "lat": -33.974,
    "lon": 18.6043
@@ -40,6 +43,7 @@
   "airport_local": {
    "code": "CPT",
    "name": "Cape Town International Airport",
+   "city": "Cape Town",
    "type": "large",
    "lat": -33.974,
    "lon": 18.6043
@@ -56,6 +60,7 @@
   "airport_main": {
    "code": "AVV",
    "name": "Melbourne Avalon International Airport",
+   "city": "Geelong/Melbourne",
    "type": "large",
    "lat": -38.0403,
    "lon": 144.4672
@@ -63,6 +68,7 @@
   "airport_local": {
    "code": "AVV",
    "name": "Melbourne Avalon International Airport",
+   "city": "Geelong/Melbourne",
    "type": "large",
    "lat": -38.0403,
    "lon": 144.4672
@@ -79,6 +85,7 @@
   "airport_main": {
    "code": "SYD",
    "name": "Sydney Kingsford Smith International Airport",
+   "city": "Sydney (Mascot)",
    "type": "large",
    "lat": -33.9461,
    "lon": 151.177
@@ -86,6 +93,7 @@
   "airport_local": {
    "code": "SYD",
    "name": "Sydney Kingsford Smith International Airport",
+   "city": "Sydney (Mascot)",
    "type": "large",
    "lat": -33.9461,
    "lon": 151.177
@@ -102,6 +110,7 @@
   "airport_main": {
    "code": "SAN",
    "name": "San Diego International Airport",
+   "city": "San Diego",
    "type": "large",
    "lat": 32.7336,
    "lon": -117.19
@@ -109,6 +118,7 @@
   "airport_local": {
    "code": "CLD",
    "name": "McClellan-Palomar Airport",
+   "city": "Carlsbad",
    "type": "medium",
    "lat": 33.1283,
    "lon": -117.28
@@ -125,6 +135,7 @@
   "airport_main": {
    "code": "LAX",
    "name": "Los Angeles International Airport",
+   "city": "Los Angeles",
    "type": "large",
    "lat": 33.9425,
    "lon": -118.408
@@ -132,6 +143,7 @@
   "airport_local": {
    "code": "LAX",
    "name": "Los Angeles International Airport",
+   "city": "Los Angeles",
    "type": "large",
    "lat": 33.9425,
    "lon": -118.408
@@ -148,6 +160,7 @@
   "airport_main": {
    "code": "FLN",
    "name": "Hercílio Luz International Airport",
+   "city": "Florianópolis",
    "type": "large",
    "lat": -27.6703,
    "lon": -48.5525
@@ -155,6 +168,7 @@
   "airport_local": {
    "code": "FLN",
    "name": "Hercílio Luz International Airport",
+   "city": "Florianópolis",
    "type": "large",
    "lat": -27.6703,
    "lon": -48.5525
@@ -171,6 +185,7 @@
   "airport_main": {
    "code": "PER",
    "name": "Perth International Airport",
+   "city": "Perth",
    "type": "large",
    "lat": -31.9403,
    "lon": 115.967
@@ -178,6 +193,7 @@
   "airport_local": {
    "code": "PER",
    "name": "Perth International Airport",
+   "city": "Perth",
    "type": "large",
    "lat": -31.9403,
    "lon": 115.967
@@ -194,6 +210,7 @@
   "airport_main": {
    "code": "BES",
    "name": "Brest Bretagne airport",
+   "city": "Brest",
    "type": "large",
    "lat": 48.4479,
    "lon": -4.4185
@@ -201,6 +218,7 @@
   "airport_local": {
    "code": "BES",
    "name": "Brest Bretagne airport",
+   "city": "Brest",
    "type": "large",
    "lat": 48.4479,
    "lon": -4.4185
@@ -217,6 +235,7 @@
   "airport_main": {
    "code": "OOL",
    "name": "Gold Coast Airport",
+   "city": "Gold Coast",
    "type": "large",
    "lat": -28.166,
    "lon": 153.5066
@@ -224,6 +243,7 @@
   "airport_local": {
    "code": "OOL",
    "name": "Gold Coast Airport",
+   "city": "Gold Coast",
    "type": "large",
    "lat": -28.166,
    "lon": 153.5066
@@ -240,6 +260,7 @@
   "airport_main": {
    "code": "LIS",
    "name": "Lisbon Humberto Delgado Airport",
+   "city": "Lisbon",
    "type": "large",
    "lat": 38.7813,
    "lon": -9.1359
@@ -247,6 +268,7 @@
   "airport_local": {
    "code": "CAT",
    "name": "Cascais Airport",
+   "city": "Cascais",
    "type": "medium",
    "lat": 38.725,
    "lon": -9.3552
@@ -263,6 +285,7 @@
   "airport_main": {
    "code": "BIO",
    "name": "Bilbao Airport",
+   "city": "Bilbao",
    "type": "large",
    "lat": 43.3011,
    "lon": -2.9106
@@ -270,6 +293,7 @@
   "airport_local": {
    "code": "BIQ",
    "name": "Biarritz Pays Basque airport",
+   "city": "Biarritz",
    "type": "medium",
    "lat": 43.4684,
    "lon": -1.5232
@@ -286,6 +310,7 @@
   "airport_main": {
    "code": "PER",
    "name": "Perth International Airport",
+   "city": "Perth",
    "type": "large",
    "lat": -31.9403,
    "lon": 115.967
@@ -293,6 +318,7 @@
   "airport_local": {
    "code": "PER",
    "name": "Perth International Airport",
+   "city": "Perth",
    "type": "large",
    "lat": -31.9403,
    "lon": 115.967
@@ -309,6 +335,7 @@
   "airport_main": {
    "code": "BUR",
    "name": "Hollywood Burbank/Bob Hope Airport",
+   "city": "Burbank",
    "type": "large",
    "lat": 34.2028,
    "lon": -118.3581
@@ -316,6 +343,7 @@
   "airport_local": {
    "code": "SBA",
    "name": "Santa Barbara Municipal Airport",
+   "city": "Santa Barbara",
    "type": "medium",
    "lat": 34.4262,
    "lon": -119.84
@@ -332,6 +360,7 @@
   "airport_main": {
    "code": "PHL",
    "name": "Philadelphia International Airport",
+   "city": "Philadelphia",
    "type": "large",
    "lat": 39.8719,
    "lon": -75.2411
@@ -339,6 +368,7 @@
   "airport_local": {
    "code": "ACY",
    "name": "Atlantic City International Airport",
+   "city": "Atlantic City",
    "type": "medium",
    "lat": 39.4562,
    "lon": -74.5775
@@ -355,6 +385,7 @@
   "airport_main": {
    "code": "BIO",
    "name": "Bilbao Airport",
+   "city": "Bilbao",
    "type": "large",
    "lat": 43.3011,
    "lon": -2.9106
@@ -362,6 +393,7 @@
   "airport_local": {
    "code": "SDR",
    "name": "Seve Ballesteros-Santander Airport",
+   "city": "Santander",
    "type": "medium",
    "lat": 43.4271,
    "lon": -3.82
@@ -378,6 +410,7 @@
   "airport_main": {
    "code": "CWL",
    "name": "Cardiff International Airport",
+   "city": "Cardiff",
    "type": "large",
    "lat": 51.3967,
    "lon": -3.3433
@@ -385,6 +418,7 @@
   "airport_local": {
    "code": "NQY",
    "name": "Cornwall Airport Newquay",
+   "city": "Newquay",
    "type": "medium",
    "lat": 50.4406,
    "lon": -4.9954
@@ -401,6 +435,7 @@
   "airport_main": {
    "code": "BOD",
    "name": "Bordeaux–Mérignac Airport",
+   "city": "Bordeaux",
    "type": "large",
    "lat": 44.8287,
    "lon": -0.7154
@@ -408,6 +443,7 @@
   "airport_local": {
    "code": "LRH",
    "name": "La Rochelle Île de Ré Airport",
+   "city": "La Rochelle",
    "type": "medium",
    "lat": 46.1792,
    "lon": -1.1953
@@ -424,6 +460,7 @@
   "airport_main": {
    "code": "KMI",
    "name": "Miyazaki Airport",
+   "city": "Miyazaki",
    "type": "large",
    "lat": 31.8772,
    "lon": 131.449
@@ -431,6 +468,7 @@
   "airport_local": {
    "code": "KMI",
    "name": "Miyazaki Airport",
+   "city": "Miyazaki",
    "type": "large",
    "lat": 31.8772,
    "lon": 131.449
@@ -447,6 +485,7 @@
   "airport_main": {
    "code": "SYD",
    "name": "Sydney Kingsford Smith International Airport",
+   "city": "Sydney (Mascot)",
    "type": "large",
    "lat": -33.9461,
    "lon": 151.177
@@ -454,6 +493,7 @@
   "airport_local": {
    "code": "MYA",
    "name": "Moruya Airport",
+   "city": "Moruya",
    "type": "medium",
    "lat": -35.8978,
    "lon": 150.144
@@ -470,6 +510,7 @@
   "airport_main": {
    "code": "SJC",
    "name": "Mineta San Jose International Airport",
+   "city": "San Jose",
    "type": "large",
    "lat": 37.3625,
    "lon": -121.9292
@@ -477,6 +518,7 @@
   "airport_local": {
    "code": "MRY",
    "name": "Monterey Regional Airport",
+   "city": "Monterey",
    "type": "medium",
    "lat": 36.5868,
    "lon": -121.8442
@@ -493,6 +535,7 @@
   "airport_main": {
    "code": "SYD",
    "name": "Sydney Kingsford Smith International Airport",
+   "city": "Sydney (Mascot)",
    "type": "large",
    "lat": -33.9461,
    "lon": 151.177
@@ -500,6 +543,7 @@
   "airport_local": {
    "code": "SYD",
    "name": "Sydney Kingsford Smith International Airport",
+   "city": "Sydney (Mascot)",
    "type": "large",
    "lat": -33.9461,
    "lon": 151.177
@@ -516,6 +560,7 @@
   "airport_main": {
    "code": "MCY",
    "name": "Sunshine Coast Airport",
+   "city": "Maroochydore",
    "type": "large",
    "lat": -26.5933,
    "lon": 153.0832
@@ -523,6 +568,7 @@
   "airport_local": {
    "code": "MCY",
    "name": "Sunshine Coast Airport",
+   "city": "Maroochydore",
    "type": "large",
    "lat": -26.5933,
    "lon": 153.0832
@@ -539,6 +585,7 @@
   "airport_main": {
    "code": "FLN",
    "name": "Hercílio Luz International Airport",
+   "city": "Florianópolis",
    "type": "large",
    "lat": -27.6703,
    "lon": -48.5525
@@ -546,6 +593,7 @@
   "airport_local": {
    "code": "FLN",
    "name": "Hercílio Luz International Airport",
+   "city": "Florianópolis",
    "type": "large",
    "lat": -27.6703,
    "lon": -48.5525
@@ -562,6 +610,7 @@
   "airport_main": {
    "code": "SCL",
    "name": "Comodoro Arturo Merino Benítez International Airport",
+   "city": "Santiago",
    "type": "large",
    "lat": -33.393,
    "lon": -70.7858
@@ -569,6 +618,7 @@
   "airport_local": {
    "code": "SCL",
    "name": "Comodoro Arturo Merino Benítez International Airport",
+   "city": "Santiago",
    "type": "large",
    "lat": -33.393,
    "lon": -70.7858
@@ -585,6 +635,7 @@
   "airport_main": {
    "code": "SDU",
    "name": "Santos Dumont Airport",
+   "city": "Rio de Janeiro",
    "type": "large",
    "lat": -22.9104,
    "lon": -43.1628
@@ -592,6 +643,7 @@
   "airport_local": {
    "code": "SDU",
    "name": "Santos Dumont Airport",
+   "city": "Rio de Janeiro",
    "type": "large",
    "lat": -22.9104,
    "lon": -43.1628
@@ -608,6 +660,7 @@
   "airport_main": {
    "code": "OPO",
    "name": "Francisco de Sá Carneiro Airport",
+   "city": "Porto",
    "type": "large",
    "lat": 41.2481,
    "lon": -8.6814
@@ -615,6 +668,7 @@
   "airport_local": {
    "code": "OPO",
    "name": "Francisco de Sá Carneiro Airport",
+   "city": "Porto",
    "type": "large",
    "lat": 41.2481,
    "lon": -8.6814
@@ -631,6 +685,7 @@
   "airport_main": {
    "code": "FAO",
    "name": "Faro - Gago Coutinho International Airport",
+   "city": "Faro",
    "type": "large",
    "lat": 37.0159,
    "lon": -7.9709
@@ -638,6 +693,7 @@
   "airport_local": {
    "code": "PRM",
    "name": "Portimão Airport",
+   "city": "Portimão",
    "type": "medium",
    "lat": 37.1493,
    "lon": -8.584
@@ -654,6 +710,7 @@
   "airport_main": {
    "code": "SCQ",
    "name": "Santiago-Rosalía de Castro Airport",
+   "city": "Santiago de Compostela",
    "type": "large",
    "lat": 42.8963,
    "lon": -8.4151
@@ -661,6 +718,7 @@
   "airport_local": {
    "code": "LCG",
    "name": "A Coruña Airport",
+   "city": "Culleredo",
    "type": "medium",
    "lat": 43.3021,
    "lon": -8.3773
@@ -677,6 +735,7 @@
   "airport_main": {
    "code": "GRU",
    "name": "São Paulo/Guarulhos–Governor André Franco Montoro International Airport",
+   "city": "São Paulo",
    "type": "large",
    "lat": -23.4313,
    "lon": -46.47
@@ -684,6 +743,7 @@
   "airport_local": {
    "code": "SJK",
    "name": "Professor Urbano Ernesto Stumpf Airport",
+   "city": "São José Dos Campos",
    "type": "medium",
    "lat": -23.2292,
    "lon": -45.8615
@@ -700,6 +760,7 @@
   "airport_main": {
    "code": "BOD",
    "name": "Bordeaux–Mérignac Airport",
+   "city": "Bordeaux",
    "type": "large",
    "lat": 44.8287,
    "lon": -0.7154
@@ -707,6 +768,7 @@
   "airport_local": {
    "code": "BOD",
    "name": "Bordeaux–Mérignac Airport",
+   "city": "Bordeaux",
    "type": "large",
    "lat": 44.8287,
    "lon": -0.7154
@@ -723,6 +785,7 @@
   "airport_main": {
    "code": "LIM",
    "name": "Jorge Chávez International Airport",
+   "city": "Lima",
    "type": "large",
    "lat": -12.0219,
    "lon": -77.1143
@@ -730,6 +793,7 @@
   "airport_local": {
    "code": "LIM",
    "name": "Jorge Chávez International Airport",
+   "city": "Lima",
    "type": "large",
    "lat": -12.0219,
    "lon": -77.1143
@@ -746,6 +810,7 @@
   "airport_main": {
    "code": "PVD",
    "name": "Rhode Island T. F. Green International Airport",
+   "city": "Providence/Warwick",
    "type": "large",
    "lat": 41.725,
    "lon": -71.4257
@@ -753,6 +818,7 @@
   "airport_local": {
    "code": "WST",
    "name": "Westerly State Airport",
+   "city": "Westerly",
    "type": "medium",
    "lat": 41.3496,
    "lon": -71.8034
@@ -769,6 +835,7 @@
   "airport_main": {
    "code": "NTL",
    "name": "Newcastle Airport",
+   "city": "Williamtown",
    "type": "large",
    "lat": -32.7961,
    "lon": 151.835
@@ -776,6 +843,7 @@
   "airport_local": {
    "code": "NTL",
    "name": "Newcastle Airport",
+   "city": "Williamtown",
    "type": "large",
    "lat": -32.7961,
    "lon": 151.835
@@ -792,6 +860,7 @@
   "airport_main": {
    "code": "PDG",
    "name": "Minangkabau International Airport",
+   "city": "Padang (Katapiang)",
    "type": "large",
    "lat": -0.786,
    "lon": 100.2804
@@ -799,6 +868,7 @@
   "airport_local": {
    "code": "PDG",
    "name": "Minangkabau International Airport",
+   "city": "Padang (Katapiang)",
    "type": "large",
    "lat": -0.786,
    "lon": 100.2804
@@ -815,6 +885,7 @@
   "airport_main": {
    "code": "AMS",
    "name": "Amsterdam Airport Schiphol",
+   "city": "Amsterdam",
    "type": "large",
    "lat": 52.3086,
    "lon": 4.7639
@@ -822,6 +893,7 @@
   "airport_local": {
    "code": "AMS",
    "name": "Amsterdam Airport Schiphol",
+   "city": "Amsterdam",
    "type": "large",
    "lat": 52.3086,
    "lon": 4.7639
@@ -838,6 +910,7 @@
   "airport_main": {
    "code": "OOL",
    "name": "Gold Coast Airport",
+   "city": "Gold Coast",
    "type": "large",
    "lat": -28.166,
    "lon": 153.5066
@@ -845,6 +918,7 @@
   "airport_local": {
    "code": "CFS",
    "name": "Coffs Harbour Airport",
+   "city": "Coffs Harbour",
    "type": "medium",
    "lat": -30.3206,
    "lon": 153.116
@@ -861,6 +935,7 @@
   "airport_main": {
    "code": "PPT",
    "name": "Fa'a'ā International Airport",
+   "city": "Papeete",
    "type": "large",
    "lat": -17.5535,
    "lon": -149.6069
@@ -868,6 +943,7 @@
   "airport_local": {
    "code": "PPT",
    "name": "Fa'a'ā International Airport",
+   "city": "Papeete",
    "type": "large",
    "lat": -17.5535,
    "lon": -149.6069
@@ -884,6 +960,7 @@
   "airport_main": {
    "code": "DPS",
    "name": "Denpasar I Gusti Ngurah Rai International Airport",
+   "city": "Kuta, Badung",
    "type": "large",
    "lat": -8.7484,
    "lon": 115.1671
@@ -891,6 +968,7 @@
   "airport_local": {
    "code": "DPS",
    "name": "Denpasar I Gusti Ngurah Rai International Airport",
+   "city": "Kuta, Badung",
    "type": "large",
    "lat": -8.7484,
    "lon": 115.1671
@@ -907,6 +985,7 @@
   "airport_main": {
    "code": "MFR",
    "name": "Rogue Valley International-Medford Airport",
+   "city": "Medford",
    "type": "medium",
    "lat": 42.3742,
    "lon": -122.873
@@ -914,6 +993,7 @@
   "airport_local": {
    "code": "CEC",
    "name": "Jack Mc Namara Field Airport",
+   "city": "Crescent City",
    "type": "medium",
    "lat": 41.7789,
    "lon": -124.2364
@@ -930,6 +1010,7 @@
   "airport_main": {
    "code": "ACE",
    "name": "César Manrique-Lanzarote Airport",
+   "city": "San Bartolomé",
    "type": "large",
    "lat": 28.9455,
    "lon": -13.6052
@@ -937,6 +1018,7 @@
   "airport_local": {
    "code": "ACE",
    "name": "César Manrique-Lanzarote Airport",
+   "city": "San Bartolomé",
    "type": "large",
    "lat": 28.9455,
    "lon": -13.6052
@@ -953,6 +1035,7 @@
   "airport_main": {
    "code": "SNC",
    "name": "General Ulpiano Paez International Airport",
+   "city": "Salinas/La Libertad",
    "type": "large",
    "lat": -2.2101,
    "lon": -80.9851
@@ -960,6 +1043,7 @@
   "airport_local": {
    "code": "SNC",
    "name": "General Ulpiano Paez International Airport",
+   "city": "Salinas/La Libertad",
    "type": "large",
    "lat": -2.2101,
    "lon": -80.9851
@@ -976,6 +1060,7 @@
   "airport_main": {
    "code": "CWL",
    "name": "Cardiff International Airport",
+   "city": "Cardiff",
    "type": "large",
    "lat": 51.3967,
    "lon": -3.3433
@@ -983,6 +1068,7 @@
   "airport_local": {
    "code": "CWL",
    "name": "Cardiff International Airport",
+   "city": "Cardiff",
    "type": "large",
    "lat": 51.3967,
    "lon": -3.3433
@@ -999,6 +1085,7 @@
   "airport_main": {
    "code": "MYR",
    "name": "Myrtle Beach International Airport",
+   "city": "Myrtle Beach",
    "type": "large",
    "lat": 33.6797,
    "lon": -78.9283
@@ -1006,6 +1093,7 @@
   "airport_local": {
    "code": "MYR",
    "name": "Myrtle Beach International Airport",
+   "city": "Myrtle Beach",
    "type": "large",
    "lat": 33.6797,
    "lon": -78.9283
@@ -1022,6 +1110,7 @@
   "airport_main": {
    "code": "NVT",
    "name": "Ministro Victor Konder International Airport",
+   "city": "Navegantes",
    "type": "large",
    "lat": -26.8794,
    "lon": -48.651
@@ -1029,6 +1118,7 @@
   "airport_local": {
    "code": "JOI",
    "name": "Lauro Carneiro de Loyola Airport",
+   "city": "Joinville",
    "type": "medium",
    "lat": -26.2245,
    "lon": -48.7974
@@ -1045,6 +1135,7 @@
   "airport_main": {
    "code": "LGW",
    "name": "London Gatwick Airport",
+   "city": "London",
    "type": "large",
    "lat": 51.1487,
    "lon": -0.1857
@@ -1052,6 +1143,7 @@
   "airport_local": {
    "code": "ACI",
    "name": "Alderney Airport",
+   "city": "Saint Anne",
    "type": "medium",
    "lat": 49.7061,
    "lon": -2.2147
@@ -1068,6 +1160,7 @@
   "airport_main": {
    "code": "NTE",
    "name": "Nantes Atlantique Airport",
+   "city": "Nantes",
    "type": "large",
    "lat": 47.1532,
    "lon": -1.6107
@@ -1075,6 +1168,7 @@
   "airport_local": {
    "code": "NTE",
    "name": "Nantes Atlantique Airport",
+   "city": "Nantes",
    "type": "large",
    "lat": 47.1532,
    "lon": -1.6107
@@ -1091,6 +1185,7 @@
   "airport_main": {
    "code": "SCQ",
    "name": "Santiago-Rosalía de Castro Airport",
+   "city": "Santiago de Compostela",
    "type": "large",
    "lat": 42.8963,
    "lon": -8.4151
@@ -1098,6 +1193,7 @@
   "airport_local": {
    "code": "VGO",
    "name": "Vigo Airport",
+   "city": "Vigo",
    "type": "medium",
    "lat": 42.2318,
    "lon": -8.6268
@@ -1114,6 +1210,7 @@
   "airport_main": {
    "code": "MCO",
    "name": "Orlando International Airport",
+   "city": "Orlando",
    "type": "large",
    "lat": 28.4294,
    "lon": -81.309
@@ -1121,6 +1218,7 @@
   "airport_local": {
    "code": "MLB",
    "name": "Melbourne Orlando International Airport",
+   "city": "Melbourne",
    "type": "medium",
    "lat": 28.102,
    "lon": -80.6411
@@ -1137,6 +1235,7 @@
   "airport_main": {
    "code": "JAX",
    "name": "Jacksonville International Airport",
+   "city": "Jacksonville",
    "type": "large",
    "lat": 30.4925,
    "lon": -81.6878
@@ -1144,6 +1243,7 @@
   "airport_local": {
    "code": "UST",
    "name": "Northeast Florida Regional Airport",
+   "city": "St Augustine",
    "type": "medium",
    "lat": 29.9592,
    "lon": -81.3398
@@ -1160,6 +1260,7 @@
   "airport_main": {
    "code": "JFK",
    "name": "John F. Kennedy International Airport",
+   "city": "New York",
    "type": "large",
    "lat": 40.6394,
    "lon": -73.7793
@@ -1167,6 +1268,7 @@
   "airport_local": {
    "code": "ISP",
    "name": "Long Island MacArthur Airport",
+   "city": "Islip",
    "type": "medium",
    "lat": 40.7963,
    "lon": -73.1017
@@ -1183,6 +1285,7 @@
   "airport_main": {
    "code": "LIR",
    "name": "Daniel Oduber Quirós International Airport",
+   "city": "Liberia",
    "type": "large",
    "lat": 10.5933,
    "lon": -85.5444
@@ -1190,6 +1293,7 @@
   "airport_local": {
    "code": "NOB",
    "name": "Nosara Airport",
+   "city": "Nicoya",
    "type": "medium",
    "lat": 9.9765,
    "lon": -85.653
@@ -1206,6 +1310,7 @@
   "airport_main": {
    "code": "OPO",
    "name": "Francisco de Sá Carneiro Airport",
+   "city": "Porto",
    "type": "large",
    "lat": 41.2481,
    "lon": -8.6814
@@ -1213,6 +1318,7 @@
   "airport_local": {
    "code": "VSE",
    "name": "Aerodromo Goncalves Lobato (Viseu Airport)",
+   "city": "Viseu",
    "type": "medium",
    "lat": 40.7255,
    "lon": -7.889
@@ -1229,6 +1335,7 @@
   "airport_main": {
    "code": "SFO",
    "name": "San Francisco International Airport",
+   "city": "San Francisco",
    "type": "large",
    "lat": 37.6198,
    "lon": -122.3748
@@ -1236,6 +1343,7 @@
   "airport_local": {
    "code": "SFO",
    "name": "San Francisco International Airport",
+   "city": "San Francisco",
    "type": "large",
    "lat": 37.6198,
    "lon": -122.3748
@@ -1252,6 +1360,7 @@
   "airport_main": {
    "code": "FAT",
    "name": "Fresno Yosemite International Airport",
+   "city": "Fresno",
    "type": "large",
    "lat": 36.7758,
    "lon": -119.718
@@ -1259,6 +1368,7 @@
   "airport_local": {
    "code": "SMX",
    "name": "Santa Maria Public Airport Captain G Allan Hancock Field",
+   "city": "Santa Maria",
    "type": "medium",
    "lat": 34.8989,
    "lon": -120.457
@@ -1275,6 +1385,7 @@
   "airport_main": {
    "code": "TLV",
    "name": "Ben Gurion International Airport",
+   "city": "Tel Aviv",
    "type": "large",
    "lat": 32.0114,
    "lon": 34.8867
@@ -1282,6 +1393,7 @@
   "airport_local": {
    "code": "HFA",
    "name": "Uri Michaeli Haifa International Airport",
+   "city": "Haifa",
    "type": "medium",
    "lat": 32.8102,
    "lon": 35.0437
@@ -1298,6 +1410,7 @@
   "airport_main": {
    "code": "FAO",
    "name": "Faro - Gago Coutinho International Airport",
+   "city": "Faro",
    "type": "large",
    "lat": 37.0159,
    "lon": -7.9709
@@ -1305,6 +1418,7 @@
   "airport_local": {
    "code": "PRM",
    "name": "Portimão Airport",
+   "city": "Portimão",
    "type": "medium",
    "lat": 37.1493,
    "lon": -8.584
@@ -1321,6 +1435,7 @@
   "airport_main": {
    "code": "SJU",
    "name": "Luis Munoz Marin International Airport",
+   "city": "San Juan",
    "type": "large",
    "lat": 18.4394,
    "lon": -66.0018
@@ -1328,6 +1443,7 @@
   "airport_local": {
    "code": "SIG",
    "name": "Fernando Luis Ribas Dominicci Airport",
+   "city": "San Juan",
    "type": "medium",
    "lat": 18.4568,
    "lon": -66.0981
@@ -1344,6 +1460,7 @@
   "airport_main": {
    "code": "SEZ",
    "name": "Seychelles International Airport",
+   "city": "Victoria",
    "type": "large",
    "lat": -4.6743,
    "lon": 55.5218
@@ -1351,6 +1468,7 @@
   "airport_local": {
    "code": "SEZ",
    "name": "Seychelles International Airport",
+   "city": "Victoria",
    "type": "large",
    "lat": -4.6743,
    "lon": 55.5218
@@ -1367,6 +1485,7 @@
   "airport_main": {
    "code": "HNL",
    "name": "Daniel K. Inouye International Airport",
+   "city": "Honolulu, Oahu",
    "type": "large",
    "lat": 21.3184,
    "lon": -157.9257
@@ -1374,6 +1493,7 @@
   "airport_local": {
    "code": "HNL",
    "name": "Daniel K. Inouye International Airport",
+   "city": "Honolulu, Oahu",
    "type": "large",
    "lat": 21.3184,
    "lon": -157.9257
@@ -1390,6 +1510,7 @@
   "airport_main": {
    "code": "OST",
    "name": "Ostend-Bruges International Airport",
+   "city": "Oostende",
    "type": "large",
    "lat": 51.1998,
    "lon": 2.8747
@@ -1397,6 +1518,7 @@
   "airport_local": {
    "code": "OST",
    "name": "Ostend-Bruges International Airport",
+   "city": "Oostende",
    "type": "large",
    "lat": 51.1998,
    "lon": 2.8747
@@ -1413,6 +1535,7 @@
   "airport_main": {
    "code": "SJO",
    "name": "Juan Santamaría International Airport",
+   "city": "San José (Alajuela)",
    "type": "large",
    "lat": 9.9939,
    "lon": -84.2088
@@ -1420,6 +1543,7 @@
   "airport_local": {
    "code": "XQP",
    "name": "Quepos Managua Airport",
+   "city": "Quepos",
    "type": "medium",
    "lat": 9.4432,
    "lon": -84.1298
@@ -1436,6 +1560,7 @@
   "airport_main": {
    "code": "NTE",
    "name": "Nantes Atlantique Airport",
+   "city": "Nantes",
    "type": "large",
    "lat": 47.1532,
    "lon": -1.6107
@@ -1443,6 +1568,7 @@
   "airport_local": {
    "code": "RNS",
    "name": "Rennes-Saint-Jacques Airport",
+   "city": "Saint-Jacques-de-la-Lande, Ille-et-Vilaine",
    "type": "medium",
    "lat": 48.0695,
    "lon": -1.7348
@@ -1459,6 +1585,7 @@
   "airport_main": {
    "code": "DUR",
    "name": "King Shaka International Airport",
+   "city": "Durban",
    "type": "large",
    "lat": -29.6144,
    "lon": 31.1197
@@ -1466,6 +1593,7 @@
   "airport_local": {
    "code": "DUR",
    "name": "King Shaka International Airport",
+   "city": "Durban",
    "type": "large",
    "lat": -29.6144,
    "lon": 31.1197
@@ -1482,6 +1610,7 @@
   "airport_main": {
    "code": "PLZ",
    "name": "Chief Dawid Stuurman International Airport",
+   "city": "Gqeberha (Port Elizabeth)",
    "type": "large",
    "lat": -33.9897,
    "lon": 25.6174
@@ -1489,6 +1618,7 @@
   "airport_local": {
    "code": "PLZ",
    "name": "Chief Dawid Stuurman International Airport",
+   "city": "Gqeberha (Port Elizabeth)",
    "type": "large",
    "lat": -33.9897,
    "lon": 25.6174
@@ -1505,6 +1635,7 @@
   "airport_main": {
    "code": "PDX",
    "name": "Portland International Airport",
+   "city": "Portland",
    "type": "large",
    "lat": 45.5887,
    "lon": -122.598
@@ -1512,6 +1643,7 @@
   "airport_local": {
    "code": "SLE",
    "name": "Salem-Willamette Valley Airport/McNary Field",
+   "city": "Salem",
    "type": "medium",
    "lat": 44.9095,
    "lon": -123.003
@@ -1528,6 +1660,7 @@
   "airport_main": {
    "code": "HNL",
    "name": "Daniel K. Inouye International Airport",
+   "city": "Honolulu, Oahu",
    "type": "large",
    "lat": 21.3184,
    "lon": -157.9257
@@ -1535,6 +1668,7 @@
   "airport_local": {
    "code": "HNL",
    "name": "Daniel K. Inouye International Airport",
+   "city": "Honolulu, Oahu",
    "type": "large",
    "lat": 21.3184,
    "lon": -157.9257
@@ -1551,6 +1685,7 @@
   "airport_main": {
    "code": "ADL",
    "name": "Adelaide International Airport",
+   "city": "Adelaide",
    "type": "large",
    "lat": -34.9475,
    "lon": 138.5334
@@ -1558,6 +1693,7 @@
   "airport_local": {
    "code": "ADL",
    "name": "Adelaide International Airport",
+   "city": "Adelaide",
    "type": "large",
    "lat": -34.9475,
    "lon": 138.5334
@@ -1574,6 +1710,7 @@
   "airport_main": {
    "code": "CGH",
    "name": "Congonhas–Deputado Freitas Nobre Airport",
+   "city": "São Paulo",
    "type": "large",
    "lat": -23.6277,
    "lon": -46.6546
@@ -1581,6 +1718,7 @@
   "airport_local": {
    "code": "CGH",
    "name": "Congonhas–Deputado Freitas Nobre Airport",
+   "city": "São Paulo",
    "type": "large",
    "lat": -23.6277,
    "lon": -46.6546
@@ -1597,6 +1735,7 @@
   "airport_main": {
    "code": "NOC",
    "name": "Ireland West Airport Knock",
+   "city": "Charlestown",
    "type": "large",
    "lat": 53.9104,
    "lon": -8.817
@@ -1604,6 +1743,7 @@
   "airport_local": {
    "code": "NOC",
    "name": "Ireland West Airport Knock",
+   "city": "Charlestown",
    "type": "large",
    "lat": 53.9104,
    "lon": -8.817
@@ -1620,6 +1760,7 @@
   "airport_main": {
    "code": "RML",
    "name": "Colombo Ratmalana International Airport",
+   "city": "Colombo",
    "type": "large",
    "lat": 6.8216,
    "lon": 79.8859
@@ -1627,6 +1768,7 @@
   "airport_local": {
    "code": "KCT",
    "name": "Koggala Airport",
+   "city": "Galle",
    "type": "medium",
    "lat": 5.9937,
    "lon": 80.3203
@@ -1643,6 +1785,7 @@
   "airport_main": {
    "code": "JFK",
    "name": "John F. Kennedy International Airport",
+   "city": "New York",
    "type": "large",
    "lat": 40.6394,
    "lon": -73.7793
@@ -1650,6 +1793,7 @@
   "airport_local": {
    "code": "JFK",
    "name": "John F. Kennedy International Airport",
+   "city": "New York",
    "type": "large",
    "lat": 40.6394,
    "lon": -73.7793
@@ -1666,6 +1810,7 @@
   "airport_main": {
    "code": "DJT",
    "name": "President Donald J. Trump International Airport",
+   "city": "West Palm Beach",
    "type": "large",
    "lat": 26.6832,
    "lon": -80.0956
@@ -1673,6 +1818,7 @@
   "airport_local": {
    "code": "DJT",
    "name": "President Donald J. Trump International Airport",
+   "city": "West Palm Beach",
    "type": "large",
    "lat": 26.6832,
    "lon": -80.0956
@@ -1689,6 +1835,7 @@
   "airport_main": {
    "code": "BOS",
    "name": "Boston Logan International Airport",
+   "city": "Boston",
    "type": "large",
    "lat": 42.362,
    "lon": -71.0079
@@ -1696,6 +1843,7 @@
   "airport_local": {
    "code": "PSM",
    "name": "Portsmouth International Airport at Pease",
+   "city": "Portsmouth",
    "type": "medium",
    "lat": 43.0779,
    "lon": -70.8233
@@ -1712,6 +1860,7 @@
   "airport_main": {
    "code": "PIE",
    "name": "St. Petersburg Clearwater International Airport",
+   "city": "Pinellas Park",
    "type": "large",
    "lat": 27.9102,
    "lon": -82.6874
@@ -1719,6 +1868,7 @@
   "airport_local": {
    "code": "PIE",
    "name": "St. Petersburg Clearwater International Airport",
+   "city": "Pinellas Park",
    "type": "large",
    "lat": 27.9102,
    "lon": -82.6874
@@ -1735,6 +1885,7 @@
   "airport_main": {
    "code": "AVV",
    "name": "Melbourne Avalon International Airport",
+   "city": "Geelong/Melbourne",
    "type": "large",
    "lat": -38.0403,
    "lon": 144.4672
@@ -1742,6 +1893,7 @@
   "airport_local": {
    "code": "AVV",
    "name": "Melbourne Avalon International Airport",
+   "city": "Geelong/Melbourne",
    "type": "large",
    "lat": -38.0403,
    "lon": 144.4672
@@ -1758,6 +1910,7 @@
   "airport_main": {
    "code": "HBA",
    "name": "Hobart International Airport",
+   "city": "Hobart (Cambridge)",
    "type": "large",
    "lat": -42.837,
    "lon": 147.513
@@ -1765,6 +1918,7 @@
   "airport_local": {
    "code": "HBA",
    "name": "Hobart International Airport",
+   "city": "Hobart (Cambridge)",
    "type": "large",
    "lat": -42.837,
    "lon": 147.513
@@ -1781,6 +1935,7 @@
   "airport_main": {
    "code": "POA",
    "name": "Porto Alegre-Salgado Filho International Airport",
+   "city": "Porto Alegre",
    "type": "large",
    "lat": -29.994,
    "lon": -51.1675
@@ -1788,6 +1943,7 @@
   "airport_local": {
    "code": "POA",
    "name": "Porto Alegre-Salgado Filho International Airport",
+   "city": "Porto Alegre",
    "type": "large",
    "lat": -29.994,
    "lon": -51.1675
@@ -1804,6 +1960,7 @@
   "airport_main": {
    "code": "SDU",
    "name": "Santos Dumont Airport",
+   "city": "Rio de Janeiro",
    "type": "large",
    "lat": -22.9104,
    "lon": -43.1628
@@ -1811,6 +1968,7 @@
   "airport_local": {
    "code": "SDU",
    "name": "Santos Dumont Airport",
+   "city": "Rio de Janeiro",
    "type": "large",
    "lat": -22.9104,
    "lon": -43.1628
@@ -1827,6 +1985,7 @@
   "airport_main": {
    "code": "SNN",
    "name": "Shannon Airport",
+   "city": "Shannon",
    "type": "large",
    "lat": 52.702,
    "lon": -8.9248
@@ -1834,6 +1993,7 @@
   "airport_local": {
    "code": "SNN",
    "name": "Shannon Airport",
+   "city": "Shannon",
    "type": "large",
    "lat": 52.702,
    "lon": -8.9248
@@ -1850,6 +2010,7 @@
   "airport_main": {
    "code": "AKL",
    "name": "Auckland International Airport",
+   "city": "Auckland",
    "type": "large",
    "lat": -37.012,
    "lon": 174.7863
@@ -1857,6 +2018,7 @@
   "airport_local": {
    "code": "WRE",
    "name": "Whangarei Airport",
+   "city": "Whangarei",
    "type": "medium",
    "lat": -35.7693,
    "lon": 174.3637
@@ -1873,6 +2035,7 @@
   "airport_main": {
    "code": "CGY",
    "name": "Laguindingan International Airport",
+   "city": "Laguindingan",
    "type": "large",
    "lat": 8.6122,
    "lon": 124.4565
@@ -1880,6 +2043,7 @@
   "airport_local": {
    "code": "SUG",
    "name": "Surigao Airport",
+   "city": "Surigao City",
    "type": "medium",
    "lat": 9.7558,
    "lon": 125.4809
@@ -1896,6 +2060,7 @@
   "airport_main": {
    "code": "BCN",
    "name": "Josep Tarradellas Barcelona-El Prat Airport",
+   "city": "Barcelona",
    "type": "large",
    "lat": 41.2971,
    "lon": 2.0785
@@ -1903,6 +2068,7 @@
   "airport_local": {
    "code": "BCN",
    "name": "Josep Tarradellas Barcelona-El Prat Airport",
+   "city": "Barcelona",
    "type": "large",
    "lat": 41.2971,
    "lon": 2.0785
@@ -1919,6 +2085,7 @@
   "airport_main": {
    "code": "OVD",
    "name": "Asturias Airport",
+   "city": "Ranón",
    "type": "large",
    "lat": 43.5636,
    "lon": -6.0346
@@ -1926,6 +2093,7 @@
   "airport_local": {
    "code": "OVD",
    "name": "Asturias Airport",
+   "city": "Ranón",
    "type": "large",
    "lat": 43.5636,
    "lon": -6.0346
@@ -1942,6 +2110,7 @@
   "airport_main": {
    "code": "MDQ",
    "name": "Ástor Piazzola International Airport",
+   "city": "Mar del Plata",
    "type": "medium",
    "lat": -37.9342,
    "lon": -57.5733
@@ -1949,6 +2118,7 @@
   "airport_local": {
    "code": "MDQ",
    "name": "Ástor Piazzola International Airport",
+   "city": "Mar del Plata",
    "type": "medium",
    "lat": -37.9342,
    "lon": -57.5733
@@ -1965,6 +2135,7 @@
   "airport_main": {
    "code": "NTL",
    "name": "Newcastle Airport",
+   "city": "Williamtown",
    "type": "large",
    "lat": -32.7961,
    "lon": 151.835
@@ -1972,6 +2143,7 @@
   "airport_local": {
    "code": "PQQ",
    "name": "Port Macquarie Airport",
+   "city": "Port Macquarie",
    "type": "medium",
    "lat": -31.4358,
    "lon": 152.863
@@ -1988,6 +2160,7 @@
   "airport_main": {
    "code": "DPS",
    "name": "Denpasar I Gusti Ngurah Rai International Airport",
+   "city": "Kuta, Badung",
    "type": "large",
    "lat": -8.7484,
    "lon": 115.1671
@@ -1995,6 +2168,7 @@
   "airport_local": {
    "code": "DPS",
    "name": "Denpasar I Gusti Ngurah Rai International Airport",
+   "city": "Kuta, Badung",
    "type": "large",
    "lat": -8.7484,
    "lon": 115.1671
@@ -2011,6 +2185,7 @@
   "airport_main": {
    "code": "PVR",
    "name": "Puerto Vallarta International Airport",
+   "city": "Puerto Vallarta",
    "type": "large",
    "lat": 20.6799,
    "lon": -105.2544
@@ -2018,6 +2193,7 @@
   "airport_local": {
    "code": "PVR",
    "name": "Puerto Vallarta International Airport",
+   "city": "Puerto Vallarta",
    "type": "large",
    "lat": 20.6799,
    "lon": -105.2544
@@ -2034,6 +2210,7 @@
   "airport_main": {
    "code": "AGA",
    "name": "Al Massira Airport",
+   "city": "Agadir (Temsia)",
    "type": "large",
    "lat": 30.3225,
    "lon": -9.412
@@ -2041,6 +2218,7 @@
   "airport_local": {
    "code": "AGA",
    "name": "Al Massira Airport",
+   "city": "Agadir (Temsia)",
    "type": "large",
    "lat": 30.3225,
    "lon": -9.412
@@ -2057,6 +2235,7 @@
   "airport_main": {
    "code": "CMN",
    "name": "Mohammed V International Airport",
+   "city": "Casablanca",
    "type": "large",
    "lat": 33.3675,
    "lon": -7.59
@@ -2064,6 +2243,7 @@
   "airport_local": {
    "code": "CMN",
    "name": "Mohammed V International Airport",
+   "city": "Casablanca",
    "type": "large",
    "lat": 33.3675,
    "lon": -7.59
@@ -2080,6 +2260,7 @@
   "airport_main": {
    "code": "MGA",
    "name": "Augusto C. Sandino (Managua) International Airport",
+   "city": "Managua",
    "type": "large",
    "lat": 12.1415,
    "lon": -86.1682
@@ -2087,6 +2268,7 @@
   "airport_local": {
    "code": "MGA",
    "name": "Augusto C. Sandino (Managua) International Airport",
+   "city": "Managua",
    "type": "large",
    "lat": 12.1415,
    "lon": -86.1682
@@ -2103,6 +2285,7 @@
   "airport_main": {
    "code": "SNC",
    "name": "General Ulpiano Paez International Airport",
+   "city": "Salinas/La Libertad",
    "type": "large",
    "lat": -2.2101,
    "lon": -80.9851
@@ -2110,6 +2293,7 @@
   "airport_local": {
    "code": "TYL",
    "name": "Captain Victor Montes Arias International Airport",
+   "city": "Talara",
    "type": "medium",
    "lat": -4.5766,
    "lon": -81.2541
@@ -2126,6 +2310,7 @@
   "airport_main": {
    "code": "PHL",
    "name": "Philadelphia International Airport",
+   "city": "Philadelphia",
    "type": "large",
    "lat": 39.8719,
    "lon": -75.2411
@@ -2133,6 +2318,7 @@
   "airport_local": {
    "code": "OCE",
    "name": "Ocean City Municipal Airport",
+   "city": "Ocean City",
    "type": "medium",
    "lat": 38.3104,
    "lon": -75.124
@@ -2149,6 +2335,7 @@
   "airport_main": {
    "code": "CBR",
    "name": "Canberra Airport",
+   "city": "Canberra",
    "type": "medium",
    "lat": -35.3069,
    "lon": 149.195
@@ -2156,6 +2343,7 @@
   "airport_local": {
    "code": "MIM",
    "name": "Merimbula Airport",
+   "city": "Merimbula",
    "type": "medium",
    "lat": -36.9086,
    "lon": 149.901
@@ -2172,6 +2360,7 @@
   "airport_main": {
    "code": "BES",
    "name": "Brest Bretagne airport",
+   "city": "Brest",
    "type": "large",
    "lat": 48.4479,
    "lon": -4.4185
@@ -2179,6 +2368,7 @@
   "airport_local": {
    "code": "BES",
    "name": "Brest Bretagne airport",
+   "city": "Brest",
    "type": "large",
    "lat": 48.4479,
    "lon": -4.4185
@@ -2195,6 +2385,7 @@
   "airport_main": {
    "code": "TIJ",
    "name": "General Abelardo L. Rodriguez International Airport",
+   "city": "Tijuana",
    "type": "large",
    "lat": 32.541,
    "lon": -116.97
@@ -2202,6 +2393,7 @@
   "airport_local": {
    "code": "TIJ",
    "name": "General Abelardo L. Rodriguez International Airport",
+   "city": "Tijuana",
    "type": "large",
    "lat": 32.541,
    "lon": -116.97
@@ -2218,6 +2410,7 @@
   "airport_main": {
    "code": "HLZ",
    "name": "Hamilton International Airport",
+   "city": "Hamilton",
    "type": "medium",
    "lat": -37.867,
    "lon": 175.332
@@ -2225,6 +2418,7 @@
   "airport_local": {
    "code": "GIS",
    "name": "Gisborne Airport",
+   "city": "Gisborne",
    "type": "medium",
    "lat": -38.6633,
    "lon": 177.978
@@ -2241,6 +2435,7 @@
   "airport_main": {
    "code": "GRJ",
    "name": "George Airport",
+   "city": "George",
    "type": "large",
    "lat": -34.0056,
    "lon": 22.3789
@@ -2248,6 +2443,7 @@
   "airport_local": {
    "code": "GRJ",
    "name": "George Airport",
+   "city": "George",
    "type": "large",
    "lat": -34.0056,
    "lon": 22.3789
@@ -2264,6 +2460,7 @@
   "airport_main": {
    "code": "MVD",
    "name": "Carrasco General Cesáreo L. Berisso International Airport",
+   "city": "Ciudad de la Costa",
    "type": "large",
    "lat": -34.8356,
    "lon": -56.0265
@@ -2271,6 +2468,7 @@
   "airport_local": {
    "code": "PDP",
    "name": "Capitan Corbeta CA Curbelo International Airport",
+   "city": "Punta del Este",
    "type": "medium",
    "lat": -34.8551,
    "lon": -55.0943
@@ -2287,6 +2485,7 @@
   "airport_main": {
    "code": "SFB",
    "name": "Orlando Sanford International Airport",
+   "city": "Orlando",
    "type": "large",
    "lat": 28.7743,
    "lon": -81.2346
@@ -2294,6 +2493,7 @@
   "airport_local": {
    "code": "DAB",
    "name": "Daytona Beach International Airport",
+   "city": "Daytona Beach",
    "type": "medium",
    "lat": 29.1825,
    "lon": -81.0595
@@ -2310,6 +2510,7 @@
   "airport_main": {
    "code": "OGG",
    "name": "Kahului International Airport",
+   "city": "Kahului",
    "type": "large",
    "lat": 20.8963,
    "lon": -156.4318
@@ -2317,6 +2518,7 @@
   "airport_local": {
    "code": "OGG",
    "name": "Kahului International Airport",
+   "city": "Kahului",
    "type": "large",
    "lat": 20.8963,
    "lon": -156.4318
@@ -2333,6 +2535,7 @@
   "airport_main": {
    "code": "OST",
    "name": "Ostend-Bruges International Airport",
+   "city": "Oostende",
    "type": "large",
    "lat": 51.1998,
    "lon": 2.8747
@@ -2340,6 +2543,7 @@
   "airport_local": {
    "code": "OST",
    "name": "Ostend-Bruges International Airport",
+   "city": "Oostende",
    "type": "large",
    "lat": 51.1998,
    "lon": 2.8747
@@ -2356,6 +2560,7 @@
   "airport_main": {
    "code": "LOP",
    "name": "Lombok International Airport",
+   "city": "Mataram (Pujut, Lombok Tengah)",
    "type": "large",
    "lat": -8.76,
    "lon": 116.2782
@@ -2363,6 +2568,7 @@
   "airport_local": {
    "code": "LOP",
    "name": "Lombok International Airport",
+   "city": "Mataram (Pujut, Lombok Tengah)",
    "type": "large",
    "lat": -8.76,
    "lon": 116.2782
@@ -2379,6 +2585,7 @@
   "airport_main": {
    "code": "ORK",
    "name": "Cork International Airport",
+   "city": "Cork",
    "type": "large",
    "lat": 51.8413,
    "lon": -8.4911
@@ -2386,6 +2593,7 @@
   "airport_local": {
    "code": "ORK",
    "name": "Cork International Airport",
+   "city": "Cork",
    "type": "large",
    "lat": 51.8413,
    "lon": -8.4911
@@ -2402,6 +2610,7 @@
   "airport_main": {
    "code": "PSA",
    "name": "Pisa International Airport",
+   "city": "Pisa (PI)",
    "type": "large",
    "lat": 43.6839,
    "lon": 10.3927
@@ -2409,6 +2618,7 @@
   "airport_local": {
    "code": "PSA",
    "name": "Pisa International Airport",
+   "city": "Pisa (PI)",
    "type": "large",
    "lat": 43.6839,
    "lon": 10.3927
@@ -2425,6 +2635,7 @@
   "airport_main": {
    "code": "MLE",
    "name": "Velana International Airport",
+   "city": "Malé",
    "type": "large",
    "lat": 4.1918,
    "lon": 73.5291
@@ -2432,6 +2643,7 @@
   "airport_local": {
    "code": "MLE",
    "name": "Velana International Airport",
+   "city": "Malé",
    "type": "large",
    "lat": 4.1918,
    "lon": 73.5291
@@ -2448,6 +2660,7 @@
   "airport_main": {
    "code": "AKL",
    "name": "Auckland International Airport",
+   "city": "Auckland",
    "type": "large",
    "lat": -37.012,
    "lon": 174.7863
@@ -2455,6 +2668,7 @@
   "airport_local": {
    "code": "TRG",
    "name": "Tauranga Airport",
+   "city": "Tauranga",
    "type": "medium",
    "lat": -37.6719,
    "lon": 176.196
@@ -2471,6 +2685,7 @@
   "airport_main": {
    "code": "SJU",
    "name": "Luis Munoz Marin International Airport",
+   "city": "San Juan",
    "type": "large",
    "lat": 18.4394,
    "lon": -66.0018
@@ -2478,6 +2693,7 @@
   "airport_local": {
    "code": "BQN",
    "name": "Rafael Hernández International Airport",
+   "city": "Aguadilla",
    "type": "medium",
    "lat": 18.4949,
    "lon": -67.1294
@@ -2494,6 +2710,7 @@
   "airport_main": {
    "code": "BRS",
    "name": "Bristol Airport",
+   "city": "Bristol",
    "type": "large",
    "lat": 51.3823,
    "lon": -2.7165
@@ -2501,6 +2718,7 @@
   "airport_local": {
    "code": "BOH",
    "name": "Bournemouth Airport",
+   "city": "Bournemouth",
    "type": "medium",
    "lat": 50.7805,
    "lon": -1.8396
@@ -2517,6 +2735,7 @@
   "airport_main": {
    "code": "NCL",
    "name": "Newcastle International Airport",
+   "city": "Newcastle upon Tyne, Tyne and Wear",
    "type": "large",
    "lat": 55.038,
    "lon": -1.6896
@@ -2524,6 +2743,7 @@
   "airport_local": {
    "code": "MME",
    "name": "Teesside International Airport",
+   "city": "Darlington, Durham",
    "type": "medium",
    "lat": 54.5092,
    "lon": -1.4294
@@ -2540,6 +2760,7 @@
   "airport_main": {
    "code": "KOA",
    "name": "Ellison Onizuka Kona International Airport at Keāhole",
+   "city": "Kailua-Kona",
    "type": "large",
    "lat": 19.7388,
    "lon": -156.0456
@@ -2547,6 +2768,7 @@
   "airport_local": {
    "code": "ITO",
    "name": "Hilo International Airport",
+   "city": "Hilo",
    "type": "medium",
    "lat": 19.7214,
    "lon": -155.0454
@@ -2563,6 +2785,7 @@
   "airport_main": {
    "code": "PDX",
    "name": "Portland International Airport",
+   "city": "Portland",
    "type": "large",
    "lat": 45.5887,
    "lon": -122.598
@@ -2570,6 +2793,7 @@
   "airport_local": {
    "code": "PDX",
    "name": "Portland International Airport",
+   "city": "Portland",
    "type": "large",
    "lat": 45.5887,
    "lon": -122.598
@@ -2586,6 +2810,7 @@
   "airport_main": {
    "code": "ADL",
    "name": "Adelaide International Airport",
+   "city": "Adelaide",
    "type": "large",
    "lat": -34.9475,
    "lon": 138.5334
@@ -2593,6 +2818,7 @@
   "airport_local": {
    "code": "ADL",
    "name": "Adelaide International Airport",
+   "city": "Adelaide",
    "type": "large",
    "lat": -34.9475,
    "lon": 138.5334
@@ -2609,6 +2835,7 @@
   "airport_main": {
    "code": "AVV",
    "name": "Melbourne Avalon International Airport",
+   "city": "Geelong/Melbourne",
    "type": "large",
    "lat": -38.0403,
    "lon": 144.4672
@@ -2616,6 +2843,7 @@
   "airport_local": {
    "code": "PTJ",
    "name": "Portland Airport",
+   "city": "",
    "type": "medium",
    "lat": -38.3181,
    "lon": 141.471
@@ -2632,6 +2860,7 @@
   "airport_main": {
    "code": "MGB",
    "name": "Mount Gambier Airport",
+   "city": "Mount Gambier",
    "type": "medium",
    "lat": -37.7444,
    "lon": 140.7806
@@ -2639,6 +2868,7 @@
   "airport_local": {
    "code": "MGB",
    "name": "Mount Gambier Airport",
+   "city": "Mount Gambier",
    "type": "medium",
    "lat": -37.7444,
    "lon": 140.7806
@@ -2655,6 +2885,7 @@
   "airport_main": {
    "code": "VIX",
    "name": "Eurico de Aguiar Salles International Airport",
+   "city": "Vitória",
    "type": "large",
    "lat": -20.258,
    "lon": -40.285
@@ -2662,6 +2893,7 @@
   "airport_local": {
    "code": "VIX",
    "name": "Eurico de Aguiar Salles International Airport",
+   "city": "Vitória",
    "type": "large",
    "lat": -20.258,
    "lon": -40.285
@@ -2678,6 +2910,7 @@
   "airport_main": {
    "code": "MRS",
    "name": "Marseille Provence Airport",
+   "city": "Marignane, Bouches-du-Rhône",
    "type": "large",
    "lat": 43.4381,
    "lon": 5.2125
@@ -2685,6 +2918,7 @@
   "airport_local": {
    "code": "MRS",
    "name": "Marseille Provence Airport",
+   "city": "Marignane, Bouches-du-Rhône",
    "type": "large",
    "lat": 43.4381,
    "lon": 5.2125
@@ -2701,6 +2935,7 @@
   "airport_main": {
    "code": "GOA",
    "name": "Genoa Cristoforo Colombo Airport",
+   "city": "Genova (GE)",
    "type": "large",
    "lat": 44.412,
    "lon": 8.8407
@@ -2708,6 +2943,7 @@
   "airport_local": {
    "code": "GOA",
    "name": "Genoa Cristoforo Colombo Airport",
+   "city": "Genova (GE)",
    "type": "large",
    "lat": 44.412,
    "lon": 8.8407
@@ -2724,6 +2960,7 @@
   "airport_main": {
    "code": "CAG",
    "name": "Cagliari Elmas Airport",
+   "city": "Cagliari",
    "type": "large",
    "lat": 39.2515,
    "lon": 9.0543
@@ -2731,6 +2968,7 @@
   "airport_local": {
    "code": "CAG",
    "name": "Cagliari Elmas Airport",
+   "city": "Cagliari",
    "type": "large",
    "lat": 39.2515,
    "lon": 9.0543
@@ -2747,6 +2985,7 @@
   "airport_main": {
    "code": "HND",
    "name": "Tokyo Haneda International Airport",
+   "city": "Tokyo",
    "type": "large",
    "lat": 35.5497,
    "lon": 139.787
@@ -2754,6 +2993,7 @@
   "airport_local": {
    "code": "HND",
    "name": "Tokyo Haneda International Airport",
+   "city": "Tokyo",
    "type": "large",
    "lat": 35.5497,
    "lon": 139.787
@@ -2770,6 +3010,7 @@
   "airport_main": {
    "code": "KOJ",
    "name": "Kagoshima Airport",
+   "city": "Kagoshima",
    "type": "large",
    "lat": 31.8034,
    "lon": 130.719
@@ -2777,6 +3018,7 @@
   "airport_local": {
    "code": "TNE",
    "name": "New Tanegashima Airport",
+   "city": "Tanegashima",
    "type": "medium",
    "lat": 30.6051,
    "lon": 130.991
@@ -2793,6 +3035,7 @@
   "airport_main": {
    "code": "FNC",
    "name": "Cristiano Ronaldo International Airport",
+   "city": "Funchal",
    "type": "large",
    "lat": 32.6978,
    "lon": -16.7746
@@ -2800,6 +3043,7 @@
   "airport_local": {
    "code": "FNC",
    "name": "Cristiano Ronaldo International Airport",
+   "city": "Funchal",
    "type": "large",
    "lat": 32.6978,
    "lon": -16.7746
@@ -2816,6 +3060,7 @@
   "airport_main": {
    "code": "ZSE",
    "name": "Saint-Pierre Pierrefonds Airport",
+   "city": "Saint-Pierre",
    "type": "large",
    "lat": -21.3194,
    "lon": 55.4225
@@ -2823,6 +3068,7 @@
   "airport_local": {
    "code": "ZSE",
    "name": "Saint-Pierre Pierrefonds Airport",
+   "city": "Saint-Pierre",
    "type": "large",
    "lat": -21.3194,
    "lon": 55.4225
@@ -2839,6 +3085,7 @@
   "airport_main": {
    "code": "DSS",
    "name": "Blaise Diagne International Airport",
+   "city": "Dakar",
    "type": "large",
    "lat": 14.6709,
    "lon": -17.0728
@@ -2846,6 +3093,7 @@
   "airport_local": {
    "code": "DSS",
    "name": "Blaise Diagne International Airport",
+   "city": "Dakar",
    "type": "large",
    "lat": 14.6709,
    "lon": -17.0728
@@ -2862,6 +3110,7 @@
   "airport_main": {
    "code": "TNG",
    "name": "Tangier Ibn Battuta Airport",
+   "city": "Tangier",
    "type": "large",
    "lat": 35.7317,
    "lon": -5.9215
@@ -2869,6 +3118,7 @@
   "airport_local": {
    "code": "XRY",
    "name": "Jerez Airport",
+   "city": "Jerez de la Frontera",
    "type": "medium",
    "lat": 36.7446,
    "lon": -6.0601
@@ -2885,6 +3135,7 @@
   "airport_main": {
    "code": "OVD",
    "name": "Asturias Airport",
+   "city": "Ranón",
    "type": "large",
    "lat": 43.5636,
    "lon": -6.0346
@@ -2892,6 +3143,7 @@
   "airport_local": {
    "code": "OVD",
    "name": "Asturias Airport",
+   "city": "Ranón",
    "type": "large",
    "lat": 43.5636,
    "lon": -6.0346
@@ -2908,6 +3160,7 @@
   "airport_main": {
    "code": "PNS",
    "name": "Pensacola International Airport",
+   "city": "Pensacola",
    "type": "large",
    "lat": 30.4727,
    "lon": -87.1866
@@ -2915,6 +3168,7 @@
   "airport_local": {
    "code": "PNS",
    "name": "Pensacola International Airport",
+   "city": "Pensacola",
    "type": "large",
    "lat": 30.4727,
    "lon": -87.1866
@@ -2931,6 +3185,7 @@
   "airport_main": {
    "code": "OGG",
    "name": "Kahului International Airport",
+   "city": "Kahului",
    "type": "large",
    "lat": 20.8963,
    "lon": -156.4318
@@ -2938,6 +3193,7 @@
   "airport_local": {
    "code": "OGG",
    "name": "Kahului International Airport",
+   "city": "Kahului",
    "type": "large",
    "lat": 20.8963,
    "lon": -156.4318
@@ -2954,6 +3210,7 @@
   "airport_main": {
    "code": "YYJ",
    "name": "Victoria International Airport",
+   "city": "Victoria",
    "type": "large",
    "lat": 48.6472,
    "lon": -123.4278
@@ -2961,6 +3218,7 @@
   "airport_local": {
    "code": "YYJ",
    "name": "Victoria International Airport",
+   "city": "Victoria",
    "type": "large",
    "lat": 48.6472,
    "lon": -123.4278
@@ -2977,6 +3235,7 @@
   "airport_main": {
    "code": "SSA",
    "name": "Deputado Luiz Eduardo Magalhães International Airport",
+   "city": "Salvador",
    "type": "large",
    "lat": -12.9086,
    "lon": -38.3225
@@ -2984,6 +3243,7 @@
   "airport_local": {
    "code": "IOS",
    "name": "Bahia - Jorge Amado Airport",
+   "city": "Ilhéus",
    "type": "medium",
    "lat": -14.8159,
    "lon": -39.0335
@@ -3000,6 +3260,7 @@
   "airport_main": {
    "code": "FOR",
    "name": "Pinto Martins International Airport",
+   "city": "Fortaleza",
    "type": "large",
    "lat": -3.7758,
    "lon": -38.5322
@@ -3007,6 +3268,7 @@
   "airport_local": {
    "code": "FOR",
    "name": "Pinto Martins International Airport",
+   "city": "Fortaleza",
    "type": "large",
    "lat": -3.7758,
    "lon": -38.5322
@@ -3023,6 +3285,7 @@
   "airport_main": {
    "code": "TFN",
    "name": "Tenerife Norte-Ciudad de La Laguna Airport",
+   "city": "Tenerife",
    "type": "large",
    "lat": 28.4828,
    "lon": -16.3417
@@ -3030,6 +3293,7 @@
   "airport_local": {
    "code": "TFN",
    "name": "Tenerife Norte-Ciudad de La Laguna Airport",
+   "city": "Tenerife",
    "type": "large",
    "lat": 28.4828,
    "lon": -16.3417
@@ -3046,6 +3310,7 @@
   "airport_main": {
    "code": "ACE",
    "name": "César Manrique-Lanzarote Airport",
+   "city": "San Bartolomé",
    "type": "large",
    "lat": 28.9455,
    "lon": -13.6052
@@ -3053,6 +3318,7 @@
   "airport_local": {
    "code": "ACE",
    "name": "César Manrique-Lanzarote Airport",
+   "city": "San Bartolomé",
    "type": "large",
    "lat": 28.9455,
    "lon": -13.6052
@@ -3069,6 +3335,7 @@
   "airport_main": {
    "code": "TFS",
    "name": "Tenerife Sur Airport",
+   "city": "Tenerife",
    "type": "large",
    "lat": 28.0445,
    "lon": -16.5725
@@ -3076,6 +3343,7 @@
   "airport_local": {
    "code": "TFS",
    "name": "Tenerife Sur Airport",
+   "city": "Tenerife",
    "type": "large",
    "lat": 28.0445,
    "lon": -16.5725
@@ -3092,6 +3360,7 @@
   "airport_main": {
    "code": "PFO",
    "name": "Paphos International Airport",
+   "city": "Paphos",
    "type": "large",
    "lat": 34.718,
    "lon": 32.4857
@@ -3099,6 +3368,7 @@
   "airport_local": {
    "code": "PFO",
    "name": "Paphos International Airport",
+   "city": "Paphos",
    "type": "large",
    "lat": 34.718,
    "lon": 32.4857
@@ -3115,6 +3385,7 @@
   "airport_main": {
    "code": "SAL",
    "name": "El Salvador International Airport Saint Óscar Arnulfo Romero y Galdámez",
+   "city": "San Salvador (San Luis Talpa)",
    "type": "large",
    "lat": 13.4445,
    "lon": -89.0558
@@ -3122,6 +3393,7 @@
   "airport_local": {
    "code": "ILS",
    "name": "Ilopango International Airport",
+   "city": "San Salvador",
    "type": "medium",
    "lat": 13.6995,
    "lon": -89.1199
@@ -3138,6 +3410,7 @@
   "airport_main": {
    "code": "CAG",
    "name": "Cagliari Elmas Airport",
+   "city": "Cagliari",
    "type": "large",
    "lat": 39.2515,
    "lon": 9.0543
@@ -3145,6 +3418,7 @@
   "airport_local": {
    "code": "CAG",
    "name": "Cagliari Elmas Airport",
+   "city": "Cagliari",
    "type": "large",
    "lat": 39.2515,
    "lon": 9.0543
@@ -3161,6 +3435,7 @@
   "airport_main": {
    "code": "ALC",
    "name": "Alicante-Elche Miguel Hernández Airport",
+   "city": "Alicante",
    "type": "large",
    "lat": 38.2822,
    "lon": -0.5582
@@ -3168,6 +3443,7 @@
   "airport_local": {
    "code": "ALC",
    "name": "Alicante-Elche Miguel Hernández Airport",
+   "city": "Alicante",
    "type": "large",
    "lat": 38.2822,
    "lon": -0.5582
@@ -3184,6 +3460,7 @@
   "airport_main": {
    "code": "SXM",
    "name": "Princess Juliana International Airport",
+   "city": "Sint Maarten",
    "type": "large",
    "lat": 18.041,
    "lon": -63.1089
@@ -3191,6 +3468,7 @@
   "airport_local": {
    "code": "SBH",
    "name": "St. Jean Airport",
+   "city": "Gustavia",
    "type": "medium",
    "lat": 17.9044,
    "lon": -62.8433
@@ -3207,6 +3485,7 @@
   "airport_main": {
    "code": "LGW",
    "name": "London Gatwick Airport",
+   "city": "London",
    "type": "large",
    "lat": 51.1487,
    "lon": -0.1857
@@ -3214,6 +3493,7 @@
   "airport_local": {
    "code": "LGW",
    "name": "London Gatwick Airport",
+   "city": "London",
    "type": "large",
    "lat": 51.1487,
    "lon": -0.1857
@@ -3230,6 +3510,7 @@
   "airport_main": {
    "code": "MVD",
    "name": "Carrasco General Cesáreo L. Berisso International Airport",
+   "city": "Ciudad de la Costa",
    "type": "large",
    "lat": -34.8356,
    "lon": -56.0265
@@ -3237,6 +3518,7 @@
   "airport_local": {
    "code": "PDP",
    "name": "Capitan Corbeta CA Curbelo International Airport",
+   "city": "Punta del Este",
    "type": "medium",
    "lat": -34.8551,
    "lon": -55.0943
@@ -3253,6 +3535,7 @@
   "airport_main": {
    "code": "ORF",
    "name": "Norfolk International Airport",
+   "city": "Norfolk",
    "type": "large",
    "lat": 36.8953,
    "lon": -76.201
@@ -3260,6 +3543,7 @@
   "airport_local": {
    "code": "ORF",
    "name": "Norfolk International Airport",
+   "city": "Norfolk",
    "type": "large",
    "lat": 36.8953,
    "lon": -76.201
@@ -3276,6 +3560,7 @@
   "airport_main": {
    "code": "KOA",
    "name": "Ellison Onizuka Kona International Airport at Keāhole",
+   "city": "Kailua-Kona",
    "type": "large",
    "lat": 19.7388,
    "lon": -156.0456
@@ -3283,6 +3568,7 @@
   "airport_local": {
    "code": "KOA",
    "name": "Ellison Onizuka Kona International Airport at Keāhole",
+   "city": "Kailua-Kona",
    "type": "large",
    "lat": 19.7388,
    "lon": -156.0456
@@ -3299,6 +3585,7 @@
   "airport_main": {
    "code": "GET",
    "name": "Geraldton Airport",
+   "city": "Moonyoonooka",
    "type": "medium",
    "lat": -28.7961,
    "lon": 114.707
@@ -3306,6 +3593,7 @@
   "airport_local": {
    "code": "GET",
    "name": "Geraldton Airport",
+   "city": "Moonyoonooka",
    "type": "medium",
    "lat": -28.7961,
    "lon": 114.707
@@ -3322,6 +3610,7 @@
   "airport_main": {
    "code": "ALH",
    "name": "Albany Airport",
+   "city": "Albany",
    "type": "medium",
    "lat": -34.9433,
    "lon": 117.8089
@@ -3329,6 +3618,7 @@
   "airport_local": {
    "code": "ALH",
    "name": "Albany Airport",
+   "city": "Albany",
    "type": "medium",
    "lat": -34.9433,
    "lon": 117.8089
@@ -3345,6 +3635,7 @@
   "airport_main": {
    "code": "BGI",
    "name": "Grantley Adams International Airport",
+   "city": "Bridgetown",
    "type": "large",
    "lat": 13.0747,
    "lon": -59.491
@@ -3352,6 +3643,7 @@
   "airport_local": {
    "code": "BGI",
    "name": "Grantley Adams International Airport",
+   "city": "Bridgetown",
    "type": "large",
    "lat": 13.0747,
    "lon": -59.491
@@ -3368,6 +3660,7 @@
   "airport_main": {
    "code": "EIS",
    "name": "Terrance B. Lettsome International Airport",
+   "city": "Beef Island",
    "type": "large",
    "lat": 18.4455,
    "lon": -64.5417
@@ -3375,6 +3668,7 @@
   "airport_local": {
    "code": "EIS",
    "name": "Terrance B. Lettsome International Airport",
+   "city": "Beef Island",
    "type": "large",
    "lat": 18.4455,
    "lon": -64.5417
@@ -3391,6 +3685,7 @@
   "airport_main": {
    "code": "LPA",
    "name": "Gran Canaria Airport",
+   "city": "Gran Canaria Island",
    "type": "large",
    "lat": 27.9319,
    "lon": -15.3866
@@ -3398,6 +3693,7 @@
   "airport_local": {
    "code": "LPA",
    "name": "Gran Canaria Airport",
+   "city": "Gran Canaria Island",
    "type": "large",
    "lat": 27.9319,
    "lon": -15.3866
@@ -3414,6 +3710,7 @@
   "airport_main": {
    "code": "ESM",
    "name": "Carlos Concha Torres International Airport",
+   "city": "Tachina",
    "type": "large",
    "lat": 0.9785,
    "lon": -79.6266
@@ -3421,6 +3718,7 @@
   "airport_local": {
    "code": "ESM",
    "name": "Carlos Concha Torres International Airport",
+   "city": "Tachina",
    "type": "large",
    "lat": 0.9785,
    "lon": -79.6266
@@ -3437,6 +3735,7 @@
   "airport_main": {
    "code": "CFU",
    "name": "Corfu Ioannis Kapodistrias International Airport",
+   "city": "Kerkyra (Corfu)",
    "type": "large",
    "lat": 39.6014,
    "lon": 19.9122
@@ -3444,6 +3743,7 @@
   "airport_local": {
    "code": "PVK",
    "name": "Aktion National Airport",
+   "city": "Preveza",
    "type": "medium",
    "lat": 38.9255,
    "lon": 20.7653

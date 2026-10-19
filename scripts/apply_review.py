@@ -52,7 +52,8 @@ def num(s):
 
 
 def airport_info(a):
-    return {"code": a["code"], "name": a["name"], "type": a["type"], "lat": round(a["lat"], 4), "lon": round(a["lon"], 4)}
+    return {"code": a["code"], "name": a["name"], "city": a.get("city") or "", "type": a["type"],
+            "lat": round(a["lat"], 4), "lon": round(a["lon"], 4)}
 
 
 def pick_airports(lat, lon, scheduled):

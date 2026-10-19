@@ -1,46 +1,52 @@
-/* Calendario: elenco per mese e matrice anno. Pensato anche per 400 px: niente scorrimento orizzontale della pagina */
-.calendar{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.cal-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
-.cal-head h2{font-family:var(--f-display);font-size:22px;margin:0}
-.cal-head .note{margin:0}
-.cal-months{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px}
-.cal-months .btn{padding:6px 0;font-size:12px;min-width:0}
-@media (max-width:560px){.cal-months{grid-template-columns:repeat(6,minmax(0,1fr))}}
-.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.cal-ctl{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between}
-.seg{display:flex;flex-wrap:wrap;gap:4px}
-.seg .btn{font-size:12px;padding:5px 9px}
-.cal-filters{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:flex-end}
-.cal-filters label{display:flex;flex-direction:column;gap:3px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-.cal-filters select{width:auto;min-width:120px;font-size:13px;padding:5px 6px}
-.cal-filters .only-fav{flex-direction:row;text-transform:none;letter-spacing:0;font-size:12px;padding-bottom:6px}
-.cal-group{display:flex;flex-direction:column;gap:2px;margin-top:6px}
-.cal-group h3{font-family:var(--f-display);font-size:16px;margin:4px 0 0}
-.cal-sum{font-size:12px;color:var(--muted);margin:0 0 4px}
-.cal-row{display:grid;grid-template-columns:minmax(0,1fr) auto 3.2em 6.6em 4.2em;align-items:center;gap:8px;width:100%;text-align:left;
-  font:13px var(--f-body);color:var(--fg);background:none;border:none;border-top:1px solid var(--line);padding:6px 2px;cursor:pointer}
+/* Calendario: una colonna di lettura, frasi al posto di sigle, colori della scala solo dove servono */
+.calendar{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 20px 24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.calendar > *{max-width:760px}
+.calendar h2{font-family:var(--f-display);font-weight:700;font-size:clamp(22px,3vw,28px);margin:0;line-height:1.15}
+#cal-month-name{color:var(--accent)}
+.cal-months{display:flex;flex-wrap:wrap;gap:2px 4px}
+.cal-months button{font:500 14px var(--f-body);color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;padding:4px 6px;cursor:pointer}
+.cal-months button:hover{color:var(--fg)}
+.cal-months button[aria-pressed="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.cal-info{margin:0;color:var(--muted);font-size:14px}
+.cal-ctl{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:var(--muted)}
+.cal-opt button{font:inherit;color:var(--fg);background:none;border:none;padding:2px 3px;margin-left:2px;cursor:pointer;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px}
+.cal-opt button:hover{text-decoration-color:var(--line)}
+.cal-opt button[aria-pressed="true"]{font-weight:600;text-decoration-color:var(--accent)}
+.cal-filters summary{cursor:pointer;font-size:14px;color:var(--muted);width:max-content}
+.cal-filter-body{display:flex;flex-wrap:wrap;gap:10px 18px;padding:10px 0 2px}
+.cal-filter-body label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.cal-filter-body select{width:auto;min-width:130px;font-size:14px;padding:5px 6px}
+.cal-filter-body .only-fav{flex-direction:row;align-self:end;padding-bottom:6px}
+
+.cal-group{margin-top:14px}
+.cal-group h3{font-family:var(--f-display);font-weight:700;font-size:18px;margin:0}
+.cal-group h3 small{font:400 13px var(--f-body);color:var(--muted);margin-left:6px}
+.cal-note{font-size:13px;color:var(--muted);margin:2px 0 6px}
+.cal-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 16px;width:100%;text-align:left;font:14px var(--f-body);color:var(--fg);
+  background:none;border:none;border-left:3px solid var(--q);padding:7px 0 7px 12px;margin-top:6px;cursor:pointer;border-radius:0}
 .cal-row:hover{background:var(--bg)}
-.cal-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
-.cal-name small{display:block;font-weight:400;font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis}
-.cal-row .chip{font-size:11px;padding:3px 7px}
-.cal-num{font-family:var(--f-mono);font-size:12px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
-.cal-warn{grid-column:1/-1;font-size:11px;color:#b5562a;margin-top:-2px}
-@media (max-width:560px){
-  .cal-row{grid-template-columns:minmax(0,1fr) auto 3em;row-gap:2px}
-  .cal-row .cal-num:nth-of-type(4),.cal-row .cal-num:nth-of-type(5){grid-row:2;text-align:left}
-  .cal-row .cal-num:nth-of-type(4){grid-column:1}
-  .cal-row .cal-num:nth-of-type(5){grid-column:2/-1;text-align:right}
-}
-/* matrice anno: scorre dentro il riquadro, intestazione e colonna zona fisse */
-.cal-year{max-height:70vh;overflow:auto;border:1px solid var(--line);border-radius:8px}
-.cal-year table{border-collapse:separate;border-spacing:0;font-size:12px;width:100%}
-.cal-year th,.cal-year td{padding:0;height:22px}
-.cal-year thead th{position:sticky;top:0;z-index:2;background:var(--panel);font:500 11px var(--f-mono);color:var(--muted);padding:4px 2px;border-bottom:1px solid var(--line)}
-.cal-year thead th.cur{color:var(--fg)}
-.cal-year .cal-zone{position:sticky;left:0;z-index:1;background:var(--panel);text-align:left;font-weight:500;padding:0 8px;max-width:140px;min-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cal-main{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cal-where{color:var(--muted);font-size:13px}
+.cal-good{font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cal-detail{grid-column:1/-1;font-size:13px;color:var(--muted)}
+.cal-detail .q{color:var(--fg)}
+.cal-detail .q::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--q);margin-right:5px;vertical-align:1px}
+.cal-detail em{font-style:normal;color:#c0602f}
+@media (max-width:520px){.cal-row{grid-template-columns:minmax(0,1fr)}.cal-good{font-weight:500}}
+
+/* tutto l'anno: scorre nel suo riquadro, mesi e nomi fissi */
+.cal-year{max-height:70vh;overflow:auto;border-radius:8px;border:1px solid var(--line)}
+.cal-year table{border-collapse:separate;border-spacing:2px;font-size:13px}
+.cal-year th,.cal-year td{height:22px;padding:0}
+.cal-year thead th{position:sticky;top:0;z-index:2;background:var(--panel);font:500 12px var(--f-body);color:var(--muted);padding:6px 0}
+.cal-year thead th.cur{color:var(--fg);font-weight:700}
+.cal-year .cal-zone{position:sticky;left:0;z-index:1;background:var(--panel);text-align:left;font-weight:400;padding:0 10px 0 6px;max-width:160px;min-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .cal-year thead .cal-zone{z-index:3}
-.cal-year td{min-width:20px;border:1px solid var(--panel);text-align:center;color:#10181b;font-weight:700;cursor:pointer}
-.cal-year td.cur{outline:2px solid var(--fg);outline-offset:-2px}
-.cal-year tr[data-id]:hover th{color:var(--accent)}
-.cal-grow th{position:sticky;left:0;background:var(--bg);text-align:left;font:600 12px var(--f-body);padding:6px 8px;border-top:1px solid var(--line)}
-@media (max-width:560px){.cal-year .cal-zone{min-width:84px;max-width:96px}.cal-year td{min-width:16px}}
+.cal-year td{min-width:24px;border-radius:3px;text-align:center;color:#10181b;font-weight:700;font-size:11px;cursor:pointer}
+.cal-year td.cur{box-shadow:inset 0 0 0 2px var(--fg)}
+.cal-year tr[data-id]:hover .cal-zone{color:var(--accent)}
+.cal-grow th{position:sticky;left:0;background:var(--panel);text-align:left;font:700 14px var(--f-display);padding:12px 6px 2px}
+.cal-grow th small{font:400 12px var(--f-body);color:var(--muted);margin-left:6px}
+.cal-legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted);margin:4px 0 0}
+.cal-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+@media (max-width:520px){.cal-year .cal-zone{min-width:88px;max-width:100px}.cal-year td{min-width:17px}}

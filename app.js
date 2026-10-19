@@ -52,6 +52,7 @@ proj.rotate([-state.zone.lon,-state.zone.lat*.6]);
 function css(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
 function resize(){
   const b=$("gbox").getBoundingClientRect();DPR=Math.min(2,window.devicePixelRatio||1);
+  if(b.width<40||b.height<40)return;   // riquadro non ancora misurato (ridimensionamenti): niente da disegnare
   W=b.width;H=b.height;cv.width=W*DPR;cv.height=H*DPR;
   base=Math.min(W,H)/2-14;proj.translate([W/2,H/2]).scale(base*zoom);draw();
 }

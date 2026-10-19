@@ -1,5 +1,23 @@
 # Diario
 
+## 2026-10-19 — Revisione dello stile
+
+### Fatto
+- Calendario riscritto per leggersi come un testo:
+  - titolo "Dove andare a luglio", mesi come linguette;
+  - "Raggruppa per aeroporto · paese · ore di volo" e "Vedi il mese · tutto l'anno" come scelte testuali; filtri chiusi in "Filtri";
+  - gruppi con il nome della città ("Bali · DPS · 23½ h di volo") e una frase sola ("2 zone buone su 3. La migliore è …");
+  - righe con barra colorata, "6 giorni buoni su 10", qualità, onde e volo in una riga sotto;
+  - colonna di lettura larga al massimo 760 px; nomi d'aeroporto più noti in `data/calendar.json` (`airportNames`: Bali, Lisbona, Città del Capo…).
+- Pagina:
+  - sottotitolo al posto del badge tratteggiato; etichette normali al posto del maiuscolo spaziato; numeri nel font del testo invece che monospace;
+  - "Giorni buoni" invece di "Giorni Good+"; note e piè di pagina più corti;
+  - i 150 bottoni delle zone chiusi in "Tutte le zone".
+- `zones.json`: l'aeroporto principale ha anche la città (`city`).
+- Corretto un errore del globo: con il riquadro misurato quasi a zero durante un ridimensionamento il raggio diventava negativo e il disegno andava in errore.
+- Dati: `climate.json` ricostruito con le zone arrivate (27). Un processo staccato aspetta la fine del download Copernicus e lo ricostruisce da solo (nessun commit automatico).
+
+
 ## 2026-10-19 — Calendario
 
 ### Fatto

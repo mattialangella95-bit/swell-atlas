@@ -7,12 +7,19 @@ const load = p => fetch(p).then(r => { if(!r.ok) throw new Error(p + ": HTTP " +
 const [RULE, CAL] = await Promise.all([load("data/quality-rule.json"), load("data/calendar.json")]);
 
 const {SCALE, MESI, CLIMATE} = app;
+const MESI_LUNGHI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
 const GOOD = SCALE.findIndex(s => s.label === "Good");
 const MF = CLIMATE.monthFields, mi = k => MF.indexOf(k);
 const LEVELS = Object.keys(RULE.levels).filter(k => !k.startsWith("_"));
 const dec = x => x.toFixed(1).replace(".", ",");
-const fmtHours = h => { const t = Math.round(h * 2) / 2; return (Number.isInteger(t) ? t : dec(t)) + " h"; };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+// "5½ h", "24 h": a mezz'ora, scritto come lo direbbe una persona
+const hours = h => { const t = Math.round(h * 2) / 2; return (t < 1 ? "meno di 1" : Math.floor(t) + (t % 1 ? "½" : "")) + " h"; };
+// "4 giorni buoni su 10" invece di "38%"
+const goodDays = g => { const n = Math.round(g / 10); return n === 0 ? (g > 0 ? "quasi mai buono" : "mai buono") : n === 10 ? "buono quasi ogni giorno" : `${n} giorni buoni su 10`; };
+// città dell'aeroporto pulita: "Kuta, Badung" -> "Kuta", "Genova (GE)" -> "Genova"
+const city = a => CAL.airportNames[a.code] || (a.city || a.name).replace(/\s*\(.*?\)/g, "").split(/[,/]/)[0].trim();
 
 const ui = {month: new Date().getMonth(), group: "airport", view: "list", minQ: 0, maxH: Infinity, onlyFav: false, level: ""};
 
@@ -45,81 +52,90 @@ function bandOf(h){
 }
 function bandLabel(i){
   const b = CAL.flightBandsHours;
-  return i === 0 ? `Entro ${b[0]} h di volo` : i === b.length ? `Oltre ${b[b.length - 1]} h di volo` : `${b[i - 1]}-${b[i]} h di volo`;
+  return i === 0 ? `Fino a ${b[0]} ore di volo` : i === b.length ? `Più di ${b[b.length - 1]} ore di volo` : `Da ${b[i - 1]} a ${b[i]} ore di volo`;
 }
 
 function groups(list){
   const by = new Map(), m = ui.month;
   for(const e of list){
-    const key = ui.group === "airport" ? e.airport.code : ui.group === "country" ? e.z.region : bandOf(e.f.hrs);
+    const key = ui.group === "airport" ? e.airport.code : ui.group === "country" ? e.country : bandOf(e.f.hrs);
     if(!by.has(key)) by.set(key, []);
     by.get(key).push(e);
   }
   const out = [...by].map(([key, items]) => {
     items.sort((a, b) => b.months[m].good - a.months[m].good || b.months[m].q - a.months[m].q);
     const mean = items.reduce((s, e) => s + e.months[m].good, 0) / items.length;
-    const label = ui.group === "airport" ? `${key} · ${items[0].airport.name}` : ui.group === "country" ? key : bandLabel(key);
-    return {key, label, items, mean};
+    return {key, items, mean};
   });
-  // per distanza l'ordine è quello delle fasce, altrimenti per qualità media del gruppo nel mese
+  // per ore di volo l'ordine è quello delle fasce, altrimenti si parte dal gruppo che rende di più nel mese
   out.sort(ui.group === "distance" ? (a, b) => a.key - b.key : (a, b) => b.mean - a.mean);
   return out;
 }
 
-function summary(g){
-  const m = ui.month, good = g.items.filter(e => e.months[m].q >= GOOD).length, best = g.items[0];
-  const hrs = g.items.map(e => e.f.hrs), lo = Math.min(...hrs), hi = Math.max(...hrs);
-  const fly = Math.abs(hi - lo) < .5 ? fmtHours(lo) : `${fmtHours(lo).replace(" h", "")}-${fmtHours(hi)}`;
-  return `${good} ${good === 1 ? "zona" : "zone"} Good+ · migliore ${esc(best.z.name)} (${best.months[m].good}%) · volo ~${fly}`;
+function groupTitle(g){
+  const e = g.items[0];
+  if(ui.group === "airport") return `${esc(city(e.airport))} <small>${e.airport.code} · ${hours(e.f.hrs)} di volo</small>`;
+  if(ui.group === "country") return esc(g.key);
+  return bandLabel(g.key);
 }
 
-// ---------- vista elenco
+function groupNote(g){
+  const m = ui.month, best = g.items[0], good = g.items.filter(e => e.months[m].q >= GOOD).length, n = g.items.length;
+  if(n === 1) return "";
+  const head = good ? `${good} ${good === 1 ? "zona buona" : "zone buone"} su ${n}` : `${n} zone, nessuna buona questo mese`;
+  return `${head}. La migliore è ${esc(best.z.name)}.`;
+}
+
+// ---------- vista mese
 function row(e){
   const m = e.months[ui.month], s = SCALE[m.q];
-  return `<button class="cal-row" data-id="${e.z.id}">
-    <span class="cal-name">${esc(e.z.name)}<small>${esc(e.region || e.country)}</small></span>
-    <span class="chip" style="background:${s.color}">${s.label}</span>
-    <span class="cal-num" title="giorni Good o meglio">${m.good}%</span>
-    <span class="cal-num" title="altezza 25-75%, al largo">${dec(m.h25)}–${dec(m.h75)} m</span>
-    <span class="cal-num" title="ore di volo stimate da ${esc(app.state.dep.code)}">~${fmtHours(e.f.hrs)}</span>
-    ${tooBig(m) ? `<span class="cal-warn">onde impegnative per il tuo livello</span>` : ""}
+  const where = ui.group === "country" ? e.region : [e.region || e.country, ui.group === "airport" ? "" : city(e.airport)].filter(Boolean).join(" · ");
+  const detail = [`<span class="q" style="--q:${s.color}">${s.label}</span>`, `onde ${dec(m.h25)}–${dec(m.h75)} m`,
+    ui.group === "airport" ? "" : `${hours(e.f.hrs)} di volo`].filter(Boolean).join(" · ");
+  return `<button class="cal-row" data-id="${e.z.id}" style="--q:${s.color}">
+    <span class="cal-main"><b>${esc(e.z.name)}</b> <span class="cal-where">${esc(where)}</span></span>
+    <span class="cal-good">${goodDays(m.good)}</span>
+    <span class="cal-detail">${detail}${tooBig(m) ? ` · <em>onde impegnative per il tuo livello</em>` : ""}</span>
   </button>`;
 }
 function renderList(gs){
-  return gs.map(g => `<section class="cal-group">
-    <h3>${esc(g.label)}</h3><p class="cal-sum">${summary(g)}</p>
+  return gs.map(g => { const note = groupNote(g); return `<section class="cal-group">
+    <h3>${groupTitle(g)}</h3>${note ? `<p class="cal-note">${note}</p>` : ""}
     ${g.items.map(row).join("")}
-  </section>`).join("");
+  </section>`; }).join("");
 }
 
 // ---------- vista anno: zone per 12 mesi, righe raggruppate, intestazioni fisse
 function renderYear(gs){
-  const head = `<thead><tr><th class="cal-zone">Zona</th>${MESI.map((n, i) => `<th class="${i === ui.month ? "cur" : ""}">${n}</th>`).join("")}</tr></thead>`;
-  const body = gs.map(g => `<tr class="cal-grow"><th colspan="13">${esc(g.label)}</th></tr>` + g.items.map(e =>
+  const head = `<thead><tr><th class="cal-zone"></th>${MESI.map((n, i) => `<th class="${i === ui.month ? "cur" : ""}" title="${MESI_LUNGHI[i]}">${n[0]}</th>`).join("")}</tr></thead>`;
+  const body = gs.map(g => `<tr class="cal-grow"><th colspan="13">${groupTitle(g)}</th></tr>` + g.items.map(e =>
     `<tr data-id="${e.z.id}"><th class="cal-zone">${esc(e.z.name)}</th>${e.months.map((m, i) => m
-      ? `<td class="${i === ui.month ? "cur" : ""}" style="background:${SCALE[m.q].color}" title="${MESI[i]}: ${SCALE[m.q].label}, ${m.good}% giorni Good+${tooBig(m) ? ", onde impegnative per il tuo livello" : ""}">${tooBig(m) ? "!" : ""}</td>`
+      ? `<td class="${i === ui.month ? "cur" : ""}" style="background:${SCALE[m.q].color}" title="${esc(e.z.name)}, ${MESI_LUNGHI[i]}: ${SCALE[m.q].label}, ${goodDays(m.good)}${tooBig(m) ? ", onde impegnative per il tuo livello" : ""}">${tooBig(m) ? "!" : ""}</td>`
       : `<td></td>`).join("")}</tr>`).join("")).join("");
-  return `<div class="cal-year"><table>${head}<tbody>${body}</tbody></table></div>`;
+  return `<div class="cal-year"><table>${head}<tbody>${body}</tbody></table></div>
+    <p class="cal-legend">${SCALE.map(s => `<span><i style="background:${s.color}"></i>${s.label}</span>`).join("")}</p>`;
 }
 
 function render(){
   buildIndex();
   const list = filtered(), gs = groups(list);
+  $("cal-month-name").textContent = MESI_LUNGHI[ui.month];
   document.querySelectorAll("#cal-months button").forEach((b, i) => b.setAttribute("aria-pressed", i === ui.month));
   document.querySelectorAll("#cal-group button").forEach(b => b.setAttribute("aria-pressed", b.dataset.g === ui.group));
   document.querySelectorAll("#cal-view button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === ui.view));
   const missing = app.ZONES.length - index.length;
-  $("cal-info").textContent = `${MESI[ui.month]} da ${app.depText(app.state.dep)}: ${list.length} zone` +
-    (missing ? ` (altre ${missing} senza dati, ancora in arrivo)` : "");
+  $("cal-info").textContent = `Partendo da ${app.state.dep.label}. ` + (missing ? `Per ora ${index.length} zone con dati, le altre ${missing} stanno arrivando.` : `${list.length} zone.`);
+  const active = [ui.minQ > 0, ui.maxH < Infinity, ui.onlyFav, !!ui.level].filter(Boolean).length;
+  $("cal-filter-count").textContent = active ? `(${active})` : "";
   $("cal-body").innerHTML = list.length ? (ui.view === "list" ? renderList(gs) : renderYear(gs))
-    : `<p class="note">Nessuna zona con questi filtri.</p>`;
+    : `<p class="cal-note">Nessuna zona con questi filtri.</p>`;
 }
 
 // ---------- controlli
-$("cal-months").innerHTML = MESI.map((n, i) => `<button class="btn" data-m="${i}">${n}</button>`).join("");
-$("cal-minq").innerHTML = SCALE.map((s, i) => `<option value="${i}">${i ? s.label + " o meglio" : "Tutte"}</option>`).join("");
-$("cal-maxh").innerHTML = `<option value="">Qualsiasi</option>` + CAL.maxHoursOptions.map(h => `<option value="${h}">Entro ${h} h</option>`).join("");
-$("cal-level").innerHTML = `<option value="">Nessuno</option>` + LEVELS.map(l => `<option value="${l}">${l[0].toUpperCase() + l.slice(1)}</option>`).join("");
+$("cal-months").innerHTML = MESI.map((n, i) => `<button data-m="${i}" title="${MESI_LUNGHI[i]}">${n}</button>`).join("");
+$("cal-minq").innerHTML = SCALE.map((s, i) => `<option value="${i}">${i ? s.label : "qualsiasi"}</option>`).join("");
+$("cal-maxh").innerHTML = `<option value="">qualsiasi</option>` + CAL.maxHoursOptions.map(h => `<option value="${h}">${h} ore</option>`).join("");
+$("cal-level").innerHTML = `<option value="">non indicato</option>` + LEVELS.map(l => `<option value="${l}">${l}</option>`).join("");
 
 $("cal-months").onclick = e => { const b = e.target.closest("button"); if(b){ ui.month = +b.dataset.m; render(); } };
 $("cal-group").onclick = e => { const b = e.target.closest("button"); if(b){ ui.group = b.dataset.g; render(); } };
@@ -135,7 +151,7 @@ $("cal-body").onclick = e => {
   $("gbox").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
 };
 
-// con login: preferiti e livello dal profilo; senza login il livello si sceglie qui
+// con login: preferiti e livello dal profilo; senza login il livello si sceglie nei filtri
 app.hooks.user.push(u => {
   $("cal-fav-box").hidden = !u.loggedIn;
   if(!u.loggedIn){ ui.onlyFav = false; $("cal-fav").checked = false; }

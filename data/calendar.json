@@ -9,5 +9,33 @@
     4,
     8,
     14
-  ]
+  ],
+  "airportNames": {
+    "_note": "nome mostrato per l'aeroporto di arrivo quando quello di OurAirports è poco riconoscibile o in inglese",
+    "DPS": "Bali",
+    "LIS": "Lisbona",
+    "CFU": "Corfù",
+    "PLZ": "Port Elizabeth",
+    "CPT": "Città del Capo",
+    "AVV": "Melbourne (Avalon)",
+    "LGW": "Londra",
+    "BCN": "Barcellona",
+    "HND": "Tokyo",
+    "GRU": "San Paolo",
+    "CGH": "San Paolo",
+    "JFK": "New York",
+    "ACE": "Lanzarote",
+    "LPA": "Gran Canaria",
+    "EIS": "Tortola",
+    "LOP": "Lombok",
+    "MCY": "Sunshine Coast",
+    "OOL": "Gold Coast",
+    "HBA": "Hobart",
+    "GET": "Geraldton",
+    "AGA": "Agadir",
+    "FNC": "Madeira",
+    "SJC": "San Jose (California)",
+    "ESM": "Esmeraldas",
+    "GRJ": "George"
+  }
 }

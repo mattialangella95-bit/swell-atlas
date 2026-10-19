@@ -5,6 +5,11 @@ Progetto hobby di Mattia. Rispondi in italiano.
 ## Cos'è
 Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`): globo D3 ortografico con zone surf colorate per qualità media settimanale (52 settimane, scala Flat → Epic), più stima ore di volo e prezzo dagli aeroporti italiani. Stessa architettura di Sala Aste: niente framework, niente build.
 
+## Stile dell'interfaccia
+- Scrivere come una persona: frasi brevi in italiano ("6 giorni buoni su 10", "5½ h di volo"), niente sigle tipo "Good+", niente maiuscoletto spaziato o numeri monospace, pochi bordi e badge.
+- Una cosa importante per riga, il resto in grigio sotto. Controlli rari dentro "Filtri" o altri `details`.
+- Provare sempre anche a 400 px di larghezza.
+
 ## Regole
 - Solo HTML + CSS + JS separati (`index.html`, `style.css`, `app.js`). Librerie solo da CDN (D3 7.8.5, topojson-client 3.0.2). Non installare dipendenze se non servono.
 - **Il codice non contiene dati**: zone, aeroporti, scala, parametri stima voli e coste stanno in `data/*.json` e si caricano con `fetch`.

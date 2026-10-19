@@ -12,9 +12,11 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>Swell Atlas</h1>
+    <div>
+      <h1>Swell Atlas</h1>
+      <p class="tagline">Dove e quando andare a surfare, partendo dall'Italia.</p>
+    </div>
     <div class="head-r">
-      <span class="demo">Onde ERA5 2005-2024 · voli e prezzi stimati</span>
       <button class="btn" id="btn-account" hidden>Accedi</button>
     </div>
   </header>
@@ -41,12 +43,12 @@
         </div>
       </div>
       <div class="stats">
-        <div class="stat"><div class="k">Onda tipica, 25-75%</div><div class="v" id="sh"></div></div>
+        <div class="stat"><div class="k">Onde di solito</div><div class="v" id="sh"></div></div>
         <div class="stat"><div class="k">Periodo medio</div><div class="v" id="sp"></div></div>
-        <div class="stat"><div class="k">Giorni Good+</div><div class="v" id="sg"></div></div>
+        <div class="stat"><div class="k">Giorni buoni</div><div class="v" id="sg"></div></div>
       </div>
       <div>
-        <div class="lbl">Stagionalità, 52 settimane</div>
+        <div class="lbl">Com'è durante l'anno</div>
         <div class="strip" id="strip"></div>
         <div class="months" id="m1"></div>
       </div>
@@ -63,11 +65,11 @@
         <div class="stat"><div class="k">Prezzo stimato</div><div class="v" id="fp"></div></div>
       </div>
       <div>
-        <div class="lbl">Prezzo indicativo andata e ritorno per mese</div>
+        <div class="lbl">Prezzo indicativo andata e ritorno, mese per mese</div>
         <div style="padding-top:16px"><div class="bars" id="bars"></div></div>
         <div class="months" id="m2"></div>
       </div>
-      <div class="note">Ore di volo e scali stimati dalla distanza ortodromica fino all'aeroporto internazionale di riferimento della zona, con tempi fissi per decollo, atterraggio e coincidenze: non sono orari reali. I prezzi sono simulati, nella versione vera arriveranno da Travelpayouts o da una raccolta settimanale.</div>
+      <div class="note">Ore e scali sono stimati dalla distanza, non sono orari veri. I prezzi per ora sono simulati.</div>
     </aside>
   </div>
 
@@ -81,34 +83,36 @@
     <input type="range" id="wr" min="0" max="51" value="0" aria-label="Settimana dell'anno">
     <div class="months" id="m3"></div>
     <div class="legend" id="legend"></div>
-    <label class="only-fav" id="only-fav-box" hidden><input type="checkbox" id="only-fav"> Solo preferiti</label>
-    <div class="list" id="zlist"></div>
+    <details class="all-zones">
+      <summary>Tutte le zone</summary>
+      <label class="only-fav" id="only-fav-box" hidden><input type="checkbox" id="only-fav"> Solo preferiti</label>
+      <div class="list" id="zlist"></div>
+    </details>
   </section>
 
   <section class="calendar" id="calendar" aria-labelledby="cal-t">
-    <div class="cal-head">
-      <h2 id="cal-t">Calendario</h2>
-      <p class="note" id="cal-info"></p>
-    </div>
-    <div class="cal-months" id="cal-months" role="group" aria-label="Mese"></div>
+    <h2 id="cal-t">Dove andare a <span id="cal-month-name"></span></h2>
+    <nav class="cal-months" id="cal-months" aria-label="Mese"></nav>
+    <p class="cal-info" id="cal-info"></p>
     <div class="cal-ctl">
-      <div class="seg" id="cal-group" role="group" aria-label="Raggruppa per">
-        <button class="btn" data-g="airport">Aeroporto</button><button class="btn" data-g="country">Paese e regione</button><button class="btn" data-g="distance">Ore di volo</button>
-      </div>
-      <div class="seg" id="cal-view" role="group" aria-label="Vista">
-        <button class="btn" data-v="list">Mese</button><button class="btn" data-v="year">Anno</button>
-      </div>
+      <span class="cal-opt" id="cal-group" role="group" aria-label="Raggruppa per">Raggruppa per
+        <button data-g="airport">aeroporto</button><button data-g="country">paese</button><button data-g="distance">ore di volo</button></span>
+      <span class="cal-opt" id="cal-view" role="group" aria-label="Vista">Vedi
+        <button data-v="list">il mese</button><button data-v="year">tutto l'anno</button></span>
     </div>
-    <div class="cal-filters">
-      <label>Qualità minima<select id="cal-minq"></select></label>
-      <label>Ore di volo<select id="cal-maxh"></select></label>
-      <label>Livello<select id="cal-level"></select></label>
-      <label class="only-fav" id="cal-fav-box" hidden><input type="checkbox" id="cal-fav"> Solo preferiti</label>
-    </div>
+    <details class="cal-filters" id="cal-filters">
+      <summary>Filtri <span id="cal-filter-count"></span></summary>
+      <div class="cal-filter-body">
+        <label>Qualità almeno<select id="cal-minq"></select></label>
+        <label>Volo al massimo<select id="cal-maxh"></select></label>
+        <label>Il tuo livello<select id="cal-level"></select></label>
+        <label class="only-fav" id="cal-fav-box" hidden><input type="checkbox" id="cal-fav"> Solo i miei preferiti</label>
+      </div>
+    </details>
     <div id="cal-body"></div>
   </section>
 
-  <footer>Per ogni zona 20 anni di dati orari ERA5 (2005-2024, via Open-Meteo e Copernicus), solo ore di luce: altezza, periodo e direzione dell'onda al largo e vento sulla costa, tradotti in una scala qualità ispirata a quella di Surfline ma calcolata con una regola nostra. Altezza e periodo sono valori al largo, non sulla battigia. È una statistica storica, serve a scegliere quando partire, non è la previsione del giorno. Ore di volo e prezzi sono ancora stime.</footer>
+  <footer>Le onde sono la media di vent'anni di dati ERA5 (2005-2024, Open-Meteo e Copernicus), solo nelle ore di luce, misurate al largo e non sulla riva. Servono a scegliere quando partire: non sono la previsione del giorno. Voli e prezzi sono stime.</footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
