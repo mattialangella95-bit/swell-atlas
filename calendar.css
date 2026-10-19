@@ -27,12 +27,12 @@
 .cal-row:hover{background:var(--bg)}
 .cal-main{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .cal-where{color:var(--muted);font-size:13px}
-.cal-good{font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cal-good{font-size:13px;font-weight:400;white-space:nowrap;font-variant-numeric:tabular-nums}
 .cal-detail{grid-column:1/-1;font-size:13px;color:var(--muted)}
 .cal-detail .q{color:var(--fg)}
 .cal-detail .q::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--q);margin-right:5px;vertical-align:1px}
 .cal-detail em{font-style:normal;color:#c0602f}
-@media (max-width:520px){.cal-row{grid-template-columns:minmax(0,1fr)}.cal-good{font-weight:500}}
+@media (max-width:520px){.cal-row{grid-template-columns:minmax(0,1fr)}}
 
 /* tutto l'anno: scorre nel suo riquadro, mesi e nomi fissi */
 .cal-year{max-height:70vh;overflow:auto;border-radius:8px;border:1px solid var(--line)}
