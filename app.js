@@ -26,7 +26,7 @@ function rnd(seed){let s=0;for(const ch of seed)s=(s*31+ch.charCodeAt(0))>>>0;re
 // t: periodo di picco mediano (s), good: % giorni Good o meglio}. null se la zona non ha dati.
 function getZoneWeeks(zone){
   const c=CLIMATE.zones[zone.id];
-  if(!c)return null;
+  if(!c||!c.weeks)return null;
   const F=CLIMATE.fields,ix=k=>F.indexOf(k);
   return c.weeks.map(w=>({q:w[ix("q")],h:w[ix("h50")],h25:w[ix("h25")],h75:w[ix("h75")],t:w[ix("t50")],good:w[ix("good")]}));
 }

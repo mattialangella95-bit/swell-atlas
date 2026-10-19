@@ -63,12 +63,14 @@ Fonti: spot dal gist pubblico di naotokui (~5900 spot), coste Natural Earth, aer
 ## Onde (fase 3)
 
 ```
-.venv/bin/python scripts/fetch_waves.py --zone <id>      # Open-Meteo, ~3 min e ~313 chiamate a zona
+.venv/bin/python scripts/fetch_waves.py --crea-coda     # congela le zone in data/raw/waves/_queue.json
+.venv/bin/python scripts/fetch_waves.py                  # Open-Meteo, ~3 min e ~313 chiamate a zona, tetto 9.000/giorno
+.venv/bin/python scripts/fetch_waves.py --stato          # avanzamento (data/raw/waves/_progress.json)
 .venv/bin/python scripts/era5_cds.py scarica --zone <id> # oppure Copernicus (serve chiave CDS)
 .venv/bin/python scripts/build_climate.py --verifica <id>
 ```
 
-La regola qualità si tara solo in `data/quality-rule.json`. Fonte: ERA5 2005-2024, ore di luce, onda totale al largo (niente swell separato) e vento a 10 m nella cella di mare sulla costa.
+La regola qualità si tara solo in `data/quality-rule.json` (usa il periodo medio). Fonte: ERA5 2005-2024, ore di luce, onda totale al largo (niente swell separato) e vento a 10 m nella cella di mare sulla costa.
 
 ## Fasi
 

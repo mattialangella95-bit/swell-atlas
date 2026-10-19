@@ -1,5 +1,27 @@
 # Diario
 
+## 2026-10-19 — Fase 3, download in background
+
+### Fatto
+- Regola qualità spostata sul periodo medio (`period.field = "wave_period"`, min 6 s, buono 11 s), perché ce l'hanno sia Open-Meteo sia il dataset puntuale Copernicus. Tarata con una griglia di soglie sulle 5 zone di collaudo: scarto medio 3,4 punti di Good+ rispetto alla tabella approvata sul periodo di picco.
+
+  | Good+ per mese | Gen | Feb | Mar | Apr | Mag | Giu | Lug | Ago | Set | Ott | Nov | Dic |
+  |---|---|---|---|---|---|---|---|---|---|---|---|---|
+  | North Shore | 72 | 61 | 47 | 28 | 7 | 1 | 0 | 1 | 8 | 33 | 45 | 66 |
+  | Jeffreys Bay* | 40 | 48 | 57 | 64 | 59 | 59 | 60 | 63 | 51 | 49 | 38 | 34 |
+  | Hossegor | 54 | 55 | 50 | 32 | 16 | 9 | 6 | 9 | 23 | 43 | 49 | 53 |
+  | Bali | 37 | 43 | 63 | 80 | 80 | 88 | 90 | 88 | 87 | 79 | 61 | 43 |
+  | Mentawai | 34 | 35 | 46 | 68 | 83 | 90 | 89 | 84 | 74 | 62 | 39 | 29 |
+
+- `fetch_waves.py`:
+  - legge solo la coda congelata `data/raw/waves/_queue.json` (150 zone per numero di spot, con centro, esposizione e punto onde);
+  - tiene il conto stimato delle chiamate (peso giorni/14 × variabili/10) e si ferma a 9.000 al giorno e 4.500 all'ora (giorno UTC), poi riparte da solo;
+  - scrive `_progress.json` e ha `--stato`; con SIGTERM salva lo stato e si ferma.
+- Download delle 145 zone mancanti lanciato il 19/10 alle 22:17 con `nohup` + `caffeinate`. Stima circa 5 giorni, circa 28 zone al giorno.
+- `build_climate.py`: le zone senza dati restano in `climate.json` con `weeks: null`.
+- Scheda: "Periodo medio".
+
+
 ## 2026-10-19 — Fase 3, onde ERA5 (collaudo e strategia dati)
 
 ### Fatto

@@ -3,7 +3,7 @@
 Input:  data/raw/waves/<id>.parquet   (scripts/fetch_waves.py)
         data/zones.json                (esposizione della costa)
         data/quality-rule.json         (tutte le soglie della regola qualità)
-Output: data/climate.json
+Output: data/climate.json (le zone senza dati grezzi ci sono con weeks = null)
 
 Per ogni zona e settimana dell'anno (0-51, la 52a raccoglie anche il 365/366° giorno),
 usando solo le ore diurne:
@@ -136,8 +136,8 @@ def main():
     missing = []
     for z in zones:
         f = RAW / f"{z['id']}.parquet"
-        if not f.exists():
-            missing.append(z["id"]); continue
+        if not f.exists():   # resta nel JSON senza climatologia: l'app la mostra come "dati in arrivo"
+            missing.append(z["id"]); out["zones"][z["id"]] = {"wave": None, "wind": None, "weeks": None}; continue
         table = pq.read_table(f)
         meta = {k.decode(): json.loads(v) for k, v in (table.schema.metadata or {}).items() if k.decode().endswith("_grid")}
         cls, doy, month, hours, h, tp = daily(z, table, R)

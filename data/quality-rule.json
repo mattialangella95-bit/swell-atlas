@@ -16,10 +16,10 @@
     "tooBig": 6.0
   },
   "period": {
-    "_note": "periodo (s) letto dalla colonna field (wave_peak_period = di picco, wave_period = medio). Sotto min punteggio zero; a good pieno",
-    "field": "wave_peak_period",
-    "min": 7,
-    "good": 14
+    "_note": "periodo (s) letto dalla colonna field. wave_period = periodo medio, presente sia in Open-Meteo sia nel dataset puntuale Copernicus. Sotto min punteggio zero; a good pieno. Tarato sulle 5 zone di collaudo (era 7/14 s sul periodo di picco)",
+    "field": "wave_period",
+    "min": 6,
+    "good": 11
   },
   "direction": {
     "_note": "differenza tra direzione di provenienza dell'onda ed esposizione della costa. Entro fullDeg arriva tutta, oltre maxDeg non arriva; in mezzo scala lineare",
