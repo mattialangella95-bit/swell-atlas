@@ -23,6 +23,7 @@ Uso:    .venv/bin/python scripts/fetch_waves.py --crea-coda           # congela 
         .venv/bin/python scripts/fetch_waves.py --zone usa-graters    # solo alcune (ripetibile)
         .venv/bin/python scripts/fetch_waves.py --rifai-vento --zone usa-graters   # riscarica solo il vento
         .venv/bin/python scripts/fetch_waves.py --stato               # riassunto di _progress.json
+        touch data/raw/waves/_stop                                    # ferma dopo la zona in corso
 """
 import argparse, json, math, os, signal, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
@@ -37,6 +38,7 @@ ZONES = ROOT / "data/zones.json"
 OUT = ROOT / "data/raw/waves"
 QUEUE = OUT / "_queue.json"
 PROGRESS = OUT / "_progress.json"
+STOP = OUT / "_stop"   # se esiste, il download si ferma prima della zona successiva
 
 START, END = "2005-01-01", "2024-12-31"
 MARINE_URL = "https://marine-api.open-meteo.com/v1/marine"
@@ -241,12 +243,14 @@ def show_state():
         os.kill(p["pid"], 0); alive = True
     except (OSError, KeyError):
         pass
+    print(f"fonte: {p.get('fonte', 'open-meteo')}")
     print(f"stato: {p['stato']} (processo {p.get('pid')} {'attivo' if alive else 'non attivo'}), aggiornato {p['aggiornato']}")
     print(f"zone: {p['fatte']}/{p['totale']} fatte, {p['mancanti']} mancanti, in corso: {p.get('zona_in_corso')}")
-    print(f"chiamate stimate oggi ({p['giorno_utc']} UTC): {p['chiamate_stimate_oggi']} / {p['tetto_giornaliero']}")
+    if "chiamate_stimate_oggi" in p:   # solo per Open-Meteo
+        print(f"chiamate stimate oggi ({p['giorno_utc']} UTC): {p['chiamate_stimate_oggi']} / {p['tetto_giornaliero']}")
+        print(f"giorni stimati alla fine: {p['giorni_stimati_alla_fine']}")
     if p.get("prossima_ripresa"):
         print(f"prossima ripresa: {p['prossima_ripresa']}")
-    print(f"giorni stimati alla fine: {p['giorni_stimati_alla_fine']}")
     if p.get("saltate"):
         print("saltate:", ", ".join(f"{k} ({v})" for k, v in p["saltate"].items()))
 
@@ -295,6 +299,10 @@ def main():
     P.state = "scarico"; P.write()
 
     for n, z in enumerate(todo, 1):
+        if STOP.exists():
+            STOP.unlink()
+            P.state, P.current = "fermato dopo la zona in corso", None
+            P.write(); log("fermato su richiesta (_stop)"); return
         final, part = OUT / f"{z['id']}.parquet", OUT / f"{z['id']}.marine.parquet"
         log(f"[{n}/{len(todo)}] {z['id']} ({z['name']})")
         P.current = z["id"]; P.write()

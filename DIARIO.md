@@ -1,5 +1,22 @@
 # Diario
 
+## 2026-10-19 — Fase 3, passaggio a Copernicus
+
+### Fatto
+- Account CDS pronto, `prova-puntuale` sulle 5 zone di collaudo (gennaio 2020):
+  - 27 s per richiesta da 1 mese (18-38 s), circa 12 KB;
+  - scarto rispetto a Open-Meteo sulle stesse 744 ore: altezza 0,00-0,01 m, periodo 0,01 s, direzione 0,2-0,3°. È lo stesso ERA5, le fonti sono intercambiabili.
+- Una zona completa da 20 anni (onde e vento, dataset puntuale): 74 s, contro una media di circa 50 minuti con Open-Meteo per via dei tetti di chiamate. Stima per le zone rimaste: circa 3 ore invece di circa 5 giorni.
+- Open-Meteo fermato alle 22:37 dopo la zona in corso; Copernicus lanciato in background (`nohup` + `caffeinate`) sulle zone rimanenti, log in `data/raw/waves/_download_cds.log`. Ritmo misurato: circa 85 s a zona.
+- `era5_cds.py scarica`:
+  - legge solo `_queue.json`;
+  - vento nella cella ERA5 di mare più vicina (coste Natural Earth, al posto di `cell_selection=sea`);
+  - se il punto onde non ha dati prova i punti alternativi;
+  - scrive lo stesso `_progress.json`, quindi `fetch_waves.py --stato` vale per entrambe le fonti.
+- `fetch_waves.py`: `touch data/raw/waves/_stop` ferma il download dopo la zona in corso.
+- Grecia ionica (prima zona da Copernicus): quasi sempre Flat, periodo medio 3,5-5 s. È plausibile, ma il Mediterraneo con questa regola risulterà quasi sempre scarso: da discutere nella taratura.
+
+
 ## 2026-10-19 — Fase 4, ore di volo
 
 ### Fatto

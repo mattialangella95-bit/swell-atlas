@@ -23,7 +23,8 @@ Uso:    .venv/bin/python scripts/era5_cds.py costi
         .venv/bin/python scripts/era5_cds.py prova-griglia
         .venv/bin/python scripts/era5_cds.py scarica --zone usa-graters
 """
-import argparse, csv, io, json, math, sys, time, urllib.request, zipfile
+import argparse, csv, io, json, math, os, sys, time, urllib.request, zipfile
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -244,32 +245,72 @@ def cmd_prova_griglia(_):
               f"tempo download {t * months / 3600:6.1f} h  estrazione {t_ext * months / 60:5.1f} min")
 
 
+def sea_cell(lat, lon, land, step=0.25):
+    """Cella ERA5 (griglia 0,25°) di mare più vicina al punto: fa le veci di cell_selection=sea di Open-Meteo."""
+    import shapely
+    base_lat, base_lon = round(lat / step) * step, round(lon / step) * step
+    cells = [(base_lat + a * step, base_lon + b * step) for a in range(-3, 4) for b in range(-3, 4)]
+    cells.sort(key=lambda c: (c[0] - lat) ** 2 + ((c[1] - lon) * math.cos(math.radians(lat))) ** 2)
+    for c in cells:
+        if not shapely.contains_xy(land, c[1], c[0]):
+            return round(c[0], 2), round((c[1] + 540) % 360 - 180, 2)
+    return base_lat, base_lon
+
+
 def cmd_scarica(a):
+    """Dataset puntuale, 20 anni orari, zone della coda congelata data/raw/waves/_queue.json."""
     c = client()
-    zones = json.loads(ZONES.read_text())
-    if a.zone:
-        zones = [z for z in zones if z["id"] in set(a.zone)]
-    RAW.mkdir(parents=True, exist_ok=True)
+    queue = json.loads((RAW / "_queue.json").read_text())
+    zones = queue if not a.zone else [z for z in queue if z["id"] in set(a.zone)]
+    if a.dalla_fine:
+        zones = zones[::-1]
     CDS_RAW.mkdir(parents=True, exist_ok=True)
     sys.path.insert(0, str(ROOT / "scripts"))
     from fetch_waves import candidates
+    from build_zones import LAND, load_land
+    land = load_land(LAND)
+    date = ["2005-01-01/2024-12-31"]
+    done, skipped = 0, {}
+
+    def progress(state, current=None):
+        """Stesso _progress.json di fetch_waves.py, così --stato funziona con entrambe le fonti."""
+        ids = [q["id"] for q in queue]
+        ok = [i for i in ids if (RAW / f"{i}.parquet").exists()]
+        (RAW / "_progress.json").write_text(json.dumps({
+            "aggiornato": datetime.now().isoformat(timespec="seconds"), "stato": state, "fonte": "copernicus",
+            "pid": os.getpid(), "zona_in_corso": current, "fatte": len(ok), "mancanti": len(ids) - len(ok), "totale": len(ids),
+            "saltate": skipped, "zone_mancanti": [i for i in ids if i not in ok], "zone_fatte": ok}, ensure_ascii=False, indent=1))
+
     for z in zones:
+        if a.max and done >= a.max:
+            break
         final = RAW / f"{z['id']}.parquet"
-        if final.exists():
-            continue
-        wlat, wlon = candidates(z)[0]
-        fw, fv = CDS_RAW / f"ts_{z['id']}_onde.csv", CDS_RAW / f"ts_{z['id']}_vento.csv"
-        date = ["2005-01-01/2024-12-31"]
-        tw = retrieve(c, TS, {"variable": TS_WAVE, "location": {"longitude": wlon, "latitude": wlat}, "date": date, "data_format": "csv"}, fw)
-        tv = retrieve(c, TS, {"variable": TS_WIND, "location": {"longitude": z["lon"], "latitude": z["lat"]}, "date": date, "data_format": "csv"}, fv)
-        w, v = read_ts_csv(fw), read_ts_csv(fv)
-        if not np.array_equal(w["time"], v["time"]) or np.isnan(w["swh"]).mean() > 0.05:
-            print(f"{z['id']}: dati incompleti, saltata (punto onde forse su terra)"); continue
+        if final.exists() or (RAW / f"{z['id']}.marine.parquet").exists():
+            continue   # già fatta, o in corso con Open-Meteo
+        t0 = time.time()
+        progress("scarico (Copernicus)", z["id"])
+        vlat, vlon = sea_cell(z["lat"], z["lon"], land)
+        fv = CDS_RAW / f"ts_{z['id']}_vento.csv"
+        retrieve(c, TS, {"variable": TS_WIND, "location": {"longitude": vlon, "latitude": vlat}, "date": date, "data_format": "csv"}, fv)
+        v = read_ts_csv(fv)
+        w = None
+        for wlat, wlon in [tuple(z["wave_point"])] + [p for p in candidates(z) if list(p) != z["wave_point"]]:
+            fw = CDS_RAW / f"ts_{z['id']}_onde.csv"
+            retrieve(c, TS, {"variable": TS_WAVE, "location": {"longitude": wlon, "latitude": wlat}, "date": date, "data_format": "csv"}, fw)
+            w = read_ts_csv(fw)
+            if np.isnan(w["swh"]).mean() <= 0.05:
+                break
+            print(f"{z['id']}: punto onde ({wlat}, {wlon}) senza dati, provo il successivo", flush=True)
+            w = None
+        if w is None or not np.array_equal(w["time"], v["time"]):
+            skipped[z["id"]] = "dati incompleti"
+            print(f"{z['id']}: dati incompleti, saltata", flush=True); continue
         cols = {"time": w["time"], "swh": w["swh"], "mwp": w["mwp"], "mwd": w["mwd"], "u10": v["u10"], "v10": v["v10"]}
-        pq.write_table(to_intermediate(cols, {"source": "cds-timeseries", "wave_grid": [wlat, wlon], "wind_grid": [z["lat"], z["lon"]]}),
-                       final, compression="zstd")
-        fw.unlink(); fv.unlink()
-        print(f"{z['id']}: ok in {tw + tv:.0f}s", flush=True)
+        pq.write_table(to_intermediate(cols, {"source": "cds-timeseries", "wave_point": [wlat, wlon], "wave_grid": [wlat, wlon],
+                                              "wind_grid": [vlat, vlon]}), final, compression="zstd")
+        fw.unlink(); fv.unlink(); done += 1
+        print(f"{datetime.now():%d/%m %H:%M:%S} {z['id']}: ok in {time.time() - t0:.0f}s ({len(w['time'])} ore)", flush=True)
+    progress("finito (Copernicus)" if not skipped else "finito con zone saltate (Copernicus)")
 
 
 def main():
@@ -277,6 +318,8 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("costi"); sub.add_parser("prova-puntuale"); sub.add_parser("prova-griglia")
     s = sub.add_parser("scarica"); s.add_argument("--zone", action="append")
+    s.add_argument("--dalla-fine", action="store_true", help="parte dal fondo della coda (per non incrociare Open-Meteo)")
+    s.add_argument("--max", type=int, help="al massimo N zone")
     a = ap.parse_args()
     {"costi": cmd_costi, "prova-puntuale": cmd_prova_puntuale, "prova-griglia": cmd_prova_griglia, "scarica": cmd_scarica}[a.cmd](a)
 
