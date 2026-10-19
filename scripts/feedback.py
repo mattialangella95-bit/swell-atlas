@@ -1,6 +1,6 @@
 """Segnalazioni dell'app (tabella swell_feedback su Supabase).
 
-Usa la chiave di servizio da .env (SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY), che resta fuori da git.
+Usa la secret key da .env (SUPABASE_URL, SUPABASE_SECRET_KEY), che resta fuori da git.
 
 Uso:    .venv/bin/python scripts/feedback.py                 # elenca le nuove
         .venv/bin/python scripts/feedback.py --tutte         # elenca tutte
@@ -22,9 +22,9 @@ def main():
     ap.add_argument("--tutte", action="store_true", help="elenca anche quelle lette e risolte")
     a = ap.parse_args()
     e = env()
-    url, key = e.get("SUPABASE_URL"), e.get("SUPABASE_SERVICE_ROLE_KEY")
+    url, key = e.get("SUPABASE_URL"), e.get("SUPABASE_SECRET_KEY")
     if not url or not key:
-        sys.exit("Mancano SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY in .env (vedi .env.example).")
+        sys.exit("Mancano SUPABASE_URL e SUPABASE_SECRET_KEY in .env (vedi .env.example).")
     base = f"{url}/rest/v1/swell_feedback"
 
     if a.azione:

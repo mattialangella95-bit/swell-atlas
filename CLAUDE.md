@@ -48,7 +48,7 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 ## Supabase
 - Tabelle solo con prefisso `swell_` (il progetto può essere condiviso con altre app). Ogni modifica allo schema è una nuova migrazione in `supabase/migrations/`, che esegue Mattia; non modificare le migrazioni già eseguite.
 - Row Level Security sempre attiva: profilo e preferiti solo propri, segnalazioni solo in inserimento.
-- La chiave anon può stare in `supabase-config.js`; la chiave di servizio MAI nel repository o nel codice del sito, solo in `.env` (in `.gitignore`).
+- La publishable key può stare in `supabase-config.js`; la secret key MAI nel repository o nel codice del sito, solo in `.env` (in `.gitignore`). Non leggere né stampare `.env`.
 - L'app deve funzionare tutta senza login e anche con `supabase-config.js` vuoto. Le funzioni di account stanno in `auth.js`, `profile.js` e `feedback.js`; `app.js` espone solo gli agganci.
 
 ## Test in locale

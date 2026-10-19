@@ -1,5 +1,14 @@
 # Diario
 
+## 2026-10-19 — Chiavi Supabase
+
+### Fatto
+- Publishable key in `supabase-config.js` (è pubblica: i permessi li decide la RLS). Manca ancora il Project URL: finché è vuoto l'app considera Supabase non configurato e funziona come prima.
+- `.env` creato (fuori da git, verificato con `git check-ignore`, permessi 600) con publishable key, URL vuoto e riga della secret key vuota con le istruzioni.
+- Variabili allineate ai nomi nuovi di Supabase: `SUPABASE_PUBLISHABLE_KEY` e `SUPABASE_SECRET_KEY` (i vecchi `SUPABASE_ANON_KEY` e `SUPABASE_SERVICE_ROLE_KEY` restano validi). Le chiavi `sb_…` non sono JWT: gli script le mandano solo nell'header `apikey`.
+- supabase-js portato da 2.45.4 (2024, prima delle publishable key) a 2.116.0.
+
+
 ## 2026-10-19 — Revisione dello stile
 
 ### Fatto
@@ -52,7 +61,7 @@
   - permessi: profilo e preferiti solo propri; segnalazioni inseribili da tutti (anche anonime, solo come "nuova" e mai a nome di altri), non leggibili né modificabili dall'app. Permessi di tabella ristretti al minimo (`revoke all` + `grant` espliciti).
 - App, in file nuovi (`app.js` toccato solo per gli agganci: filtro zone, callback dopo il render, oggetto `app` esportato):
   - `supabase-config.js` con URL e chiave anon. Vuoti = account e segnalazioni disattivati, il resto funziona uguale (verificato: nessun errore in console);
-  - `auth.js`: magic link (`signInWithOtp`) che torna alla pagina da cui si è partiti; supabase-js 2.45.4 da jsdelivr, caricato solo se configurato;
+  - `auth.js`: magic link (`signInWithOtp`) che torna alla pagina da cui si è partiti; supabase-js 2.116.0 da jsdelivr, caricato solo se configurato;
   - `profile.js`: al primo accesso crea il profilo copiando la partenza già scelta nel browser; stella sulla scheda; filtro "Solo preferiti" su lista e globo; pannello profilo con partenza, livello, nome e preferiti con nota. Gli id vecchi delle zone confluite si risolvono con gli alias;
   - `feedback.js`: bottone "Segnala" sempre visibile, tipo, zona corrente precompilata, testo, conferma dopo l'invio.
 - `scripts/feedback.py`: elenca le segnalazioni nuove (o `--tutte`), `letta`/`risolta <id>`. Chiave di servizio solo da `.env`, che è in `.gitignore`; `.env.example` mostra i nomi.

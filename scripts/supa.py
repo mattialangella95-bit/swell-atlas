@@ -16,12 +16,20 @@ def env():
                 k, v = line.split("=", 1)
                 vals[k.strip()] = v.strip().strip('"').strip("'")
     vals.update({k: v for k, v in os.environ.items() if k.startswith("SUPABASE_")})
+    # nomi nuovi di Supabase, con i vecchi ancora validi
+    vals.setdefault("SUPABASE_PUBLISHABLE_KEY", vals.get("SUPABASE_ANON_KEY", ""))
+    vals.setdefault("SUPABASE_SECRET_KEY", vals.get("SUPABASE_SERVICE_ROLE_KEY", ""))
     return vals
 
 
 def request(method, url, key, token=None, body=None, prefer=None):
     """Ritorna (codice HTTP, JSON o testo). Non solleva su 4xx: i test devono vedere i rifiuti."""
-    headers = {"apikey": key, "Authorization": f"Bearer {token or key}", "Content-Type": "application/json"}
+    headers = {"apikey": key, "Content-Type": "application/json"}
+    # le chiavi nuove (sb_publishable_..., sb_secret_...) vanno solo in apikey; in Authorization
+    # va il token dell'utente, oppure la chiave se è del vecchio tipo JWT (anon / service_role)
+    bearer = token or (key if key.startswith("eyJ") else None)
+    if bearer:
+        headers["Authorization"] = f"Bearer {bearer}"
     if prefer:
         headers["Prefer"] = prefer
     data = json.dumps(body).encode() if body is not None else None

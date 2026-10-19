@@ -2,7 +2,7 @@
 // l'app funziona tutta; l'account serve solo per preferiti e profilo.
 import {SUPABASE_URL, SUPABASE_ANON_KEY} from "./supabase-config.js";
 
-const SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm";
+const SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/+esm";
 const $ = id => document.getElementById(id);
 export const configured = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 

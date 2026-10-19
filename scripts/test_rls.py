@@ -7,7 +7,7 @@ anon e verifica che:
   - non si possa segnalare a nome di un altro utente o con uno stato diverso da "nuova".
 Alla fine cancella utenti e righe di prova (anche se un controllo fallisce).
 
-Serve .env con SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY e le migrazioni eseguite.
+Serve .env con SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_SECRET_KEY e le migrazioni eseguite.
 Uso:    .venv/bin/python scripts/test_rls.py
 """
 import secrets, sys
@@ -15,7 +15,7 @@ import secrets, sys
 from supa import env, request
 
 E = env()
-URL, ANON, SERVICE = E.get("SUPABASE_URL"), E.get("SUPABASE_ANON_KEY"), E.get("SUPABASE_SERVICE_ROLE_KEY")
+URL, ANON, SERVICE = E.get("SUPABASE_URL"), E.get("SUPABASE_PUBLISHABLE_KEY"), E.get("SUPABASE_SECRET_KEY")
 REST, AUTH = f"{URL}/rest/v1", f"{URL}/auth/v1"
 results = []
 
@@ -39,7 +39,7 @@ def create_user(tag):
 
 def main():
     if not (URL and ANON and SERVICE):
-        sys.exit("Mancano SUPABASE_URL, SUPABASE_ANON_KEY o SUPABASE_SERVICE_ROLE_KEY in .env (vedi .env.example).")
+        sys.exit("Mancano SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY o SUPABASE_SECRET_KEY in .env (vedi .env.example).")
     marker = "test_rls " + secrets.token_hex(4)
     a_id, a_tok = create_user("a")
     b_id, b_tok = create_user("b")

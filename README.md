@@ -98,7 +98,7 @@ L'app funziona tutta senza account; il login (link via mail) serve solo per pref
 .venv/bin/python scripts/test_rls.py            # collaudo permessi
 ```
 
-La chiave anon sta in `supabase-config.js`; la chiave di servizio solo in `.env`, mai nel repository.
+La publishable key sta in `supabase-config.js`; la secret key solo in `.env`, mai nel repository.
 
 ## Fasi
 
