@@ -22,8 +22,15 @@ onUser(async u => {
   $("only-fav-box").hidden = !u;
   if(!u){ $("only-fav").checked = false; app.hooks.filter = null; }
   $("btn-account").textContent = u ? (profile?.display_name || "Profilo") : "Accedi";
+  publishUser();
   app.refresh();
 });
+
+// preferiti e livello per le altre viste (calendario)
+function publishUser(){
+  app.user = {loggedIn: !!currentUser(), favs: new Set(favs.keys()), level: profile?.surf_level || null};
+  app.hooks.user.forEach(f => f(app.user));
+}
 
 async function loadProfile(u){
   const sb = await supabase();
@@ -60,6 +67,7 @@ async function toggleFav(z){
   const {error} = await q;
   if(error) return console.error(error);
   if(favs.has(z.id)) favs.delete(z.id); else favs.set(z.id, "");
+  publishUser();
   app.refresh();
 }
 
@@ -119,6 +127,7 @@ $("profile-form").addEventListener("submit", async e => {
   const {data, error} = await sb.from("swell_profiles").update(row).eq("id", currentUser().id).select().single();
   if(error){ $("profile-msg").textContent = "Non salvato: " + error.message; return; }
   profile = data;
+  publishUser();
   $("btn-account").textContent = profile.display_name || "Profilo";
   const d = depByCode(profile.home_airport);
   if(d) app.setDep(d);

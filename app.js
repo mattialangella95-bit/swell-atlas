@@ -125,7 +125,7 @@ const endP=e=>{pts.delete(e.pointerId);if(pts.size<2)pinch0=null};
 cv.addEventListener("pointerup",endP);cv.addEventListener("pointercancel",e=>{endP(e);dragging=false});
 
 // agganci per profile.js e feedback.js: filtro zone visibili (es. solo preferiti) e callback dopo ogni render
-const hooks={filter:null,render:[]};
+const hooks={filter:null,render:[],user:[]};
 const visible=z=>!hooks.filter||hooks.filter(z);
 function zoneColor(z){return z.wk?SCALE[z.wk[state.week].q].color:css("--nodata")}
 
@@ -203,5 +203,6 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
 new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 render();resize();
 
-export const app={state,ZONES,DEPS,DEP_KEY,hooks,depText,findDep,setDep,selectZone,
+export const app={state,ZONES,DEPS,SCALE,MESI,CLIMATE,DEP_KEY,hooks,depText,findDep,setDep,selectZone,flight,
+  user:{loggedIn:false,favs:new Set(),level:null},   // aggiornato da profile.js, letto da calendar.js
   refresh(){buildZoneList();render();draw()}};

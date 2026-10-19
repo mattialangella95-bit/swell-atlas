@@ -3,14 +3,16 @@
 Input:  data/raw/waves/<id>.parquet   (scripts/fetch_waves.py)
         data/zones.json                (esposizione della costa)
         data/quality-rule.json         (tutte le soglie della regola qualità)
-Output: data/climate.json (le zone senza dati grezzi ci sono con weeks = null)
+Output: data/climate.json (le zone senza dati grezzi ci sono con weeks e months = null)
 
 Per ogni zona e settimana dell'anno (0-51, la 52a raccoglie anche il 365/366° giorno),
 usando solo le ore diurne:
   - ogni ora riceve una classe 0-9 dalla regola, ogni giorno la classe migliore tenuta
     per almeno day.minHours ore;
   - per settimana: classe prevalente dei giorni, % di giorni Good o meglio,
-    25°/50°/75° percentile di altezza onda e periodo (colonna scelta in quality-rule.json).
+    25°/50°/75° percentile di altezza onda e periodo (colonna scelta in quality-rule.json);
+  - per mese (calendario): classe prevalente, altezza 25/75, periodo mediano, % giorni Good+,
+    vento offshore prevalente sì/no.
 
 Uso:    .venv/bin/python scripts/build_climate.py
         .venv/bin/python scripts/build_climate.py --verifica usa-graters france-le-penon   # tabella mese per mese
@@ -28,6 +30,7 @@ RULE = ROOT / "data/quality-rule.json"
 SCALE = ROOT / "data/scale.json"
 OUT = ROOT / "data/climate.json"
 FIELDS = ["q", "h25", "h50", "h75", "t25", "t50", "t75", "good"]
+MONTH_FIELDS = ["q", "h25", "h75", "t50", "good", "offshore"]
 MESI = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"]
 
 
@@ -49,6 +52,19 @@ def sun_elevation(t, lat, lon):
     return np.degrees(np.arcsin(np.sin(phi) * np.sin(decl) + np.cos(phi) * np.cos(decl) * np.cos(ha)))
 
 
+def wind_regime(wspd, wndir, expo, W):
+    """Maschere orarie (leggero, offshore, cross-offshore, onshore). Senza esposizione solo "leggero"."""
+    light = wspd < W["lightKmh"]
+    if expo is None:
+        none = np.zeros_like(light)
+        return light, none, none, none
+    d_off = angdiff(wndir, (expo + 180) % 360)
+    off = ~light & (d_off <= W["offshoreDeg"])
+    cross_off = ~light & ~off & (d_off <= W["crossOffshoreDeg"])
+    on = ~light & (angdiff(wndir, expo) <= W["onshoreDeg"])
+    return light, off, cross_off, on
+
+
 def hourly_class(h, tp, wdir, wspd, wndir, expo, R):
     """Classe 0-9 per ogni ora; -1 se mancano i dati."""
     H, P, D, W, P_ = R["height"], R["period"], R["direction"], R["wind"], R["points"]
@@ -63,13 +79,9 @@ def hourly_class(h, tp, wdir, wspd, wndir, expo, R):
     ps = np.clip((tp - P["min"]) / (P["good"] - P["min"]), 0, 1)
 
     adj = np.zeros_like(h)
-    light = wspd < W["lightKmh"]
+    light, off, cross_off, on = wind_regime(wspd, wndir, expo, W)
     adj[light] = W["lightBonus"]
     if expo is not None:
-        d_off = angdiff(wndir, (expo + 180) % 360)
-        off = ~light & (d_off <= W["offshoreDeg"])
-        cross_off = ~light & ~off & (d_off <= W["crossOffshoreDeg"])
-        on = ~light & (angdiff(wndir, expo) <= W["onshoreDeg"])
         adj[off] = W["offshoreBonus"]
         adj[cross_off] = W["crossOffshoreBonus"]
         adj[on] = -W["onshorePenalty"]
@@ -122,6 +134,17 @@ def summarize(sel, cls, hours, h, tp, good_cls):
             round(100 * float((c >= good_cls).mean()))]
 
 
+def month_summary(sel, cls, hours, h, tp, good_cls, off, on, has_expo):
+    """Riepilogo di un mese: classe prevalente, altezza 25/75, periodo mediano, % giorni Good+,
+    vento offshore prevalente (1 se nelle ore di luce l'offshore supera l'onshore; null senza esposizione)."""
+    s = summarize(sel, cls, hours, h, tp, good_cls)
+    if s is None:
+        return None
+    idx = np.concatenate([hours[i] for i in sel])
+    offshore = (1 if off[idx].mean() > on[idx].mean() else 0) if has_expo else None
+    return [s[0], s[1], s[3], s[5], s[7], offshore]
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--verifica", nargs="*", metavar="ID", help="stampa la tabella mese per mese di queste zone")
@@ -131,19 +154,23 @@ def main():
     labels = [s["label"] for s in json.loads(SCALE.read_text())]
     zones = json.loads(ZONES.read_text())
     good = R["goodClass"]
-    out = {"source": "ERA5 via Open-Meteo (onde: era5_ocean, vento: era5), 2005-2024, ore diurne",
-           "rule": "data/quality-rule.json", "fields": FIELDS, "zones": {}}
+    out = {"source": "ERA5 via Open-Meteo (onde: era5_ocean, vento: era5) e Copernicus CDS (dataset puntuale), 2005-2024, ore diurne",
+           "rule": "data/quality-rule.json", "fields": FIELDS, "monthFields": MONTH_FIELDS, "zones": {}}
     missing = []
     for z in zones:
         f = RAW / f"{z['id']}.parquet"
         if not f.exists():   # resta nel JSON senza climatologia: l'app la mostra come "dati in arrivo"
-            missing.append(z["id"]); out["zones"][z["id"]] = {"wave": None, "wind": None, "weeks": None}; continue
+            missing.append(z["id"]); out["zones"][z["id"]] = {"wave": None, "wind": None, "weeks": None, "months": None}; continue
         table = pq.read_table(f)
         meta = {k.decode(): json.loads(v) for k, v in (table.schema.metadata or {}).items() if k.decode().endswith("_grid")}
         cls, doy, month, hours, h, tp = daily(z, table, R)
         week = np.minimum(doy // 7, 51)
         weeks = [summarize(np.flatnonzero(week == w), cls, hours, h, tp, good) for w in range(52)]
-        out["zones"][z["id"]] = {"wave": meta.get("wave_grid"), "wind": meta.get("wind_grid"), "weeks": weeks}
+        col = lambda c: table.column(c).to_numpy().astype(float)
+        _, off, _, on = wind_regime(col("wind_speed_10m"), col("wind_direction_10m"), z.get("exposure"), R["wind"])
+        months = [month_summary(np.flatnonzero(month == m), cls, hours, h, tp, good, off, on, z.get("exposure") is not None)
+                  for m in range(12)]
+        out["zones"][z["id"]] = {"wave": meta.get("wave_grid"), "wind": meta.get("wind_grid"), "weeks": weeks, "months": months}
 
         if a.verifica is not None and z["id"] in a.verifica:
             print(f"\n{z['id']} ({z['name']}, {z['region']}), esposizione {z.get('exposure')}°, onde in {meta.get('wave_grid')}")

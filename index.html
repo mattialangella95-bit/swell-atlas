@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="calendar.css">
 </head>
 <body>
 <div class="wrap">
@@ -84,6 +85,29 @@
     <div class="list" id="zlist"></div>
   </section>
 
+  <section class="calendar" id="calendar" aria-labelledby="cal-t">
+    <div class="cal-head">
+      <h2 id="cal-t">Calendario</h2>
+      <p class="note" id="cal-info"></p>
+    </div>
+    <div class="cal-months" id="cal-months" role="group" aria-label="Mese"></div>
+    <div class="cal-ctl">
+      <div class="seg" id="cal-group" role="group" aria-label="Raggruppa per">
+        <button class="btn" data-g="airport">Aeroporto</button><button class="btn" data-g="country">Paese e regione</button><button class="btn" data-g="distance">Ore di volo</button>
+      </div>
+      <div class="seg" id="cal-view" role="group" aria-label="Vista">
+        <button class="btn" data-v="list">Mese</button><button class="btn" data-v="year">Anno</button>
+      </div>
+    </div>
+    <div class="cal-filters">
+      <label>Qualità minima<select id="cal-minq"></select></label>
+      <label>Ore di volo<select id="cal-maxh"></select></label>
+      <label>Livello<select id="cal-level"></select></label>
+      <label class="only-fav" id="cal-fav-box" hidden><input type="checkbox" id="cal-fav"> Solo preferiti</label>
+    </div>
+    <div id="cal-body"></div>
+  </section>
+
   <footer>Per ogni zona 20 anni di dati orari ERA5 (2005-2024, via Open-Meteo e Copernicus), solo ore di luce: altezza, periodo e direzione dell'onda al largo e vento sulla costa, tradotti in una scala qualità ispirata a quella di Surfline ma calcolata con una regola nostra. Altezza e periodo sono valori al largo, non sulla battigia. È una statistica storica, serve a scegliere quando partire, non è la previsione del giorno. Ore di volo e prezzi sono ancora stime.</footer>
 </div>
 
@@ -132,5 +156,6 @@
 <script type="module" src="app.js"></script>
 <script type="module" src="profile.js"></script>
 <script type="module" src="feedback.js"></script>
+<script type="module" src="calendar.js"></script>
 </body>
 </html>

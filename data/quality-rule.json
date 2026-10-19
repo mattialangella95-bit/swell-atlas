@@ -44,5 +44,17 @@
     "height": 4,
     "period": 3
   },
-  "goodClass": 6
+  "goodClass": 6,
+  "levels": {
+    "_note": "altezza massima consigliata per livello (m), confrontata con il 75° percentile dell'altezza del mese, che è un valore al largo: più alta di quella in spiaggia. null = nessun limite. Valori indicativi da tarare.",
+    "principiante": {
+      "maxHeight": 1.5
+    },
+    "intermedio": {
+      "maxHeight": 2.5
+    },
+    "esperto": {
+      "maxHeight": null
+    }
+  }
 }

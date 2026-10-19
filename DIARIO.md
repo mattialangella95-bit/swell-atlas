@@ -1,5 +1,29 @@
 # Diario
 
+## 2026-10-19 — Calendario
+
+### Fatto
+- `build_climate.py`: riepilogo mensile per zona (`months` in `climate.json`, campi `monthFields`): classe prevalente, altezza 25/75, periodo mediano, % giorni Good+, vento offshore prevalente (1 se nelle ore di luce l'offshore supera l'onshore, null senza esposizione). Il regime di vento ha una funzione sola (`wind_regime`), usata anche dalla classe oraria.
+- `calendar.js` + `calendar.css`, sezione "Calendario" sotto la timeline. `app.js` toccato solo per gli agganci (esporta `flight`, `SCALE`, `MESI`, `CLIMATE`, `app.user`); `profile.js` pubblica preferiti e livello.
+  - 12 bottoni mese, quello corrente preselezionato;
+  - raggruppamento per aeroporto di arrivo (`airport_main`, gruppi ordinati per % Good+ media), per paese e regione, per ore di volo (fasce in `data/calendar.json`: entro 4, 4-8, 8-14, oltre 14 h);
+  - righe compatte: nome, chip qualità del mese, % Good+, altezza 25-75, ore di volo stimate (stessa `flight()` della scheda); riassunto in testa al gruppo (zone Good+, migliore, ore di volo);
+  - filtri: qualità minima, ore di volo massime, solo preferiti (con login), livello;
+  - clic su una zona: scheda e globo ruotato lì;
+  - vista "Anno": matrice zone × 12 mesi colorata con la scala, righe raggruppate, intestazione e colonna zona fisse, scorre dentro il suo riquadro.
+- Livelli in `quality-rule.json` (`levels`): altezza massima indicativa principiante 1,5 m, intermedio 2,5 m, esperto nessun limite, confrontata con il 75° percentile del mese (valore al largo). Le zone oltre il limite restano visibili con "onde impegnative per il tuo livello". Con login il livello viene dal profilo.
+- Collaudo, con 24 zone scaricate su 150:
+  - gennaio da Genova, primi 3 gruppi per aeroporto: HNL (Graters 72%, ~24,5 h), LIS (Magoito 58%, ~5,5 h), BIO (2 zone Good+, Islares 61% e Le Penon, ~1,5 h);
+  - gennaio, prime 5 entro 8 h: Islares 61%, Magoito 58%, Le Penon 54%, Boobies 38%, Oléron 34%;
+  - luglio: Bali (Medewi) 1ª con 90%, Mentawai 2ª con 89%, Jeffreys Bay 5ª con 60%, North Shore 23ª su 24 con 0%;
+  - 400 px: pagina larga 400 px, nessuna riga fuori, matrice che scorre dentro il riquadro; nessun errore in console;
+  - livello in gennaio: avvisi su 20 zone su 24 (principiante), 10 (intermedio), 0 (esperto).
+
+### Aperti
+- Collaudo da ripetere a download finito, con tutte le 150 zone (`build_climate.py` va rilanciato).
+- Soglie dei livelli da tarare: con altezze al largo il principiante vede avvisi quasi ovunque in inverno.
+
+
 ## 2026-10-19 — Account, preferiti e segnalazioni (Supabase)
 
 ### Fatto

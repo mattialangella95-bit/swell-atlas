@@ -31,6 +31,10 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Il download gira staccato dalla sessione e legge solo `data/raw/waves/_queue.json`. Stato: `.venv/bin/python scripts/fetch_waves.py --stato`; stop: `kill $(python3 -c "import json;print(json.load(open('data/raw/waves/_progress.json'))['pid'])")`. Non lanciarne un secondo in parallelo.
 - Prima di cambiare soglie, mostra la tabella mese per mese delle 5 zone di collaudo (`build_climate.py --verifica ...`) e spiega il perché.
 
+## Calendario
+- `calendar.js` legge solo `climate.json` (campo `months`) e i parametri in `data/calendar.json` e `quality-rule.json` (`levels`); la stima voli è quella di `app.js` (`app.flight`), non va duplicata.
+- `app.js` espone gli agganci (`app`, `app.hooks`, `app.user`); le viste nuove stanno in file propri.
+
 ## Voli
 - Ore e scali sono stimati, mai presentati come reali: nella scheda sempre "stimato".
 - Tutti i parametri (velocità, tempi fissi, coincidenze, fasce di scali, hub, eccezioni) stanno in `data/flight-estimate.json`. Se il collaudo da Genova e Malpensa sbaglia di oltre il 15%, si correggono i parametri, non il codice.

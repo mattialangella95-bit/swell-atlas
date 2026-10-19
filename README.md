@@ -15,6 +15,7 @@ app.js              logica: globo, timeline, pannello zona, stima voli
 auth.js             accesso con link via mail (Supabase Auth)
 profile.js          profilo e preferiti
 feedback.js         segnalazioni
+calendar.js         vista Calendario (mese e anno) · calendar.css i suoi stili
 supabase-config.js  URL e chiave anon di Supabase (vuoti = account disattivati)
 supabase/migrations/ SQL delle tabelle swell_* con Row Level Security
 .env.example        nomi delle chiavi per gli script (.env resta fuori da git)
@@ -22,7 +23,8 @@ data/
   zones.json        zone surf (generato da scripts/apply_review.py)
   zone-ids.json     registro degli id zona stabili (generato da scripts/build_zones.py)
   climate.json      climatologia settimanale per zona (generato da scripts/build_climate.py)
-  quality-rule.json soglie della regola qualità (Flat → Epic)
+  quality-rule.json soglie della regola qualità (Flat → Epic) e altezza massima per livello surf
+  calendar.json     fasce di ore di volo della vista Calendario
   airports.json     partenze italiane (generato da scripts/build_airports.py)
   scale.json        scala qualità Flat → Epic (indice 0-9, colore)
   flight-estimate.json  parametri della stima di ore di volo e scali, prezzi finti
@@ -81,6 +83,10 @@ Fonti: spot dal gist pubblico di naotokui (~5900 spot), coste Natural Earth, aer
 ```
 
 La regola qualità si tara solo in `data/quality-rule.json` (usa il periodo medio). Fonte: ERA5 2005-2024, ore di luce, onda totale al largo (niente swell separato) e vento a 10 m nella cella di mare sulla costa.
+
+## Calendario
+
+Sotto il globo: scelto un mese, le zone raggruppate per aeroporto di arrivo, per paese e regione o per ore di volo, con qualità del mese, % giorni Good+, altezza e ore di volo stimate. La vista "Anno" mostra la matrice zone × mesi. Usa i riepiloghi mensili di `climate.json`; le zone senza dati non compaiono.
 
 ## Account e segnalazioni (Supabase)
 

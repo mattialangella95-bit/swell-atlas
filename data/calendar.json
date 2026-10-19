@@ -1,0 +1,13 @@
+{
+  "_note": "Parametri della vista Calendario: fasce di ore di volo stimate per il raggruppamento per distanza e per il filtro ore massime.",
+  "flightBandsHours": [
+    4,
+    8,
+    14
+  ],
+  "maxHoursOptions": [
+    4,
+    8,
+    14
+  ]
+}

@@ -1,0 +1,46 @@
+/* Calendario: elenco per mese e matrice anno. Pensato anche per 400 px: niente scorrimento orizzontale della pagina */
+.calendar{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cal-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.cal-head h2{font-family:var(--f-display);font-size:22px;margin:0}
+.cal-head .note{margin:0}
+.cal-months{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px}
+.cal-months .btn{padding:6px 0;font-size:12px;min-width:0}
+@media (max-width:560px){.cal-months{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.cal-ctl{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between}
+.seg{display:flex;flex-wrap:wrap;gap:4px}
+.seg .btn{font-size:12px;padding:5px 9px}
+.cal-filters{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:flex-end}
+.cal-filters label{display:flex;flex-direction:column;gap:3px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.cal-filters select{width:auto;min-width:120px;font-size:13px;padding:5px 6px}
+.cal-filters .only-fav{flex-direction:row;text-transform:none;letter-spacing:0;font-size:12px;padding-bottom:6px}
+.cal-group{display:flex;flex-direction:column;gap:2px;margin-top:6px}
+.cal-group h3{font-family:var(--f-display);font-size:16px;margin:4px 0 0}
+.cal-sum{font-size:12px;color:var(--muted);margin:0 0 4px}
+.cal-row{display:grid;grid-template-columns:minmax(0,1fr) auto 3.2em 6.6em 4.2em;align-items:center;gap:8px;width:100%;text-align:left;
+  font:13px var(--f-body);color:var(--fg);background:none;border:none;border-top:1px solid var(--line);padding:6px 2px;cursor:pointer}
+.cal-row:hover{background:var(--bg)}
+.cal-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.cal-name small{display:block;font-weight:400;font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis}
+.cal-row .chip{font-size:11px;padding:3px 7px}
+.cal-num{font-family:var(--f-mono);font-size:12px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cal-warn{grid-column:1/-1;font-size:11px;color:#b5562a;margin-top:-2px}
+@media (max-width:560px){
+  .cal-row{grid-template-columns:minmax(0,1fr) auto 3em;row-gap:2px}
+  .cal-row .cal-num:nth-of-type(4),.cal-row .cal-num:nth-of-type(5){grid-row:2;text-align:left}
+  .cal-row .cal-num:nth-of-type(4){grid-column:1}
+  .cal-row .cal-num:nth-of-type(5){grid-column:2/-1;text-align:right}
+}
+/* matrice anno: scorre dentro il riquadro, intestazione e colonna zona fisse */
+.cal-year{max-height:70vh;overflow:auto;border:1px solid var(--line);border-radius:8px}
+.cal-year table{border-collapse:separate;border-spacing:0;font-size:12px;width:100%}
+.cal-year th,.cal-year td{padding:0;height:22px}
+.cal-year thead th{position:sticky;top:0;z-index:2;background:var(--panel);font:500 11px var(--f-mono);color:var(--muted);padding:4px 2px;border-bottom:1px solid var(--line)}
+.cal-year thead th.cur{color:var(--fg)}
+.cal-year .cal-zone{position:sticky;left:0;z-index:1;background:var(--panel);text-align:left;font-weight:500;padding:0 8px;max-width:140px;min-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cal-year thead .cal-zone{z-index:3}
+.cal-year td{min-width:20px;border:1px solid var(--panel);text-align:center;color:#10181b;font-weight:700;cursor:pointer}
+.cal-year td.cur{outline:2px solid var(--fg);outline-offset:-2px}
+.cal-year tr[data-id]:hover th{color:var(--accent)}
+.cal-grow th{position:sticky;left:0;background:var(--bg);text-align:left;font:600 12px var(--f-body);padding:6px 8px;border-top:1px solid var(--line)}
+@media (max-width:560px){.cal-year .cal-zone{min-width:84px;max-width:96px}.cal-year td{min-width:16px}}
