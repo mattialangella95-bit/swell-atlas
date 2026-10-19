@@ -1,5 +1,14 @@
 # Diario
 
+## 2026-10-19 — Collaudo Supabase
+
+### Fatto
+- Migrazione eseguita da Mattia sul progetto "Swell Atlas"; secret key in `.env` verificata (tipo `sb_secret_`, API admin 200) senza stamparla.
+- `scripts/test_rls.py`: 20/20 controlli superati con due utenti di prova. Ognuno vede e modifica solo profilo e preferiti propri; senza login non si vede nulla; le segnalazioni anonime entrano ma non si leggono né si modificano con la publishable key né da utente; niente segnalazioni a nome di altri o già "risolte"; con la secret key si leggono.
+- Corretto un errore dello script: il marcatore delle righe di prova conteneva uno spazio non codificato nell'URL. Il primo giro si era fermato dopo 18 controlli superati senza pulire; avanzi (2 utenti, 2 segnalazioni) cancellati a mano con la secret key, profili e preferiti erano già spariti in cascata.
+- `feedback.py --tutte`: nessuna segnalazione, il progetto è pulito.
+
+
 ## 2026-10-19 — Chiavi Supabase
 
 ### Fatto
@@ -70,10 +79,9 @@
   - `profile.js`: al primo accesso crea il profilo copiando la partenza già scelta nel browser; stella sulla scheda; filtro "Solo preferiti" su lista e globo; pannello profilo con partenza, livello, nome e preferiti con nota. Gli id vecchi delle zone confluite si risolvono con gli alias;
   - `feedback.js`: bottone "Segnala" sempre visibile, tipo, zona corrente precompilata, testo, conferma dopo l'invio.
 - `scripts/feedback.py`: elenca le segnalazioni nuove (o `--tutte`), `letta`/`risolta <id>`. Chiave di servizio solo da `.env`, che è in `.gitignore`; `.env.example` mostra i nomi.
-- `scripts/test_rls.py`: collaudo sul progetto vero con due utenti di prova creati e poi cancellati (17 controlli).
+- `scripts/test_rls.py`: collaudo sul progetto vero con due utenti di prova creati e poi cancellati (20 controlli).
 
 ### Aperti
-- Collaudo RLS da lanciare quando il progetto è pronto: servono `.env` e la migrazione eseguita.
 - Il livello surf per ora si salva e basta.
 
 

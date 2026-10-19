@@ -11,6 +11,7 @@ Serve .env con SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_SECRET_KEY e le 
 Uso:    .venv/bin/python scripts/test_rls.py
 """
 import secrets, sys
+from urllib.parse import quote
 
 from supa import env, request
 
@@ -40,7 +41,7 @@ def create_user(tag):
 def main():
     if not (URL and ANON and SERVICE):
         sys.exit("Mancano SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY o SUPABASE_SECRET_KEY in .env (vedi .env.example).")
-    marker = "test_rls " + secrets.token_hex(4)
+    marker = "test_rls_" + secrets.token_hex(4)   # senza spazi: finisce nei filtri dell'URL
     a_id, a_tok = create_user("a")
     b_id, b_tok = create_user("b")
     try:
@@ -82,12 +83,12 @@ def main():
         check("non si segnala a nome di un altro utente", c in (401, 403), f"{c} {r}")
         c, r = request("POST", f"{REST}/swell_feedback", ANON, body={**fb, "status": "risolta"})
         check("non si inserisce una segnalazione già risolta", c in (401, 403), f"{c} {r}")
-        c, r = request("PATCH", f"{REST}/swell_feedback?message=eq.{marker}", ANON, body={"status": "letta"}, prefer="return=representation")
+        c, r = request("PATCH", f"{REST}/swell_feedback?message=eq.{quote(marker)}", ANON, body={"status": "letta"}, prefer="return=representation")
         check("con la chiave anon non si cambia lo stato", c in (401, 403) or (c == 200 and r == []), f"{c} {r}")
-        c, r = request("GET", f"{REST}/swell_feedback?message=eq.{marker}&select=id,user_id", SERVICE)
+        c, r = request("GET", f"{REST}/swell_feedback?message=eq.{quote(marker)}&select=id,user_id", SERVICE)
         check("con la chiave di servizio le segnalazioni di prova si leggono (2)", c == 200 and len(r) == 2, f"{c} {r}")
     finally:
-        request("DELETE", f"{REST}/swell_feedback?message=eq.{marker}", SERVICE)
+        request("DELETE", f"{REST}/swell_feedback?message=eq.{quote(marker)}", SERVICE)
         for uid in (a_id, b_id):   # profili e preferiti se ne vanno in cascata
             request("DELETE", f"{AUTH}/admin/users/{uid}", SERVICE)
         print("utenti e righe di prova cancellati")
