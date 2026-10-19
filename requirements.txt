@@ -1,2 +1,5 @@
+cdsapi==0.7.7
+h5py==3.16.0
 numpy==2.5.4
+pyarrow==26.0.0
 shapely==2.2.0

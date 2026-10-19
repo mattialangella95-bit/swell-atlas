@@ -8,42 +8,35 @@ async function loadJSON(path){
   if(!r.ok)throw new Error(path+": HTTP "+r.status);
   return r.json();
 }
-let ZONES,DEPS,SCALE,FLY,LAND50,LAND110;
+let ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110;
 try{
-  [ZONES,DEPS,SCALE,FLY,LAND50,LAND110]=await Promise.all(
-    ["data/zones.json","data/airports.json","data/scale.json","data/flight-estimate.json","data/land-50m.json","data/land-110m.json"].map(loadJSON));
+  [ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110]=await Promise.all(
+    ["data/zones.json","data/airports.json","data/scale.json","data/flight-estimate.json","data/climate.json","data/land-50m.json","data/land-110m.json"].map(loadJSON));
 }catch(err){
   $("zn").textContent="Dati non caricati";
   $("zs").textContent="Apri il sito tramite un server (es. python3 -m http.server), non come file locale.";
   throw err;
 }
 
-// generatore deterministico per i dati finti
+// generatore deterministico per i prezzi finti della stima voli
 function rnd(seed){let s=0;for(const ch of seed)s=(s*31+ch.charCodeAt(0))>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
 
-// Onde per settimana: 52 elementi {q: indice nella scala 0-9, h: altezza m, t: periodo s}.
-// Per ora FINTI, generati dai parametri zone.demo. Nella fase 3 questa funzione
-// leggerà il JSON calcolato da ERA5: è l'unico punto da sostituire.
+// Onde per settimana dalla climatologia ERA5 (data/climate.json, scripts/build_climate.py):
+// 52 elementi {q: classe prevalente 0-9, h/h25/h75: altezza mediana e 25-75 percentile (m),
+// t: periodo di picco mediano (s), good: % giorni Good o meglio}. null se la zona non ha dati.
 function getZoneWeeks(zone){
-  const d=zone.demo,r=rnd(zone.id),weeks=[];
-  for(let w=0;w<52;w++){
-    const f=(Math.cos(2*Math.PI*(w-d.peak)/52)+1)/2;
-    const q=Math.max(0,Math.min(SCALE.length-1,Math.round(d.base+d.amp*f+(r()-.5)*1.6)));
-    const h=d.height[0]+(d.height[1]-d.height[0])*f+(r()-.5)*.25;
-    const t=Math.round(d.period[0]+(d.period[1]-d.period[0])*f+(r()-.5)*1.5);
-    weeks.push({q,h:Math.max(.2,h),t});
-  }
-  return weeks;
+  const c=CLIMATE.zones[zone.id];
+  if(!c)return null;
+  const F=CLIMATE.fields,ix=k=>F.indexOf(k);
+  return c.weeks.map(w=>({q:w[ix("q")],h:w[ix("h50")],h25:w[ix("h25")],h75:w[ix("h75")],t:w[ix("t50")],good:w[ix("good")]}));
 }
-const GOOD=SCALE.findIndex(s=>s.label==="Good");
-ZONES.forEach(z=>{
-  z.wk=getZoneWeeks(z);
-  z.good=Math.round(100*z.wk.filter(x=>x.q>=GOOD).length/52);
-});
+ZONES.forEach(z=>z.wk=getZoneWeeks(z));
+ZONES=ZONES.filter(z=>z.wk);   // le zone senza climatologia non compaiono
 
 const state={week:0,zone:ZONES[0],dep:DEPS[0]};
 const weekMonth=w=>Math.min(11,Math.floor(w*12/52));
-const fmtH=h=>{const lo=Math.max(.2,h*.75),hi=h*1.2;return lo.toFixed(1).replace(".",",")+"–"+hi.toFixed(1).replace(".",",")+" m"};
+const dec=x=>x.toFixed(1).replace(".",",");
+const fmtH=w=>dec(w.h25)+"–"+dec(w.h75)+" m";
 
 // ---------- globo
 const cv=$("g"),ctx=cv.getContext("2d");
@@ -75,13 +68,13 @@ function draw(){
   ctx.setLineDash([4,4]);ctx.strokeStyle=css("--accent");ctx.lineWidth=1.5;ctx.stroke();ctx.setLineDash([]);
   const c=proj.invert([cx,cy]);
   if(d3.geoDistance([d.lon,d.lat],c)<Math.PI/2){const p=proj([d.lon,d.lat]);ctx.beginPath();ctx.arc(p[0],p[1],3.5,0,7);ctx.fillStyle=css("--fg");ctx.fill()}
-  // zone: pallini che crescono con lo zoom, la selezionata disegnata per ultima (sopra le altre)
-  const fg=css("--fg"),k=Math.min(2,Math.sqrt(zoom)),shown=[];
+  // zone: punti piccoli colorati per qualità, crescono poco con lo zoom; la selezionata ha un anello ed è disegnata sopra le altre
+  const fg=css("--fg"),k=Math.min(1.6,Math.sqrt(zoom)),shown=[];
   ZONES.forEach(zz=>{
     if(zz===state.zone||d3.geoDistance([zz.lon,zz.lat],c)>Math.PI/2-.02)return;
-    shown.push(dot(zz,k,1,"rgba(0,0,0,.35)"));
+    shown.push(dot(zz,k,false,fg));
   });
-  if(d3.geoDistance([z.lon,z.lat],c)<=Math.PI/2-.02)shown.unshift(dot(z,k,2.5,fg));
+  if(d3.geoDistance([z.lon,z.lat],c)<=Math.PI/2-.02)shown.unshift(dot(z,k,true,fg));
   // etichette: la selezionata sempre, le altre solo da zoom e solo se non si sovrappongono
   ctx.font="600 12px "+css("--f-body");ctx.fillStyle=fg;
   const boxes=[];
@@ -93,11 +86,12 @@ function draw(){
   });
 }
 const LABEL_ZOOM=1.6;
-function dot(zz,k,lw,stroke){
-  const p=proj([zz.lon,zz.lat]),wk=zz.wk[state.week],rad=(3.5+wk.h*2.2)*k;
-  ctx.beginPath();ctx.arc(p[0],p[1],rad,0,7);ctx.fillStyle=SCALE[wk.q].color;ctx.globalAlpha=.9;ctx.fill();ctx.globalAlpha=1;
-  ctx.lineWidth=lw;ctx.strokeStyle=stroke;ctx.stroke();
-  return{zz,p,rad};
+function dot(zz,k,sel,fg){
+  const p=proj([zz.lon,zz.lat]),wk=zz.wk[state.week],rad=(sel?3.4:2.6)*k;
+  ctx.beginPath();ctx.arc(p[0],p[1],rad,0,7);ctx.fillStyle=SCALE[wk.q].color;ctx.fill();
+  ctx.lineWidth=.75;ctx.strokeStyle="rgba(0,0,0,.45)";ctx.stroke();
+  if(sel){ctx.beginPath();ctx.arc(p[0],p[1],rad+4,0,7);ctx.lineWidth=1.5;ctx.strokeStyle=fg;ctx.stroke()}
+  return{zz,p,rad:sel?rad+4:rad};
 }
 function rotateTo(z){
   if(anim)anim.stop();
@@ -148,7 +142,7 @@ function render(){
   const z=state.zone,w=z.wk[state.week],m=weekMonth(state.week);
   $("zn").textContent=z.name;$("zs").textContent=z.region+" · aeroporto "+z.airport.code;
   const zq=$("zq");zq.textContent=SCALE[w.q].label;zq.style.background=SCALE[w.q].color;
-  $("sh").textContent=fmtH(w.h);$("sp").textContent=w.t+" s";$("sg").textContent=z.good+"%";
+  $("sh").textContent=fmtH(w);$("sh").title="mediana "+dec(w.h)+" m";$("sp").textContent=Math.round(w.t)+" s";$("sg").textContent=w.good+"%";
   $("strip").innerHTML=z.wk.map((x,i)=>`<i style="background:${SCALE[x.q].color}" class="${i===state.week?"on":""}" title="Settimana ${i+1}, ${SCALE[x.q].label}" data-w="${i}"></i>`).join("");
   const f=flight(state.dep,z);
   $("fd").textContent=Math.round(f.dist).toLocaleString("it-IT")+" km";

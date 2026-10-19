@@ -25,6 +25,9 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - `data/zones.json` non si modifica a mano: si rigenera con `scripts/build_zones.py` -> revisione di `data/review/zones_candidates.csv` -> `scripts/apply_review.py`.
 - Il CSV di revisione è di Mattia: non sovrascriverlo se ha `nome_manuale`, `esposizione_manuale`, `tieni` o `note` compilati. Le colonne `*_manuale` vincono su quelle calcolate.
 - `data/raw/` contiene solo download, non è versionata.
+- Onde: le soglie della regola qualità stanno solo in `data/quality-rule.json`, mai nel codice. I dati orari passano dal formato intermedio parquet (`data/raw/waves/<id>.parquet`) sia da Open-Meteo (`fetch_waves.py`) sia da Copernicus (`era5_cds.py`); `build_climate.py` scrive `data/climate.json`.
+- Open-Meteo gratuito: 10.000 chiamate al giorno, una zona da 20 anni ne vale circa 313. Niente download massivi senza chiedere.
+- Prima di cambiare soglie, mostra la tabella mese per mese delle 5 zone di collaudo (`build_climate.py --verifica ...`) e spiega il perché.
 
 ## Test in locale
 `python3 -m http.server 8000` e apri http://localhost:8000 (con `file://` il fetch fallisce).

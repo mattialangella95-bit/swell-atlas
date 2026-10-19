@@ -3,8 +3,7 @@
 Tiene solo le righe con tieni = si. Se compilate, nome_manuale ed esposizione_manuale
 prendono il posto di nome ed esposizione_gradi (nome_manuale: "Nome" oppure "Nome · Regione";
 senza regione resta quella proposta). Per ogni zona aggiunge l'aeroporto di riferimento
-(il più vicino con voli di linea, da OurAirports) e i parametri demo per i dati onda finti
-di getZoneWeeks, che spariranno in fase 3.
+(il più vicino con voli di linea, da OurAirports).
 
 Input:  data/review/zones_candidates.csv  (oppure il percorso passato con --csv)
         data/raw/airports.csv              (OurAirports, scaricato se manca)
@@ -13,7 +12,7 @@ Output: data/zones.json
 Uso:    .venv/bin/python scripts/apply_review.py
         .venv/bin/python scripts/apply_review.py --preseleziona 150   # segna "si" sulle 150 zone con più spot
 """
-import argparse, csv, io, json, math, random, sys, urllib.request
+import argparse, csv, io, json, math, sys, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -67,15 +66,6 @@ def km(lat1, lon1, lat2, lon2):
     return 2 * 6371 * math.asin(math.sqrt(min(1, a)))
 
 
-def demo_params(zid, lat):
-    """Parametri finti per getZoneWeeks: picco d'inverno nel proprio emisfero, il resto casuale ma stabile per id."""
-    r = random.Random(zid)
-    peak = (2 if lat >= 0 else 28) + r.randint(-6, 6) if abs(lat) > 10 else r.randint(0, 51)
-    h0 = round(r.uniform(0.4, 1.0), 1); t0 = r.randint(7, 12)
-    return {"peak": peak % 52, "base": round(r.uniform(1.5, 3.5), 1), "amp": round(r.uniform(4.5, 6.5), 1),
-            "height": [h0, round(h0 + r.uniform(1.2, 2.4), 1)], "period": [t0, t0 + r.randint(4, 6)]}
-
-
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--csv", type=Path, default=CSV, help="CSV revisionato (default data/review/zones_candidates.csv)")
@@ -122,7 +112,7 @@ def main():
         zones.append({"id": zid, "name": name.strip(), "region": ", ".join(x for x in (country, region.strip()) if x),
                       "lat": round(lat, 4), "lon": round(lon, 4), "spots": int(r["n_spot"]),
                       "exposure": expo,
-                      "airport": airport, "demo": demo_params(zid, lat)})
+                      "airport": airport})
 
     OUT.write_text(json.dumps(zones, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     far = [z for z in zones if km(z["lat"], z["lon"], z["airport"]["lat"], z["airport"]["lon"]) > 200]

@@ -1,0 +1,48 @@
+{
+  "_note": "Regola qualità oraria usata da scripts/build_climate.py. Si tara qui, non nel codice. Classi 0-9 come data/scale.json (0 Flat ... 9 Epic).",
+  "daylight": {
+    "_note": "ore diurne: sole sopra l'orizzonte di almeno minSunElevationDeg",
+    "minSunElevationDeg": 0
+  },
+  "day": {
+    "_note": "classe del giorno = la classe migliore tenuta per almeno minHours ore diurne (con dati ogni 3 o 6 ore: minHours convertite in campioni, almeno 1)",
+    "minHours": 3
+  },
+  "height": {
+    "_note": "altezza onda (m, ERA5 al largo) dopo la correzione per direzione. Sotto min è Flat; da ideal a max punteggio pieno; oltre max scende fino a zero a tooBig (mareggiate)",
+    "min": 0.4,
+    "ideal": 2.5,
+    "max": 3.5,
+    "tooBig": 6.0
+  },
+  "period": {
+    "_note": "periodo (s) letto dalla colonna field (wave_peak_period = di picco, wave_period = medio). Sotto min punteggio zero; a good pieno",
+    "field": "wave_peak_period",
+    "min": 7,
+    "good": 14
+  },
+  "direction": {
+    "_note": "differenza tra direzione di provenienza dell'onda ed esposizione della costa. Entro fullDeg arriva tutta, oltre maxDeg non arriva; in mezzo scala lineare",
+    "fullDeg": 45,
+    "maxDeg": 100
+  },
+  "wind": {
+    "_note": "offshore: vento che arriva entro offshoreDeg dall'opposto dell'esposizione; cross-offshore: entro crossOffshoreDeg ma non offshore. onshore: entro onshoreDeg dall'esposizione. Velocità in km/h",
+    "offshoreDeg": 60,
+    "crossOffshoreDeg": 100,
+    "onshoreDeg": 60,
+    "lightKmh": 10,
+    "onshoreStrongKmh": 20,
+    "offshoreBonus": 2,
+    "crossOffshoreBonus": 1,
+    "lightBonus": 1,
+    "onshorePenalty": 1,
+    "onshoreStrongPenalty": 3
+  },
+  "points": {
+    "_note": "classe = arrotondamento di height*punteggio_altezza + period*punteggio_periodo + correzione vento, limitata tra 1 e 9 (Flat solo sotto height.min)",
+    "height": 4,
+    "period": 3
+  },
+  "goodClass": 6
+}

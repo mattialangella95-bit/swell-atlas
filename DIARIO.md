@@ -1,5 +1,61 @@
 # Diario
 
+## 2026-10-19 — Fase 3, onde ERA5 (collaudo e strategia dati)
+
+### Fatto
+- `scripts/fetch_waves.py` (Open-Meteo):
+  - onde dal modello `era5_ocean` (altezza, periodo medio, periodo di picco, direzione dell'onda totale). Per il 2005-2024 Open-Meteo **non ha lo swell separato**: c'è solo dal 2022;
+  - punto onde a 40 km dal centro verso l'esposizione; se è terra, spostamenti di 20 km;
+  - vento ERA5 a 10 m nella cella di **mare** più vicina alla costa (`cell_selection=sea`). La cella di terra lo sottostimava: a Bali segnava "vento leggero" nel 47-64% delle ore;
+  - pause, attesa automatica sui limiti, ripresa da dove si era fermato, `--rifai-vento`. Grezzi in `data/raw/waves/<id>.parquet` (fuori da git, ~1,5 MB a zona).
+- `data/quality-rule.json`: tutte le soglie della regola oraria, più la scelta del campo periodo.
+- `scripts/build_climate.py`:
+  - ore diurne calcolate con la posizione del sole; giorno = classe migliore tenuta per 3 ore;
+  - per settimana: classe prevalente, % giorni Good+, percentili 25/50/75 di altezza e periodo. Output `data/climate.json` (~1,6 KB a zona);
+  - regge anche dati ogni 3 o 6 ore (le 3 ore diventano campioni);
+  - `--verifica` stampa la tabella mese per mese.
+- App: `getZoneWeeks` legge `climate.json`. La scheda mostra altezza 25-75% e giorni Good+ della settimana. Le zone senza dati non compaiono. Generatore finto e parametri `demo` eliminati.
+- Marker del globo rimpiccioliti: punti di circa 5 px, la selezionata con un anello.
+- Collaudo su 5 zone (20 anni orari, Open-Meteo):
+  - prima regola troppo generosa: Hossegor Epic in inverno, Bali buona tutto l'anno, Jeffreys Bay piatta;
+  - correzioni: vento in cella di mare; altezza massima 3,5 m con calo fino a 6 m; bonus cross-offshore; bonus vento leggero ridotto; ideale 2,5 m e periodo buono 14 s;
+  - Mentawai era senza esposizione, con il punto onde nello stretto riparato: `esposizione_manuale` = 225 nel CSV e zona riscaricata.
+
+  | Good+ per mese | Gen | Feb | Mar | Apr | Mag | Giu | Lug | Ago | Set | Ott | Nov | Dic |
+  |---|---|---|---|---|---|---|---|---|---|---|---|---|
+  | North Shore | 70 | 60 | 50 | 30 | 10 | 2 | 0 | 1 | 10 | 35 | 45 | 64 |
+  | Jeffreys Bay* | 37 | 44 | 52 | 59 | 56 | 55 | 56 | 59 | 47 | 43 | 35 | 31 |
+  | Hossegor | 54 | 58 | 50 | 30 | 16 | 7 | 5 | 7 | 22 | 42 | 50 | 57 |
+  | Bali (Medewi/Uluwatu) | 37 | 42 | 60 | 80 | 90 | 94 | 95 | 96 | 91 | 81 | 60 | 39 |
+  | Mentawai | 42 | 39 | 50 | 68 | 83 | 89 | 91 | 90 | 83 | 71 | 54 | 42 |
+
+  *zona "Doughnuts Backreef", 41 km da J-Bay.
+- Consumo Open-Meteo misurato (gli header non lo riportano, nessun 429 ricevuto):
+  - 18 richieste da 20 anni oggi, di cui 11 nella stessa ora: il peso medio è al massimo 454 chiamate, quindi la stima di ~520 a richiesta è troppo alta;
+  - compatibile con `giorni/14 × variabili/10`: onde 209, vento 104, circa 313 a zona;
+  - circa 2,7 minuti a zona.
+- Copernicus CDS, misure senza account (endpoint pubblico di costing):
+  - dataset puntuale `reanalysis-era5-single-levels-timeseries`: ha altezza significativa, periodo medio e direzione media dell'onda, più vento u/v a 10 m. Non ha periodo di picco né swell separato. 20 anni orari per un punto costano 180 su un limite di 760: una richiesta per punto;
+  - griglia `reanalysis-era5-single-levels`, 7 variabili: 1 mese ogni 6 ore costa 5.208, 1 anno 61.488, 1 mese con 3 orari 3.906, 1 mese orario 31.248, su un limite di 121.000.
+- Prove su dati già scaricati:
+  - dati ogni 6 ore: Good+ mensile spostato di 0,4-4,9 punti;
+  - 3 orari UTC fissi: fino a 22 punti su Bali (ore notturne), quindi non usabile sulla griglia globale;
+  - formato intermedio Copernicus (u/v convertiti): climatologia identica.
+- `scripts/era5_cds.py`: `costi`, `prova-puntuale`, `prova-griglia` (1 mese), `scarica` (dataset puntuale -> stesso parquet di Open-Meteo).
+- Periodo medio / periodo di picco nelle 5 zone: da 0,77 a 0,85, quindi non è un fattore fisso.
+
+### Aperti
+- Prova reale Copernicus non fatta: serve l'account CDS di Mattia. Quindi tempi di coda e dimensioni della griglia sono stime, non misure, e anche il confronto Open-Meteo/CDS sulle stesse ore è da fare.
+- Hossegor: l'inverno resta alto quanto l'autunno; da tarare con l'amico (es. `height.max`).
+- Con il dataset puntuale CDS la regola va spostata su `period.field = wave_period` e ritarata sulle 5 zone.
+- Sul sito ci sarebbero solo le 5 zone con dati finché il download non è completo: non pubblicare prima.
+
+### Prossimi passi
+- Mattia: account CDS, licenza ERA5, chiave in `~/.cdsapirc`.
+- Lanciare `era5_cds.py prova-puntuale` e `prova-griglia`, riscalare le stime e confrontare con Open-Meteo.
+- Ritarare la regola sul periodo medio e scaricare tutte le zone dal dataset puntuale.
+
+
 ## 2026-10-19 — Fase 2, zone
 
 ### Fatto
