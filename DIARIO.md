@@ -21,6 +21,9 @@
 
 - Push: GitHub ha rifiutato il primo tentativo perché il token di `gh` non ha il permesso `workflow`. Il workflow dei prezzi (inutile finché mancano i secret) è stato spostato nei commit non pubblicati in `.github/workflows-da-attivare/prezzi.yml`: stesso contenuto, cartella che GitHub non esegue. Ramo locale `backup-prima-del-push` con la versione originale.
 
+- Push fatto (`5ccc6a5..568572b`, 16 commit). Sito pubblicato verificato: si apre, carica i dati (51 zone con dati, 99 "in arrivo"), calendario con 51 righe, nessun errore in console.
+- Processi fermati: download Copernicus (PID 5884) e il suo `caffeinate` (5885), lo script che avrebbe ricostruito il clima a fine download (6670), il server locale sulla porta 8000 (8545). Le porte 8000, 8765 e 9333 sono libere: niente del progetto resta attivo.
+
 ### Ripresa del download (comando esatto)
 ```
 cd /Users/mattia/Documents/swell-atlas
