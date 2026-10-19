@@ -9,9 +9,9 @@ Per ogni zona e settimana dell'anno (0-51, la 52a raccoglie anche il 365/366° g
 usando solo le ore diurne:
   - ogni ora riceve una classe 0-9 dalla regola, ogni giorno la classe migliore tenuta
     per almeno day.minHours ore;
-  - per settimana: classe prevalente dei giorni, % di giorni Good o meglio,
+  - per settimana: classe del giorno tipico (mediana dei giorni), % di giorni Good o meglio,
     25°/50°/75° percentile di altezza onda e periodo (colonna scelta in quality-rule.json);
-  - per mese (calendario): classe prevalente, altezza 25/75, periodo mediano, % giorni Good+,
+  - per mese (calendario): classe del giorno tipico, altezza 25/75, periodo mediano, % giorni Good+,
     vento offshore prevalente sì/no.
 
 Uso:    .venv/bin/python scripts/build_climate.py
@@ -122,12 +122,15 @@ def daily(zone, table, R):
 
 
 def summarize(sel, cls, hours, h, tp, good_cls):
-    """Classe prevalente, percentili di altezza e periodo, % giorni Good+ per un gruppo di giorni."""
+    """Classe del giorno tipico, percentili di altezza e periodo, % giorni Good+ per un gruppo di giorni."""
     if not len(sel):
         return None
     idx = np.concatenate([hours[i] for i in sel])
     c = cls[sel]
-    q = int(np.bincount(c, minlength=10).argmax())
+    # classe del giorno tipico: la mediana, non la più frequente. La moda salta tra classi lontane
+    # (una zona con il 22% di giorni buoni risultava "Flat"), e globo (settimana) e calendario (mese)
+    # davano colori diversi nel 9% dei casi; con la mediana quasi mai.
+    q = int(np.median(c))
     h25, h50, h75 = np.percentile(h[idx], [25, 50, 75])
     t25, t50, t75 = np.percentile(tp[idx], [25, 50, 75])
     return [q, round(h25, 1), round(h50, 1), round(h75, 1), round(t25, 1), round(t50, 1), round(t75, 1),
@@ -135,7 +138,7 @@ def summarize(sel, cls, hours, h, tp, good_cls):
 
 
 def month_summary(sel, cls, hours, h, tp, good_cls, off, on, has_expo):
-    """Riepilogo di un mese: classe prevalente, altezza 25/75, periodo mediano, % giorni Good+,
+    """Riepilogo di un mese: classe del giorno tipico, altezza 25/75, periodo mediano, % giorni Good+,
     vento offshore prevalente (1 se nelle ore di luce l'offshore supera l'onshore; null senza esposizione)."""
     s = summarize(sel, cls, hours, h, tp, good_cls)
     if s is None:

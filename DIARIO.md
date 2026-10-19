@@ -1,5 +1,13 @@
 # Diario
 
+## 2026-10-20 — Colori coerenti tra globo e calendario
+
+### Fatto
+- Problema: il globo colora la zona con la classe della settimana, il calendario con quella del mese, e la classe era la più frequente (moda). La moda salta tra classi lontane: una zona con il 22% di giorni buoni risultava "Flat". Globo e calendario differivano di 2 o più classi nel 9% delle settimane (233 su 2.652).
+- Correzione in `build_climate.py`: la classe mostrata è quella del giorno tipico, cioè la mediana dei giorni. Differenze di 2 o più classi: 8 su 2.652 (0%). La % di giorni buoni non cambia.
+- Verifica sull'Europa (settimana 42 / ottobre): 12 zone su 15 con lo stesso colore, le altre 3 a un gradino di distanza, perché la settimana è un po' diversa dalla media del mese. A metà ottobre l'Europa è soprattutto verde-giallo e giallo; l'arancione ("Very Good") compare in inverno.
+
+
 ## 2026-10-19 sera — Chiusura di giornata
 
 ### Fatto
