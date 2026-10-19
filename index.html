@@ -12,7 +12,10 @@
 <div class="wrap">
   <header>
     <h1>Swell Atlas</h1>
-    <span class="demo">Onde ERA5 2005-2024 · voli e prezzi stimati</span>
+    <div class="head-r">
+      <span class="demo">Onde ERA5 2005-2024 · voli e prezzi stimati</span>
+      <button class="btn" id="btn-account" hidden>Accedi</button>
+    </div>
   </header>
 
   <div class="main">
@@ -31,7 +34,10 @@
           <h2 class="zone-name" id="zn"></h2>
           <div class="zone-sub" id="zs"></div>
         </div>
-        <span class="chip" id="zq"></span>
+        <div class="zone-tools">
+          <button class="star" id="fav" aria-pressed="false" title="Aggiungi ai preferiti" hidden>☆</button>
+          <span class="chip" id="zq"></span>
+        </div>
       </div>
       <div class="stats">
         <div class="stat"><div class="k">Onda tipica, 25-75%</div><div class="v" id="sh"></div></div>
@@ -74,14 +80,57 @@
     <input type="range" id="wr" min="0" max="51" value="0" aria-label="Settimana dell'anno">
     <div class="months" id="m3"></div>
     <div class="legend" id="legend"></div>
+    <label class="only-fav" id="only-fav-box" hidden><input type="checkbox" id="only-fav"> Solo preferiti</label>
     <div class="list" id="zlist"></div>
   </section>
 
-  <footer>Per ogni zona 20 anni di dati orari ERA5 (2005-2024, via Open-Meteo), solo ore di luce: altezza, periodo e direzione dell'onda al largo e vento sulla costa, tradotti in una scala qualità ispirata a quella di Surfline ma calcolata con una regola nostra. Altezza e periodo sono valori al largo, non sulla battigia. È una statistica storica, serve a scegliere quando partire, non è la previsione del giorno. Ore di volo e prezzi sono ancora stime.</footer>
+  <footer>Per ogni zona 20 anni di dati orari ERA5 (2005-2024, via Open-Meteo e Copernicus), solo ore di luce: altezza, periodo e direzione dell'onda al largo e vento sulla costa, tradotti in una scala qualità ispirata a quella di Surfline ma calcolata con una regola nostra. Altezza e periodo sono valori al largo, non sulla battigia. È una statistica storica, serve a scegliere quando partire, non è la previsione del giorno. Ore di volo e prezzi sono ancora stime.</footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<button class="fab" id="btn-feedback">Segnala</button>
+
+<dialog id="dlg-login" aria-labelledby="login-t">
+  <form method="dialog" class="dlg" id="login-form">
+    <h2 id="login-t">Accedi</h2>
+    <p class="note">Ti mandiamo un link via mail, niente password. Serve solo per preferiti e profilo: il resto funziona anche senza.</p>
+    <label class="field"><span>Email</span><input type="email" id="login-email" required autocomplete="email"></label>
+    <p class="msg" id="login-msg" role="status"></p>
+    <div class="dlg-actions"><button class="btn" value="cancel" formnovalidate>Chiudi</button><button class="btn primary" id="login-send" value="default">Mandami il link</button></div>
+  </form>
+</dialog>
+
+<dialog id="dlg-profile" aria-labelledby="profile-t">
+  <form method="dialog" class="dlg" id="profile-form">
+    <h2 id="profile-t">Profilo</h2>
+    <p class="note" id="profile-email"></p>
+    <label class="field"><span>Nome visualizzato</span><input id="pf-name" maxlength="60" autocomplete="nickname"></label>
+    <label class="field"><span>Partenza preferita</span><select id="pf-airport"></select></label>
+    <label class="field"><span>Livello surf</span><select id="pf-level">
+      <option value="">—</option><option value="principiante">Principiante</option><option value="intermedio">Intermedio</option><option value="esperto">Esperto</option>
+    </select></label>
+    <div class="field"><span>Preferiti</span><ul class="favs" id="pf-favs"></ul></div>
+    <p class="msg" id="profile-msg" role="status"></p>
+    <div class="dlg-actions"><button class="btn" id="pf-logout" value="cancel" formnovalidate>Esci</button><button class="btn" value="cancel" formnovalidate>Chiudi</button><button class="btn primary" id="pf-save" value="default">Salva</button></div>
+  </form>
+</dialog>
+
+<dialog id="dlg-feedback" aria-labelledby="fb-t">
+  <form method="dialog" class="dlg" id="fb-form">
+    <h2 id="fb-t">Segnala</h2>
+    <label class="field"><span>Tipo</span><select id="fb-kind">
+      <option value="bug">Qualcosa non funziona</option><option value="miglioria">Idea o miglioria</option><option value="dato_zona">Dato sbagliato su una zona</option>
+    </select></label>
+    <label class="field"><span>Zona</span><select id="fb-zone"></select></label>
+    <label class="field"><span>Cosa hai visto</span><textarea id="fb-text" rows="5" maxlength="4000" required></textarea></label>
+    <p class="msg" id="fb-msg" role="status"></p>
+    <div class="dlg-actions"><button class="btn" value="cancel" formnovalidate>Chiudi</button><button class="btn primary" id="fb-send" value="default">Invia</button></div>
+  </form>
+</dialog>
+
 <script type="module" src="app.js"></script>
+<script type="module" src="profile.js"></script>
+<script type="module" src="feedback.js"></script>
 </body>
 </html>

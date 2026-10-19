@@ -73,7 +73,7 @@ function draw(){
   // zone: punti piccoli colorati per qualità, crescono poco con lo zoom; la selezionata ha un anello ed è disegnata sopra le altre
   const fg=css("--fg"),k=Math.min(1.6,Math.sqrt(zoom)),shown=[];
   ZONES.forEach(zz=>{
-    if(zz===state.zone||d3.geoDistance([zz.lon,zz.lat],c)>Math.PI/2-.02)return;
+    if(zz===state.zone||!visible(zz)||d3.geoDistance([zz.lon,zz.lat],c)>Math.PI/2-.02)return;
     shown.push(dot(zz,k,false,fg));
   });
   if(d3.geoDistance([z.lon,z.lat],c)<=Math.PI/2-.02)shown.unshift(dot(z,k,true,fg));
@@ -124,6 +124,9 @@ cv.addEventListener("pointermove",e=>{if(!pts.has(e.pointerId))return;pts.set(e.
 const endP=e=>{pts.delete(e.pointerId);if(pts.size<2)pinch0=null};
 cv.addEventListener("pointerup",endP);cv.addEventListener("pointercancel",e=>{endP(e);dragging=false});
 
+// agganci per profile.js e feedback.js: filtro zone visibili (es. solo preferiti) e callback dopo ogni render
+const hooks={filter:null,render:[]};
+const visible=z=>!hooks.filter||hooks.filter(z);
 function zoneColor(z){return z.wk?SCALE[z.wk[state.week].q].color:css("--nodata")}
 
 // ---------- voli: ore e scali stimati da distanza e parametri (data/flight-estimate.json); prezzi ancora finti
@@ -167,13 +170,15 @@ function render(){
   $("wk").textContent="Settimana "+(state.week+1)+" · "+MESI[m];
   $("wr").value=state.week;
   document.querySelectorAll("#zlist button").forEach(b=>{const zz=ZONES.find(x=>x.id===b.dataset.id);b.classList.toggle("sel",zz===z);b.querySelector("i").style.background=zoneColor(zz)});
+  hooks.render.forEach(f=>f(z));
 }
 function setWeek(w){state.week=(w+52)%52;render();draw()}
 $("strip").addEventListener("click",e=>{if(e.target.dataset.w)setWeek(+e.target.dataset.w)});
 $("wr").addEventListener("input",e=>setWeek(+e.target.value));
 ["m1","m2","m3"].forEach(id=>$(id).innerHTML=MESI.map(m=>`<span>${m}</span>`).join(""));
 $("legend").innerHTML=SCALE.map(s=>`<span><b style="background:${s.color}"></b>${s.label}</span>`).join("");
-$("zlist").innerHTML=ZONES.map(z=>`<button data-id="${z.id}"><i></i>${z.name}</button>`).join("");
+function buildZoneList(){$("zlist").innerHTML=ZONES.filter(visible).map(z=>`<button data-id="${z.id}"><i></i>${z.name}</button>`).join("")}
+buildZoneList();
 $("zlist").addEventListener("click",e=>{const b=e.target.closest("button");if(b)selectZone(ZONES.find(z=>z.id===b.dataset.id))});
 // partenza: campo con ricerca per nome o codice IATA (datalist), tutti gli aeroporti italiani large e medium
 const depText=d=>`${d.label} (${d.code})`;
@@ -197,3 +202,6 @@ new ResizeObserver(resize).observe($("gbox"));
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
 new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 render();resize();
+
+export const app={state,ZONES,DEPS,DEP_KEY,hooks,depText,findDep,setDep,selectZone,
+  refresh(){buildZoneList();render();draw()}};

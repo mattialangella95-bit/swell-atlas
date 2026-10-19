@@ -12,6 +12,12 @@ Online: https://mattialangella95-bit.github.io/swell-atlas/
 index.html          markup
 style.css           stili (tema chiaro/scuro)
 app.js              logica: globo, timeline, pannello zona, stima voli
+auth.js             accesso con link via mail (Supabase Auth)
+profile.js          profilo e preferiti
+feedback.js         segnalazioni
+supabase-config.js  URL e chiave anon di Supabase (vuoti = account disattivati)
+supabase/migrations/ SQL delle tabelle swell_* con Row Level Security
+.env.example        nomi delle chiavi per gli script (.env resta fuori da git)
 data/
   zones.json        zone surf (generato da scripts/apply_review.py)
   zone-ids.json     registro degli id zona stabili (generato da scripts/build_zones.py)
@@ -32,6 +38,8 @@ scripts/
   fetch_waves.py    onde e vento orari 2005-2024 da Open-Meteo (ERA5)
   era5_cds.py       stesso formato da Copernicus CDS, più costi e prove
   build_climate.py  dati orari + regola qualità -> data/climate.json
+  feedback.py       legge le segnalazioni e ne cambia lo stato (chiave di servizio da .env)
+  test_rls.py       collaudo dei permessi Supabase con due utenti di prova
 requirements.txt    dipendenze Python degli script
 README.md
 DIARIO.md           diario di lavoro
@@ -73,6 +81,18 @@ Fonti: spot dal gist pubblico di naotokui (~5900 spot), coste Natural Earth, aer
 ```
 
 La regola qualità si tara solo in `data/quality-rule.json` (usa il periodo medio). Fonte: ERA5 2005-2024, ore di luce, onda totale al largo (niente swell separato) e vento a 10 m nella cella di mare sulla costa.
+
+## Account e segnalazioni (Supabase)
+
+L'app funziona tutta senza account; il login (link via mail) serve solo per preferiti e profilo. Le segnalazioni si mandano anche senza login e si leggono solo da qui:
+
+```
+.venv/bin/python scripts/feedback.py            # nuove
+.venv/bin/python scripts/feedback.py letta 3    # oppure: risolta 3
+.venv/bin/python scripts/test_rls.py            # collaudo permessi
+```
+
+La chiave anon sta in `supabase-config.js`; la chiave di servizio solo in `.env`, mai nel repository.
 
 ## Fasi
 

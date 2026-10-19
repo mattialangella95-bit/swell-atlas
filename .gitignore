@@ -3,3 +3,6 @@ swell-atlas.html
 .venv/
 data/raw/
 __pycache__/
+.env
+.env.*
+!.env.example

@@ -1,5 +1,26 @@
 # Diario
 
+## 2026-10-19 — Account, preferiti e segnalazioni (Supabase)
+
+### Fatto
+- `supabase/migrations/20261019120000_swell_init.sql`, tutto con prefisso `swell_` e Row Level Security attiva:
+  - `swell_profiles`: nome visualizzato, partenza preferita (IATA), livello surf, date;
+  - `swell_favorites`: utente, id zona, nota, data;
+  - `swell_feedback`: utente facoltativo, tipo, zona facoltativa, testo, pagina, stato dell'app, user agent, stato, data;
+  - permessi: profilo e preferiti solo propri; segnalazioni inseribili da tutti (anche anonime, solo come "nuova" e mai a nome di altri), non leggibili né modificabili dall'app. Permessi di tabella ristretti al minimo (`revoke all` + `grant` espliciti).
+- App, in file nuovi (`app.js` toccato solo per gli agganci: filtro zone, callback dopo il render, oggetto `app` esportato):
+  - `supabase-config.js` con URL e chiave anon. Vuoti = account e segnalazioni disattivati, il resto funziona uguale (verificato: nessun errore in console);
+  - `auth.js`: magic link (`signInWithOtp`) che torna alla pagina da cui si è partiti; supabase-js 2.45.4 da jsdelivr, caricato solo se configurato;
+  - `profile.js`: al primo accesso crea il profilo copiando la partenza già scelta nel browser; stella sulla scheda; filtro "Solo preferiti" su lista e globo; pannello profilo con partenza, livello, nome e preferiti con nota. Gli id vecchi delle zone confluite si risolvono con gli alias;
+  - `feedback.js`: bottone "Segnala" sempre visibile, tipo, zona corrente precompilata, testo, conferma dopo l'invio.
+- `scripts/feedback.py`: elenca le segnalazioni nuove (o `--tutte`), `letta`/`risolta <id>`. Chiave di servizio solo da `.env`, che è in `.gitignore`; `.env.example` mostra i nomi.
+- `scripts/test_rls.py`: collaudo sul progetto vero con due utenti di prova creati e poi cancellati (17 controlli).
+
+### Aperti
+- Collaudo RLS da lanciare quando il progetto è pronto: servono `.env` e la migrazione eseguita.
+- Il livello surf per ora si salva e basta.
+
+
 ## 2026-10-19 — Id zona stabili
 
 ### Fatto

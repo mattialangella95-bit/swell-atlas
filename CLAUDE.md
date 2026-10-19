@@ -36,5 +36,11 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Tutti i parametri (velocità, tempi fissi, coincidenze, fasce di scali, hub, eccezioni) stanno in `data/flight-estimate.json`. Se il collaudo da Genova e Malpensa sbaglia di oltre il 15%, si correggono i parametri, non il codice.
 - Le zone hanno `airport_main` (usato per i voli) e `airport_local`. Le partenze italiane si rigenerano con `scripts/build_airports.py`.
 
+## Supabase
+- Tabelle solo con prefisso `swell_` (il progetto può essere condiviso con altre app). Ogni modifica allo schema è una nuova migrazione in `supabase/migrations/`, che esegue Mattia; non modificare le migrazioni già eseguite.
+- Row Level Security sempre attiva: profilo e preferiti solo propri, segnalazioni solo in inserimento.
+- La chiave anon può stare in `supabase-config.js`; la chiave di servizio MAI nel repository o nel codice del sito, solo in `.env` (in `.gitignore`).
+- L'app deve funzionare tutta senza login e anche con `supabase-config.js` vuoto. Le funzioni di account stanno in `auth.js`, `profile.js` e `feedback.js`; `app.js` espone solo gli agganci.
+
 ## Test in locale
 `python3 -m http.server 8000` e apri http://localhost:8000 (con `file://` il fetch fallisce).
