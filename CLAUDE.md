@@ -33,7 +33,7 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - `data/raw/` contiene solo download, non è versionata.
 - Onde: le soglie della regola qualità stanno solo in `data/quality-rule.json`, mai nel codice. I dati orari passano dal formato intermedio parquet (`data/raw/waves/<id>.parquet`) sia da Open-Meteo (`fetch_waves.py`) sia da Copernicus (`era5_cds.py`); `build_climate.py` scrive `data/climate.json`.
 - Open-Meteo gratuito: 10.000 chiamate al giorno, una zona da 20 anni ne vale circa 313. Niente download massivi senza chiedere.
-- Stato al 19/10 sera: 51 zone su 150 con dati, download Copernicus in pausa. Si riprende con `era5_cds.py scarica` (comando esatto in DIARIO.md), si ferma con `touch data/raw/waves/_stop`.
+- Stato al 20/10: download completo, 150 zone su 150. Per zone nuove: aggiorna `_queue.json` e lancia `era5_cds.py scarica` (comando in DIARIO.md); si ferma con `touch data/raw/waves/_stop`.
 - Il download gira staccato dalla sessione e legge solo `data/raw/waves/_queue.json`. Stato: `.venv/bin/python scripts/fetch_waves.py --stato`; stop: `kill $(python3 -c "import json;print(json.load(open('data/raw/waves/_progress.json'))['pid'])")`. Non lanciarne un secondo in parallelo.
 - Prima di cambiare soglie, mostra la tabella mese per mese delle 5 zone di collaudo (`build_climate.py --verifica ...`) e spiega il perché.
 

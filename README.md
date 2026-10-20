@@ -128,6 +128,6 @@ Il giro completo lo farà GitHub Actions ogni lunedì: il workflow è pronto in 
 
 1. **Base** — prototipo trasformato in progetto: file separati, dati in JSON, GitHub Pages. *(completata)*
 2. **Zone** — zone reali da ~5900 spot: pulizia, clustering, esposizione della costa, aeroporto di riferimento, revisione a mano. *(completata)*
-3. **Onde ERA5** — climatologia 2005-2024 da ERA5 (Open-Meteo per il collaudo, Copernicus CDS per tutte le zone), regola qualità in JSON, `climate.json` letto da `getZoneWeeks()`. *(in corso: 51 zone su 150, download in pausa; ripresa in DIARIO.md)*
+3. **Onde ERA5** — climatologia 2005-2024 da ERA5 (Open-Meteo per il collaudo, Copernicus CDS per tutte le zone), regola qualità in JSON, `climate.json` letto da `getZoneWeeks()`. *(fatta: 150 zone su 150; resta la taratura della regola)*
 4. **Ore di volo** — aeroporto principale e locale per zona da OurAirports, partenza da tutti gli aeroporti italiani, ore e scali stimati con parametri in `data/flight-estimate.json`. *(fatta, stima senza rotte vere)*
 5. **Prezzi** — prezzi indicativi dalla cache di Aviasales (Travelpayouts), raccolti ogni settimana da GitHub Actions in `swell_prices` su Supabase; storico per vedere la stagionalità vera. *(codice pronto; mancano token, migrazione e collaudo)*

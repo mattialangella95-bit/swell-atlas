@@ -1,5 +1,17 @@
 # Diario
 
+## 2026-10-20 — Download onde completato
+
+### Fatto
+- Download ripreso alle 11:20 dal comando del diario, finito alle 13:00: **150 zone su 150**, nessuna saltata, circa 2 minuti a zona, un paio di errori di rete superati da soli. Download e `caffeinate` si sono chiusi da soli.
+- `climate.json` ricostruito con tutte le zone (285 KB, settimane e mesi). Le 5 zone di collaudo sono invariate (es. Graters gen 72% / lug 0%, Medewi gen 37% / lug 90%).
+- Calendario completo: 150 zone; in luglio in testa Mentawai, Sudafrica (George, Città del Capo), Lombok, Australia occidentale.
+- Controlli prima del push: nessun segreto nei 6 commit nuovi, `data/raw` fuori da git, nessun errore in console, 400 px senza sforamenti.
+
+### Aperti
+- 12 zone non sono mai "buone" in nessun mese, tutte in mari chiusi o con onda corta: Langevelderslag, Bay of Heist, Sunset Beach, Garraf, Cap Blanc Nez, 3-poles reef, Deep Creek, Playa Grande, Il Convento, Calita, Bexhill, Batts Rock. Da guardare nella taratura (periodo minimo, onde corte).
+
+
 ## 2026-10-20 — Accesso con email e password, come Piano alimentare
 
 ### Fatto
