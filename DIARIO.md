@@ -1,5 +1,24 @@
 # Diario
 
+## 2026-10-20 — Pagine Mondo e Calendario, periodo a giorni, paese dalla mappa
+
+### Fatto
+- Due pagine con linguette in alto, Mondo e Calendario (`pages.js`). La pagina sta nell'indirizzo (`#calendario`); il clic su una zona del calendario riporta al Mondo con la scheda aperta.
+- Mondo: globo, scheda, timeline e, al posto del calendario, "Le zone, paese per paese" (gruppi per paese con il colore della settimana; "Solo preferiti" con login).
+- Paese dalla mappa (`data/countries-110m.json`, confini world-atlas):
+  - qualunque tocco porta in testa alla lista il paese toccato;
+  - su uno spot si apre la scheda e la pagina non scorre;
+  - su un punto vuoto il paese si colora sul globo e la pagina scorre alla lista;
+  - isole piccole senza confini a questa scala (Maldive, Barbados): vale la zona più vicina entro 500 km;
+  - "mostra tutti in ordine" toglie la selezione.
+  - Il test aveva mostrato che a zoom normale gli spot sono così fitti che toccando il Portogallo si prendeva sempre uno spot: per questo anche il tocco su uno spot porta in testa il suo paese.
+- Calendario: oltre ai mesi, "oppure dal … al …" a giorno. I dati sono per settimana: ogni settimana pesa quanti giorni cadono nel periodo (% giorni buoni e altezze in media pesata, classe del giorno tipico come mediana pesata); il prezzo è quello del mese a metà periodo. Funziona anche a cavallo d'anno.
+  - 5-19 agosto: in testa 4 Bobs, Herolds Bay, Tropical's, Blinkklip Reef.
+  - 28 dicembre-10 gennaio: Klamath Rivermouth, Scott's Creek, Oubaha, Double point.
+- Corretto "Dove andare a agosto" in "ad agosto" (anche aprile e ottobre).
+- Collaudo nel browser headless: pagine, tocco su Portogallo, Maldive e Hawaii, periodi, clic che riporta al Mondo, 400 px senza sforamenti su entrambe le pagine, nessun errore.
+
+
 ## 2026-10-20 — Download onde completato
 
 ### Fatto

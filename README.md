@@ -16,7 +16,8 @@ auth.js             accesso con email e password (Supabase Auth), come Piano ali
 profile.js          profilo e preferiti
 feedback.js         segnalazioni
 admin.js            segnalazioni dentro il profilo, solo per gli admin
-calendar.js         vista Calendario (mese e anno) · calendar.css i suoi stili
+calendar.js         pagina Calendario (mese, periodo dal … al …, anno) · calendar.css i suoi stili
+pages.js            linguette Mondo / Calendario
 prices.js           prezzi voli indicativi da Supabase (swell_prices), con la stima come riserva
 .github/workflows-da-attivare/prezzi.yml  raccolta settimanale dei prezzi
 supabase-config.js  URL e chiave anon di Supabase (vuoti = account disattivati)
@@ -34,6 +35,7 @@ data/
   flight-estimate.json  parametri della stima di ore di volo e scali, prezzi finti
   land-50m.json     coste Natural Earth 1:50m (world-atlas, TopoJSON)
   land-110m.json    coste 1:110m, usate durante trascinamento e animazioni
+  countries-110m.json confini dei paesi (world-atlas), per scegliere un paese toccando il globo
   review/
     zones_candidates.csv   zone candidate da revisionare a mano (Excel)
   raw/              download grezzi, non versionati (spot, OurAirports in raw/airports, onde orarie)
@@ -101,7 +103,7 @@ La regola qualità si tara solo in `data/quality-rule.json` (usa il periodo medi
 
 ## Calendario
 
-Sotto il globo: scelto un mese, le zone raggruppate per aeroporto di arrivo, per paese e regione o per ore di volo, con qualità del mese, % giorni Good+, altezza e ore di volo stimate. La vista "Anno" mostra la matrice zone × mesi. Usa i riepiloghi mensili di `climate.json`; le zone senza dati non compaiono.
+Nella pagina Calendario (linguetta in alto): scelto un mese, le zone raggruppate per aeroporto di arrivo, per paese e regione o per ore di volo, con qualità del mese, % giorni Good+, altezza e ore di volo stimate. Oltre ai mesi si può scegliere un periodo "dal … al …" a giorno: le settimane pesano per i giorni che cadono nel periodo. La vista "Anno" mostra la matrice zone × mesi. Nella pagina Mondo le zone sono elencate paese per paese; toccando un paese sul globo va in testa alla lista. Usa i riepiloghi mensili di `climate.json`; le zone senza dati non compaiono.
 
 ## Account e segnalazioni (Supabase)
 

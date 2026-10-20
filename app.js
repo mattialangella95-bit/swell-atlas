@@ -8,10 +8,10 @@ async function loadJSON(path){
   if(!r.ok)throw new Error(path+": HTTP "+r.status);
   return r.json();
 }
-let ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110;
+let ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110,COUNTRIES;
 try{
-  [ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110]=await Promise.all(
-    ["data/zones.json","data/airports.json","data/scale.json","data/flight-estimate.json","data/climate.json","data/land-50m.json","data/land-110m.json"].map(loadJSON));
+  [ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110,COUNTRIES]=await Promise.all(
+    ["data/zones.json","data/airports.json","data/scale.json","data/flight-estimate.json","data/climate.json","data/land-50m.json","data/land-110m.json","data/countries-110m.json"].map(loadJSON));
 }catch(err){
   $("zn").textContent="Dati non caricati";
   $("zs").textContent="Apri il sito tramite un server (es. python3 -m http.server), non come file locale.";
@@ -44,6 +44,7 @@ const fmtH=w=>dec(w.h25)+"–"+dec(w.h75)+" m";
 const cv=$("g"),ctx=cv.getContext("2d");
 const land50=topojson.feature(LAND50,LAND50.objects.land);
 const land110=topojson.feature(LAND110,LAND110.objects.land);
+const countries=topojson.feature(COUNTRIES,COUNTRIES.objects.countries).features;   // per scegliere un paese toccando la mappa
 const proj=d3.geoOrthographic().clipAngle(90).precision(.4);
 const path=d3.geoPath(proj,ctx);
 const grat=d3.geoGraticule10();
@@ -65,6 +66,8 @@ function draw(){
   ctx.beginPath();path(grat);ctx.strokeStyle=css("--grat");ctx.lineWidth=1;ctx.stroke();
   ctx.beginPath();path(dragging||anim?land110:land50);ctx.fillStyle=css("--land");ctx.fill();
   ctx.strokeStyle=css("--landline");ctx.lineWidth=.6;ctx.stroke();
+  // paese scelto toccando la mappa
+  if(state.place?.feature){ctx.beginPath();path(state.place.feature);ctx.fillStyle=css("--halo");ctx.fill();ctx.strokeStyle=css("--accent");ctx.lineWidth=1.2;ctx.stroke()}
   // rotta volo
   const z=state.zone,d=state.dep;
   ctx.beginPath();path({type:"LineString",coordinates:[[d.lon,d.lat],[z.airport_main.lon,z.airport_main.lat]]});
@@ -113,7 +116,27 @@ cv.addEventListener("pointerup",e=>{dragging=false;const moved=Math.hypot(e.clie
   if(moved<5)pick(e);draw()});
 function pick(e){const b=cv.getBoundingClientRect(),x=e.clientX-b.left,y=e.clientY-b.top,c=proj.invert(proj.translate());let best=null,bd=22;
   ZONES.forEach(z=>{if(d3.geoDistance([z.lon,z.lat],c)>Math.PI/2)return;const p=proj([z.lon,z.lat]),dd=Math.hypot(p[0]-x,p[1]-y);if(dd<bd){bd=dd;best=z}});
-  if(best)selectZone(best,false)}
+  if(best){selectZone(best,false);pickCountry([best.airport_local.lon,best.airport_local.lat],[best])}   // il suo paese in testa, la scheda resta in vista
+  else pickCountry(proj.invert([x,y]),null,true)}
+// tocco sulla mappa: il paese toccato va in testa alla lista. Su uno spot si apre la sua scheda (senza scorrere),
+// su un punto vuoto il paese si evidenzia e la pagina scorre alla lista.
+// Zone del paese: quelle con aeroporto o centro dentro i suoi confini; per le isole piccole che a questa
+// scala non ci sono (Maldive, Barbados...) vale la zona più vicina entro 500 km.
+const countryOf=z=>z.region.split(", ")[0];
+function pickCountry(ll,given=null,scroll=false){
+  if(!ll)return;
+  const f=countries.find(c=>d3.geoContains(c,ll));
+  let zs=given||(f?ZONES.filter(z=>d3.geoContains(f,[z.airport_local.lon,z.airport_local.lat])||d3.geoContains(f,[z.lon,z.lat])):[]);
+  if(!zs.length){
+    const near=ZONES.map(z=>[d3.geoDistance(ll,[z.lon,z.lat])*6371,z]).sort((a,b)=>a[0]-b[0])[0];
+    if(near&&near[0]<=500)zs=[near[1]];
+  }
+  if(!zs.length){state.place=null;buildZoneList();draw();return}
+  const names=[...new Set(zs.map(countryOf))];
+  state.place={feature:f&&zs.some(z=>d3.geoContains(f,[z.airport_local.lon,z.airport_local.lat])||d3.geoContains(f,[z.lon,z.lat]))?f:null,names};
+  buildZoneList();draw();
+  if(scroll)$("places").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+}
 function setZoom(z){zoom=Math.max(.8,Math.min(6,z));proj.scale(base*zoom);draw()}
 cv.addEventListener("wheel",e=>{e.preventDefault();setZoom(zoom*(e.deltaY<0?1.12:1/1.12))},{passive:false});
 $("zin").onclick=()=>setZoom(zoom*1.3);$("zout").onclick=()=>setZoom(zoom/1.3);
@@ -183,9 +206,20 @@ $("strip").addEventListener("click",e=>{if(e.target.dataset.w)setWeek(+e.target.
 $("wr").addEventListener("input",e=>setWeek(+e.target.value));
 ["m1","m2","m3"].forEach(id=>$(id).innerHTML=MESI.map(m=>`<span>${m}</span>`).join(""));
 $("legend").innerHTML=SCALE.map(s=>`<span><b style="background:${s.color}"></b>${s.label}</span>`).join("");
-function buildZoneList(){$("zlist").innerHTML=ZONES.filter(visible).map(z=>`<button data-id="${z.id}"><i></i>${z.name}</button>`).join("")}
-buildZoneList();
-$("zlist").addEventListener("click",e=>{const b=e.target.closest("button");if(b)selectZone(ZONES.find(z=>z.id===b.dataset.id))});
+// lista della pagina Mondo: zone raggruppate per paese, il paese scelto sulla mappa in testa
+function buildZoneList(){
+  const by=new Map();
+  for(const z of ZONES.filter(visible)){const c=countryOf(z);if(!by.has(c))by.set(c,[]);by.get(c).push(z)}
+  const sel=new Set(state.place?.names||[]);
+  const order=[...by.keys()].sort((a,b)=>(sel.has(b)-sel.has(a))||a.localeCompare(b,"it"));
+  $("zlist").innerHTML=order.map(c=>`<section class="pl-group${sel.has(c)?" on":""}"><h3>${c} <small>${by.get(c).length} ${by.get(c).length===1?"zona":"zone"}</small></h3>
+    <div class="list">${by.get(c).map(z=>`<button data-id="${z.id}"><i></i>${z.name}</button>`).join("")}</div></section>`).join("");
+  $("pl-info").innerHTML=state.place?`In testa: ${state.place.names.join(", ")}. <button type="button" class="btn link" id="pl-clear">mostra tutti in ordine</button>`
+    :"Tocca un paese sul globo per portarlo in cima alla lista.";
+  render();
+}
+$("zlist").addEventListener("click",e=>{const b=e.target.closest("button[data-id]");if(b){selectZone(ZONES.find(z=>z.id===b.dataset.id));$("gbox").scrollIntoView({behavior:"smooth",block:"start"})}});
+$("pl-info").addEventListener("click",e=>{if(e.target.id==="pl-clear"){state.place=null;buildZoneList();draw()}});
 // partenza: campo con ricerca per nome o codice IATA (datalist), tutti gli aeroporti italiani large e medium
 const depText=d=>`${d.label} (${d.code})`;
 $("deps").innerHTML=DEPS.map(d=>`<option value="${depText(d)}" label="${d.name}"></option>`).join("");
@@ -207,8 +241,9 @@ $("play").onclick=()=>{if(timer){clearInterval(timer);timer=null;$("play").textC
 new ResizeObserver(resize).observe($("gbox"));
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
 new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
-render();resize();
+buildZoneList();resize();
 
 export const app={state,ZONES,DEPS,SCALE,MESI,CLIMATE,DEP_KEY,hooks,depText,findDep,setDep,selectZone,flight,monthPrices,
   user:{loggedIn:false,favs:new Set(),level:null},   // aggiornato da profile.js, letto da calendar.js
+  project:ll=>proj(ll),   // coordinate -> punto sullo schermo del globo
   refresh(){buildZoneList();render();draw()}};

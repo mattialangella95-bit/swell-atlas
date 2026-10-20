@@ -36,12 +36,54 @@ function buildIndex(){
   });
 }
 
+// ---------- periodo "dal ... al ...": i dati sono per settimana, ogni settimana pesa quanti giorni cadono nel periodo
+const DAY = 864e5;
+function rangeDays(){
+  const a = new Date(ui.range.from + "T00:00:00Z"), b = new Date(ui.range.to + "T00:00:00Z");
+  if(b < a) b.setUTCFullYear(b.getUTCFullYear() + 1);   // es. dal 28 dicembre al 10 gennaio
+  const out = [];
+  for(let d = a; d <= b && out.length < 366; d = new Date(+d + DAY)) out.push(d);
+  return out;
+}
+let weights = null, midMonth = 0;   // settimana -> giorni nel periodo; mese a metà periodo (per il prezzo)
+function computeWeights(){
+  weights = null;
+  if(!ui.range) return;
+  const days = rangeDays();
+  weights = new Map();
+  for(const d of days){
+    const w = Math.min(51, Math.floor((d - Date.UTC(d.getUTCFullYear(), 0, 1)) / DAY / 7));
+    weights.set(w, (weights.get(w) || 0) + 1);
+  }
+  midMonth = days[Math.floor(days.length / 2)].getUTCMonth();
+}
+function aggregate(wk){
+  let W = 0, good = 0, h25 = 0, h75 = 0, t = 0;
+  const qs = [];
+  for(const [w, n] of weights){
+    const x = wk[w];
+    W += n; good += n * x.good; h25 += n * x.h25; h75 += n * x.h75; t += n * x.t; qs.push([x.q, n]);
+  }
+  qs.sort((a, b) => a[0] - b[0]);
+  let acc = 0, q = qs[0][0];
+  for(const [v, n] of qs){ acc += n; if(acc >= W / 2){ q = v; break; } }   // classe del giorno tipico nel periodo
+  return {q, good: Math.round(good / W), h25: h25 / W, h75: h75 / W, t: t / W};
+}
+// dati della selezione: il mese scelto oppure il periodo
+const sel = e => weights ? (e.agg ||= aggregate(e.z.wk)) : e.months[ui.month];
+const priceMonth = () => weights ? midMonth : ui.month;
+function rangeLabel(){
+  const d = rangeDays(), a = d[0], b = d[d.length - 1];
+  const m = x => MESI_LUNGHI[x.getUTCMonth()];
+  return a.getUTCMonth() === b.getUTCMonth() && d.length < 40 ? `dal ${a.getUTCDate()} al ${b.getUTCDate()} ${m(b)}` : `dal ${a.getUTCDate()} ${m(a)} al ${b.getUTCDate()} ${m(b)}`;
+}
+
 const isFav = e => app.user.favs.has(e.z.id) || (e.z.aliases || []).some(a => app.user.favs.has(a));
 const tooBig = m => { const max = RULE.levels[ui.level]?.maxHeight; return max != null && m && m.h75 > max; };
 
 function filtered(){
   return index.filter(e => {
-    const m = e.months[ui.month];
+    const m = sel(e);
     return m && m.q >= ui.minQ && e.f.hrs <= ui.maxH && (!ui.onlyFav || isFav(e));
   });
 }
@@ -56,15 +98,15 @@ function bandLabel(i){
 }
 
 function groups(list){
-  const by = new Map(), m = ui.month;
+  const by = new Map();
   for(const e of list){
     const key = ui.group === "airport" ? e.airport.code : ui.group === "country" ? e.country : bandOf(e.f.hrs);
     if(!by.has(key)) by.set(key, []);
     by.get(key).push(e);
   }
   const out = [...by].map(([key, items]) => {
-    items.sort((a, b) => b.months[m].good - a.months[m].good || b.months[m].q - a.months[m].q);
-    const mean = items.reduce((s, e) => s + e.months[m].good, 0) / items.length;
+    items.sort((a, b) => sel(b).good - sel(a).good || sel(b).q - sel(a).q);
+    const mean = items.reduce((s, e) => s + sel(e).good, 0) / items.length;
     return {key, items, mean};
   });
   // per ore di volo l'ordine è quello delle fasce, altrimenti si parte dal gruppo che rende di più nel mese
@@ -80,17 +122,17 @@ function groupTitle(g){
 }
 
 function groupNote(g){
-  const m = ui.month, best = g.items[0], good = g.items.filter(e => e.months[m].q >= GOOD).length, n = g.items.length;
+  const best = g.items[0], good = g.items.filter(e => sel(e).q >= GOOD).length, n = g.items.length;
   if(n === 1) return "";
-  const head = good ? `${good} ${good === 1 ? "zona buona" : "zone buone"} su ${n}` : `${n} zone, nessuna buona questo mese`;
+  const head = good ? `${good} ${good === 1 ? "zona buona" : "zone buone"} su ${n}` : `${n} zone, nessuna buona ${weights ? "in questo periodo" : "questo mese"}`;
   return `${head}. La migliore è ${esc(best.z.name)}.`;
 }
 
 // ---------- vista mese
 function row(e){
-  const m = e.months[ui.month], s = SCALE[m.q];
+  const m = sel(e), s = SCALE[m.q];
   const where = ui.group === "country" ? e.region : [e.region || e.country, ui.group === "airport" ? "" : city(e.airport)].filter(Boolean).join(" · ");
-  const pr = app.monthPrices(app.state.dep, e.z, e.f)[ui.month];
+  const pr = app.monthPrices(app.state.dep, e.z, e.f)[priceMonth()];
   const price = `circa ${pr.value.toLocaleString("it-IT")} € ${pr.real ? "indicativi" : "(stima)"}`;
   const detail = [`<span class="q" style="--q:${s.color}">${s.label}</span>`, `onde ${dec(m.h25)}–${dec(m.h75)} m`,
     ui.group === "airport" ? "" : `${hours(e.f.hrs)} di volo`, price].filter(Boolean).join(" · ");
@@ -109,10 +151,11 @@ function renderList(gs){
 
 // ---------- vista anno: zone per 12 mesi, righe raggruppate, intestazioni fisse
 function renderYear(gs){
-  const head = `<thead><tr><th class="cal-zone"></th>${MESI.map((n, i) => `<th class="${i === ui.month ? "cur" : ""}" title="${MESI_LUNGHI[i]}">${n[0]}</th>`).join("")}</tr></thead>`;
+  const cur = weights ? new Set(rangeDays().map(d => d.getUTCMonth())) : new Set([ui.month]);
+  const head = `<thead><tr><th class="cal-zone"></th>${MESI.map((n, i) => `<th class="${cur.has(i) ? "cur" : ""}" title="${MESI_LUNGHI[i]}">${n[0]}</th>`).join("")}</tr></thead>`;
   const body = gs.map(g => `<tr class="cal-grow"><th colspan="13">${groupTitle(g)}</th></tr>` + g.items.map(e =>
     `<tr data-id="${e.z.id}"><th class="cal-zone">${esc(e.z.name)}</th>${e.months.map((m, i) => m
-      ? `<td class="${i === ui.month ? "cur" : ""}" style="background:${SCALE[m.q].color}" title="${esc(e.z.name)}, ${MESI_LUNGHI[i]}: ${SCALE[m.q].label}, ${goodDays(m.good)}${tooBig(m) ? ", onde impegnative per il tuo livello" : ""}">${tooBig(m) ? "!" : ""}</td>`
+      ? `<td class="${cur.has(i) ? "cur" : ""}" style="background:${SCALE[m.q].color}" title="${esc(e.z.name)}, ${MESI_LUNGHI[i]}: ${SCALE[m.q].label}, ${goodDays(m.good)}${tooBig(m) ? ", onde impegnative per il tuo livello" : ""}">${tooBig(m) ? "!" : ""}</td>`
       : `<td></td>`).join("")}</tr>`).join("")).join("");
   return `<div class="cal-year"><table>${head}<tbody>${body}</tbody></table></div>
     <p class="cal-legend">${SCALE.map(s => `<span><i style="background:${s.color}"></i>${s.label}</span>`).join("")}</p>`;
@@ -120,9 +163,12 @@ function renderYear(gs){
 
 function render(){
   buildIndex();
+  computeWeights();
+  index.forEach(e => e.agg = null);
   const list = filtered(), gs = groups(list);
-  $("cal-month-name").textContent = MESI_LUNGHI[ui.month];
-  document.querySelectorAll("#cal-months button").forEach((b, i) => b.setAttribute("aria-pressed", i === ui.month));
+  $("cal-t").innerHTML = weights ? `Dove andare <span id="cal-month-name">${rangeLabel()}</span>` : `Dove andare ${/^[aeiou]/.test(MESI_LUNGHI[ui.month]) ? "ad" : "a"} <span id="cal-month-name">${MESI_LUNGHI[ui.month]}</span>`;
+  document.querySelectorAll("#cal-months button").forEach((b, i) => b.setAttribute("aria-pressed", !weights && i === ui.month));
+  $("cal-range-clear").hidden = !weights;
   document.querySelectorAll("#cal-group button").forEach(b => b.setAttribute("aria-pressed", b.dataset.g === ui.group));
   document.querySelectorAll("#cal-view button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === ui.view));
   const missing = app.ZONES.length - index.length;
@@ -139,7 +185,15 @@ $("cal-minq").innerHTML = SCALE.map((s, i) => `<option value="${i}">${i ? s.labe
 $("cal-maxh").innerHTML = `<option value="">qualsiasi</option>` + CAL.maxHoursOptions.map(h => `<option value="${h}">${h} ore</option>`).join("");
 $("cal-level").innerHTML = `<option value="">non indicato</option>` + LEVELS.map(l => `<option value="${l}">${l}</option>`).join("");
 
-$("cal-months").onclick = e => { const b = e.target.closest("button"); if(b){ ui.month = +b.dataset.m; render(); } };
+$("cal-months").onclick = e => { const b = e.target.closest("button"); if(b){ ui.month = +b.dataset.m; clearRange(); render(); } };
+function clearRange(){ ui.range = null; $("cal-from").value = ""; $("cal-to").value = ""; }
+function onRange(){
+  const from = $("cal-from").value, to = $("cal-to").value;
+  if(from && to){ ui.range = {from, to}; render(); }
+}
+$("cal-from").onchange = () => { if($("cal-from").value && !$("cal-to").value) $("cal-to").value = $("cal-from").value; onRange(); };
+$("cal-to").onchange = onRange;
+$("cal-range-clear").onclick = () => { clearRange(); render(); };
 $("cal-group").onclick = e => { const b = e.target.closest("button"); if(b){ ui.group = b.dataset.g; render(); } };
 $("cal-view").onclick = e => { const b = e.target.closest("button"); if(b){ ui.view = b.dataset.v; render(); } };
 $("cal-minq").onchange = e => { ui.minQ = +e.target.value; render(); };
@@ -149,6 +203,7 @@ $("cal-fav").onchange = e => { ui.onlyFav = e.target.checked; render(); };
 $("cal-body").onclick = e => {
   const el = e.target.closest("[data-id]");
   if(!el) return;
+  app.hooks.showPage?.("mondo");
   app.selectZone(app.ZONES.find(z => z.id === el.dataset.id));   // apre la scheda e ruota il globo
   $("gbox").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
 };

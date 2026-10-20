@@ -20,8 +20,13 @@
     <div class="head-r">
       <button class="btn" id="btn-account" hidden>Accedi</button>
     </div>
+    <nav class="pages" aria-label="Pagine">
+      <a href="#mondo" data-page="mondo">Mondo</a>
+      <a href="#calendario" data-page="calendario">Calendario</a>
+    </nav>
   </header>
 
+  <div class="page" id="page-mondo">
   <div class="main">
     <div class="globe-box" id="gbox">
       <canvas id="g" aria-label="Globo con le zone surf colorate per qualità"></canvas>
@@ -84,16 +89,25 @@
     <input type="range" id="wr" min="0" max="51" value="0" aria-label="Settimana dell'anno">
     <div class="months" id="m3"></div>
     <div class="legend" id="legend"></div>
-    <details class="all-zones">
-      <summary>Tutte le zone</summary>
-      <label class="only-fav" id="only-fav-box" hidden><input type="checkbox" id="only-fav"> Solo preferiti</label>
-      <div class="list" id="zlist"></div>
-    </details>
   </section>
 
+  <section class="places" id="places" aria-labelledby="pl-t">
+    <h2 id="pl-t">Le zone, paese per paese</h2>
+    <p class="cal-info" id="pl-info"></p>
+    <label class="only-fav" id="only-fav-box" hidden><input type="checkbox" id="only-fav"> Solo preferiti</label>
+    <div id="zlist"></div>
+  </section>
+  </div>
+
+  <div class="page" id="page-calendario" hidden>
   <section class="calendar" id="calendar" aria-labelledby="cal-t">
     <h2 id="cal-t">Dove andare a <span id="cal-month-name"></span></h2>
     <nav class="cal-months" id="cal-months" aria-label="Mese"></nav>
+    <div class="cal-range">
+      <span>oppure dal</span><input type="date" id="cal-from" aria-label="Dal giorno">
+      <span>al</span><input type="date" id="cal-to" aria-label="Al giorno">
+      <button type="button" class="btn link" id="cal-range-clear" hidden>torna ai mesi</button>
+    </div>
     <p class="cal-info" id="cal-info"></p>
     <div class="cal-ctl">
       <span class="cal-opt" id="cal-group" role="group" aria-label="Raggruppa per">Raggruppa per
@@ -112,6 +126,7 @@
     </details>
     <div id="cal-body"></div>
   </section>
+  </div>
 
   <footer>Le onde sono la media di vent'anni di dati ERA5 (2005-2024, Open-Meteo e Copernicus), solo nelle ore di luce, misurate al largo e non sulla riva. Servono a scegliere quando partire: non sono la previsione del giorno. Ore di volo stimate; prezzi indicativi dalla cache di Aviasales via Travelpayouts, o stimati quando mancano.</footer>
 </div>
@@ -192,5 +207,6 @@
 <script type="module" src="admin.js"></script>
 <script type="module" src="prices.js"></script>
 <script type="module" src="calendar.js"></script>
+<script type="module" src="pages.js"></script>
 </body>
 </html>

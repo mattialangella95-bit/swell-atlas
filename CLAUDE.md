@@ -37,6 +37,10 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Il download gira staccato dalla sessione e legge solo `data/raw/waves/_queue.json`. Stato: `.venv/bin/python scripts/fetch_waves.py --stato`; stop: `kill $(python3 -c "import json;print(json.load(open('data/raw/waves/_progress.json'))['pid'])")`. Non lanciarne un secondo in parallelo.
 - Prima di cambiare soglie, mostra la tabella mese per mese delle 5 zone di collaudo (`build_climate.py --verifica ...`) e spiega il perché.
 
+## Pagine
+- Due pagine (`pages.js`): Mondo (globo, scheda, timeline, zone per paese) e Calendario. `app.hooks.showPage` per passare dall'una all'altra.
+- Il periodo "dal … al …" del calendario si calcola dalle settimane pesate per giorni (`sel(e)` in `calendar.js`): non esistono dati giornalieri.
+
 ## Calendario
 - `calendar.js` legge solo `climate.json` (campo `months`) e i parametri in `data/calendar.json` e `quality-rule.json` (`levels`); la stima voli è quella di `app.js` (`app.flight`), non va duplicata.
 - `app.js` espone gli agganci (`app`, `app.hooks`, `app.user`); le viste nuove stanno in file propri.
