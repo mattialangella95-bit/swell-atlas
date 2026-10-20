@@ -11,6 +11,8 @@
 
 - Migrazione admin eseguita da Mattia; `mattialangella95@gmail.com` aggiunto come admin. `test_rls.py`: 27/27 controlli superati (7 nuovi sull'admin).
 
+- `Apri in locale.command`: doppio clic dal Finder per avviare il sito su http://localhost:8000 (con login e segnalazioni). Con `file://` non può funzionare: Chrome blocca i file JavaScript con origine "null" (CORS), verificato.
+
 ### Aperti
 - Il pannello admin è nei commit locali: sul sito pubblicato compare dopo il push.
 

@@ -56,6 +56,8 @@ CLAUDE.md           istruzioni per Claude Code
 
 ## Avvio in locale
 
+Dal Finder: doppio clic su `Apri in locale.command` (avvia il server e apre il browser; per spegnerlo chiudi la finestra del Terminale). Da terminale:
+
 I dati sono caricati con `fetch`, quindi serve un server (aprire il file direttamente non funziona):
 
 ```

@@ -60,4 +60,5 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Limite Travelpayouts: 600 richieste al minuto per i metodi v3; lo script va a 8 al secondo.
 
 ## Test in locale
+Doppio clic su `Apri in locale.command`, oppure:
 `python3 -m http.server 8000` e apri http://localhost:8000 (con `file://` il fetch fallisce).
