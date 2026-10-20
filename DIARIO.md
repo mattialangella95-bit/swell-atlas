@@ -1,5 +1,18 @@
 # Diario
 
+## 2026-10-20 — Segnalazioni nel profilo admin
+
+### Fatto
+- Prima segnalazione vera arrivata (#11, anonima, da iPhone, 20/10 00:13): temperatura di acqua e aria, finestra di più settimane, settimana di oggi evidenziata, costo della vita €/€€/€€€, zoom animato sul paese cliccato. Lasciata "nuova".
+- Migrazione `20261020120000_swell_admin.sql`: tabella `swell_admins` (si scrive solo via SQL o secret key), funzione `swell_is_admin()`, regole nuove su `swell_feedback`: gli admin leggono e cambiano solo lo stato; utenti normali e visitatori continuano a non vedere nulla.
+- `scripts/admin.py`: elenco, `aggiungi <email>`, `togli <email>` (l'utente deve essere entrato una volta nell'app).
+- `admin.js`: se l'utente è admin, nel profilo compare "Segnalazioni (N nuove)". Si aprono elenco e filtro "solo le nuove"; per ognuna tipo, testo, zona, settimana, partenza e telefono o no, con "Apri la zona", "Segna come letta" o "risolta", "Rimetti come nuova". I testi si mostrano solo come testo, mai come HTML.
+- `test_rls.py`: 7 controlli admin in più, saltati finché la migrazione non è eseguita.
+
+### Aperti
+- Eseguire la migrazione admin, entrare una volta nell'app, poi `admin.py aggiungi` e `test_rls.py`.
+
+
 ## 2026-10-20 — Colori coerenti tra globo e calendario
 
 ### Fatto

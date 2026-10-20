@@ -44,6 +44,7 @@ def main():
     marker = "test_rls_" + secrets.token_hex(4)   # senza spazi: finisce nei filtri dell'URL
     a_id, a_tok = create_user("a")
     b_id, b_tok = create_user("b")
+    c_id, c_tok = create_user("admin")
     try:
         # profili e preferiti propri
         for uid, tok, ap, zone in ((a_id, a_tok, "GOA", "usa-graters"), (b_id, b_tok, "MXP", "indonesia-medewi")):
@@ -87,9 +88,29 @@ def main():
         check("con la chiave anon non si cambia lo stato", c in (401, 403) or (c == 200 and r == []), f"{c} {r}")
         c, r = request("GET", f"{REST}/swell_feedback?message=eq.{quote(marker)}&select=id,user_id", SERVICE)
         check("con la chiave di servizio le segnalazioni di prova si leggono (2)", c == 200 and len(r) == 2, f"{c} {r}")
+
+        # admin (swell_admins, migrazione 20261020120000): legge le segnalazioni e ne cambia solo lo stato
+        c, r = request("POST", f"{REST}/swell_admins", SERVICE, body={"user_id": c_id}, prefer="return=minimal")
+        if c == 404:
+            print("     (migrazione admin non eseguita: controlli admin saltati)")
+        else:
+            c, r = request("POST", f"{REST}/rpc/swell_is_admin", ANON, c_tok, {})
+            check("l'admin risulta admin", c == 200 and r is True, f"{c} {r}")
+            c, r = request("POST", f"{REST}/rpc/swell_is_admin", ANON, a_tok, {})
+            check("un utente normale non risulta admin", c == 200 and r is False, f"{c} {r}")
+            c, r = request("GET", f"{REST}/swell_feedback?message=eq.{quote(marker)}&select=id", ANON, c_tok)
+            check("l'admin legge le segnalazioni", c == 200 and len(r) == 2, f"{c} {r}")
+            c, r = request("PATCH", f"{REST}/swell_feedback?message=eq.{quote(marker)}", ANON, c_tok, {"status": "letta"}, "return=representation")
+            check("l'admin cambia lo stato", c == 200 and len(r) == 2 and all(x["status"] == "letta" for x in r), f"{c} {r}")
+            c, r = request("PATCH", f"{REST}/swell_feedback?message=eq.{quote(marker)}", ANON, c_tok, {"message": "manomesso"}, "return=representation")
+            check("l'admin non può cambiare il testo", c in (401, 403), f"{c} {r}")
+            c, r = request("GET", f"{REST}/swell_feedback?select=id", ANON, a_tok)
+            check("un utente normale continua a non leggerle", c == 200 and r == [], f"{c} {r}")
+            c, r = request("POST", f"{REST}/swell_admins", ANON, a_tok, {"user_id": a_id})
+            check("un utente non può farsi admin da solo", c in (401, 403), f"{c} {r}")
     finally:
         request("DELETE", f"{REST}/swell_feedback?message=eq.{quote(marker)}", SERVICE)
-        for uid in (a_id, b_id):   # profili e preferiti se ne vanno in cascata
+        for uid in (a_id, b_id, c_id):   # profili, preferiti e riga admin se ne vanno in cascata
             request("DELETE", f"{AUTH}/admin/users/{uid}", SERVICE)
         print("utenti e righe di prova cancellati")
     print(f"\n{sum(results)}/{len(results)} controlli superati")

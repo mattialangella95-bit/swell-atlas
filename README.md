@@ -15,6 +15,7 @@ app.js              logica: globo, timeline, pannello zona, stima voli
 auth.js             accesso con link via mail (Supabase Auth)
 profile.js          profilo e preferiti
 feedback.js         segnalazioni
+admin.js            segnalazioni dentro il profilo, solo per gli admin
 calendar.js         vista Calendario (mese e anno) · calendar.css i suoi stili
 prices.js           prezzi voli indicativi da Supabase (swell_prices), con la stima come riserva
 .github/workflows-da-attivare/prezzi.yml  raccolta settimanale dei prezzi
@@ -44,7 +45,8 @@ scripts/
   era5_cds.py       stesso formato da Copernicus CDS, più costi e prove
   build_climate.py  dati orari + regola qualità -> data/climate.json
   feedback.py       legge le segnalazioni e ne cambia lo stato (chiave di servizio da .env)
-  test_rls.py       collaudo dei permessi Supabase con due utenti di prova
+  test_rls.py       collaudo dei permessi Supabase con utenti di prova (anche admin)
+  admin.py          aggiunge o toglie gli admin che vedono le segnalazioni nell'app
   fetch_prices.py   prezzi indicativi da Travelpayouts -> swell_prices (GitHub Actions, settimanale)
 requirements.txt    dipendenze Python degli script
 README.md
@@ -107,6 +109,7 @@ L'app funziona tutta senza account; il login (link via mail) serve solo per pref
 .venv/bin/python scripts/feedback.py            # nuove
 .venv/bin/python scripts/feedback.py letta 3    # oppure: risolta 3
 .venv/bin/python scripts/test_rls.py            # collaudo permessi
+.venv/bin/python scripts/admin.py aggiungi tu@mail.it   # admin: segnalazioni anche nel profilo dell'app
 ```
 
 La publishable key sta in `supabase-config.js`; la secret key solo in `.env`, mai nel repository.

@@ -139,6 +139,7 @@
       <option value="">—</option><option value="principiante">Principiante</option><option value="intermedio">Intermedio</option><option value="esperto">Esperto</option>
     </select></label>
     <div class="field"><span>Preferiti</span><ul class="favs" id="pf-favs"></ul></div>
+    <div class="field" id="pf-admin" hidden><span>Admin</span><button type="button" class="btn" id="pf-admin-open">Segnalazioni</button></div>
     <p class="msg" id="profile-msg" role="status"></p>
     <div class="dlg-actions"><button class="btn" id="pf-logout" value="cancel" formnovalidate>Esci</button><button class="btn" value="cancel" formnovalidate>Chiudi</button><button class="btn primary" id="pf-save" value="default">Salva</button></div>
   </form>
@@ -157,9 +158,20 @@
   </form>
 </dialog>
 
+<dialog id="dlg-admin" aria-labelledby="adm-t">
+  <div class="dlg">
+    <h2 id="adm-t">Segnalazioni</h2>
+    <label class="only-fav"><input type="checkbox" id="adm-new" checked> Solo le nuove</label>
+    <ul class="adm-list" id="adm-list"></ul>
+    <p class="msg" id="adm-msg" role="status"></p>
+    <div class="dlg-actions"><button class="btn" id="adm-close">Chiudi</button></div>
+  </div>
+</dialog>
+
 <script type="module" src="app.js"></script>
 <script type="module" src="profile.js"></script>
 <script type="module" src="feedback.js"></script>
+<script type="module" src="admin.js"></script>
 <script type="module" src="prices.js"></script>
 <script type="module" src="calendar.js"></script>
 </body>
