@@ -103,7 +103,7 @@ La regola qualità si tara solo in `data/quality-rule.json` (usa il periodo medi
 
 ## Calendario
 
-Nella pagina Calendario (linguetta in alto): scelto un mese, le zone raggruppate per aeroporto di arrivo, per paese e regione o per ore di volo, con qualità del mese, % giorni Good+, altezza e ore di volo stimate. Oltre ai mesi si può scegliere un periodo "dal … al …" a giorno: le settimane pesano per i giorni che cadono nel periodo. La vista "Anno" mostra la matrice zone × mesi. Nella pagina Mondo le zone sono elencate paese per paese; toccando un paese sul globo va in testa alla lista. Usa i riepiloghi mensili di `climate.json`; le zone senza dati non compaiono.
+Nella pagina Calendario (linguetta in alto): scelto un mese, le zone raggruppate per aeroporto di arrivo, per paese e regione o per ore di volo, con qualità del mese, % giorni Good+, altezza e ore di volo stimate. Oltre ai mesi si può scegliere un periodo "dal … al …" a giorno: le settimane pesano per i giorni che cadono nel periodo. La vista "Anno" mostra la matrice zone × mesi. Nella pagina Mondo le tendine Paese e Spot (o un tocco sul globo) portano il globo sul paese, ne elencano gli spot dal migliore della settimana e aprono il migliore. Usa i riepiloghi mensili di `climate.json`; le zone senza dati non compaiono.
 
 ## Account e segnalazioni (Supabase)
 

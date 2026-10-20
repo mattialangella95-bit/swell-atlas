@@ -38,7 +38,7 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Prima di cambiare soglie, mostra la tabella mese per mese delle 5 zone di collaudo (`build_climate.py --verifica ...`) e spiega il perché.
 
 ## Pagine
-- Due pagine (`pages.js`): Mondo (globo, scheda, timeline, zone per paese) e Calendario. `app.hooks.showPage` per passare dall'una all'altra.
+- Due pagine (`pages.js`): Mondo (tendine Paese/Spot, globo, scheda, timeline, spot del paese scelto) e Calendario. `app.hooks.showPage` per passare dall'una all'altra.
 - Il periodo "dal … al …" del calendario si calcola dalle settimane pesate per giorni (`sel(e)` in `calendar.js`): non esistono dati giornalieri.
 
 ## Calendario

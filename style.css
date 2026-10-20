@@ -119,13 +119,15 @@ header .pages{flex-basis:100%;display:flex;gap:4px 18px;margin-top:4px}
 /* zone paese per paese */
 .places{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px 20px;display:flex;flex-direction:column;gap:8px}
 .places h2{font-family:var(--f-display);font-size:22px;margin:0}
-.pl-group{margin-top:10px}
-.pl-group h3{font-family:var(--f-display);font-size:16px;margin:0 0 6px}
-.pl-group h3 small{font:400 13px var(--f-body);color:var(--muted);margin-left:4px}
-.pl-group.on h3{color:var(--accent)}
-.places .list{max-height:none;overflow:visible;padding:0}
 /* periodo nel calendario */
 .cal-range{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-size:14px;color:var(--muted)}
 .cal-range input{font:14px var(--f-body);padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
 .cal-range .btn.link{margin:0}
+/* tendine Paese / Spot sopra il globo */
+.finder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:10px;max-width:760px}
+.finder label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.finder select{font-size:15px;padding:8px}
+@media (max-width:520px){.finder{grid-template-columns:minmax(0,1fr)}}
+.places > *{max-width:760px}
+.places .cal-row.sel{background:var(--bg)}
 

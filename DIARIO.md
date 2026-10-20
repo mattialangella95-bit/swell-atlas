@@ -1,5 +1,23 @@
 # Diario
 
+## 2026-10-20 — Tendine Paese e Spot
+
+### Fatto
+- Corretta l'interpretazione della segnalazione dell'amico: scegliendo un paese si vuole vedere solo i suoi spot, con la mappa che ci gira sopra (prima la lista mostrava tutti gli spot, raggruppati).
+- Sopra il globo due tendine, Paese e Spot. Scegliendo un paese (dalla tendina o toccandolo sul globo):
+  - il globo ruota e zooma per inquadrare i suoi spot, e il paese si colora;
+  - la tendina Spot si riempie dal migliore al peggiore per la settimana scelta (giorni buoni, a parità la classe);
+  - si apre lo spot migliore.
+- Toccando uno spot si apre lui e il suo paese va nelle tendine. Cambiando settimana l'ordine si aggiorna.
+- Sotto il globo, "Spot in <paese>": solo gli spot del paese scelto, dal migliore. Senza paese, l'invito a sceglierne uno.
+- Collaudo:
+  - Portugal apre Buarcos, il migliore della settimana 42 secondo i dati (58%);
+  - tocco su Spagna e Francia vuote: si aprono Bastiagueiro e Le Penon con 8 e 10 spot;
+  - settimana 3: A-ver-o-mar in testa;
+  - dal calendario Medewi porta Indonesia nelle tendine;
+  - 400 px senza sforamenti, nessun errore.
+
+
 ## 2026-10-20 — Pagine Mondo e Calendario, periodo a giorni, paese dalla mappa
 
 ### Fatto

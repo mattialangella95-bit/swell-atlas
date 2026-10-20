@@ -27,6 +27,10 @@
   </header>
 
   <div class="page" id="page-mondo">
+  <div class="finder">
+    <label>Paese<select id="sel-country"></select></label>
+    <label>Spot<select id="sel-spot" disabled></select></label>
+  </div>
   <div class="main">
     <div class="globe-box" id="gbox">
       <canvas id="g" aria-label="Globo con le zone surf colorate per qualità"></canvas>
@@ -92,7 +96,7 @@
   </section>
 
   <section class="places" id="places" aria-labelledby="pl-t">
-    <h2 id="pl-t">Le zone, paese per paese</h2>
+    <h2 id="pl-t">Spot per paese</h2>
     <p class="cal-info" id="pl-info"></p>
     <label class="only-fav" id="only-fav-box" hidden><input type="checkbox" id="only-fav"> Solo preferiti</label>
     <div id="zlist"></div>
