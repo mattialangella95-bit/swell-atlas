@@ -12,7 +12,7 @@ Online: https://mattialangella95-bit.github.io/swell-atlas/
 index.html          markup
 style.css           stili (tema chiaro/scuro)
 app.js              logica: globo, timeline, pannello zona, stima voli
-auth.js             accesso con link via mail (Supabase Auth)
+auth.js             accesso con email e password (Supabase Auth), come Piano alimentare
 profile.js          profilo e preferiti
 feedback.js         segnalazioni
 admin.js            segnalazioni dentro il profilo, solo per gli admin
@@ -105,7 +105,7 @@ Sotto il globo: scelto un mese, le zone raggruppate per aeroporto di arrivo, per
 
 ## Account e segnalazioni (Supabase)
 
-L'app funziona tutta senza account; il login (link via mail) serve solo per preferiti e profilo. Le segnalazioni si mandano anche senza login e si leggono solo da qui:
+L'app funziona tutta senza account; l'accesso (email e password) serve solo per preferiti e profilo. Le segnalazioni si mandano anche senza login e si leggono solo da qui:
 
 ```
 .venv/bin/python scripts/feedback.py            # nuove

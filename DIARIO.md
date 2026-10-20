@@ -1,5 +1,22 @@
 # Diario
 
+## 2026-10-20 — Accesso con email e password, come Piano alimentare
+
+### Fatto
+- Letti in sola lettura `piano-alimentare` e `sala-aste` su GitHub. Piano alimentare entra con email e password, ha il cambio password nel profilo e mostra all'amministratore una striscia "N segnalazioni nuove". Lo schema admin (tabella `amministratori` + regole) era già uguale al nostro.
+- Il solo link via mail non andava bene: le app di posta aprono il link nel loro browser interno e l'accesso resta lì.
+- Nuovo accesso (`auth.js`):
+  - email e password, "Entra" e "Crea account": la mail serve solo una volta per confermare l'account, poi si entra con la password da qualsiasi browser;
+  - "Password dimenticata?": manda una mail per sceglierne una nuova, e all'arrivo si apre subito "Scegli una password";
+  - messaggi d'errore in italiano, presi da Piano alimentare.
+- Profilo: "Nuova password" con il pulsante "Cambia".
+- Admin: striscia in cima alla pagina "📬 N segnalazioni nuove · Apri", che si ricontrolla quando si torna sulla pagina.
+- Collaudo nel browser headless con un utente di prova (creato e poi cancellato): password sbagliata, entrata, striscia con le 2 segnalazioni, elenco, cambio password, uscita; 400 px senza sforamenti; nessun errore. Non provati "Crea account" e "Password dimenticata?", per non mandare mail vere.
+
+### Aperti
+- Il tuo account è nato con il link e non ha una password: la prima volta usa "Password dimenticata?".
+
+
 ## 2026-10-20 — Segnalazioni nel profilo admin
 
 ### Fatto

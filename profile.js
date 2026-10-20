@@ -1,7 +1,7 @@
 // Profilo e preferiti su Supabase (tabelle swell_profiles e swell_favorites, ognuno vede solo i suoi).
 // Il livello surf per ora si salva e basta: servirà per adattare la scala qualità.
 import {app} from "./app.js";
-import {supabase, configured, onUser, currentUser, openLogin, signOut, ready} from "./auth.js";
+import {supabase, configured, onUser, currentUser, openLogin, signOut, ready, changePassword, authErrorText} from "./auth.js";
 
 const $ = id => document.getElementById(id);
 const favs = new Map();   // zone_id -> nota
@@ -133,5 +133,12 @@ $("profile-form").addEventListener("submit", async e => {
   if(d) app.setDep(d);
   $("profile-msg").textContent = "Salvato.";
 });
+
+$("pf-pw-save").onclick = async () => {
+  const pw = $("pf-newpw").value;
+  if(pw.length < 6){ $("profile-msg").textContent = "La password deve avere almeno 6 caratteri."; return; }
+  try{ await changePassword(pw); $("pf-newpw").value = ""; $("profile-msg").textContent = "Password cambiata."; }
+  catch(err){ $("profile-msg").textContent = authErrorText(err); }
+};
 
 ready.then(() => app.refresh());

@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="wrap">
+  <button class="admin-banner" id="admin-banner" hidden>📬 <span id="admin-banner-text"></span> <span class="admin-banner-open">Apri ›</span></button>
   <header>
     <div>
       <h1>Swell Atlas</h1>
@@ -120,12 +121,28 @@
 <button class="fab" id="btn-feedback">Segnala</button>
 
 <dialog id="dlg-login" aria-labelledby="login-t">
-  <form method="dialog" class="dlg" id="login-form">
+  <form class="dlg" id="login-form" novalidate>
     <h2 id="login-t">Accedi</h2>
-    <p class="note">Ti mandiamo un link via mail, niente password. Serve solo per preferiti e profilo: il resto funziona anche senza.</p>
-    <label class="field"><span>Email</span><input type="email" id="login-email" required autocomplete="email"></label>
+    <p class="note">Serve solo per preferiti e profilo: il resto funziona anche senza.</p>
+    <label class="field"><span>Email</span><input type="email" id="login-email" autocomplete="email" inputmode="email" autocapitalize="off"></label>
+    <label class="field"><span>Password</span><input type="password" id="login-password" autocomplete="current-password"></label>
     <p class="msg" id="login-msg" role="status"></p>
-    <div class="dlg-actions"><button class="btn" value="cancel" formnovalidate>Chiudi</button><button class="btn primary" id="login-send" value="default">Mandami il link</button></div>
+    <div class="dlg-actions">
+      <button type="button" class="btn link" id="login-forgot">Password dimenticata?</button>
+      <button type="button" class="btn" id="login-close">Chiudi</button>
+      <button type="button" class="btn" id="login-signup">Crea account</button>
+      <button type="submit" class="btn primary" id="login-send">Entra</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlg-newpw" aria-labelledby="newpw-t">
+  <form class="dlg" id="newpw-form" novalidate>
+    <h2 id="newpw-t">Scegli una password</h2>
+    <p class="note">Poi potrai entrare con email e password da qualsiasi browser.</p>
+    <label class="field"><span>Nuova password (almeno 6 caratteri)</span><input type="password" id="newpw" autocomplete="new-password"></label>
+    <p class="msg" id="newpw-msg" role="status"></p>
+    <div class="dlg-actions"><button type="submit" class="btn primary">Salva la password</button></div>
   </form>
 </dialog>
 
@@ -139,6 +156,7 @@
       <option value="">—</option><option value="principiante">Principiante</option><option value="intermedio">Intermedio</option><option value="esperto">Esperto</option>
     </select></label>
     <div class="field"><span>Preferiti</span><ul class="favs" id="pf-favs"></ul></div>
+    <div class="field"><span>Nuova password</span><div class="pw-row"><input type="password" id="pf-newpw" autocomplete="new-password" placeholder="almeno 6 caratteri"><button type="button" class="btn" id="pf-pw-save">Cambia</button></div></div>
     <div class="field" id="pf-admin" hidden><span>Admin</span><button type="button" class="btn" id="pf-admin-open">Segnalazioni</button></div>
     <p class="msg" id="profile-msg" role="status"></p>
     <div class="dlg-actions"><button class="btn" id="pf-logout" value="cancel" formnovalidate>Esci</button><button class="btn" value="cancel" formnovalidate>Chiudi</button><button class="btn primary" id="pf-save" value="default">Salva</button></div>

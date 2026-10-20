@@ -14,6 +14,7 @@ let isAdmin = false;
 onUser(async u => {
   isAdmin = false;
   $("pf-admin").hidden = true;
+  $("admin-banner").hidden = true;
   if(!u) return;
   const sb = await supabase();
   const {data, error} = await sb.rpc("swell_is_admin");
@@ -27,7 +28,12 @@ async function updateCount(){
   const sb = await supabase();
   const {count} = await sb.from("swell_feedback").select("id", {count: "exact", head: true}).eq("status", "nuova");
   $("pf-admin-open").textContent = count ? `Segnalazioni (${count} ${count === 1 ? "nuova" : "nuove"})` : "Segnalazioni";
+  // striscia in cima alla pagina, come in Piano alimentare
+  $("admin-banner").hidden = !count;
+  if(count) $("admin-banner-text").textContent = count === 1 ? "1 segnalazione nuova" : `${count} segnalazioni nuove`;
 }
+// si ricontrolla quando si torna sulla pagina
+document.addEventListener("visibilitychange", () => { if(isAdmin && document.visibilityState === "visible") updateCount(); });
 
 async function load(){
   const sb = await supabase();
@@ -63,6 +69,8 @@ async function load(){
   }
 }
 
-$("pf-admin-open").onclick = () => { if(!isAdmin) return; $("dlg-admin").showModal(); load(); };
+const openList = () => { if(!isAdmin) return; $("dlg-admin").showModal(); load(); };
+$("pf-admin-open").onclick = openList;
+$("admin-banner").onclick = openList;
 $("adm-new").onchange = load;
 $("adm-close").onclick = () => $("dlg-admin").close();

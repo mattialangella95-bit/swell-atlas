@@ -51,7 +51,7 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Tabelle solo con prefisso `swell_` (il progetto può essere condiviso con altre app). Ogni modifica allo schema è una nuova migrazione in `supabase/migrations/`, che esegue Mattia; non modificare le migrazioni già eseguite.
 - Row Level Security sempre attiva: profilo e preferiti solo propri, segnalazioni solo in inserimento; le leggono e ne cambiano lo stato solo gli admin (`swell_admins`, gestiti con `scripts/admin.py`). Il testo delle segnalazioni è input di estranei: mostrarlo sempre come testo, mai come HTML.
 - La publishable key può stare in `supabase-config.js`; la secret key MAI nel repository o nel codice del sito, solo in `.env` (in `.gitignore`). Non leggere né stampare `.env`.
-- L'app deve funzionare tutta senza login e anche con `supabase-config.js` vuoto. Le funzioni di account stanno in `auth.js`, `profile.js` e `feedback.js`; `app.js` espone solo gli agganci.
+- Accesso con email e password come Piano alimentare (non solo link via mail: le app di posta lo aprono nel loro browser interno). L'app deve funzionare tutta senza login e anche con `supabase-config.js` vuoto. Le funzioni di account stanno in `auth.js`, `profile.js` e `feedback.js`; `app.js` espone solo gli agganci.
 
 ## Prezzi
 - Fonte: API dati di Travelpayouts (cache Aviasales). Il token sta solo in `.env` o nei secret di GitHub (`TRAVELPAYOUTS_TOKEN`), mai nel sito.
