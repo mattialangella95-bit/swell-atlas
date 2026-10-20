@@ -9,8 +9,10 @@
 - `admin.js`: se l'utente è admin, nel profilo compare "Segnalazioni (N nuove)". Si aprono elenco e filtro "solo le nuove"; per ognuna tipo, testo, zona, settimana, partenza e telefono o no, con "Apri la zona", "Segna come letta" o "risolta", "Rimetti come nuova". I testi si mostrano solo come testo, mai come HTML.
 - `test_rls.py`: 7 controlli admin in più, saltati finché la migrazione non è eseguita.
 
+- Migrazione admin eseguita da Mattia; `mattialangella95@gmail.com` aggiunto come admin. `test_rls.py`: 27/27 controlli superati (7 nuovi sull'admin).
+
 ### Aperti
-- Eseguire la migrazione admin, entrare una volta nell'app, poi `admin.py aggiungi` e `test_rls.py`.
+- Il pannello admin è nei commit locali: sul sito pubblicato compare dopo il push.
 
 
 ## 2026-10-20 — Colori coerenti tra globo e calendario
