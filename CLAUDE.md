@@ -67,6 +67,9 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - Nell'interfaccia un prezzo è sempre "indicativo" o "stima": niente link, pulsanti o parole che lo facciano sembrare prenotabile.
 - Limite Travelpayouts: 600 richieste al minuto per i metodi v3; lo script va a 8 al secondo.
 
+## Novità
+- A ogni rilascio che cambia qualcosa per chi usa il sito, aggiungere una voce IN CIMA a `data/news.json` con un id nuovo (la data): compare una volta per browser (`news.js`). Frasi semplici, come nello stile dell'interfaccia.
+
 ## Test in locale
 Doppio clic su `Apri in locale.command`, oppure:
 `python3 -m http.server 8000` e apri http://localhost:8000 (con `file://` il fetch fallisce).

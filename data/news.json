@@ -1,0 +1,20 @@
+{
+ "_note": "Novità mostrate una volta per browser (news.js). A ogni rilascio che cambia qualcosa per chi usa il sito si aggiunge una voce IN CIMA, con un id nuovo (la data).",
+ "news": [
+  {
+   "id": "2026-10-22",
+   "title": "Ottobre 2026",
+   "intro": "Grazie delle segnalazioni: le abbiamo lette tutte. Ecco cosa è cambiato.",
+   "items": [
+    "Le zone ora ci sono tutte, 150, ciascuna con 20 anni di dati sulle onde.",
+    "Scegli un paese dalla tendina sopra il globo, oppure toccalo: la mappa ci gira sopra, vedi solo i suoi spot e si apre quello migliore della settimana.",
+    "La barra colorata dell'anno si scorre col dito, e un bordo rosso segna la settimana di oggi.",
+    "Nuova pagina Calendario: scegli un mese o un periodo «dal … al …» e vedi dove conviene andare.",
+    "Filtri per livello e misura delle onde sotto la timeline; nel Calendario anche per prezzo e costo della vita.",
+    "I prezzi dicono sempre se sono andata e ritorno (A/R) o solo andata, e puoi scegliere tu.",
+    "Costo della vita del paese: €, €€ o €€€, indicativo rispetto all'Italia."
+   ],
+   "note": "Sui dati live: le medie le facciamo già con Open-Meteo e Copernicus, 20 anni di dati ERA5. Swell Atlas però serve a scegliere quando partire, guardando come va di solito ogni settimana dell'anno; per com'è il mare oggi ci sono già Windy e Surfline, che lo fanno meglio. In arrivo: le temperature di acqua e aria."
+  }
+ ]
+}

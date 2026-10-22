@@ -143,7 +143,7 @@
   </section>
   </div>
 
-  <footer>Le onde sono la media di vent'anni di dati ERA5 (2005-2024, Open-Meteo e Copernicus), solo nelle ore di luce, misurate al largo e non sulla riva. Servono a scegliere quando partire: non sono la previsione del giorno. Ore di volo stimate; prezzi indicativi dalla cache di Aviasales via Travelpayouts, o stimati quando mancano.</footer>
+  <footer>Le onde sono la media di vent'anni di dati ERA5 (2005-2024, Open-Meteo e Copernicus), solo nelle ore di luce, misurate al largo e non sulla riva. Servono a scegliere quando partire: non sono la previsione del giorno. Ore di volo stimate; prezzi indicativi dalla cache di Aviasales via Travelpayouts, o stimati quando mancano. <button type="button" class="btn link" id="news-link">Novità</button></footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
@@ -206,6 +206,14 @@
   </form>
 </dialog>
 
+<dialog id="dlg-news" aria-labelledby="news-t">
+  <div class="dlg">
+    <h2 id="news-t">Novità</h2>
+    <div id="news-body"></div>
+    <div class="dlg-actions"><button class="btn primary" id="news-ok">Ho capito</button></div>
+  </div>
+</dialog>
+
 <dialog id="dlg-admin" aria-labelledby="adm-t">
   <div class="dlg">
     <h2 id="adm-t">Segnalazioni</h2>
@@ -223,5 +231,6 @@
 <script type="module" src="prices.js"></script>
 <script type="module" src="calendar.js"></script>
 <script type="module" src="pages.js"></script>
+<script type="module" src="news.js"></script>
 </body>
 </html>

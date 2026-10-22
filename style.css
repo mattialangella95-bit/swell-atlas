@@ -143,4 +143,11 @@ header .pages{flex-basis:100%;display:flex;gap:4px 18px;margin-top:4px}
 .mf .cal-filter-body label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
 .mf select{width:auto;min-width:150px;font-size:14px;padding:5px 6px}
 .mf .note{margin:6px 0 0}
+/* novità */
+#dlg-news{width:min(520px,calc(100vw - 32px))}
+#news-body h3{font-family:var(--f-display);font-size:16px;margin:4px 0}
+#news-body p{margin:0 0 8px;font-size:14px}
+#news-body ul{margin:0 0 10px;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+#news-body .note{font-size:13px}
+footer .btn.link{font-size:12px;padding:0;margin:0}
 

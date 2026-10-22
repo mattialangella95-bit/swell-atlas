@@ -18,6 +18,7 @@ feedback.js         segnalazioni
 admin.js            segnalazioni dentro il profilo, solo per gli admin
 calendar.js         pagina Calendario (mese, periodo dal … al …, anno) · calendar.css i suoi stili
 pages.js            linguette Mondo / Calendario
+news.js             finestra "Novità", una volta per browser (testi in data/news.json)
 prices.js           prezzi voli indicativi da Supabase (swell_prices), con la stima come riserva
 .github/workflows-da-attivare/prezzi.yml  raccolta settimanale dei prezzi
 supabase-config.js  URL e chiave anon di Supabase (vuoti = account disattivati)
