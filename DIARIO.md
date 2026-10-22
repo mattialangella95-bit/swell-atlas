@@ -3,6 +3,9 @@
 ## 2026-10-22 — Finestra "Novità"
 
 ### Fatto
+- Stato delle segnalazioni aggiornato:
+  - risolte #18 (nuovi spot: deciso di non farlo), #19 e #21 (dati live: spiegato nelle Novità), #20, #22 e #23 (fatte);
+  - lette ma ancora aperte #11 (manca la temperatura di acqua e aria) e #17 (mappa nel Calendario).
 - `news.js` + `data/news.json`, come in Piano alimentare: alla prima apertura dopo un aggiornamento si mostrano le novità non ancora viste (al massimo 3 voci), poi mai più; il link "Novità" in fondo alla pagina le riapre.
 - Diversamente da Piano alimentare, la "vista" si ricorda nel browser e non nel profilo, perché qui quasi tutti entrano senza account. Quindi la vede una volta anche chi apre il sito per la prima volta. Se il browser non permette di ricordarlo (navigazione privata) non si mostra, per non comparire a ogni apertura.
 - Prima voce "Ottobre 2026": le novità delle segnalazioni e la spiegazione sui dati live.
@@ -35,6 +38,7 @@
 - Collaudo nel browser headless: trascinamento dalla settimana 1 alla 32, filtri, prezzi, costi, 400 px senza sforamenti, nessun errore.
 
 ### Aperti
+- Segnalazioni aperte: #11 temperature, #17 mappa nel Calendario.
 - Mappa nel Calendario (#17): da decidere se planisfero piatto o globo.
 - Temperature di acqua e aria (#11): download di circa 3-4 ore, da combinare.
 - Prezzi di sola andata veri e filtro sul prezzo reale: con la fase 5.
