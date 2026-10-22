@@ -65,5 +65,7 @@
     "noiseMin": 0.9,
     "noiseRange": 0.2,
     "_note": "prezzi ancora finti: base + perKm × distanza + perStop × scali, per fattore del mese e rumore stabile"
-  }
+  },
+  "oneWayFactor": 0.6,
+  "_noteOneWay": "oneWayFactor: stima della sola andata come frazione dell'andata e ritorno, finché non ci sono prezzi di sola andata rilevati"
 }

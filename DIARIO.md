@@ -1,5 +1,36 @@
 # Diario
 
+## 2026-10-22 — Segnalazioni: correzioni di forma, filtri, A/R, costo della vita
+
+### Fatto
+- Lette le segnalazioni #11-#23 e fatto il resoconto. Decisioni di Mattia:
+  - niente proposta di nuovi spot (#18);
+  - niente dati live (#19, #21): va spiegato all'amico;
+  - le cose facili subito; i download pesanti (temperature) da combinare dopo.
+- Barra colorata dell'anno trascinabile: tocco o trascinamento del dito (#23).
+- Settimana di oggi: bordo rosso nella barra dell'anno e "· questa settimana" nella timeline (#11).
+- Prezzi:
+  - sempre con "A/R" o "solo andata" (#20);
+  - scelta "A/R / solo andata" nella sezione Volo, ricordata nel browser;
+  - la sola andata per ora è una stima, pari al 60% dell'andata e ritorno (`oneWayFactor` in `flight-estimate.json`), finché la fase 5 non rileva prezzi veri di sola andata.
+- Filtri della pagina Mondo sotto la timeline, in "Filtri" (#22):
+  - "Onde adatte a" (livello, con `levels` di `quality-rule.json` sul 75° percentile della settimana);
+  - "Misura delle onde" (fasce in `data/filters.json`);
+  - nascondono gli spot su globo, tendine e lista, e si aggiornano cambiando settimana.
+- Filtri del calendario: misura delle onde, prezzo fino a, costo della vita (#20).
+- Costo della vita €/€€/€€€ rispetto all'Italia (#11):
+  - `scripts/build_costs.py` → `data/costs.json`, dati Banca Mondiale 2025 (PPP / cambio, `PA.NUS.PPP` / `PA.NUS.FCRF`; l'indicatore diretto è stato archiviato);
+  - fasce: sotto 0,7 €, fino a 1,1 €€, oltre €€€;
+  - Isole Vergini britanniche, Polinesia francese e Saint-Barth senza dato: €€€ a mano;
+  - si vede nella scheda ("· vita €€", con spiegazione), nella tendina Paese e nei gruppi per paese del calendario.
+- Collaudo nel browser headless: trascinamento dalla settimana 1 alla 32, filtri, prezzi, costi, 400 px senza sforamenti, nessun errore.
+
+### Aperti
+- Mappa nel Calendario (#17): da decidere se planisfero piatto o globo.
+- Temperature di acqua e aria (#11): download di circa 3-4 ore, da combinare.
+- Prezzi di sola andata veri e filtro sul prezzo reale: con la fase 5.
+
+
 ## 2026-10-20 — Tendine Paese e Spot
 
 ### Fatto

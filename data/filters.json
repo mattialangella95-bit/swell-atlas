@@ -1,0 +1,32 @@
+{
+  "_note": "Filtri condivisi da Mondo e Calendario. waveSizes: fasce di altezza tipica (m, al largo); maxPriceOptions: euro; costLevels: costo della vita (data/costs.json).",
+  "waveSizes": [
+    {
+      "id": "piccole",
+      "label": "piccole, fino a 1 m",
+      "max": 1.0
+    },
+    {
+      "id": "medie",
+      "label": "medie, da 1 a 2 m",
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "id": "grandi",
+      "label": "grandi, oltre 2 m",
+      "min": 2.0
+    }
+  ],
+  "maxPriceOptions": [
+    300,
+    500,
+    800,
+    1200
+  ],
+  "costLevels": {
+    "1": "meno cara dell'Italia",
+    "2": "più o meno come l'Italia",
+    "3": "più cara dell'Italia"
+  }
+}

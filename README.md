@@ -29,6 +29,8 @@ data/
   climate.json      climatologia settimanale per zona (generato da scripts/build_climate.py)
   quality-rule.json soglie della regola qualità (Flat → Epic) e altezza massima per livello surf
   calendar.json     fasce di ore di volo e nomi d'aeroporto della vista Calendario
+  filters.json      fasce di misura onde, prezzi e costo della vita per i filtri
+  costs.json        costo della vita per paese €/€€/€€€ (generato da scripts/build_costs.py)
   prices.json       partenze, mesi, valuta e ritmo della raccolta prezzi
   airports.json     partenze italiane (generato da scripts/build_airports.py)
   scale.json        scala qualità Flat → Epic (indice 0-9, colore)
@@ -50,6 +52,7 @@ scripts/
   test_rls.py       collaudo dei permessi Supabase con utenti di prova (anche admin)
   admin.py          aggiunge o toglie gli admin che vedono le segnalazioni nell'app
   fetch_prices.py   prezzi indicativi da Travelpayouts -> swell_prices (GitHub Actions, settimanale)
+  build_costs.py    costo della vita dalla Banca Mondiale -> data/costs.json
 requirements.txt    dipendenze Python degli script
 README.md
 DIARIO.md           diario di lavoro

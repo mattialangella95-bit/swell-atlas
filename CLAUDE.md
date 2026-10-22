@@ -45,8 +45,12 @@ Sito statico su GitHub Pages (account `mattialangella95-bit`, repo `swell-atlas`
 - `calendar.js` legge solo `climate.json` (campo `months`) e i parametri in `data/calendar.json` e `quality-rule.json` (`levels`); la stima voli è quella di `app.js` (`app.flight`), non va duplicata.
 - `app.js` espone gli agganci (`app`, `app.hooks`, `app.user`); le viste nuove stanno in file propri.
 
+## Filtri e costi
+- Fasce dei filtri (misura onde, prezzi, costo della vita) in `data/filters.json`; livelli in `quality-rule.json` (`levels`). Mondo filtra sulla settimana scelta, Calendario sul mese o periodo.
+- Costo della vita in `data/costs.json`, generato da `scripts/build_costs.py` (Banca Mondiale, rispetto all'Italia). È indicativo e nazionale: dirlo sempre.
+
 ## Voli
-- Ore e scali sono stimati, mai presentati come reali: nella scheda sempre "stimato".
+- Ore e scali sono stimati, mai presentati come reali: nella scheda sempre "stimato". Ogni prezzo dice se è A/R o solo andata; la sola andata è stimata (`oneWayFactor`) finché non ci sono prezzi rilevati.
 - Tutti i parametri (velocità, tempi fissi, coincidenze, fasce di scali, hub, eccezioni) stanno in `data/flight-estimate.json`. Se il collaudo da Genova e Malpensa sbaglia di oltre il 15%, si correggono i parametri, non il codice.
 - Le zone hanno `airport_main` (usato per i voli) e `airport_local`. Le partenze italiane si rigenerano con `scripts/build_airports.py`.
 

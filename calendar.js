@@ -21,7 +21,12 @@ const goodDays = g => { const n = Math.round(g / 10); return n === 0 ? (g > 0 ? 
 // città dell'aeroporto pulita: "Kuta, Badung" -> "Kuta", "Genova (GE)" -> "Genova"
 const city = a => CAL.airportNames[a.code] || (a.city || a.name).replace(/\s*\(.*?\)/g, "").split(/[,/]/)[0].trim();
 
-const ui = {month: new Date().getMonth(), group: "airport", view: "list", minQ: 0, maxH: Infinity, onlyFav: false, level: ""};
+const ui = {month: new Date().getMonth(), group: "airport", view: "list", minQ: 0, maxH: Infinity, onlyFav: false, level: "",
+  size: "", maxPrice: Infinity, maxCost: 3};
+const {FILT} = app;
+const sizeOk = (id, h) => { const s = FILT.waveSizes.find(x => x.id === id); return !s || ((s.min == null || h >= s.min) && (s.max == null || h < s.max)); };
+const priceOf = e => app.monthPrices(app.state.dep, e.z, e.f)[priceMonth()];
+const costLevel = e => app.COSTS.countries[e.country]?.level ?? 2;
 
 // ---------- indice zone: dati del mese e volo stimato dalla partenza scelta (logica voli di app.js)
 let index = [], indexDep = null;
@@ -84,7 +89,8 @@ const tooBig = m => { const max = RULE.levels[ui.level]?.maxHeight; return max !
 function filtered(){
   return index.filter(e => {
     const m = sel(e);
-    return m && m.q >= ui.minQ && e.f.hrs <= ui.maxH && (!ui.onlyFav || isFav(e));
+    return m && m.q >= ui.minQ && e.f.hrs <= ui.maxH && (!ui.onlyFav || isFav(e)) && sizeOk(ui.size, (m.h25 + m.h75) / 2)
+      && priceOf(e).value <= ui.maxPrice && costLevel(e) <= ui.maxCost;
   });
 }
 
@@ -117,7 +123,7 @@ function groups(list){
 function groupTitle(g){
   const e = g.items[0];
   if(ui.group === "airport") return `${esc(city(e.airport))} <small>${e.airport.code} · ${hours(e.f.hrs)} di volo</small>`;
-  if(ui.group === "country") return esc(g.key);
+  if(ui.group === "country") return `${esc(g.key)}${app.costOf(g.key) ? ` <small title="${esc(app.costTitle(g.key))}">vita ${app.costOf(g.key)}</small>` : ""}`;
   return bandLabel(g.key);
 }
 
@@ -132,8 +138,8 @@ function groupNote(g){
 function row(e){
   const m = sel(e), s = SCALE[m.q];
   const where = ui.group === "country" ? e.region : [e.region || e.country, ui.group === "airport" ? "" : city(e.airport)].filter(Boolean).join(" · ");
-  const pr = app.monthPrices(app.state.dep, e.z, e.f)[priceMonth()];
-  const price = `circa ${pr.value.toLocaleString("it-IT")} € ${pr.real ? "indicativi" : "(stima)"}`;
+  const pr = priceOf(e);
+  const price = `circa ${pr.value.toLocaleString("it-IT")} € ${app.tripShort()} ${pr.real ? "indicativi" : "(stima)"}`;
   const detail = [`<span class="q" style="--q:${s.color}">${s.label}</span>`, `onde ${dec(m.h25)}–${dec(m.h75)} m`,
     ui.group === "airport" ? "" : `${hours(e.f.hrs)} di volo`, price].filter(Boolean).join(" · ");
   return `<button class="cal-row" data-id="${e.z.id}" style="--q:${s.color}">
@@ -173,7 +179,7 @@ function render(){
   document.querySelectorAll("#cal-view button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === ui.view));
   const missing = app.ZONES.length - index.length;
   $("cal-info").textContent = `Partendo da ${app.state.dep.label}. ` + (missing ? `Per ora ${index.length} zone con dati, le altre ${missing} stanno arrivando.` : `${list.length} zone.`);
-  const active = [ui.minQ > 0, ui.maxH < Infinity, ui.onlyFav, !!ui.level].filter(Boolean).length;
+  const active = [ui.minQ > 0, ui.maxH < Infinity, ui.onlyFav, !!ui.level, !!ui.size, ui.maxPrice < Infinity, ui.maxCost < 3].filter(Boolean).length;
   $("cal-filter-count").textContent = active ? `(${active})` : "";
   $("cal-body").innerHTML = list.length ? (ui.view === "list" ? renderList(gs) : renderYear(gs))
     : `<p class="cal-note">Nessuna zona con questi filtri.</p>`;
@@ -184,6 +190,12 @@ $("cal-months").innerHTML = MESI.map((n, i) => `<button data-m="${i}" title="${M
 $("cal-minq").innerHTML = SCALE.map((s, i) => `<option value="${i}">${i ? s.label : "qualsiasi"}</option>`).join("");
 $("cal-maxh").innerHTML = `<option value="">qualsiasi</option>` + CAL.maxHoursOptions.map(h => `<option value="${h}">${h} ore</option>`).join("");
 $("cal-level").innerHTML = `<option value="">non indicato</option>` + LEVELS.map(l => `<option value="${l}">${l}</option>`).join("");
+$("cal-size").innerHTML = `<option value="">qualsiasi</option>` + FILT.waveSizes.map(s => `<option value="${s.id}">${s.label}</option>`).join("");
+$("cal-price").innerHTML = `<option value="">qualsiasi</option>` + FILT.maxPriceOptions.map(v => `<option value="${v}">${v} €</option>`).join("");
+$("cal-cost").innerHTML = `<option value="3">qualsiasi</option><option value="2">fino a €€</option><option value="1">solo €</option>`;
+$("cal-size").onchange = e => { ui.size = e.target.value; render(); };
+$("cal-price").onchange = e => { ui.maxPrice = e.target.value ? +e.target.value : Infinity; render(); };
+$("cal-cost").onchange = e => { ui.maxCost = +e.target.value; render(); };
 
 $("cal-months").onclick = e => { const b = e.target.closest("button"); if(b){ ui.month = +b.dataset.m; clearRange(); render(); } };
 function clearRange(){ ui.range = null; $("cal-from").value = ""; $("cal-to").value = ""; }

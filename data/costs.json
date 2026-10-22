@@ -1,0 +1,254 @@
+{
+ "_note": "Costo della vita indicativo rispetto all'Italia (Banca Mondiale: PPP / cambio). level 1 = €, 2 = €€, 3 = €€€. manual = senza dato, livello messo a mano. Rigenerare con scripts/build_costs.py.",
+ "countries": {
+  "Argentina": {
+   "iso3": "ARG",
+   "ratio": 0.66,
+   "level": 1,
+   "year": "2025"
+  },
+  "Australia": {
+   "iso3": "AUS",
+   "ratio": 1.31,
+   "level": 3,
+   "year": "2025"
+  },
+  "Barbados": {
+   "iso3": "BRB",
+   "ratio": 1.59,
+   "level": 3,
+   "year": "2025"
+  },
+  "Belgium": {
+   "iso3": "BEL",
+   "ratio": 1.18,
+   "level": 3,
+   "year": "2025"
+  },
+  "Brazil": {
+   "iso3": "BRA",
+   "ratio": 0.66,
+   "level": 1,
+   "year": "2025"
+  },
+  "British Virgin": {
+   "iso3": "VGB",
+   "ratio": null,
+   "level": 3,
+   "year": null,
+   "manual": true
+  },
+  "Canary": {
+   "iso3": "ESP",
+   "ratio": 0.94,
+   "level": 2,
+   "year": "2025"
+  },
+  "Chile": {
+   "iso3": "CHL",
+   "ratio": 0.69,
+   "level": 1,
+   "year": "2025"
+  },
+  "Costa Rica": {
+   "iso3": "CRI",
+   "ratio": 0.86,
+   "level": 2,
+   "year": "2025"
+  },
+  "Cyprus": {
+   "iso3": "CYP",
+   "ratio": 0.94,
+   "level": 2,
+   "year": "2025"
+  },
+  "Ecuador": {
+   "iso3": "ECU",
+   "ratio": 0.62,
+   "level": 1,
+   "year": "2025"
+  },
+  "El Salvador": {
+   "iso3": "SLV",
+   "ratio": 0.59,
+   "level": 1,
+   "year": "2025"
+  },
+  "France": {
+   "iso3": "FRA",
+   "ratio": 1.11,
+   "level": 3,
+   "year": "2025"
+  },
+  "French Polynesia": {
+   "iso3": "PYF",
+   "ratio": null,
+   "level": 3,
+   "year": null,
+   "manual": true
+  },
+  "Greece": {
+   "iso3": "GRC",
+   "ratio": 0.86,
+   "level": 2,
+   "year": "2025"
+  },
+  "Indonesia": {
+   "iso3": "IDN",
+   "ratio": 0.42,
+   "level": 1,
+   "year": "2025"
+  },
+  "Ireland": {
+   "iso3": "IRL",
+   "ratio": 1.23,
+   "level": 3,
+   "year": "2025"
+  },
+  "Israel": {
+   "iso3": "ISR",
+   "ratio": 1.47,
+   "level": 3,
+   "year": "2025"
+  },
+  "Italy": {
+   "iso3": "ITA",
+   "ratio": 1.0,
+   "level": 2,
+   "year": "2025"
+  },
+  "Japan": {
+   "iso3": "JPN",
+   "ratio": 0.94,
+   "level": 2,
+   "year": "2025"
+  },
+  "Madeira": {
+   "iso3": "PRT",
+   "ratio": 0.88,
+   "level": 2,
+   "year": "2025"
+  },
+  "Maldives": {
+   "iso3": "MDV",
+   "ratio": 0.74,
+   "level": 2,
+   "year": "2025"
+  },
+  "Mexico": {
+   "iso3": "MEX",
+   "ratio": 0.78,
+   "level": 2,
+   "year": "2025"
+  },
+  "Morocco": {
+   "iso3": "MAR",
+   "ratio": 0.61,
+   "level": 1,
+   "year": "2025"
+  },
+  "Netherlands": {
+   "iso3": "NLD",
+   "ratio": 1.22,
+   "level": 3,
+   "year": "2025"
+  },
+  "New Zealand": {
+   "iso3": "NZL",
+   "ratio": 1.24,
+   "level": 3,
+   "year": "2025"
+  },
+  "Nicaragua": {
+   "iso3": "NIC",
+   "ratio": 0.5,
+   "level": 1,
+   "year": "2025"
+  },
+  "Peru": {
+   "iso3": "PER",
+   "ratio": 0.75,
+   "level": 2,
+   "year": "2025"
+  },
+  "Philippines": {
+   "iso3": "PHL",
+   "ratio": 0.48,
+   "level": 1,
+   "year": "2025"
+  },
+  "Portugal": {
+   "iso3": "PRT",
+   "ratio": 0.88,
+   "level": 2,
+   "year": "2025"
+  },
+  "Puerto Rico": {
+   "iso3": "PRI",
+   "ratio": 1.13,
+   "level": 3,
+   "year": "2025"
+  },
+  "Reunion": {
+   "iso3": "FRA",
+   "ratio": 1.11,
+   "level": 3,
+   "year": "2025"
+  },
+  "Senegal": {
+   "iso3": "SEN",
+   "ratio": 0.52,
+   "level": 1,
+   "year": "2025"
+  },
+  "Seychelles": {
+   "iso3": "SYC",
+   "ratio": 0.79,
+   "level": 2,
+   "year": "2025"
+  },
+  "South Africa": {
+   "iso3": "ZAF",
+   "ratio": 0.6,
+   "level": 1,
+   "year": "2025"
+  },
+  "Spain": {
+   "iso3": "ESP",
+   "ratio": 0.94,
+   "level": 2,
+   "year": "2025"
+  },
+  "Sri Lanka": {
+   "iso3": "LKA",
+   "ratio": 0.43,
+   "level": 1,
+   "year": "2025"
+  },
+  "St Barthelemy": {
+   "iso3": "BLM",
+   "ratio": null,
+   "level": 3,
+   "year": null,
+   "manual": true
+  },
+  "UK": {
+   "iso3": "GBR",
+   "ratio": 1.29,
+   "level": 3,
+   "year": "2025"
+  },
+  "USA": {
+   "iso3": "USA",
+   "ratio": 1.45,
+   "level": 3,
+   "year": "2025"
+  },
+  "Uruguay": {
+   "iso3": "URY",
+   "ratio": 0.95,
+   "level": 2,
+   "year": "2025"
+  }
+ }
+}

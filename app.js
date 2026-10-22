@@ -8,10 +8,11 @@ async function loadJSON(path){
   if(!r.ok)throw new Error(path+": HTTP "+r.status);
   return r.json();
 }
-let ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110,COUNTRIES;
+let ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110,COUNTRIES,RULE,COSTS,FILT;
 try{
-  [ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110,COUNTRIES]=await Promise.all(
-    ["data/zones.json","data/airports.json","data/scale.json","data/flight-estimate.json","data/climate.json","data/land-50m.json","data/land-110m.json","data/countries-110m.json"].map(loadJSON));
+  [ZONES,DEPS,SCALE,FLY,CLIMATE,LAND50,LAND110,COUNTRIES,RULE,COSTS,FILT]=await Promise.all(
+    ["data/zones.json","data/airports.json","data/scale.json","data/flight-estimate.json","data/climate.json","data/land-50m.json","data/land-110m.json","data/countries-110m.json",
+     "data/quality-rule.json","data/costs.json","data/filters.json"].map(loadJSON));
 }catch(err){
   $("zn").textContent="Dati non caricati";
   $("zs").textContent="Apri il sito tramite un server (es. python3 -m http.server), non come file locale.";
@@ -35,7 +36,14 @@ ZONES.forEach(z=>z.wk=getZoneWeeks(z));   // null = dati in arrivo (in grigio)
 // partenza: l'ultima scelta resta nel browser
 const DEP_KEY="swellatlas.partenza";
 function savedDep(){try{return DEPS.find(d=>d.code===localStorage.getItem(DEP_KEY))}catch(e){return null}}
-const state={week:0,zone:ZONES.find(z=>z.wk)||ZONES[0],dep:savedDep()||DEPS.find(d=>d.code==="GOA")||DEPS[0]};
+const TRIP_KEY="swellatlas.viaggio";
+function savedTrip(){try{return localStorage.getItem(TRIP_KEY)==="a"?"a":"ar"}catch(e){return "ar"}}
+const state={week:0,zone:ZONES.find(z=>z.wk)||ZONES[0],dep:savedDep()||DEPS.find(d=>d.code==="GOA")||DEPS[0],
+  trip:savedTrip(),mf:{level:"",size:""}};   // trip: "ar" andata e ritorno, "a" solo andata; mf: filtri della pagina Mondo
+const TODAY_WEEK=(()=>{const n=new Date(),s=new Date(n.getFullYear(),0,1);return Math.min(51,Math.floor((n-s)/6048e5))})();
+// costo della vita del paese (data/costs.json): "€", "€€", "€€€"
+const costOf=n=>COSTS.countries[n]?"€".repeat(COSTS.countries[n].level):"";
+const costTitle=n=>COSTS.countries[n]?`Costo della vita ${FILT.costLevels[COSTS.countries[n].level]} (indicativo, Banca Mondiale${COSTS.countries[n].manual?", stimato a mano":""})`:"";
 const weekMonth=w=>Math.min(11,Math.floor(w*12/52));
 const dec=x=>x.toFixed(1).replace(".",",");
 const fmtH=w=>dec(w.h25)+"–"+dec(w.h75)+" m";
@@ -167,9 +175,24 @@ cv.addEventListener("pointerup",endP);cv.addEventListener("pointercancel",e=>{en
 
 // agganci per profile.js e feedback.js: filtro zone visibili (es. solo preferiti) e callback dopo ogni render
 const hooks={filter:null,render:[],user:[],prices:null};
-const visible=z=>!hooks.filter||hooks.filter(z);
+// filtri della pagina Mondo (settimana scelta): livello = altezza al 75° percentile entro il massimo del livello;
+// misura = altezza mediana nella fascia. La zona aperta resta sempre visibile.
+const sizeOk=(id,h)=>{const s=FILT.waveSizes.find(x=>x.id===id);return !s||((s.min==null||h>=s.min)&&(s.max==null||h<s.max))};
+function mondoOk(z){
+  if(!state.mf.level&&!state.mf.size)return true;
+  const w=z.wk?.[state.week];if(!w)return false;
+  const max=RULE.levels[state.mf.level]?.maxHeight;
+  return (max==null||w.h75<=max)&&sizeOk(state.mf.size,w.h);
+}
+const visible=z=>z===state.zone||((!hooks.filter||hooks.filter(z))&&mondoOk(z));
 // prezzi del mese: prices.js li sostituisce con quelli rilevati; senza, la stima di flight()
-const monthPrices=(dep,z,f)=>hooks.prices?hooks.prices(dep,z,f):f.months.map(value=>({value,real:false}));
+// prezzi del mese: prices.js li sostituisce con quelli rilevati (andata e ritorno); senza, la stima di flight().
+// Solo andata: per ora sempre stima, come frazione dell'andata e ritorno (oneWayFactor in flight-estimate.json).
+function monthPrices(dep,z,f){
+  const ar=hooks.prices?hooks.prices(dep,z,f):f.months.map(value=>({value,real:false}));
+  return state.trip==="a"?ar.map(p=>({value:Math.round(p.value*FLY.oneWayFactor/10)*10,real:false})):ar;
+}
+const tripShort=()=>state.trip==="a"?"solo andata":"A/R";
 function zoneColor(z){return z.wk?SCALE[z.wk[state.week].q].color:css("--nodata")}
 
 // ---------- voli: ore e scali stimati da distanza e parametri (data/flight-estimate.json); prezzi ancora finti
@@ -191,17 +214,19 @@ function selectZone(z,rot=true){state.zone=z;$("arr").value=z.id;if(rot)rotateTo
 function render(){
   const z=state.zone,m=weekMonth(state.week),main=z.airport_main,local=z.airport_local;
   $("zn").textContent=z.name;
-  $("zs").textContent=z.region+" · aeroporto "+main.code+(local.code!==main.code?" (il più vicino è "+local.code+")":"");
+  const cn=countryOf(z);
+  $("zs").textContent=z.region+" · aeroporto "+main.code+(local.code!==main.code?" (il più vicino è "+local.code+")":"")+(costOf(cn)?" · vita "+costOf(cn):"");
+  $("zs").title=costTitle(cn);
   const zq=$("zq");
   if(z.wk){
     const w=z.wk[state.week];
     zq.textContent=SCALE[w.q].label;zq.style.background=SCALE[w.q].color;
     $("sh").textContent=fmtH(w);$("sh").title="mediana "+dec(w.h)+" m";$("sp").textContent=Math.round(w.t)+" s";$("sg").textContent=w.good+"%";
-    $("strip").innerHTML=z.wk.map((x,i)=>`<i style="background:${SCALE[x.q].color}" class="${i===state.week?"on":""}" title="Settimana ${i+1}, ${SCALE[x.q].label}" data-w="${i}"></i>`).join("");
+    $("strip").innerHTML=z.wk.map((x,i)=>`<i style="background:${SCALE[x.q].color}" class="${i===state.week?"on":""}${i===TODAY_WEEK?" today":""}" title="Settimana ${i+1}${i===TODAY_WEEK?" (questa)":""}, ${SCALE[x.q].label}" data-w="${i}"></i>`).join("");
   }else{
     zq.textContent="Dati in arrivo";zq.style.background=css("--nodata");
     ["sh","sp","sg"].forEach(id=>{$(id).textContent="—";$(id).title=""});
-    $("strip").innerHTML=Array.from({length:52},(_,i)=>`<i style="background:var(--nodata)" class="${i===state.week?"on":""}" title="Settimana ${i+1}, dati in arrivo" data-w="${i}"></i>`).join("");
+    $("strip").innerHTML=Array.from({length:52},(_,i)=>`<i style="background:var(--nodata)" class="${i===state.week?"on":""}${i===TODAY_WEEK?" today":""}" title="Settimana ${i+1}, dati in arrivo" data-w="${i}"></i>`).join("");
   }
   const f=flight(state.dep,z);
   $("fd").textContent=Math.round(f.dist).toLocaleString("it-IT")+" km";
@@ -210,17 +235,39 @@ function render(){
   // prezzi: rilevati (prices.js, swell_prices) dove ci sono, altrimenti la stima; sempre indicativi
   const pm=monthPrices(state.dep,z,f),cur=pm[m],eur=v=>v.toLocaleString("it-IT")+" €";
   $("fp").textContent="circa "+eur(cur.value);
-  $("fps").textContent=cur.real?"indicativo, rilevato il "+new Date(cur.observed).toLocaleDateString("it-IT",{day:"numeric",month:"short"}):"stima";
+  $("bars-t").textContent="Prezzo indicativo "+(state.trip==="a"?"di sola andata":"andata e ritorno")+", mese per mese";
+  document.querySelectorAll("#trip button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===state.trip));
+  $("fps").textContent=tripShort()+" · "+(cur.real?"indicativo, rilevato il "+new Date(cur.observed).toLocaleDateString("it-IT",{day:"numeric",month:"short"}):"stima");
   const mx=Math.max(...pm.map(p=>p.value));
   $("bars").innerHTML=pm.map((p,i)=>`<div class="${i===m?"cur":""} ${p.real?"":"est"}" style="height:${Math.round(100*p.value/mx)}%" title="${MESI[i]}: circa ${eur(p.value)}, ${p.real?"indicativo (ricerche recenti su Aviasales)":"stima"}">${i===m?`<span>${p.value}</span>`:""}</div>`).join("");
-  $("wk").textContent="Settimana "+(state.week+1)+" · "+MESI[m];
+  $("wk").textContent="Settimana "+(state.week+1)+" · "+MESI[m]+(state.week===TODAY_WEEK?" · questa settimana":"");
   $("wr").value=state.week;
   if(state.country&&countryOf(z)!==state.country)state.country=countryOf(z);   // spot scelto da fuori (arrivo, calendario)
   updateFinder();
   hooks.render.forEach(f=>f(z));
 }
-function setWeek(w){state.week=(w+52)%52;render();draw()}
-$("strip").addEventListener("click",e=>{if(e.target.dataset.w)setWeek(+e.target.dataset.w)});
+function setWeek(w){state.week=(w+52)%52;if(state.mf.level||state.mf.size)onMondoFilter();else{render();draw()}}
+// barra colorata dell'anno come un cursore: tocco o trascinamento del dito
+let stripDrag=false;
+const stripAt=e=>{const b=$("strip").getBoundingClientRect();setWeek(Math.max(0,Math.min(51,Math.floor((e.clientX-b.left)/b.width*52))))};
+$("strip").addEventListener("pointerdown",e=>{stripDrag=true;$("strip").setPointerCapture(e.pointerId);stripAt(e)});
+$("strip").addEventListener("pointermove",e=>{if(stripDrag)stripAt(e)});
+["pointerup","pointercancel"].forEach(t=>$("strip").addEventListener(t,()=>stripDrag=false));
+// prezzo andata e ritorno o solo andata, ricordato nel browser
+$("trip").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state.trip=b.dataset.t;try{localStorage.setItem(TRIP_KEY,state.trip)}catch(x){}
+  render();document.dispatchEvent(new CustomEvent("swell:prezzi"))});
+// filtri della pagina Mondo, sotto la timeline
+$("mf-level").innerHTML=`<option value="">tutti i livelli</option>`+Object.keys(RULE.levels).filter(k=>!k.startsWith("_")).map(l=>`<option value="${l}">${l}</option>`).join("");
+$("mf-size").innerHTML=`<option value="">qualsiasi</option>`+FILT.waveSizes.map(s=>`<option value="${s.id}">${s.label}</option>`).join("");
+function onMondoFilter(){
+  state.mf={level:$("mf-level").value,size:$("mf-size").value};
+  const n=[state.mf.level,state.mf.size].filter(Boolean).length,shown=ZONES.filter(visible).length;
+  $("mf-count").textContent=n?`(${n})`:"";
+  $("mf-note").textContent=n?`${shown} spot su ${ZONES.length} nella settimana ${state.week+1}. Cambia settimana e il filtro si aggiorna.`:"";
+  if(state.country&&!zonesOf(state.country).length)state.country=null;
+  render();draw();
+}
+$("mf-level").onchange=onMondoFilter;$("mf-size").onchange=onMondoFilter;
 $("wr").addEventListener("input",e=>setWeek(+e.target.value));
 ["m1","m2","m3"].forEach(id=>$(id).innerHTML=MESI.map(m=>`<span>${m}</span>`).join(""));
 $("legend").innerHTML=SCALE.map(s=>`<span><b style="background:${s.color}"></b>${s.label}</span>`).join("");
@@ -229,7 +276,7 @@ const goodTxt=g=>{const n=Math.round(g/10);return n===0?(g>0?"quasi mai buono":"
 const esc=x=>String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function updateFinder(){
   const names=[...new Set(ZONES.filter(visible).map(countryOf))].sort((a,b)=>a.localeCompare(b,"it"));
-  $("sel-country").innerHTML=`<option value="">Scegli un paese…</option>`+names.map(n=>`<option value="${esc(n)}">${esc(n)} (${zonesOf(n).length})</option>`).join("");
+  $("sel-country").innerHTML=`<option value="">Scegli un paese…</option>`+names.map(n=>`<option value="${esc(n)}">${esc(n)} (${zonesOf(n).length})${costOf(n)?" · "+costOf(n):""}</option>`).join("");
   $("sel-country").value=state.country||"";
   const zs=state.country?zonesOf(state.country):[];
   $("sel-spot").disabled=!zs.length;
@@ -270,7 +317,7 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
 new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 buildZoneList();resize();
 
-export const app={state,ZONES,DEPS,SCALE,MESI,CLIMATE,DEP_KEY,hooks,depText,findDep,setDep,selectZone,flight,monthPrices,
+export const app={state,ZONES,DEPS,SCALE,MESI,CLIMATE,COSTS,FILT,DEP_KEY,hooks,depText,findDep,setDep,selectZone,flight,monthPrices,tripShort,costOf,costTitle,
   user:{loggedIn:false,favs:new Set(),level:null},   // aggiornato da profile.js, letto da calendar.js
   project:ll=>proj(ll),   // coordinate -> punto sullo schermo del globo
   refresh(){buildZoneList();render();draw()}};
